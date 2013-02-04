@@ -42,7 +42,14 @@ parser.add_argument('action', choices=[
     'stats'
 ])
 parser.add_argument('target')
+parser.add_argument('-v', '--verbosity', help='Increase verbosity.', action='store_true')
 args = parser.parse_args()
+
+if args.verbosity:
+    logging.basicConfig(
+        format='%(levelname)s: %(message)s',
+        level=logging.DEBUG
+    )
 
 try:
     exec "from sources import %s as source_module" % args.target
