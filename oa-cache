@@ -28,58 +28,46 @@ from helpers import media, make_datestring
 from model import session, setup_all, create_all, set_source, \
     Article, Category, Journal, SupplementaryMaterial
 
-try:
-    action = argv[1]
-    target = argv[2]
-except IndexError:
-    stderr.write("""
-oa-cache – Open Access Media Importer local operations
-
-usage:  oa-cache browse-database [source] |
-        oa-cache clear-media [source] |
-        oa-cache clear-database [source] |
-        oa-cache convert-media [source] |
-        oa-cache find-media [source] |
-        oa-cache forget-converted [source] |
-        oa-cache forget-downloaded [source] |
-        oa-cache forget-uploaded [source] |
-        oa-cache stats [source]
-
-""")
-    exit(1)
+from argparse import ArgumentParser
+parser = ArgumentParser()
+parser.add_argument('action', choices=[
+    'browse-database',
+    'clear-media',
+    'clear-database',
+    'convert-media',
+    'find-media',
+    'forget-converted',
+    'forget-downloaded',
+    'forget-uploaded',
+    'stats'
+])
+parser.add_argument('target')
+args = parser.parse_args()
 
 try:
-    assert(action in ['browse-database', 'clear-media', 'clear-database', \
-        'convert-media', 'find-media', 'forget-converted', \
-        'forget-downloaded', 'forget-uploaded', 'stats'])
-except AssertionError:  # invalid action
-    stderr.write('Unknown action “%s”.\n' % action)
-    exit(2)
-
-try:
-    exec "from sources import %s as source_module" % target
+    exec "from sources import %s as source_module" % args.target
 except ImportError:  # invalid source
-    stderr.write("Unknown source “%s”.\n" % target)
+    stderr.write("Unknown source “%s”.\n" % args.target)
     exit(3)
 
-set_source(target)
+set_source(args.target)
 setup_all(True)
 
 from helpers import config
 
-if action == 'browse-database':
-    filename = config.database_path(target)
+if args.action == 'browse-database':
+    filename = config.database_path(args.target)
     try:
         subprocess.call(['sqlitebrowser', filename])
     except OSError:
         stderr.write('Unable to start sqlitebrowser <http://sqlitebrowser.sourceforge.net/>.\n')
         exit(4)
 
-if action == 'clear-media':
-    media_raw_directory = config.get_media_refined_source_path(target)
+if args.action == 'clear-media':
+    media_raw_directory = config.get_media_refined_source_path(args.target)
     listing = listdir(media_raw_directory)
 
-    metadata_refined_directory = config.get_metadata_refined_source_path(target)
+    metadata_refined_directory = config.get_metadata_refined_source_path(args.target)
     download_cache_path = path.join(metadata_refined_directory, 'download_cache')
     remove(download_cache_path)
 
@@ -89,8 +77,8 @@ if action == 'clear-media':
         remove(media_path)
         stderr.write("done.\n")
 
-if action == 'clear-database':
-    filename = config.database_path(target)
+if args.action == 'clear-database':
+    filename = config.database_path(args.target)
     stderr.write("Removing “%s” … " % filename)
     try:
         remove(filename)
@@ -98,14 +86,14 @@ if action == 'clear-database':
     except OSError, e:
         stderr.write('\n%s\n' % str(e))
 
-if action == 'convert-media':
+if args.action == 'convert-media':
     materials = SupplementaryMaterial.query.filter_by(
         downloaded=True,
         converted=False
     ).all()
     for material in materials:
-        media_refined_directory = config.get_media_refined_source_path(target)
-        media_raw_directory = config.get_media_raw_source_path(target)
+        media_refined_directory = config.get_media_refined_source_path(args.target)
+        media_raw_directory = config.get_media_raw_source_path(args.target)
         temporary_media_path = path.join(media_refined_directory, 'current.ogv')
 
         url_path = urlparse.urlsplit(material.url).path
@@ -178,7 +166,7 @@ if action == 'convert-media':
         material.converted = True
         session.commit()
 
-if action == 'forget-converted':
+if args.action == 'forget-converted':
     materials = SupplementaryMaterial.query.filter_by(
         converted=True
     ).all()
@@ -188,7 +176,7 @@ if action == 'forget-converted':
     session.commit()
     stderr.write("done.\n")
 
-if action == 'forget-downloaded':
+if args.action == 'forget-downloaded':
     materials = SupplementaryMaterial.query.filter_by(
         downloaded=True
     ).all()
@@ -198,7 +186,7 @@ if action == 'forget-downloaded':
     session.commit()
     stderr.write("done.\n")
 
-if action == 'forget-uploaded':
+if args.action == 'forget-uploaded':
     materials = SupplementaryMaterial.query.filter_by(
         uploaded=True
     ).all()
@@ -208,11 +196,11 @@ if action == 'forget-uploaded':
     session.commit()
     stderr.write("done.\n")
 
-if action == 'find-media':
+if args.action == 'find-media':
     skip = [article.name for article in Article.query.all()]
     if len(skip) > 0:
         stderr.write('Skipping %s records … \n' % len(skip))
-    source_path = config.get_metadata_raw_source_path(target)
+    source_path = config.get_metadata_raw_source_path(args.target)
     for result in source_module.list_articles(
         source_path,
         supplementary_materials=True,
@@ -304,7 +292,7 @@ if action == 'find-media':
             session.commit()
             exit(0)
 
-if action == "stats":
+if args.action == "stats":
     stderr.write('Counting supplementary materials … ')
     materials = SupplementaryMaterial.query.all()
     stderr.write(str(len(materials)) + ' supplementary materials found.\n')
