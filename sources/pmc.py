@@ -640,5 +640,7 @@ def _get_supplementary_material_url(pmcid, href):
     This function creates absolute URIs for supplementary materials,
     using a PubMed Central ID and a relative URI.
     """
-    return str('http://www.ncbi.nlm.nih.gov/pmc/articles/PMC' + pmcid +
+    url = str('http://www.ncbi.nlm.nih.gov/pmc/articles/PMC' + pmcid + \
         '/bin/' + href)
+    logging.info('Supplementary material URL is <%s>.', url)
+    return url
