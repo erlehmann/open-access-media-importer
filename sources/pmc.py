@@ -614,6 +614,16 @@ def _get_supplementary_material(tree, sup):
         )
         return result
 
+    graphic = sup_tree.find('graphic')
+    if graphic is not None:
+        result['mimetype'] = 'image'  # TODO: correct guess?
+        result['mime-subtype'] = 'jpeg'  # TODO: correct guess?
+        result['url'] = _get_figure_url(
+            _get_pmcid(tree),
+            graphic.attrib['{http://www.w3.org/1999/xlink}href']
+        )
+        return result
+
 def _get_pmcid(tree):
     """
     Given an ElementTree, returns PubMed Central ID.
@@ -642,3 +652,12 @@ def _get_supplementary_material_url(pmcid, href):
     """
     return str('http://www.ncbi.nlm.nih.gov/pmc/articles/PMC' + pmcid +
         '/bin/' + href)
+
+def _get_figure_url(pmcid, href):
+    """
+    This function creates absolute URIs for figures, using a PubMed
+    Central ID and a relative URI missing the extension. It operates
+    under the questionable assumption that the missing extension is
+    always “.jpg”.
+    """
+    return _get_supplementary_material_url(pmcid, href) + '.jpg'
