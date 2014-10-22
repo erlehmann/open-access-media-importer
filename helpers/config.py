@@ -12,25 +12,33 @@ config_path = path.join(BaseDirectory.xdg_config_home, APPLICATION_NAME)
 data_path = path.join(BaseDirectory.xdg_data_home, APPLICATION_NAME)
 
 def database_path(source):
+    """Return the path of the SQLite database used for OAMI source."""
     return path.join(data_path, '%s.sqlite' % source)
 
 def ensure_directory_exists(directory):
+    """Create given directory if it does not exist."""
     if not path.exists(directory):
         makedirs(directory)
 
-for p in (cache_path, config_path, data_path):
-    ensure_directory_exists(p)
+def ensure_all_directories_exist():
+    """Create each of cache, config, data directories if they do not exist."""
+    for p in (cache_path, config_path, data_path):
+        ensure_directory_exists(p)
+
+ensure_all_directories_exist()
 
 _metadata_path = path.join(cache_path, 'metadata')
 
 _metadata_raw_path = path.join(_metadata_path, 'raw')
 def get_metadata_raw_source_path(source_name):
+    """Return path where raw files for OAMI source are saved."""
     p = path.join(_metadata_raw_path, source_name)
     ensure_directory_exists(p)
     return p
 
 _metadata_refined_path = path.join(_metadata_path, 'refined')
 def get_metadata_refined_source_path(source_name):
+    """Return path where refined files for OAMI source are saved."""
     p = path.join(_metadata_refined_path, source_name)
     ensure_directory_exists(p)
     return p
@@ -39,12 +47,14 @@ _media_path = path.join(cache_path, 'media')
 
 _media_raw_path = path.join(_media_path, 'raw')
 def get_media_raw_source_path(source_name):
+    """Return path where raw media files for OAMI source are saved."""
     p = path.join(_media_raw_path, source_name)
     ensure_directory_exists(p)
     return p
 
 _media_refined_path = path.join(_media_path, 'refined')
 def get_media_refined_source_path(source_name):
+    """Return path where refined media files for OAMI source are saved."""
     p = path.join(_media_refined_path, source_name)
     ensure_directory_exists(p)
     return p
@@ -68,6 +78,7 @@ userconfig.optionsxform = str  # case sensitivity
 userconfig.read(userconfig_file)
 
 def get_userconfig(section, option):
+    """Return OAMI configuration values."""
     try:
         return userconfig.get(section, option)
     except NoSectionError:
