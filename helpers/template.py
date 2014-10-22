@@ -19,6 +19,37 @@ def _trim(text):
     """Return given text without superfluous whitespace."""
     return ' '.join(text.split())
 
+def _capitalize_properly(word):
+    """
+    Return given text lowercased if all letters after the first are already lower cased.
+    """
+    if len(word) == 1: # single letters should pass through unchanged
+        return word
+    if word[1:] == word[1:].lower():  # word has no capital letters inside
+        return word.lower()
+    else:  # words like 'DNA' or 'HeLa' should not be touched
+        return word
+
+def _postprocess_category(category):
+    """Return category, slightly adjusted."""
+    # Category “blurb (blarb)“ becomes “blurb”.
+    if '(' in category:
+        category = category.split('(')[0]
+    # Category “blurb, blarbed” becomes “blarbed blurb”.
+    if ',' in category:
+        category_parts = category.split(',')
+        category_parts.reverse()
+        category = ' '.join(category_parts)
+    processed_category = []
+    # Category “blarb-Based blurb” becomes “blarb-based blurb”.
+    for word in category.strip().split(' '):
+        wordparts = []
+        for part in word.split('-'):
+            wordparts.append(_capitalize_properly(part))
+        processed_category.append('-'.join(wordparts))
+    category = ' '.join(processed_category)
+    return category[0].capitalize() + category[1:]
+
 def page(article_doi, article_pmid, article_pmcid, authors, article_title, journal_title, \
     article_year, article_month, article_day, article_url, license_url, label, caption, \
     title, categories, mimetype, material_url):
@@ -69,37 +100,6 @@ def page(article_doi, article_pmid, article_pmcid, authors, article_title, journ
     text += "|Permission= %s\n" % license_template
     text += "|Other_fields={{Information field|name=Provenance|value= {{Open Access Media Importer}} }}\n"
     text += "}}\n\n"
-
-    def _capitalize_properly(word):
-        """
-        Return given text lowercased if all letters after the first are already lower cased.
-        """
-        if len(word) == 1: # single letters should pass through unchanged
-            return word
-        if word[1:] == word[1:].lower():  # word has no capital letters inside
-            return word.lower()
-        else:  # words like 'DNA' or 'HeLa' should not be touched
-            return word
-
-    def _postprocess_category(category):
-        """Return category, slightly adjusted."""
-        # Category “blurb (blarb)“ becomes “blurb”.
-        if '(' in category:
-            category = category.split('(')[0]
-        # Category “blurb, blarbed” becomes “blarbed blurb”.
-        if ',' in category:
-            category_parts = category.split(',')
-            category_parts.reverse()
-            category = ' '.join(category_parts)
-        processed_category = []
-        # Category “blarb-Based blurb” becomes “blarb-based blurb”.
-        for word in category.strip().split(' '):
-            wordparts = []
-            for part in word.split('-'):
-                wordparts.append(_capitalize_properly(part))
-            processed_category.append('-'.join(wordparts))
-        category = ' '.join(processed_category)
-        return category[0].capitalize() + category[1:]
 
     for category in categories:
         category = _postprocess_category(category)
