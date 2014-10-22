@@ -29,8 +29,7 @@ except IndexError:
     stderr.write("""
 oa-cache – Open Access Media Importer local operations
 
-usage:  oa-cache browse-database [source] |
-        oa-cache clear-media [source] |
+usage:  oa-cache clear-media [source] |
         oa-cache clear-database [source] |
         oa-cache convert-media [source] |
         oa-cache find-media [source] |
@@ -44,7 +43,7 @@ usage:  oa-cache browse-database [source] |
     exit(1)
 
 try:
-    assert(action in ['browse-database', 'clear-media', 'clear-database', \
+    assert(action in ['clear-media', 'clear-database', \
         'convert-media', 'find-media', 'forget-converted', \
         'forget-downloaded', 'forget-uploaded', 'print-database-path', \
         'stats'])
@@ -62,14 +61,6 @@ set_source(target)
 setup_all(True)
 
 from helpers import config
-
-def browse_database(filename):
-    """Invoke SQLitebrowser on SQLite database, exit non-zero on error."""
-    try:
-        subprocess.call(['sqlitebrowser', filename])
-    except OSError:
-        stderr.write('Unable to start sqlitebrowser <http://sqlitebrowser.sourceforge.net/>.\n')
-        exit(4)
 
 def clear_database(filename):
     """Delete database."""
@@ -391,10 +382,6 @@ def stats():
         'mimetypes_prefix_publishers': mimetypes_prefix_publishers
     })
     stdout.write(output + '\n')
-
-if action == 'browse-database':
-    db_filename = config.database_path(target)
-    browse_database(db_filename)
 
 if action == 'clear-media':
     clear_media()
