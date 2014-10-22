@@ -4,6 +4,7 @@
 from . import make_datestring
 
 def _escape(text):
+    """Return given text escaped for MediaWiki markup."""
     for original, replacement in [
         ('=', '{{=}}'),
         ('|', '{{!}}')
@@ -15,11 +16,13 @@ def _escape(text):
     return text
 
 def _trim(text):
+    """Return given text without superfluous whitespace."""
     return ' '.join(text.split())
 
 def page(article_doi, article_pmid, article_pmcid, authors, article_title, journal_title, \
     article_year, article_month, article_day, article_url, license_url, label, caption, \
     title, categories, mimetype, material_url):
+    """Return MediaWiki markup of page for given supplementary material."""
     license_templates = {
         u'http://creativecommons.org/licenses/by/2.0/': '{{cc-by-2.0}}',
         u'http://creativecommons.org/licenses/by-sa/2.0/': '{{cc-by-sa-2.0}}',
@@ -68,6 +71,9 @@ def page(article_doi, article_pmid, article_pmcid, authors, article_title, journ
     text += "}}\n\n"
 
     def _capitalize_properly(word):
+        """
+        Return given text lowercased if all letters after the first are already lower cased.
+        """
         if len(word) == 1: # single letters should pass through unchanged
             return word
         if word[1:] == word[1:].lower():  # word has no capital letters inside
@@ -76,13 +82,17 @@ def page(article_doi, article_pmid, article_pmcid, authors, article_title, journ
             return word
 
     def _postprocess_category(category):
+        """Return category, slightly adjusted."""
+        # Category “blurb (blarb)“ becomes “blurb”.
         if '(' in category:
             category = category.split('(')[0]
+        # Category “blurb, blarbed” becomes “blarbed blurb”.
         if ',' in category:
             category_parts = category.split(',')
             category_parts.reverse()
             category = ' '.join(category_parts)
         processed_category = []
+        # Category “blarb-Based blurb” becomes “blarb-based blurb”.
         for word in category.strip().split(' '):
             wordparts = []
             for part in word.split('-'):
