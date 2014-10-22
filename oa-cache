@@ -63,15 +63,25 @@ setup_all(True)
 
 from helpers import config
 
-if action == 'browse-database':
-    filename = config.database_path(target)
+def browse_database(filename):
+    """Invoke SQLitebrowser on SQLite database, exit non-zero on error."""
     try:
         subprocess.call(['sqlitebrowser', filename])
     except OSError:
         stderr.write('Unable to start sqlitebrowser <http://sqlitebrowser.sourceforge.net/>.\n')
         exit(4)
 
-if action == 'clear-media':
+def clear_database(filename):
+    """Delete database."""
+    stderr.write("Removing “%s” … " % filename)
+    try:
+        remove(filename)
+        stderr.write("done.\n")
+    except OSError, e:
+        stderr.write('\n%s\n' % str(e))
+
+def clear_media():
+    """Delete cached media files."""
     media_raw_directory = config.get_media_refined_source_path(target)
     listing = listdir(media_raw_directory)
 
@@ -85,16 +95,8 @@ if action == 'clear-media':
         remove(media_path)
         stderr.write("done.\n")
 
-if action == 'clear-database':
-    filename = config.database_path(target)
-    stderr.write("Removing “%s” … " % filename)
-    try:
-        remove(filename)
-        stderr.write("done.\n")
-    except OSError, e:
-        stderr.write('\n%s\n' % str(e))
-
-if action == 'convert-media':
+def convert_media():
+    """Converts downloaded supplementary materials that are not converted."""
     materials = SupplementaryMaterial.query.filter_by(
         downloaded=True,
         converted=False
@@ -173,7 +175,8 @@ if action == 'convert-media':
         material.converted = True
         session.commit()
 
-if action == 'forget-converted':
+def forget_converted():
+    """Reset conversion flag of all supplementary materials."""
     materials = SupplementaryMaterial.query.filter_by(
         converted=True
     ).all()
@@ -183,7 +186,8 @@ if action == 'forget-converted':
     session.commit()
     stderr.write("done.\n")
 
-if action == 'forget-downloaded':
+def forget_downloaded():
+    """Reset download flag of all supplementary materials."""
     materials = SupplementaryMaterial.query.filter_by(
         downloaded=True
     ).all()
@@ -193,7 +197,8 @@ if action == 'forget-downloaded':
     session.commit()
     stderr.write("done.\n")
 
-if action == 'forget-uploaded':
+def forget_uploaded():
+    """Reset upload flag of all supplementary materials."""
     materials = SupplementaryMaterial.query.filter_by(
         uploaded=True
     ).all()
@@ -203,7 +208,8 @@ if action == 'forget-uploaded':
     session.commit()
     stderr.write("done.\n")
 
-if action == 'find-media':
+def find_media():
+    """Find supplementary materials suitable for conversion."""
     skip = [article.name for article in Article.query.all()]
     if len(skip) > 0:
         stderr.write('Skipping %s records … \n' % len(skip))
@@ -299,11 +305,8 @@ if action == 'find-media':
             session.commit()
             exit(0)
 
-if action == "print-database-path":
-    filename = config.database_path(target)
-    stdout.write(filename)
-
-if action == "stats":
+def stats():
+    """Output statistics regarding supplementary materials as a dictionary."""
     stderr.write('Counting supplementary materials … ')
     materials = SupplementaryMaterial.query.all()
     stderr.write(str(len(materials)) + ' supplementary materials found.\n')
@@ -388,3 +391,36 @@ if action == "stats":
         'mimetypes_prefix_publishers': mimetypes_prefix_publishers
     })
     stdout.write(output + '\n')
+
+if action == 'browse-database':
+    db_filename = config.database_path(target)
+    browse_database(db_filename)
+
+if action == 'clear-media':
+    clear_media()
+
+if action == 'clear-database':
+    db_filename = config.database_path(target)
+    clear_database(db_filename)
+
+if action == 'convert-media':
+    convert_media()
+
+if action == 'forget-converted':
+    forget_converted()
+
+if action == 'forget-downloaded':
+    forget_downloaded()
+
+if action == 'forget-uploaded':
+    forget_uploaded()
+
+if action == 'find-media':
+    find_media()
+
+if action == "print-database-path":
+    filename = config.database_path(target)
+    stdout.write(filename)
+
+if action == "stats":
+    stats()
