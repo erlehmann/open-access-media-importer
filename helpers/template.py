@@ -32,16 +32,13 @@ def _capitalize_properly(word):
 
 def _postprocess_category(category):
     """Return category, slightly adjusted."""
-    # Category “blurb (blarb)“ becomes “blurb”.
     if '(' in category:
         category = category.split('(')[0]
-    # Category “blurb, blarbed” becomes “blarbed blurb”.
     if ',' in category:
         category_parts = category.split(',')
         category_parts.reverse()
         category = ' '.join(category_parts)
     processed_category = []
-    # Category “blarb-Based blurb” becomes “blarb-based blurb”.
     for word in category.strip().split(' '):
         wordparts = []
         for part in word.split('-'):
