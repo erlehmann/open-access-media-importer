@@ -10,6 +10,7 @@ from sys import exit, stderr
 
 class Media():
     def __init__(self, filename):
+        """Initialise from the given filename."""
         self.filename = filename
         self.has_audio = False
         self.has_video = False
@@ -17,17 +18,19 @@ class Media():
         self.lastposition = 0
 
     def find_streams(self):
-        """
-        Determines if media file has audio and / or video streams.
-        """
+        """Determine existence of audio or video streams of content."""
         loop = gobject.MainLoop()
-        pipeline = gst.parse_launch("filesrc name=source ! decodebin2 ! fakesink")
 
+        # This GStreamer pipeline decodes our file and throws away the output.
+        pipeline = gst.parse_launch(
+            "filesrc name=source ! decodebin2 ! fakesink"
+            )
         source = pipeline.get_by_name("source")
         source.set_property("location", self.filename)
 
         bus = pipeline.get_bus()
         def on_message(bus, message):
+            """Check GStreamer pipeline messages for existence of audio or video streams."""
             t = message.type
             if t == gst.MESSAGE_TAG:
                 pipeline.set_state(gst.STATE_PAUSED)
@@ -60,9 +63,8 @@ class Media():
         loop.run()
 
     def convert(self, outfile):
-        """
-        Converts media file to Ogg Theora or Ogg Theora+Vorbis.
-        """
+        """Converts media to Ogg Theora or Ogg Theora+Vorbis."""
+        # TODO: Convert video content to WebM (VP8 + Vorbis).
         loop = gobject.MainLoop()
 
         if self.has_video and self.has_audio:
@@ -98,6 +100,7 @@ class Media():
 
         bus = pipeline.get_bus()
         def on_message(bus, message):
+            """Check GStreamer pipeline messages for conversion errors."""
             t = message.type
             if t == gst.MESSAGE_EOS:  # end of stream
                 pipeline.set_state(gst.STATE_NULL)
@@ -121,6 +124,7 @@ class Media():
             pass
 
         def update_progress():
+            """Update progress bar used during media conversion."""
             try:
                 self.position = pipeline.query_position(gst.FORMAT_TIME, \
                     None)[0]
