@@ -76,5 +76,18 @@ class TestMediaWikiTemplate(unittest.TestCase):
         a4 = template._trim(" The quick brown fox jumps over the lazy dog. ")
         self.assertTrue(a0 == a4)
 
+    def test_capitalize_properly(self):
+        """Test that template._capitalize_properly capitalizes properly."""
+        for (word, expected_output) in(
+            ('a', 'a'),
+            ('A', 'A'),
+            ('ape', 'ape'),
+            ('Ape', 'ape'),
+            ('DNA', 'DNA'),
+            ('HeLa', 'HeLa')
+            ):
+            calculated_output = template._capitalize_properly(word)
+            self.assertTrue(calculated_output == expected_output)
+
 if __name__ == '__main__':
     unittest.main()
