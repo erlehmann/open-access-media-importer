@@ -20,5 +20,19 @@ class TestCountdict(unittest.TestCase):
         self.assertTrue('v' in c.values())
         self.assertTrue(('k', 'v') in c.items())
 
+class TestAutovividict(unittest.TestCase):
+    def test_autovivication(self):
+        """Test that autovividict creates countdict as needed."""
+        a = autovividict()
+        a['k1'] += 1111
+        a['k2']['k2'] += 2222
+        self.assertTrue('k1' in a.keys())
+        self.assertTrue(1111 in a.values())
+        self.assertTrue(('k1', 1111) in a.items())
+        self.assertTrue('k2' in a.keys())
+        self.assertTrue('k2' in a['k2'].keys())
+        self.assertTrue(2222 in a['k2'].values())
+        self.assertTrue(('k2', 2222) in a['k2'].items())
+
 if __name__ == '__main__':
     unittest.main()
