@@ -3,7 +3,7 @@
 
 import unittest
 
-from helpers import make_datestring
+from helpers import make_datestring, filename_from_url
 from helpers.autovividict import countdict, autovividict
 
 class TestMakeDatestring(unittest.TestCase):
@@ -17,6 +17,13 @@ class TestMakeDatestring(unittest.TestCase):
         self.assertTrue(c == '0111-12-13')
         d = make_datestring(1111, 12, 13)
         self.assertTrue(d == '1111-12-13')
+
+class TestFilenameFromURL(unittest.TestCase):
+    def test_quoting(self):
+        """Test that filename_from_url quotes URLs properly."""
+        url = 'http://example.org/123#%23'
+        filename = filename_from_url(url)
+        self.assertTrue(filename == 'http%3A%2F%2Fexample.org%2F123%23%2523')
 
 class TestCountdict(unittest.TestCase):
     def test_addition(self):
