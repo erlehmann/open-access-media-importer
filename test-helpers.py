@@ -89,5 +89,20 @@ class TestMediaWikiTemplate(unittest.TestCase):
             calculated_output = template._capitalize_properly(word)
             self.assertTrue(calculated_output == expected_output)
 
+    def test_postprocess_category(self):
+        """Test for proper category postprocessing."""
+        for (category, expected_output) in (
+            # example categories
+            ('blurb (blarb)', 'Blurb'),
+            ('blurb, blarbed', 'Blarbed blurb'),
+            ('blarb-Based blurb', 'Blarb-based blurb'),
+            # real categories taken from <http://commons.wikimedia.org/wiki/File:-Adrenergic-Inhibition-of-Contractility-in-L6-Skeletal-Muscle-Cells-pone.0022304.s001.ogv>
+            ('CHO Cells', 'CHO cells'),
+            ('Beta-2 Adrenergic Receptors', 'Beta-2 adrenergic receptors'),
+            ('Protein Kinases, Cyclic AMP-Dependent', 'Cyclic AMP-dependent protein kinases'),
+            ):
+            calculated_output = template._postprocess_category(category)
+            self.assertTrue(calculated_output == expected_output)
+
 if __name__ == '__main__':
     unittest.main()
