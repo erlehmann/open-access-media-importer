@@ -55,6 +55,6 @@ def get_categories_from_pmid(pmid):
         htree = ElementTree(heading)
         descriptor_text = htree.find('DescriptorName').text
         if (htree.find('QualifierName') is not None) or \
-            (' ' in descriptor_text and not 'and' in descriptor_text):
+            (' ' in descriptor_text and not ' and ' in descriptor_text):
             categories.append(descriptor_text)
     return categories
