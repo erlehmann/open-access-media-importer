@@ -1,8 +1,11 @@
 from collections import defaultdict
 
-# counting dictionary that serves as 0 for addition
-# this allows incrementing unknown keys: d['k'] += 1
 class countdict(defaultdict):
+    """
+    Dictionary that serves as neutral element (0) for addition.
+
+    This dictionary allows incrementing unknown keys: d['k'] += 1
+    """
     def __init__(self, *args, **kwargs):
         self.value = 0
         super(countdict, self).__init__(*args, **kwargs)
@@ -11,7 +14,12 @@ class countdict(defaultdict):
     def __add__(self, x):
         return self.value + x
 
-# autovivicatious counting dictionary, allowing dynamic creation of keys
-# explained at <http://en.wikipedia.org/wiki/Autovivification#Python>
 def autovividict():
+    """
+    Autovivicatious counting dictionary, allowing dynamic creation of keys.
+
+    Autovivication is the automatic creation of new dictionaries as
+    required when an undefined value is dereferenced. Explanation:
+    <http://en.wikipedia.org/wiki/Autovivification#Python>
+    """
     return countdict(autovividict)
