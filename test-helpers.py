@@ -3,7 +3,20 @@
 
 import unittest
 
+from helpers import make_datestring
 from helpers.autovividict import countdict, autovividict
+
+class TestMakeDatestring(unittest.TestCase):
+    def test_datestring(self):
+        """Test that make_datestring produces output in the right form."""
+        a = make_datestring(1, 2, 3)
+        self.assertTrue(a == '0001-02-03')
+        b = make_datestring(11, 12, 13)
+        self.assertTrue(b == '0011-12-13')
+        c = make_datestring(111, 12, 13)
+        self.assertTrue(c == '0111-12-13')
+        d = make_datestring(1111, 12, 13)
+        self.assertTrue(d == '1111-12-13')
 
 class TestCountdict(unittest.TestCase):
     def test_addition(self):
