@@ -1,6 +1,36 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from argparse import ArgumentParser
+parser = ArgumentParser()
+parser.add_argument('action', choices=[
+    'clear-media',
+    'clear-database',
+    'convert-media',
+    'find-media',
+    'forget-converted',
+    'forget-downloaded',
+    'forget-uploaded',
+    'stats'
+    ])
+parser.add_argument(
+    'target',
+    help='OAMI metadata source (e.g. pmc, pmc_doi, pmc_pmcid)'
+    )
+parser.add_argument(
+    '-v',
+    '--verbose',
+    help='Verbose output.',
+    action='store_true'
+    )
+args = parser.parse_args()
+
+if args.verbose:
+    logging.basicConfig(
+        format='%(levelname)s: %(message)s',
+        level=logging.DEBUG
+        )
+
 from os import listdir, path, remove, rename
 from sys import argv, exit, stderr, stdout
 
@@ -21,28 +51,6 @@ import subprocess
 from helpers import autovividict, filename_from_url, media, make_datestring
 from model import session, setup_all, create_all, set_source, \
     Article, Category, Journal, SupplementaryMaterial
-
-from argparse import ArgumentParser
-parser = ArgumentParser()
-parser.add_argument('action', choices=[
-    'clear-media',
-    'clear-database',
-    'convert-media',
-    'find-media',
-    'forget-converted',
-    'forget-downloaded',
-    'forget-uploaded',
-    'stats'
-])
-parser.add_argument('target')
-parser.add_argument('-v', '--verbose', help='Verbose output.', action='store_true')
-args = parser.parse_args()
-
-if args.verbose:
-    logging.basicConfig(
-        format='%(levelname)s: %(message)s',
-        level=logging.DEBUG
-        )
 
 try:
     exec "from sources import %s as source_module" % target
