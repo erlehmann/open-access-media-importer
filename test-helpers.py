@@ -3,7 +3,7 @@
 
 import unittest
 
-from helpers import make_datestring, filename_from_url
+from helpers import make_datestring, filename_from_url, template
 from helpers.autovividict import countdict, autovividict
 
 class TestMakeDatestring(unittest.TestCase):
@@ -53,6 +53,28 @@ class TestAutovividict(unittest.TestCase):
         self.assertTrue('k2' in a['k2'].keys())
         self.assertTrue(2222 in a['k2'].values())
         self.assertTrue(('k2', 2222) in a['k2'].items())
+
+class TestMediaWikiTemplate(unittest.TestCase):
+    def test_escape(self):
+        """Test that template._escape escapes “=” and “|” as needed."""
+        a_o = 'abc = 123'
+        a_e = template._escape(a_o)
+        self.assertTrue(a_e == 'abc {{=}} 123')
+        b_o = 'def | ghi'
+        b_e = template._escape(b_o)
+        self.assertTrue(b_e == 'def {{!}} ghi')
+
+    def test_trim(self):
+        """Test that template._trim removes whitespace properly."""
+        a0 = "The quick brown fox jumps over the lazy dog."
+        a1 = template._trim("The quick brown fox jumps over the lazy dog.")
+        self.assertTrue(a0 == a1)
+        a2 = template._trim("The quick brown fox jumps over the lazy dog. ")
+        self.assertTrue(a0 == a2)
+        a3 = template._trim(" The quick brown fox jumps over the lazy dog.")
+        self.assertTrue(a0 == a3)
+        a4 = template._trim(" The quick brown fox jumps over the lazy dog. ")
+        self.assertTrue(a0 == a4)
 
 if __name__ == '__main__':
     unittest.main()
