@@ -22,34 +22,27 @@ from helpers import autovividict, filename_from_url, media, make_datestring
 from model import session, setup_all, create_all, set_source, \
     Article, Category, Journal, SupplementaryMaterial
 
-try:
-    action = argv[1]
-    target = argv[2]
-except IndexError:
-    stderr.write("""
-oa-cache – Open Access Media Importer local operations
+from argparse import ArgumentParser
+parser = ArgumentParser()
+parser.add_argument('action', choices=[
+    'clear-media',
+    'clear-database',
+    'convert-media',
+    'find-media',
+    'forget-converted',
+    'forget-downloaded',
+    'forget-uploaded',
+    'stats'
+])
+parser.add_argument('target')
+parser.add_argument('-v', '--verbose', help='Verbose output.', action='store_true')
+args = parser.parse_args()
 
-usage:  oa-cache clear-media [source] |
-        oa-cache clear-database [source] |
-        oa-cache convert-media [source] |
-        oa-cache find-media [source] |
-        oa-cache forget-converted [source] |
-        oa-cache forget-downloaded [source] |
-        oa-cache forget-uploaded [source] |
-        oa-cache print-database-path [source]
-        oa-cache stats [source]
-
-""")
-    exit(1)
-
-try:
-    assert(action in ['clear-media', 'clear-database', \
-        'convert-media', 'find-media', 'forget-converted', \
-        'forget-downloaded', 'forget-uploaded', 'print-database-path', \
-        'stats'])
-except AssertionError:  # invalid action
-    stderr.write('Unknown action “%s”.\n' % action)
-    exit(2)
+if args.verbose:
+    logging.basicConfig(
+        format='%(levelname)s: %(message)s',
+        level=logging.DEBUG
+        )
 
 try:
     exec "from sources import %s as source_module" % target
@@ -383,31 +376,31 @@ def stats():
     })
     stdout.write(output + '\n')
 
-if action == 'clear-media':
+if args.action == 'clear-media':
     clear_media()
 
-if action == 'clear-database':
+if args.action == 'clear-database':
     db_filename = config.database_path(target)
     clear_database(db_filename)
 
-if action == 'convert-media':
+if args.action == 'convert-media':
     convert_media()
 
-if action == 'forget-converted':
+if args.action == 'forget-converted':
     forget_converted()
 
-if action == 'forget-downloaded':
+if args.action == 'forget-downloaded':
     forget_downloaded()
 
-if action == 'forget-uploaded':
+if args.action == 'forget-uploaded':
     forget_uploaded()
 
-if action == 'find-media':
+if args.action == 'find-media':
     find_media()
 
-if action == "print-database-path":
+if args.action == "print-database-path":
     filename = config.database_path(target)
     stdout.write(filename)
 
-if action == "stats":
+if args.action == "stats":
     stats()
