@@ -9,6 +9,7 @@ is_uploaded_cache = SimpleCache()
 wiki = wikitools.wiki.Wiki(config.api_url)
 
 def query(params):
+    """Return request to MediaWiki API."""
     request = wikitools.api.APIRequest(wiki, params)
     try:
         return request.query()
@@ -17,6 +18,12 @@ def query(params):
         return query(request)
 
 def get_uploads():
+    """
+    Return OAMI uploads for “File” namespace (MediaWiki namespace 6).
+
+    See documentation for built-in MediaWiki Namespace numbering:
+    <http://www.mediawiki.org/wiki/Manual:Namespace#Built-in_namespaces>
+    """
     params = {
         'action': 'query',
         'list': 'usercontribs',
@@ -30,6 +37,7 @@ def get_uploads():
     ]
 
 def get_wiki_name():
+    """Return name of MediaWiki instance OAMI is configured to upload to."""
     params = {
         'action': 'query',
         'meta': 'siteinfo',
@@ -104,9 +112,7 @@ def is_uploaded(material):
                   # show up in search results.
 
 def upload(filename, wiki_filename, page_template):
-    """
-    Uploades a file to a mediawiki site.
-    """
+    """Uploads given file to MediaWiki instance OAMI is configured for."""
     stderr.write('Authenticating with <%s>.\n' % config.api_url)
     wiki.login(username=config.username, password=config.password)
     wiki_file = wikitools.wikifile.File(wiki=wiki, title=wiki_filename)
