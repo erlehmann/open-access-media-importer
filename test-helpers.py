@@ -41,50 +41,6 @@ class TestFilenameFromURL(unittest.TestCase):
         self.assertTrue(filename == 'http%3A%2F%2Fexample.org%2F123%23%2523')
 
 
-class TestCountdict(unittest.TestCase):
-    def test_addition(self):
-        """Test that a countdict serves as neutral element for addition."""
-        c = countdict()
-        c += 1
-        self.assertTrue(c == 1)
-
-    def test_dictionary(self):
-        """Test that a countdict serves as a dictionary."""
-        c = countdict()
-        c['k'] = 'v'
-        self.assertTrue('k' in c.keys())
-        self.assertTrue('v' in c.values())
-        self.assertTrue(('k', 'v') in c.items())
-
-
-class TestAutovividict(unittest.TestCase):
-    def test_autovivication(self):
-        """Test that autovividict creates countdict as needed."""
-        a = autovividict()
-        a['k0'] = 'abc'
-        a['k1'] += 1111
-        a['k2']['k20'] = 'def'
-        a['k2']['k21'] += 2222
-        for k in 'k0', 'k1', 'k2':
-            self.assertTrue(k in a.keys())
-        for v in 'abc', 1111:
-            self.assertTrue(v in a.values())
-        for k, v in (
-                ('k0', 'abc'),
-                ('k1', 1111),
-                ):
-            self.assertTrue((k, v) in a.items())
-        for k in 'k20', 'k21':
-            self.assertTrue(k in a['k2'].keys())
-        for v in 'def', 2222:
-            self.assertTrue(v in a['k2'].values())
-        for k, v in (
-                ('k20', 'def'),
-                ('k21', 2222),
-                ):
-            self.assertTrue((k, v) in a['k2'].items())
-
-
 class TestMediaWiki(unittest.TestCase):
     def test_get_wiki_name(self):
         """Test if mediawiki helper can get wiki name."""
