@@ -3,7 +3,7 @@
 
 import unittest
 
-from helpers import make_datestring, filename_from_url, efetch, template
+from helpers import make_datestring, filename_from_url, efetch, mediawiki, template
 from helpers.autovividict import countdict, autovividict
 
 class TestMakeDatestring(unittest.TestCase):
@@ -53,6 +53,12 @@ class TestAutovividict(unittest.TestCase):
         self.assertTrue('k2' in a['k2'].keys())
         self.assertTrue(2222 in a['k2'].values())
         self.assertTrue(('k2', 2222) in a['k2'].items())
+
+class TestMediaWiki(unittest.TestCase):
+    def test_get_wiki_name(self):
+        """Test if mediawiki can get wiki name."""
+        wiki_name = mediawiki.get_wiki_name()
+        self.assertTrue(wiki_name == 'Wikimedia Commons')
 
 class TestMediaWikiTemplate(unittest.TestCase):
     def test_escape(self):
