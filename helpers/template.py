@@ -62,6 +62,7 @@ def get_license_template(url):
     return license_templates[url]
 
 def make_description(title, caption):
+    """Returns description merged from suitable title and caption."""
     if (title == 'Supplementary Data') or \
         (title == 'Supplementary Data') or \
         (title == 'Supplementary material') or \
