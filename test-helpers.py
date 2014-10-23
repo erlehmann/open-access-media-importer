@@ -8,13 +8,6 @@ from helpers import make_datestring, filename_from_url, efetch, mediawiki, \
 from helpers.autovividict import countdict, autovividict
 
 
-class TestMediaWiki(unittest.TestCase):
-    def test_get_wiki_name(self):
-        """Test if mediawiki helper can get wiki name."""
-        wiki_name = mediawiki.get_wiki_name()
-        self.assertTrue(wiki_name == 'Wikimedia Commons')
-
-
 class TestMediaWikiTemplate(unittest.TestCase):
     def test_escape(self):
         """Test that template._escape escapes “=” and “|” as needed."""

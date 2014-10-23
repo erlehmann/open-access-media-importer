@@ -40,7 +40,12 @@ def get_uploads():
     ]
 
 def get_wiki_name():
-    """Return name of MediaWiki instance OAMI is configured to upload to."""
+    """
+    Return name of MediaWiki instance OAMI is configured to upload to.
+
+    >>> mediawiki.get_wiki_name()
+    'Wikimedia Commons'
+    """
     params = {
         'action': 'query',
         'meta': 'siteinfo',
@@ -124,3 +129,9 @@ def upload(filename, wiki_filename, page_template):
         text=page_template.encode('utf-8'),
         comment = 'Automatically uploaded media file from [[:en:Open access|Open Access]] source. Please report problems or suggestions [[User talk:Open Access Media Importer Bot|here]].'
     )
+
+
+if __name__ == "__main__":
+    """Start doctests."""
+    import doctest
+    doctest.testmod()
