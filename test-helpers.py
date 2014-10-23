@@ -3,7 +3,7 @@
 
 import unittest
 
-from helpers import make_datestring, filename_from_url, template
+from helpers import make_datestring, filename_from_url, efetch, template
 from helpers.autovividict import countdict, autovividict
 
 class TestMakeDatestring(unittest.TestCase):
@@ -135,6 +135,38 @@ class TestMediaWikiTemplate(unittest.TestCase):
             ):
             calculated_output = template.make_description(title, caption)
             self.assertTrue(calculated_output == expected_output)
+
+class TestEfetch(unittest.TestCase):
+    def test_download(self):
+        """Test if efetch._get_file_from_url can download files."""
+        f = efetch._get_file_from_url('http://example.org')
+        self.assertTrue('Example Domain' in f.read())
+
+    def test_get_pmcid_from_doi(self):
+        """Test if efetch.get_pmcid_from_doi can retrieve correct PMCIDs."""
+        for (doi, expected_pmcid) in (
+            (u'10.1371/journal.pone.0062199', 3631234),
+            (u'10.1371/journal.pone.0093036', 3973673),
+            (u'10.1371/journal.pone.0099936', 4057317)
+            ):
+            retrieved_pmcid = efetch.get_pmcid_from_doi(doi)
+            self.assertTrue(retrieved_pmcid == expected_pmcid)
+
+    def test_get_pmid_from_doi(self):
+        """Test if efetch.get_pmid_from_doi can retrieve correct PMIDs."""
+        for (doi, expected_pmid) in (
+            (u'10.1371/journal.pone.0062199', 23620812),
+            (u'10.1371/journal.pone.0093036', 24695492),
+            (u'10.1371/journal.pone.0099936', 24927280)
+            ):
+            retrieved_pmid = efetch.get_pmid_from_doi(doi)
+            self.assertTrue(retrieved_pmid == expected_pmid)
+
+    def test_get_categories_from_pmid(self):
+        """Test if efetch.get_categories_from_pmid can retrieve categories."""
+        retrieved_categories = efetch.get_categories_from_pmid(23620812)
+        for category in ['Behavior, Animal', 'Calcium', 'Drosophila melanogaster', 'Embryo, Nonmammalian', 'Feedback, Sensory', 'Larva', 'Locomotion', 'Motor Neurons', 'Muscle Contraction', 'Nerve Net', 'Sensation', 'Sense Organs', 'Time Factors']:
+            self.assertTrue(category in retrieved_categories)
 
 if __name__ == '__main__':
     unittest.main()
