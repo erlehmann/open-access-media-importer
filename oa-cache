@@ -67,8 +67,9 @@ setup_all(True)
 from helpers import config
 
 
-def clear_database(filename):
+def clear_database(source):
     """Delete database."""
+    filename = config.database_path(source)
     stderr.write("Removing “%s” … " % filename)
     try:
         remove(filename)
@@ -77,13 +78,13 @@ def clear_database(filename):
         stderr.write('\n%s\n' % str(e))
 
 
-def clear_media():
+def clear_media(source):
     """Delete cached media files."""
-    media_raw_directory = config.get_media_refined_source_path(args.target)
+    media_raw_directory = config.get_media_refined_source_path(source)
     listing = listdir(media_raw_directory)
 
     metadata_refined_directory = \
-        config.get_metadata_refined_source_path(args.target)
+        config.get_metadata_refined_source_path(source)
     download_cache_path = \
         path.join(metadata_refined_directory, 'download_cache')
     remove(download_cache_path)
@@ -95,7 +96,7 @@ def clear_media():
         stderr.write("done.\n")
 
 
-def convert_media():
+def convert_media(source):
     """Converts downloaded supplementary materials that are not converted."""
     materials = SupplementaryMaterial.query.filter_by(
         downloaded=True,
@@ -103,9 +104,9 @@ def convert_media():
     ).all()
     for material in materials:
         media_refined_directory = \
-            config.get_media_refined_source_path(args.target)
+            config.get_media_refined_source_path(source)
         media_raw_directory = \
-            config.get_media_raw_source_path(args.target)
+            config.get_media_raw_source_path(source)
         temporary_media_path = \
             path.join(media_refined_directory, 'current.ogg')
 
@@ -182,7 +183,7 @@ def convert_media():
         session.commit()
 
 
-def forget_converted():
+def forget_converted(source):
     """Reset conversion flag of all supplementary materials."""
     materials = SupplementaryMaterial.query.filter_by(
         converted=True
@@ -194,7 +195,7 @@ def forget_converted():
     stderr.write("done.\n")
 
 
-def forget_downloaded():
+def forget_downloaded(source):
     """Reset download flag of all supplementary materials."""
     materials = SupplementaryMaterial.query.filter_by(
         downloaded=True
@@ -218,12 +219,12 @@ def forget_uploaded():
     stderr.write("done.\n")
 
 
-def find_media():
+def find_media(source):
     """Find supplementary materials suitable for conversion."""
     skip = [article.name for article in Article.query.all()]
     if len(skip) > 0:
         stderr.write('Skipping %s records … \n' % len(skip))
-    source_path = config.get_metadata_raw_source_path(args.target)
+    source_path = config.get_metadata_raw_source_path(source)
     for result in source_module.list_articles(
         source_path,
         supplementary_materials=True,
@@ -316,7 +317,7 @@ def find_media():
             exit(0)
 
 
-def stats():
+def stats(source):
     """Output statistics regarding supplementary materials as a dictionary."""
     stderr.write('Counting supplementary materials … ')
     materials = SupplementaryMaterial.query.all()
@@ -403,30 +404,29 @@ def stats():
     stdout.write(output + '\n')
 
 if args.action == 'clear-media':
-    clear_media()
+    clear_media(args.target)
 
 if args.action == 'clear-database':
-    db_filename = config.database_path(args.target)
-    clear_database(db_filename)
+    clear_database(args.target)
 
 if args.action == 'convert-media':
-    convert_media()
+    convert_media(args.target)
 
 if args.action == 'forget-converted':
-    forget_converted()
+    forget_converted(args.target)
 
 if args.action == 'forget-downloaded':
-    forget_downloaded()
+    forget_downloaded(args.target)
 
 if args.action == 'forget-uploaded':
-    forget_uploaded()
+    forget_uploaded(args.target)
 
 if args.action == 'find-media':
-    find_media()
+    find_media(args.target)
 
 if args.action == "print-database-path":
     filename = config.database_path(args.target)
     stdout.write(filename)
 
 if args.action == "stats":
-    stats()
+    stats(args.target)
