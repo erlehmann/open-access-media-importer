@@ -43,8 +43,8 @@ def get_wiki_name():
     """
     Return name of MediaWiki instance OAMI is configured to upload to.
 
-    >>> mediawiki.get_wiki_name()
-    'Wikimedia Commons'
+    >>> get_wiki_name()
+    u'Wikimedia Commons'
     """
     params = {
         'action': 'query',
