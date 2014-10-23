@@ -72,15 +72,15 @@ class TestMediaWikiTemplate(unittest.TestCase):
 
     def test_trim(self):
         """Test that template._trim removes whitespace properly."""
-        a0 = "The quick brown fox jumps over the lazy dog."
-        a1 = template._trim("The quick brown fox jumps over the lazy dog.")
-        self.assertTrue(a0 == a1)
-        a2 = template._trim("The quick brown fox jumps over the lazy dog. ")
-        self.assertTrue(a0 == a2)
-        a3 = template._trim(" The quick brown fox jumps over the lazy dog.")
-        self.assertTrue(a0 == a3)
-        a4 = template._trim(" The quick brown fox jumps over the lazy dog. ")
-        self.assertTrue(a0 == a4)
+        expected_result = "The quick brown fox jumps over the lazy dog."
+        for text in (
+            "The quick brown fox jumps over the lazy dog.",
+            "The quick brown fox jumps over the lazy dog. ",
+            " The quick brown fox jumps over the lazy dog.",
+            " The quick brown fox jumps over the lazy dog. ",
+            ):
+            computed_result = template._trim(text)
+            self.assertTrue(computed_result == expected_result)
 
     def test_capitalize_properly(self):
         """Test that template._capitalize_properly capitalizes properly."""
