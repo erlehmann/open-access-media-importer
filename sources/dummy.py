@@ -4,13 +4,31 @@
 from time import sleep
 
 def download_metadata(target_directory):
+    """
+    Provide a dummy download method with fake progress for three URLs.
+
+    >>> for x in download_metadata('/tmp/testfile'):
+    ...     print x
+    {'url': 'http://example.org/file1', 'completed': 0, 'total': 1234}
+    {'url': 'http://example.org/file1', 'completed': 345, 'total': 1234}
+    {'url': 'http://example.org/file1', 'completed': 690, 'total': 1234}
+    {'url': 'http://example.org/file1', 'completed': 1035, 'total': 1234}
+    {'url': 'http://example.org/file2', 'completed': 0, 'total': 1234}
+    {'url': 'http://example.org/file2', 'completed': 345, 'total': 1234}
+    {'url': 'http://example.org/file2', 'completed': 690, 'total': 1234}
+    {'url': 'http://example.org/file2', 'completed': 1035, 'total': 1234}
+    {'url': 'http://example.org/file3', 'completed': 0, 'total': 1234}
+    {'url': 'http://example.org/file3', 'completed': 345, 'total': 1234}
+    {'url': 'http://example.org/file3', 'completed': 690, 'total': 1234}
+    {'url': 'http://example.org/file3', 'completed': 1035, 'total': 1234}
+    """
     for fake_file in [
         'http://example.org/file1',
         'http://example.org/file2',
         'http://example.org/file3'
     ]:
         fake_filesize = 1234
-        for i in range(0, fake_filesize, 123):
+        for i in range(0, fake_filesize, 345):
             yield {
                 'url': '' + fake_file,
                 'completed': i,
@@ -45,3 +63,9 @@ def list_articles(target_directory, supplementary_materials=False, skip=[]):
         }
     ]:
         yield fake_media
+
+
+if __name__ == "__main__":
+    """Start doctests."""
+    import doctest
+    doctest.testmod()
