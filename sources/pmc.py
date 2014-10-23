@@ -98,8 +98,13 @@ def list_articles(target_directory, supplementary_materials=False, skip=[]):
                     yield result
 
 def _strip_whitespace(text):
-    """
+    r"""
     Strips leading and trailing whitespace for multiple lines.
+
+    >>> print _strip_whitespace('  abc  \n  def  \n  ghi  ')
+    abc
+    def
+    ghi
     """
     text = '\n'.join(
         [line.strip() for line in text.splitlines()]
@@ -658,3 +663,9 @@ def _get_supplementary_material_url(pmcid, href):
     """
     return str('http://www.ncbi.nlm.nih.gov/pmc/articles/PMC' + pmcid +
         '/bin/' + href)
+
+
+if __name__ == "__main__":
+    """Start doctests."""
+    import doctest
+    doctest.testmod()
