@@ -56,15 +56,28 @@ class TestAutovividict(unittest.TestCase):
     def test_autovivication(self):
         """Test that autovividict creates countdict as needed."""
         a = autovividict()
+        a['k0'] = 'abc'
         a['k1'] += 1111
-        a['k2']['k2'] += 2222
-        self.assertTrue('k1' in a.keys())
-        self.assertTrue(1111 in a.values())
-        self.assertTrue(('k1', 1111) in a.items())
-        self.assertTrue('k2' in a.keys())
-        self.assertTrue('k2' in a['k2'].keys())
-        self.assertTrue(2222 in a['k2'].values())
-        self.assertTrue(('k2', 2222) in a['k2'].items())
+        a['k2']['k20'] = 'def'
+        a['k2']['k21'] += 2222
+        for k in 'k0', 'k1', 'k2':
+            self.assertTrue(k in a.keys())
+        for v in 'abc', 1111:
+            self.assertTrue(v in a.values())
+        for k, v in (
+            ('k0', 'abc'),
+            ('k1', 1111),
+            ):
+            self.assertTrue((k, v) in a.items())
+        for k in 'k20', 'k21':
+            self.assertTrue(k in a['k2'].keys())
+        for v in 'def', 2222:
+            self.assertTrue(v in a['k2'].values())
+        for k, v in (
+            ('k20', 'def'),
+            ('k21', 2222),
+            ):
+            self.assertTrue((k, v) in a['k2'].items())
 
 class TestMediaWiki(unittest.TestCase):
     def test_get_wiki_name(self):
