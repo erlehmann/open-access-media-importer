@@ -37,6 +37,7 @@ def download_metadata(target_directory):
             sleep(0.5)
 
 def list_articles(target_directory, supplementary_materials=False, skip=[]):
+    """Provide dummy supplementary material data."""
     for fake_media in [
         {
             'name': "Parasit_Vectors/Parasit_Vectors_2008_Sep_1_1_29.nxml".decode('utf-8'),
