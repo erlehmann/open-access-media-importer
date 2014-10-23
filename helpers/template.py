@@ -61,6 +61,16 @@ def get_license_template(url):
     }
     return license_templates[url]
 
+def make_description(title, caption):
+    if (title == 'Supplementary Data') or \
+        (title == 'Supplementary Data') or \
+        (title == 'Supplementary material') or \
+        (title.startswith('Additional file') and len(title.split()) == 3):
+        description = _escape(caption)  # title useless, not using it
+    else:
+        description = "%s %s" % (_escape(title), _escape(caption))
+    return description
+
 def page(article_doi, article_pmid, article_pmcid, authors, article_title, journal_title, \
     article_year, article_month, article_day, article_url, license_url, label, caption, \
     title, categories, mimetype, material_url):
@@ -69,13 +79,8 @@ def page(article_doi, article_pmid, article_pmcid, authors, article_title, journ
 
     text = "=={{int:filedesc}}==\n\n"
     text += "{{Information\n"
-    if (title == 'Supplementary Data') or \
-        (title == 'Supplementary Data') or \
-        (title == 'Supplementary material') or \
-        (title.startswith('Additional file') and len(title.split()) == 3):
-        description = _escape(caption)  # title useless, not using it
-    else:
-        description = "%s %s" % (_escape(title), _escape(caption))
+
+    description = make_description(title, caption)
     text += "|Description=\n"
     if len(description.strip()) > 0:
         text+= "{{en|1=%s}}\n" % description

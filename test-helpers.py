@@ -126,5 +126,15 @@ class TestMediaWikiTemplate(unittest.TestCase):
             calculated_output = template.get_license_template(url)
             self.assertTrue(calculated_output == expected_output)
 
+    def test_make_description(self):
+        for (title, caption, expected_output) in (
+            ('foo', 'bar', 'foo bar'),
+            ('Supplementary Data', 'foo', 'foo'),
+            ('Supplementary material', 'bar', 'bar'),
+            ('Additional file 1', 'baz', 'baz')
+            ):
+            calculated_output = template.make_description(title, caption)
+            self.assertTrue(calculated_output == expected_output)
+
 if __name__ == '__main__':
     unittest.main()
