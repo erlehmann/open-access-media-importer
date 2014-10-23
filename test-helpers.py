@@ -78,7 +78,7 @@ class TestMediaWikiTemplate(unittest.TestCase):
 
     def test_capitalize_properly(self):
         """Test that template._capitalize_properly capitalizes properly."""
-        for (word, expected_output) in(
+        for (word, expected_output) in (
             ('a', 'a'),
             ('A', 'A'),
             ('ape', 'ape'),
