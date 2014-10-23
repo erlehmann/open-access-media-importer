@@ -8,39 +8,6 @@ from helpers import make_datestring, filename_from_url, efetch, mediawiki, \
 from helpers.autovividict import countdict, autovividict
 
 
-class TestMakeDatestring(unittest.TestCase):
-    def test_datestring(self):
-        """Test that make_datestring produces output in the right form."""
-        for (year, month, day, expected_result) in (
-                (1, 2, 3, '0001-02-03'),
-                (11, 2, 3, '0011-02-03'),
-                (111, 2, 3, '0111-02-03'),
-                (1111, 2, 3, '1111-02-03'),
-                (1, 12, 3, '0001-12-03'),
-                (11, 12, 3, '0011-12-03'),
-                (111, 12, 3, '0111-12-03'),
-                (1111, 12, 3, '1111-12-03'),
-                (1, 2, 13, '0001-02-13'),
-                (11, 2, 13, '0011-02-13'),
-                (111, 2, 13, '0111-02-13'),
-                (1111, 2, 13, '1111-02-13'),
-                (1, 12, 13, '0001-12-13'),
-                (11, 12, 13, '0011-12-13'),
-                (111, 12, 13, '0111-12-13'),
-                (1111, 12, 13, '1111-12-13'),
-                ):
-            computed_result = make_datestring(year, month, day)
-            self.assertTrue(computed_result == expected_result)
-
-
-class TestFilenameFromURL(unittest.TestCase):
-    def test_quoting(self):
-        """Test that filename_from_url quotes URLs properly."""
-        url = 'http://example.org/123#%23'
-        filename = filename_from_url(url)
-        self.assertTrue(filename == 'http%3A%2F%2Fexample.org%2F123%23%2523')
-
-
 class TestMediaWiki(unittest.TestCase):
     def test_get_wiki_name(self):
         """Test if mediawiki helper can get wiki name."""
