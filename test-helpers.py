@@ -140,6 +140,7 @@ class TestMediaWikiTemplate(unittest.TestCase):
             self.assertTrue(calculated_output == expected_output)
 
     def test_get_license_template(self):
+        """Test for proper mapping of license URLs to license templates."""
         for (url, expected_output) in (
             (u'http://creativecommons.org/licenses/by/2.0/',
              '{{cc-by-2.0}}'),
@@ -162,6 +163,7 @@ class TestMediaWikiTemplate(unittest.TestCase):
             self.assertTrue(calculated_output == expected_output)
 
     def test_make_description(self):
+        """Test for filtering of superfluous text when constructing description."""
         for (title, caption, expected_output) in (
             ('foo', 'bar', 'foo bar'),
             ('Supplementary Data', 'foo', 'foo'),
