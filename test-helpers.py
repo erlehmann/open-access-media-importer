@@ -63,12 +63,12 @@ class TestMediaWiki(unittest.TestCase):
 class TestMediaWikiTemplate(unittest.TestCase):
     def test_escape(self):
         """Test that template._escape escapes “=” and “|” as needed."""
-        a_o = 'abc = 123'
-        a_e = template._escape(a_o)
-        self.assertTrue(a_e == 'abc {{=}} 123')
-        b_o = 'def | ghi'
-        b_e = template._escape(b_o)
-        self.assertTrue(b_e == 'def {{!}} ghi')
+        for (text, expected_result) in (
+            ('abc = 123', 'abc {{=}} 123'),
+            ('def | ghi', 'def {{!}} ghi'),
+            ):
+            computed_result = template._escape(text)
+            self.assertTrue(computed_result == expected_result)
 
     def test_trim(self):
         """Test that template._trim removes whitespace properly."""
