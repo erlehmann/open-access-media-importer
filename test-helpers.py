@@ -78,6 +78,10 @@ class TestMediaWikiTemplate(unittest.TestCase):
             "The quick brown fox jumps over the lazy dog. ",
             " The quick brown fox jumps over the lazy dog.",
             " The quick brown fox jumps over the lazy dog. ",
+            "The  quick  brown  fox  jumps  over  the  lazy  dog.  ",
+            "  The  quick  brown  fox  jumps  over  the  lazy  dog.",
+            "  The  quick  brown  fox  jumps  over  the  lazy  dog.  ",
+            "The quick brown  fox  jumps   over   the    lazy    dog.  ",
             ):
             computed_result = template._trim(text)
             self.assertTrue(computed_result == expected_result)
