@@ -50,7 +50,8 @@ import pprint
 
 import subprocess
 
-from helpers import autovividict, filename_from_url, media, make_datestring
+from helpers import autovividict, filename_from_url, media
+from helpers.template import make_datestring
 from model import session, setup_all, create_all, set_source, \
     Article, Category, Journal, SupplementaryMaterial
 
