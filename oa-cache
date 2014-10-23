@@ -36,7 +36,8 @@ from os import listdir, path, remove, rename
 from sys import argv, exit, stderr, stdout
 
 import errno
-import gobject, pygst
+import gobject
+import pygst
 pygst.require("0.10")
 
 import gst
@@ -64,6 +65,7 @@ setup_all(True)
 
 from helpers import config
 
+
 def clear_database(filename):
     """Delete database."""
     stderr.write("Removing “%s” … " % filename)
@@ -73,13 +75,16 @@ def clear_database(filename):
     except OSError, e:
         stderr.write('\n%s\n' % str(e))
 
+
 def clear_media():
     """Delete cached media files."""
     media_raw_directory = config.get_media_refined_source_path(args.target)
     listing = listdir(media_raw_directory)
 
-    metadata_refined_directory = config.get_metadata_refined_source_path(args.target)
-    download_cache_path = path.join(metadata_refined_directory, 'download_cache')
+    metadata_refined_directory = \
+        config.get_metadata_refined_source_path(args.target)
+    download_cache_path = \
+        path.join(metadata_refined_directory, 'download_cache')
     remove(download_cache_path)
 
     for filename in listing:
@@ -88,6 +93,7 @@ def clear_media():
         remove(media_path)
         stderr.write("done.\n")
 
+
 def convert_media():
     """Converts downloaded supplementary materials that are not converted."""
     materials = SupplementaryMaterial.query.filter_by(
@@ -95,52 +101,58 @@ def convert_media():
         converted=False
     ).all()
     for material in materials:
-        media_refined_directory = config.get_media_refined_source_path(args.target)
-        media_raw_directory = config.get_media_raw_source_path(args.target)
-        temporary_media_path = path.join(media_refined_directory, 'current.ogg')
+        media_refined_directory = \
+            config.get_media_refined_source_path(args.target)
+        media_raw_directory = \
+            config.get_media_raw_source_path(args.target)
+        temporary_media_path = \
+            path.join(media_refined_directory, 'current.ogg')
 
         filename = filename_from_url(material.url)
         media_raw_path = path.join(media_raw_directory, filename)
-        media_refined_path = path.join(media_refined_directory, filename + '.ogg')
+        media_refined_path = \
+            path.join(media_refined_directory, filename + '.ogg')
 
         if material.converting:
-            stderr.write("Skipping conversion of “%s”, earlier attempt failed.\n" % \
-                media_raw_path.encode('utf-8'))
+            stderr.write(
+                "Skipping conversion of “%s”, earlier attempt failed.\n" %
+                media_raw_path.encode('utf-8')
+                )
             continue
 
         if path.isfile(media_refined_path):
-            stderr.write("Skipping conversion of “%s”, exists at “%s”.\n" %
-                (
+            stderr.write(
+                "Skipping conversion of “%s”, exists at “%s”.\n" % (
                     media_raw_path.encode('utf-8'),
                     media_refined_path.encode('utf-8')
+                    )
                 )
-            )
             material.converted = True
             session.commit()
             continue
 
         material.converting = True
         session.commit()
-        stderr.write("Converting “%s”, saving into “%s” … " % (
+        stderr.write(
+            "Converting “%s”, saving into “%s” … " % (
                 media_raw_path.encode('utf-8'),
                 media_refined_path.encode('utf-8')
+                )
             )
-        )
 
-        #loop = gobject.MainLoop()
+        # loop = gobject.MainLoop()
         m = media.Media(media_raw_path)
         try:
             m.find_streams()
             m.convert(temporary_media_path)
         except RuntimeError, e:
-            logging.error("%s: Skipping conversion of “%s”.", \
-                e, media_raw_path.encode('utf-8'))
+            logging.error("%s: Skipping conversion of “%s”.",
+                          e, media_raw_path.encode('utf-8'))
             continue
 
         try:
             f = mutagen.oggtheora.OggTheora(temporary_media_path)
-            for key, value in \
-                [
+            for key, value in [
                     ('TITLE', material.title),
                     ('ALBUM', material.article.title),
                     ('ARTIST', material.article.contrib_authors),
@@ -151,8 +163,8 @@ def convert_media():
                         material.article.year,
                         material.article.month,
                         material.article.day
-                    ))
-                ]:
+                        ))
+                    ]:
                 if value is not None:
                     f[key] = value
                 else:
@@ -168,6 +180,7 @@ def convert_media():
         material.converted = True
         session.commit()
 
+
 def forget_converted():
     """Reset conversion flag of all supplementary materials."""
     materials = SupplementaryMaterial.query.filter_by(
@@ -178,6 +191,7 @@ def forget_converted():
         material.converted = False
     session.commit()
     stderr.write("done.\n")
+
 
 def forget_downloaded():
     """Reset download flag of all supplementary materials."""
@@ -190,6 +204,7 @@ def forget_downloaded():
     session.commit()
     stderr.write("done.\n")
 
+
 def forget_uploaded():
     """Reset upload flag of all supplementary materials."""
     materials = SupplementaryMaterial.query.filter_by(
@@ -200,6 +215,7 @@ def forget_uploaded():
         material.uploaded = False
     session.commit()
     stderr.write("done.\n")
+
 
 def find_media():
     """Find supplementary materials suitable for conversion."""
@@ -215,9 +231,7 @@ def find_media():
         try:
             journal = Journal.get_by(title=result['journal-title'])
             if not journal:
-                journal = Journal(
-                    title = result['journal-title']
-                )
+                journal = Journal(title=result['journal-title'])
             article = Article.get_by(
                 title=result['article-title'],
                 contrib_authors=result['article-contrib-authors']
@@ -229,15 +243,15 @@ def find_media():
                     doi_prefix = doi.split('/')[0]
                 except AttributeError:
                     stderr.write(
-                        "Skipping Article “%s”, as it has no DOI.\n" % \
-                            result['name']
+                        "Skipping Article “%s”, as it has no DOI.\n" %
+                        result['name']
                     )
                     continue
                 if config.whitelist_doi and \
-                    doi_prefix not in config.whitelist_doi:
+                        doi_prefix not in config.whitelist_doi:
                     stderr.write(
-                        "Skipping DOI %s, prefix %s is not in whitelist.\n" % \
-                            (doi, doi_prefix)
+                        "Skipping DOI %s, prefix %s is not in whitelist.\n" %
+                        (doi, doi_prefix)
                         )
                     continue
                 article = Article(
@@ -268,14 +282,16 @@ def find_media():
                 )
                 mimetypes = {}
                 for material in materials:
-                    mimetype = material['mimetype'] + '/' + material['mime-subtype']
+                    mimetype = material['mimetype'] + '/' + \
+                        material['mime-subtype']
                     try:
                         mimetypes[mimetype] += 1
                     except KeyError:
                         mimetypes[mimetype] = 1
-                    supplementary_material = SupplementaryMaterial.get_by(url=material['url'])
+                    supplementary_material = \
+                        SupplementaryMaterial.get_by(url=material['url'])
                     if not supplementary_material:
-                        supplementary_material=SupplementaryMaterial(
+                        supplementary_material = SupplementaryMaterial(
                             label=material['label'],
                             title=material['title'],
                             caption=material['caption'],
@@ -285,7 +301,7 @@ def find_media():
                             article=article
                         )
                 for mimetype in mimetypes.keys():
-                     stderr.write(
+                    stderr.write(
                         '\t%s × %s\n' % (
                             mimetypes[mimetype],
                             mimetype
@@ -297,6 +313,7 @@ def find_media():
             stderr.write('Saving database …\n')
             session.commit()
             exit(0)
+
 
 def stats():
     """Output statistics regarding supplementary materials as a dictionary."""
@@ -341,7 +358,8 @@ def stats():
         mimetype = material.mimetype
         mimetype_composite = mimetype + '/' + material.mime_subtype
         try:
-            mimetype_composite_reported = material.mimetype_reported + '/' + material.mime_subtype_reported
+            mimetype_composite_reported = material.mimetype_reported + '/' + \
+                material.mime_subtype_reported
             if mimetype_composite == 'application/msword':
                 mimetypes_publishers['unknown'][doi_prefix] += 1
             elif mimetype_composite != mimetype_composite_reported:
@@ -360,14 +378,12 @@ def stats():
             mimetypes['non-free'][mimetype_composite] += 1
             mimetypes_prefix_publishers['non-free'][mimetype][doi_prefix] += 1
         if license_url is not None:
-            if license_text is not None or \
-                copyright_statement is not None:
+            if license_text is not None or copyright_statement is not None:
                 licensing_publishers['url-from-text'][doi_prefix] += 1
             else:  # URL was given, no text lookup necessary
                 licensing_publishers['url'][doi_prefix] += 1
         else:
-            if license_text is not None or \
-                copyright_statement is not None:
+            if license_text is not None or copyright_statement is not None:
                 licensing_publishers['text'][doi_prefix] += 1
             else:  # no licensing information at all
                 licensing_publishers['none'][doi_prefix] += 1
