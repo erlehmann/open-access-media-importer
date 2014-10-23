@@ -56,7 +56,7 @@ class TestAutovividict(unittest.TestCase):
 
 class TestMediaWiki(unittest.TestCase):
     def test_get_wiki_name(self):
-        """Test if mediawiki can get wiki name."""
+        """Test if mediawiki helper can get wiki name."""
         wiki_name = mediawiki.get_wiki_name()
         self.assertTrue(wiki_name == 'Wikimedia Commons')
 
