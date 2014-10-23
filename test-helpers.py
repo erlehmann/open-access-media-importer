@@ -104,5 +104,27 @@ class TestMediaWikiTemplate(unittest.TestCase):
             calculated_output = template._postprocess_category(category)
             self.assertTrue(calculated_output == expected_output)
 
+    def test_get_license_template(self):
+        for (url, expected_output) in (
+            (u'http://creativecommons.org/licenses/by/2.0/',
+             '{{cc-by-2.0}}'),
+            (u'http://creativecommons.org/licenses/by-sa/2.0/',
+             '{{cc-by-sa-2.0}}'),
+            (u'http://creativecommons.org/licenses/by/2.5/',
+             '{{cc-by-2.5}}'),
+            (u'http://creativecommons.org/licenses/by-sa/2.5/',
+             '{{cc-by-sa-2.5}}'),
+            (u'http://creativecommons.org/licenses/by/3.0/',
+             '{{cc-by-3.0}}'),
+            (u'http://creativecommons.org/licenses/by-sa/3.0/',
+             '{{cc-by-sa-3.0}}'),
+            (u'http://creativecommons.org/licenses/by/4.0/',
+             '{{cc-by-4.0}}'),
+            (u'http://creativecommons.org/licenses/by-sa/4.0/',
+             '{{cc-by-sa-4.0}}')
+            ):
+            calculated_output = template.get_license_template(url)
+            self.assertTrue(calculated_output == expected_output)
+
 if __name__ == '__main__':
     unittest.main()

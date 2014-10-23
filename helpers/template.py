@@ -47,10 +47,8 @@ def _postprocess_category(category):
     category = ' '.join(processed_category)
     return category[0].capitalize() + category[1:]
 
-def page(article_doi, article_pmid, article_pmcid, authors, article_title, journal_title, \
-    article_year, article_month, article_day, article_url, license_url, label, caption, \
-    title, categories, mimetype, material_url):
-    """Return MediaWiki markup of page for given supplementary material."""
+def get_license_template(url):
+    """Return MediaWiki template markup for given license URL."""
     license_templates = {
         u'http://creativecommons.org/licenses/by/2.0/': '{{cc-by-2.0}}',
         u'http://creativecommons.org/licenses/by-sa/2.0/': '{{cc-by-sa-2.0}}',
@@ -61,8 +59,13 @@ def page(article_doi, article_pmid, article_pmcid, authors, article_title, journ
         u'http://creativecommons.org/licenses/by/4.0/': '{{cc-by-4.0}}',
         u'http://creativecommons.org/licenses/by-sa/4.0/': '{{cc-by-sa-4.0}}'
     }
+    return license_templates[url]
 
-    license_template = license_templates[license_url]
+def page(article_doi, article_pmid, article_pmcid, authors, article_title, journal_title, \
+    article_year, article_month, article_day, article_url, license_url, label, caption, \
+    title, categories, mimetype, material_url):
+    """Return MediaWiki markup of page for given supplementary material."""
+    license_template = get_license_template(license_url)
 
     text = "=={{int:filedesc}}==\n\n"
     text += "{{Information\n"
