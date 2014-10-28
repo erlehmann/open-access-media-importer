@@ -12,6 +12,14 @@ from pmc import _get_article_contrib_authors, _get_article_title, _get_article_a
     _get_article_categories
 
 def _get_file_from_url(url):
+    """
+    Download file from a given URL.
+
+    >>> f = _get_file_from_url('http://example.org')
+    >>> 'Example Domain' in f.read()
+    True
+
+    """
     req = Request(url, None, {'User-Agent' : 'pmc_doi/2012-07-14'})
     try:
         remote_file = urlopen(req)
@@ -98,3 +106,9 @@ def list_articles(target_directory, supplementary_materials=False, skip=[]):
             if supplementary_materials:
                 result['supplementary-materials'] = _get_supplementary_materials(tree)
             yield result
+
+
+if __name__ == "__main__":
+    """Start doctests."""
+    import doctest
+    doctest.testmod()

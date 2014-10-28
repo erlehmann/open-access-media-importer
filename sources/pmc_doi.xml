@@ -1,0 +1,3505 @@
+<?xml version="1.0"?>
+<!DOCTYPE pmc-articleset PUBLIC "-//NLM//DTD ARTICLE SET 2.0//EN" "http://dtd.nlm.nih.gov/ncbi/pmc/articleset/nlm-articleset-2.0.dtd">
+<pmc-articleset><article xmlns:xlink="http://www.w3.org/1999/xlink" article-type="review-article">
+  <?properties open_access?>
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">Parasit Vectors</journal-id>
+      <journal-title>Parasites &amp; Vectors</journal-title>
+      <issn pub-type="epub">1756-3305</issn>
+      <publisher>
+        <publisher-name>BioMed Central</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="pmid">18761736</article-id>
+      <article-id pub-id-type="pmc">2559997</article-id>
+      <article-id pub-id-type="publisher-id">1756-3305-1-29</article-id>
+      <article-id pub-id-type="doi">10.1186/1756-3305-1-29</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Review</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Developing novel anthelmintics from plant cysteine proteinases</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib id="A1" corresp="yes" contrib-type="author">
+          <name>
+            <surname>Behnke</surname>
+            <given-names>Jerzy M</given-names>
+          </name>
+          <xref ref-type="aff" rid="I1">1</xref>
+          <email>jerzy.behnke@nottingham.ac.uk</email>
+        </contrib>
+        <contrib id="A2" contrib-type="author">
+          <name>
+            <surname>Buttle</surname>
+            <given-names>David J</given-names>
+          </name>
+          <xref ref-type="aff" rid="I2">2</xref>
+          <email>d.j.buttle@sheffield.ac.uk</email>
+        </contrib>
+        <contrib id="A3" contrib-type="author">
+          <name>
+            <surname>Stepek</surname>
+            <given-names>Gillian</given-names>
+          </name>
+          <xref ref-type="aff" rid="I1">1</xref>
+          <xref ref-type="aff" rid="I3">3</xref>
+          <email>G.Stepek@vet.gla.ac.uk</email>
+        </contrib>
+        <contrib id="A4" contrib-type="author">
+          <name>
+            <surname>Lowe</surname>
+            <given-names>Ann</given-names>
+          </name>
+          <xref ref-type="aff" rid="I1">1</xref>
+          <email>anne.lowe@nottingham.ac.uk</email>
+        </contrib>
+        <contrib id="A5" contrib-type="author">
+          <name>
+            <surname>Duce</surname>
+            <given-names>Ian R</given-names>
+          </name>
+          <xref ref-type="aff" rid="I1">1</xref>
+          <email>ian.duce@nottingham.ac.uk</email>
+        </contrib>
+      </contrib-group>
+      <aff id="I1"><label>1</label>School of Biology, University of Nottingham, University Park, Nottingham, NG7 2RD, UK</aff>
+      <aff id="I2"><label>2</label>Academic Unit of Molecular Medicine, University of Sheffield Medical School, Beech Hill Road, Sheffield S10 2RX, UK</aff>
+      <aff id="I3"><label>3</label>Institute of Comparative Medicine, Faculty of Veterinary Medicine, University of Glasgow, G61 1QH, UK</aff>
+      <pub-date pub-type="collection">
+        <year>2008</year>
+      </pub-date>
+      <pub-date pub-type="epub">
+        <day>1</day>
+        <month>9</month>
+        <year>2008</year>
+      </pub-date>
+      <volume>1</volume>
+      <fpage>29</fpage>
+      <lpage>29</lpage>
+      <ext-link ext-link-type="uri" xlink:href="http://www.parasitesandvectors.com/content/1/1/29"/>
+      <history>
+        <date date-type="received">
+          <day>2</day>
+          <month>7</month>
+          <year>2008</year>
+        </date>
+        <date date-type="accepted">
+          <day>1</day>
+          <month>9</month>
+          <year>2008</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>Copyright &#xA9; 2008 Behnke et al; licensee BioMed Central Ltd.</copyright-statement>
+        <copyright-year>2008</copyright-year>
+        <copyright-holder>Behnke et al; licensee BioMed Central Ltd.</copyright-holder>
+        <license license-type="open-access" xlink:href="http://creativecommons.org/licenses/by/2.0">
+          <p>This is an Open Access article distributed under the terms of the Creative Commons Attribution License (<ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by/2.0"/>), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</p>
+          <!--<rdf xmlns="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1" xmlns:dcterms="http://purl.org/dc/terms"><Work xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" rdf:about=""><license rdf:resource="http://creativecommons.org/licenses/by/2.0"/><dc:type rdf:resource="http://purl.org/dc/dcmitype/Text"/><dc:author>
+               Behnke
+               M
+               Jerzy
+               
+               jerzy.behnke@nottingham.ac.uk
+            </dc:author><dc:title>
+            Developing novel anthelmintics from plant cysteine proteinases
+         </dc:title><dc:date>2008</dc:date><dcterms:bibliographicCitation>Parasites &#x00026; Vectors 1(1): 29-. (2008)</dcterms:bibliographicCitation><dc:identifier type="sici">1756-3305(2008)1:1&#x0003c;29&#x0003e;</dc:identifier><dcterms:isPartOf>urn:ISSN:1756-3305</dcterms:isPartOf><License rdf:about="http://creativecommons.org/licenses/by/2.0"><permits rdf:resource="http://web.resource.org/cc/Reproduction" xmlns=""/><permits rdf:resource="http://web.resource.org/cc/Distribution" xmlns=""/><requires rdf:resource="http://web.resource.org/cc/Notice" xmlns=""/><requires rdf:resource="http://web.resource.org/cc/Attribution" xmlns=""/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" xmlns=""/></License></Work></rdf>-->
+        </license>
+      </permissions>
+      <abstract>
+        <p>Intestinal helminth infections of livestock and humans are predominantly controlled by treatment with three classes of synthetic drugs, but some livestock nematodes have now developed resistance to all three classes and there are signs that human hookworms are becoming less responsive to the two classes (benzimidazoles and the nicotinic acetylcholine agonists) that are licensed for treatment of humans. New anthelmintics are urgently needed, and whilst development of new synthetic drugs is ongoing, it is slow and there are no signs yet that novel compounds operating through different modes of action, will be available on the market in the current decade. The development of naturally-occurring compounds as medicines for human use and for treatment of animals is fraught with problems. In this paper we review the current status of cysteine proteinases from fruits and protective plant latices as novel anthelmintics, we consider some of the problems inherent in taking laboratory findings and those derived from folk-medicine to the market and we suggest that there is a wealth of new compounds still to be discovered that could be harvested to benefit humans and livestock.</p>
+      </abstract>
+    </article-meta>
+  </front>
+  <body>
+    <sec>
+      <title>Introduction</title>
+      <p>Intestinal nematodes are extremely important pathogens of domestic livestock, especially of sheep, goats and cattle. Collectively, they are responsible for severe losses to livestock agriculture throughout the world. It has been calculated that, in the U.K., intestinal worms constitute the most important disease-related cost of farming sheep, being responsible for an estimated annual loss to the industry of &#xA3;83 million [<xref ref-type="bibr" rid="B1">1</xref>]. In developing countries of the world, intestinal worm infections are perceived to be the single most important threat to economic success, as was made dramatically clear in a recent review of the attitudes and concerns of small holder farmers in Africa [<xref ref-type="bibr" rid="B2">2</xref>].</p>
+      <p>Intestinal nematodes are also important pathogens of humans, with a range of pathologies and consequences for human health [<xref ref-type="bibr" rid="B3">3</xref>]. Four species dominate: <italic>Ascaris lumbricoides</italic>, <italic>Trichuris trichiura </italic>and the two hookworms <italic>Ancylostoma duodenale </italic>and <italic>Necator americanus</italic>. Global estimates of disability adjusted life years lost to infection are almost 5 million with some 3 billion people around the world believed to carry some of the species involved [<xref ref-type="bibr" rid="B3">3</xref>,<xref ref-type="bibr" rid="B4">4</xref>].</p>
+    </sec>
+    <sec>
+      <title>Synthetic anthelmintics and resistance</title>
+      <p>The treatment of intestinal nematode infections in the 21<sup>st </sup>century is largely through the use of modern synthetic anthelmintics. Three classes of these anthelmintics dominate the market, each mediating its effect through a different mode of action on the target nematodes. The group 1 anthelmintics include the benzimidazoles and these were introduced in the early 1960s for use in livestock but resistance (in this case to thiabendazole) was detected after only 4 years of usage in the U.S.A. The group 2 anthelmintics, the nicotinic acetylcholine agonists such as pyrantel, levamisole, morantel etc., were introduced in the early 1970s and resistance was detected for the first time in 1977 in Australia. The macrocyclic lactones (e.g. ivermectin), which form the group 3 anthelmintics, were first licensed for use in the early 1980s and resistance became apparent again within seven years and was first reported in S. Africa [<xref ref-type="bibr" rid="B5">5</xref>].</p>
+      <p>Since then, resistance has spread around the globe, particularly in species affecting sheep, but it is also a significant problem in the husbandry of horses, especially with respect to the cyathostomins [<xref ref-type="bibr" rid="B5">5</xref>-<xref ref-type="bibr" rid="B7">7</xref>], and is an increasing problem in cattle and pigs [<xref ref-type="bibr" rid="B8">8</xref>,<xref ref-type="bibr" rid="B9">9</xref>]. Of particular concern is the discovery of triple resistant nematodes which cannot be easily controlled by any of the three classes of drugs. This was first detected in S. Africa in sheep, and then in Scotland among Angora goat flocks [<xref ref-type="bibr" rid="B10">10</xref>], but is now known to be more widely distributed [<xref ref-type="bibr" rid="B11">11</xref>].</p>
+      <p>There are also some indications that human hookworms, notably <italic>Necator americanus </italic>and <italic>Ancylostoma duodenale </italic>are becoming less sensitive to the benzimidazoles and to pyrantel, respectively [<xref ref-type="bibr" rid="B12">12</xref>-<xref ref-type="bibr" rid="B14">14</xref>]. Studies in communities in Tanzania have shown that the efficacy of mebendazole has declined significantly in areas where mebendazole was given routinely to school aged children in a national program to reduce GI nematode infections in the population and to give the children a good start in life [<xref ref-type="bibr" rid="B15">15</xref>,<xref ref-type="bibr" rid="B16">16</xref>]. Currently, there are a number of new programs being implemented in developing countries based on mass treatment of populations with ivermectin or praziquantel, each combined either with mebendazole or albendazole, and these have already made a significant impact on the prevalence of intestinal parasitic infections in these regions [<xref ref-type="bibr" rid="B17">17</xref>-<xref ref-type="bibr" rid="B19">19</xref>]. Nevertheless, veterinary parasitologists have repeatedly warned those working in the medical profession that where mass delivery of anthelmintics is being implemented, the lessons from the veterinary experience should be taken on board by the medical profession and, if we are to preserve the efficacy of the available drugs into the future, appropriate actions should be taken before it is too late [<xref ref-type="bibr" rid="B20">20</xref>,<xref ref-type="bibr" rid="B21">21</xref>].</p>
+      <p>Although there are signs that novel synthetic drugs are being developed (e.g. nitazoxanide, cyclic depsipeptides, octadepsipeptides such as emodepside, tribendimidine, diketopiperazines such as paraherquamides, amino-acetonitrile derivatives {AADs}), no new drugs that operate through a different mode of action to the Class 1, 2 and 3 anthelmintics have become available on the market for the treatment of either livestock or humans [<xref ref-type="bibr" rid="B22">22</xref>-<xref ref-type="bibr" rid="B26">26</xref>]. However, there is an exception for companion animals because emodepsides (a product of fungi associated with the leaves of <italic>Camellia japonica</italic>) are being marketed already for treatment of worms in cats (Bayer Health Care under the trade name Profender). Nevertheless, it is now 28 years since the avermectins appeared, and we are still largely constrained by having to rely on just three classes of anthelmintics, so despite the promise of new agents in the pipeline, the range of effective agents is extremely limited and there is a pressing need for new/additional solutions to the problem of controlling intestinal worm infections. The obvious route to follow is to develop novel synthetic drugs. In this context, it may be that as yet undeclared alternative drugs have been developed already by pharmaceutical companies but assessed as uncompetitive in the current market in the face of the overwhelming success of the macrocylic lactones. It is possible that some such drugs are being kept in the wings until they have a likelihood of success, and can take centre stage, when the current agents become totally redundant. Whatever the explanation for the lack of overt progress on this front, whether through failure to develop novel compounds or failure to develop commercially competitive agents, the lack of new drugs over the last 28 years indicates that it is not easy in this day and age to develop novel drugs with a different mode of action from those already on the market.</p>
+    </sec>
+    <sec>
+      <title>Medicinal plants and the problems of developing their active principles as novel medicines</title>
+      <p>An alternative is to exploit naturally-occurring compounds that exist in plants and trees and in their seeds and fruits. Medicinal plants and fruits have been used by indigenous peoples for centuries as sources of extracts used in the treatment of a variety of problems, including infectious diseases and those caused by parasites, in livestock and humans [<xref ref-type="bibr" rid="B27">27</xref>-<xref ref-type="bibr" rid="B29">29</xref>]. These are often referred to as ethno-veterinary or ethno-medical remedies, and, in general, they are shunned by traditional, conventional western medicine.</p>
+      <p>There have been considerable efforts to identify the active ingredients and indeed some are well known [<xref ref-type="bibr" rid="B30">30</xref>-<xref ref-type="bibr" rid="B32">32</xref>], but, to a large extent, few have lived up to their expectations when tested rigorously [<xref ref-type="bibr" rid="B33">33</xref>], and even fewer have been found to have curative properties that can compete effectively with synthetic drugs [<xref ref-type="bibr" rid="B27">27</xref>]. Nevertheless, some exceptional natural products, have become widely accepted. Quinine for the treatment of malaria is an obvious example, as is artemisinin or quinghaosu from <italic>Artemisia annula </italic>[<xref ref-type="bibr" rid="B30">30</xref>,<xref ref-type="bibr" rid="B34">34</xref>]. Penicillin is a fungal product and indeed ivermectin itself is a bacterial product, being derived from the soil bacterium <italic>Streptomyces avermitilis </italic>[<xref ref-type="bibr" rid="B35">35</xref>]. Among plant derived molecules that have anti-parasitic activity and have been used as veterinary parasiticides at times there are nicotine, pyrethrum and rotenone. The former two provided templates for the development of synthetic mimics which include the pyrantel group for nematodes and synthetic insecticides, respectively. However, to our knowledge, there are no naturally-derived plant products sold commercially in the markets of the developed nations of the world for the treatment of worm infections [<xref ref-type="bibr" rid="B31">31</xref>].</p>
+      <p>If natural plant products are to be exploited in the future as medicines for human use or for the treatment of livestock, then isolation and characterisation of their active principles becomes an essential prerequisite to further progress. Problems which follow include development of methods for their stabilisation, preservation, formulation, delivery etc., and all this requires enormous development costs and many years of patient work. Furthermore, the necessary clinical trials of efficacy (randomised, double-blind, placebo-controlled) and essential safety trials add, to the delay before drugs become available for treatment, and enormously to the costs sustained by developers. Inherent in the system is the accompanying bureaucracy required by authorities to licence novel drugs for commercial production and this adds yet another tier of complexity, expense and delay.</p>
+      <p>Perhaps the most important impediment to further progress is the obstacle presented by "prior art". Although contemporary laboratory techniques may help to identify the active compounds and solve some of the initial problems referred to above, the ultimate developmental costs are dependent on investment by industry. But pharmaceutical firms are not charities. Their priority is to ensure good returns on their outlay, for reinvestment in research and for their shareholders; profits usually facilitated by patents protecting the key steps involved in extraction or manufacture of the active principles. For many medicinal plants, there is already too much published information in the public domain to enable compounds to be patented securely, although if structure has not been disclosed, patenting is possible. Moreover, it is very clear to us that there is a conflict between disclosure as part of academic research (publish or die!) and secrecy to ensure patentability in the longer term. These are real obstacles to investment by industry, and an anomaly of the system that is hindering progress in a world where novel drugs are urgently required. It is also a sad reflection of our priorities since it is very clear that there are active compounds that could be developed into new generations of modern medicines. If we are to make progress, trusts and public funds will need to support the initial sequence of developmental steps, possibly right through to the marketable product and at least some such schemes have already been initiated (e.g. Wellcome Trust Translational Awards Scheme). By way of encouragement, it is worth pointing out that in developing formulations and delivery systems, it is conceivable that novel steps will be discovered and these will allow patents to be filed eventually and industry to be guaranteed protection.</p>
+      <p>There are of course other problems that deter pharmaceutical companies from exploiting plant derived medicines. These include variability in the concentration of active principles in relation to how the plants were grown, climate, soil quality, site, and season of the year. Additionally governments may charge fees to access sources of relevant plants, and royalties for their exploitation, and these charges may eat into profits, discouraging investment and development.</p>
+      <p>An alternative avenue might be to develop natural products as food additives. Concerns about residues in food and animal welfare under intensive stocking densities have stimulated a growing market in the developed world for organic farming, and organically farmed livestock are as susceptible to parasites, perhaps even more so than those intensively reared and regularly drenched with wormers. Whole plants, leaves, stems, fruits and seeds containing activity against worms could be incorporated into feed without loss of organic status. This would be more acceptable where the whole plant is itself a suitable food for the target animals, as in the case of fruits, but perhaps less so where the only benefit of eating would be from the medicinal principles, since plants, like all biological material, are extremely complex and may contain thousands of molecules, only some of which would bring benefits while others may be toxic. A good example of the use of fodder that does not support transmission of intestinal worms is in chicory on organic sheep farms [<xref ref-type="bibr" rid="B36">36</xref>], or plants with high tannin content [<xref ref-type="bibr" rid="B37">37</xref>]. More refined methods of administration may include extracts from plant tissues, given on their own or in combination with conventional fodder.</p>
+      <p>Indeed, this whole approach may spawn a novel industry, searching for novel plant varieties with up-regulated content of the active principles. In this age of genetic manipulation, transgenic approaches may also pay dividends [<xref ref-type="bibr" rid="B32">32</xref>], but, of course, these would risk opening another field of controversy: the reluctance of many consumers to accept transgenic plants as viable alternatives to those developed through conventional breeding programs [<xref ref-type="bibr" rid="B38">38</xref>,<xref ref-type="bibr" rid="B39">39</xref>].</p>
+      <p>If natural plant products are to have a future in veterinary or human medicine, they must be developed to a stage where consistency of their effects can be assured, and rigorous quality control methods can be implemented. For this, knowledge of the active principles is essential, and specific <italic>in vitro</italic>-based assays that reflect accurately their anti-worm potential need to be available. Minimal side effects on either health or production traits are obvious requirements of any such products if they are to compete effectively with available drugs on the market.</p>
+    </sec>
+    <sec>
+      <title>Medicinal fruits containing cysteine proteinases</title>
+      <p>Some of the earliest known medicinal anthelmintic plants include papaya (<italic>Carica papaya</italic>), figs (<italic>Ficus </italic>spp.) and pineapple (<italic>Ananas comosus</italic>). Anecdotal reports of their usage for the treatment of worm infections by the native inhabitants of Panama and South America stretch back to over a century ago [<xref ref-type="bibr" rid="B40">40</xref>]. Their extracts were shown to be highly effective in clearing the most obstinate of human intestinal worms, <italic>Trichuris trichiura</italic>, in the 1920s [<xref ref-type="bibr" rid="B41">41</xref>] and more effectively than any of the current synthetic drugs [<xref ref-type="bibr" rid="B42">42</xref>]. Indeed, European doctors used papain and papaya latex for the treatment of worms in the 19th century [[<xref ref-type="bibr" rid="B43">43</xref>,<xref ref-type="bibr" rid="B44">44</xref>] and see later in this review] but, it was not until the 1930s that they were shown to be actually capable of digesting nematodes [<xref ref-type="bibr" rid="B40">40</xref>] and their enzymic basis was discovered [<xref ref-type="bibr" rid="B45">45</xref>]. The active principles are now known to be cysteine proteinases (CP) that occur naturally in various parts of the plant, and Table <xref ref-type="table" rid="T1">1</xref> summarises some of those known to be contained within plants. For example, in pineapples, different combinations of enzymes occur in the stem, and in the fruit. The latex of both papaya and figs contains CPs.</p>
+      <table-wrap position="float" id="T1">
+        <label>Table 1</label>
+        <caption>
+          <p>Plants which are known to contain cysteine proteinases with potential anthelmintic activity</p>
+        </caption>
+        <table frame="hsides" rules="groups">
+          <thead>
+            <tr>
+              <td align="left">Species</td>
+              <td align="left">Enzymes known to be contained</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="left">Papaya</td>
+              <td align="left">papain, chymopapain, caricain, glycyl endopeptidase</td>
+            </tr>
+            <tr>
+              <td align="left">Fig</td>
+              <td align="left">ficin, ficain</td>
+            </tr>
+            <tr>
+              <td align="left">Pineapple</td>
+              <td align="left">ananain, fruit bromelain, stem bromelain, comosain</td>
+            </tr>
+            <tr>
+              <td align="left">Kiwi fruit</td>
+              <td align="left">Actinidain</td>
+            </tr>
+            <tr>
+              <td align="left">Egyptian milkweed</td>
+              <td align="left">Asclepain</td>
+            </tr>
+            <tr>
+              <td align="left">Cowhage</td>
+              <td align="left">mucunain [<xref ref-type="bibr" rid="B108">108</xref>]</td>
+            </tr>
+          </tbody>
+        </table>
+      </table-wrap>
+      <p>These plant-derived CPs probably evolved primarily to defend plants against insect pests [<xref ref-type="bibr" rid="B46">46</xref>] but possibly also against plant parasitic nematodes, against which they are likewise highly effective [<xref ref-type="bibr" rid="B47">47</xref>,<xref ref-type="bibr" rid="B48">48</xref>]. Among the other important roles of CPs are facilitating the coagulation of latex during the sealing of wounds on plants, leaf senescence and possibly also in the ripening process [<xref ref-type="bibr" rid="B49">49</xref>-<xref ref-type="bibr" rid="B51">51</xref>].</p>
+    </sec>
+    <sec>
+      <title>Molecular characteristics of cysteine proteinases and their target proteins</title>
+      <p>The CPs are phylogenetically classified into 9 clans which show no evolutionary relationship between them, suggesting that the ability to utilise the thiolate anion of a cysteine residue as the nucleophile in peptide bond hydrolysis may have arisen independently on nine occasions. Fifty eight families of CPs are organised within these clans, and the CPs that have been shown to be anthelmintic are in Family C1, the papain family, in Clan CA [<xref ref-type="bibr" rid="B52">52</xref>,<xref ref-type="bibr" rid="B53">53</xref>]. Much is known about how these enzymes exert their activity. They have an active site groove into which the target polypetides bind. Lying across the groove are the active site cysteine and histidine residues, both crucial to the process of hydrolysis of the target polypeptide. The amino acid residues lining the groove determine which peptide bonds in a protein are susceptible to hydrolysis, by complementary binding with the substrate amino acid side-chains.</p>
+      <p>One important property of CPs is that their activity can be easily quantified. As was emphasized earlier, a useful property of any naturally occurring anthelmintic is to have an assay of its activity that is independent of the <italic>in vivo </italic>efficacy but correlates well with it. In the case of CPs, the specific inhibitor E-64 can be used to measure the operational molar concentration of enzyme activity in any preparation. For this assay, convenient substrates are also required and, for many of the enzymes, amide substrates with coloured or fluorimetric leaving groups can be used, such as, for papain, chymopapain and crude papaya latex, benzoyl-(D, L)-arginine-<italic>p</italic>-nitroanilide (Bz-Arg-pNA). On digestion, the nitroaniline group is released, which can be accurately quantified with the use of a spectrophotometer. For <italic>F. carica </italic>&amp;<italic> F. benjamina </italic>latex, ficin, pineapple juice, kiwi fruit extract and <italic>Asclepias sinaica </italic>latex, a useful substrate is benzyloxycarbonyl-phenylalanyl-arginyl-<italic>p</italic>-nitroanilide (Z-Phe-Arg-pNA), and for stem bromelain, it is benzyloxycarbonyl-arginyl-arginyl-<italic>p</italic>-nitroanilide (Z-Arg-Arg-pNA). All these substrates are commercially available.</p>
+    </sec>
+    <sec>
+      <title>Useful nematode screens for activity</title>
+      <p>Parasitic helminths have evolved to occupy virtually every conceivable niche in the mammalian host. Each species of intestinal nematode is a specialist to some degree and parasitizes a restricted region of the intestine. Table <xref ref-type="table" rid="T2">2</xref> is not an exhaustive list, but gives some examples of important nematode species affecting sheep, cattle, pigs, humans and rodents. Anthelmintic drugs are clearly likely to have varying efficacies in different regions of the gut because of the differences in physiology, including pH, enzyme content, fluid and solid content, etc., and therefore, in evaluating candidate drugs, it is important to assess their efficacies in laboratory systems with a spectrum of species that occupy different niches along the entire length of the intestine. The best suited systems for this approach are laboratory rodents, and, fortuitously, laboratory rodents are hosts to a range of relevant parasites, maintained in different laboratories throughout the world.</p>
+      <table-wrap position="float" id="T2">
+        <label>Table 2</label>
+        <caption>
+          <p>Examples of nematode parasites that parasitize different regions of the intestinal tract in domestic animals, humans and rodents</p>
+        </caption>
+        <table frame="hsides" rules="groups">
+          <thead>
+            <tr>
+              <td align="left">Host</td>
+              <td/>
+              <td align="left">Species</td>
+              <td/>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td/>
+              <td align="left">Stomach</td>
+              <td align="left">Small intestine</td>
+              <td align="left">Large intestine</td>
+            </tr>
+            <tr>
+              <td colspan="4">
+                <hr/>
+              </td>
+            </tr>
+            <tr>
+              <td align="left">Sheep</td>
+              <td align="left">Teladorsagia circumcincta<break/>Haemonchus contortus<break/>Trichostrongylus axei</td>
+              <td align="left">Trichostrongylus colubriformis<break/>Nematodirus battus</td>
+              <td align="left">Trichuris ovis</td>
+            </tr>
+            <tr>
+              <td align="left">Cattle</td>
+              <td align="left">Ostertagia ostertagi<break/>Trichostrongylus axei</td>
+              <td align="left">Cooperia spp.<break/>Nematodirus spathiger</td>
+              <td align="left">Oesophagostomum radiatum <break/>Trichuris globulosa</td>
+            </tr>
+            <tr>
+              <td align="left">Pigs</td>
+              <td align="left">Hyostrongylus rubidus</td>
+              <td align="left">Ascaris suum</td>
+              <td align="left">Oesophagostomum spp.</td>
+            </tr>
+            <tr>
+              <td align="left">Humans</td>
+              <td/>
+              <td align="left">Ancylostoma duodenale<break/>Necator americanus<break/>Ascaris lumbricoides</td>
+              <td align="left">Trichuris trichiura<break/>Enterobius vermicularis</td>
+            </tr>
+            <tr>
+              <td align="left">Rodents</td>
+              <td align="left">Protospirura muricola</td>
+              <td align="left">Heligmosomoides bakeri<break/>Nippostrongylus brasiliensis<break/>Trichinella spiralis</td>
+              <td align="left">Trichuris muris<break/></td>
+            </tr>
+          </tbody>
+        </table>
+      </table-wrap>
+      <p>Of the rodent species listed in Table <xref ref-type="table" rid="T2">2</xref>, <italic>Heligmosomoides bakeri </italic>is perhaps the easiest to maintain and to work with. <italic>H. bakeri </italic>has changed its name twice in recent times, being formally known as <italic>Nematospiroides dubius</italic>, and then <italic>H. polygyrus</italic>, but now correctly as <italic>H. bakeri </italic>[<xref ref-type="bibr" rid="B54">54</xref>]. This species causes chronic infections in the anterior of the small intestine of mice, so there is little concern about loss of parasites through host immunity in the immediate weeks following a single-pulse infection [<xref ref-type="bibr" rid="B55">55</xref>]. With species such as <italic>Trichinella spiralis </italic>and <italic>Nippostrongylus brasiliensis</italic>, which are expelled within 3 weeks of infection by rats, experimental trials have to be carefully timed to complete observations before worm expulsion through immunity, otherwise it is not possible to distinguish between worm loss arising through treatment with a candidate drug and worm loss through the development of the host-protective immune response.</p>
+      <p>Many of the most devastating problems in ruminants are caused by nematodes that live in the abomasum, the fourth stomach of ruminants, but there are no ideal models of these species in rodents. Recently, a spirurid worm of wild spiny mice [<xref ref-type="bibr" rid="B56">56</xref>] has been isolated and adapted for passage through laboratory mice [<xref ref-type="bibr" rid="B57">57</xref>], and we have used this species successfully to assess the effects of our candidate anthelmintics in the rodent stomach [<xref ref-type="bibr" rid="B58">58</xref>]. Although it is a member of a phylogenetic group that is not closely related to the Trichostrongyloidae, it nevertheless lives in the acid environment of the stomach and presents candidate drugs with similar problems to those encountered in the abomasum of ruminants.</p>
+      <p>Many different species of nematodes exploit the large intestines of mammals and, in some hosts, such as horses, the list is very long indeed, notably the cyathostomins. In mice, <italic>Trichuris muris</italic>, which is closely related to the <italic>Trichuris </italic>spp. that infect humans (<italic>T. trichiura</italic>), dogs (<italic>T. vulpis</italic>), pigs (<italic>T. suis</italic>) and ruminants (<italic>T. ovis, T. globulosa</italic>), is an obvious species to exploit in screening programs.</p>
+    </sec>
+    <sec>
+      <title>Comparison of the efficacy of different extracts on parasite motility <italic>in vitro</italic></title>
+      <p>Note all experiments carried out by the authors involving the use of laboratory animals were approved by the University of Nottingham ethics committee and were carried out under UK Home Office Licence (Project Licence number 40/2621).</p>
+      <p>Most species of nematodes can be kept alive and motile in simple saline media for short periods of time after removal from their hosts. As an initial screen, we developed a straightforward motility assay which was simple to implement and highly reproducible. Worms were placed in a saline solution kept at 37&#xB0;C on a laboratory bench incubator, and their motility was scored on a scale of 0&#x2013;5, where a score of 5 represents a highly active motile worm, 4 slightly less active, 3 less active still, 2 lethargic but capable of independent movement, 1 movement only apparent when prodded, and 0 no movement even when prodded. With <italic>H. bakeri </italic>and <italic>T. muris </italic>the motility of worms kept in control saline declined from the outset but slowly relative to that of worms exposed to effective anthelmintic agents. So with these species, assessment of efficacy was based on the expectation that motility would decline faster when the worms were exposed to an effective agent. <italic>P. muricola</italic>, however, is far more robust and capable of moving vigorously in media for well over 24 h.</p>
+      <p>Representative results are shown in Fig. <xref ref-type="fig" rid="F1">1</xref>, where the more rapid loss of motility of <italic>H. bakeri </italic>is clearly apparent when worms were exposed to increasing operational molar concentrations of CP activity. The dataset in Fig. <xref ref-type="fig" rid="F1">1B</xref> shows that all three concentrations of papain were highly effective in this case. Experiments such as these allow enzyme activity from different sources to be compared. Table <xref ref-type="table" rid="T3">3</xref> shows EC<sub>50 </sub>values extrapolated from these <italic>in vitro </italic>assays for plant extracts, and some purified enzymes as well. Many were extremely effective at micromolar concentrations, but interestingly kiwi fruit extract, containing actinidain, had no effect at all.</p>
+      <fig position="float" id="F1">
+        <label>Figure 1</label>
+        <caption>
+          <p>The effect of varying concentrations of enzyme activity in papaya latex (A) and in papain (B) on the motility of <italic>Heligmosomoides bakeri in vitro</italic>. Standard errors are given for the control (0 &#x3BC;M) groups and in selected treated groups only, to retain clarity. For the full statistical analysis of these and related data, see Stepek <italic>et al</italic>. [<xref ref-type="bibr" rid="B107">107</xref>]. Reprinted with permission.</p>
+        </caption>
+        <graphic xlink:href="1756-3305-1-29-1"/>
+      </fig>
+      <table-wrap position="float" id="T3">
+        <label>Table 3</label>
+        <caption>
+          <p>Comparison of EC<sub>50</sub>s of a range of plant extracts known to contain cysteine proteinase activity</p>
+        </caption>
+        <table frame="hsides" rules="groups">
+          <thead>
+            <tr>
+              <td align="left">Enzyme</td>
+              <td align="center">EC<sub>50</sub>(&#x3BC;M)</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="left">Milkweed latex extract</td>
+              <td align="center">3</td>
+            </tr>
+            <tr>
+              <td align="left">Ficin</td>
+              <td align="center">5</td>
+            </tr>
+            <tr>
+              <td align="left">Pineapple fruit extract</td>
+              <td align="center">5</td>
+            </tr>
+            <tr>
+              <td align="left">Chymopapain</td>
+              <td align="center">7.5</td>
+            </tr>
+            <tr>
+              <td align="left">Papain</td>
+              <td align="center">7.5</td>
+            </tr>
+            <tr>
+              <td align="left">Crude papaya latex</td>
+              <td align="center">12.5</td>
+            </tr>
+            <tr>
+              <td align="left">Stem bromelain</td>
+              <td align="center">75</td>
+            </tr>
+            <tr>
+              <td align="left"><italic>Ficus benjamina</italic> latex</td>
+              <td align="center">140</td>
+            </tr>
+            <tr>
+              <td align="left"><italic>Ficus carica</italic> latex</td>
+              <td align="center">150</td>
+            </tr>
+            <tr>
+              <td align="left">Kiwi fruit extract</td>
+              <td align="center">None</td>
+            </tr>
+          </tbody>
+        </table>
+        <table-wrap-foot>
+          <p>All values are in micromolar concentrations of enzyme activity, as determined by active site titration, that caused 50% reduction in motility after 90 minutes of incubation with <italic>H. bakeri</italic></p>
+        </table-wrap-foot>
+      </table-wrap>
+      <p>An experiment following a factorial design, in which worms were incubated in the presence or absence of cysteine, presence or absence of papain, presence or absence of the specific CP inhibitor E-64, established firmly that the active ingredients were CPs. The only treatment in which worms showed accelerated loss of motility was incubation in the presence of exogenous cysteine and papain, but in the absence of E-64 (Fig. <xref ref-type="fig" rid="F2">2</xref>).</p>
+      <fig position="float" id="F2">
+        <label>Figure 2</label>
+        <caption>
+          <p>A factorial experiment to confirm that the effect on <italic>H. bakeri </italic>is mediated by cysteine proteinase activity. The worms were incubated in the presence/absence of papaya latex, presence/absence of cysteine, and presence/absence of the specific CP inhibitor E-64. The only treatment to show accelerated loss of motility was when worms were incubated with papaya latex, in the presence of cysteine but absence of E-64. This treatment is highlighted in bold. For the full statistical analysis of these and related data, see Stepek <italic>et al</italic>. [<xref ref-type="bibr" rid="B75">75</xref>]. Reprinted with permission.</p>
+        </caption>
+        <graphic xlink:href="1756-3305-1-29-2"/>
+      </fig>
+    </sec>
+    <sec>
+      <title>Effects on the surface of the worms <italic>in vitro</italic></title>
+      <p>When exposed to CPs <italic>in vitro</italic>, all three species of nematodes (<italic>H. bakeri</italic>, <italic>P. muricola </italic>and <italic>T. muris</italic>) lost motility and, moreover, their surface began to show clearly apparent damage. Fig. <xref ref-type="fig" rid="F3">3</xref> shows scanning electron micrographs of changes in <italic>H. bakeri</italic>, but similar changes were also seen in the other species. Most surprisingly, even the tough, resilient <italic>P. muricola </italic>could not hold out against the attack by CPs <italic>in vitro </italic>[<xref ref-type="bibr" rid="B58">58</xref>].</p>
+      <fig position="float" id="F3">
+        <label>Figure 3</label>
+        <caption>
+          <p><bold>Scanning electron micrographs of <italic>Heligmosomoides bakeri </italic>adult worms exposed to papaya latex and ficin <italic>in vitro</italic></bold>. Clear evidence of damage to the cuticle can be seen from 30 min in 200 &#x3BC;M crude papaya latex and ficin, 30 &#x3BC;M. Note the transverse wrinkling leading to signs of shedding of the cuticle after 90&#x2013;120 min. In contrast, worms incubated in Hanks's saline showed no sign of cuticular damage, even after 120 min incubation. Scale bar = 10 &#x3BC;m. For SEM preparation adult specimens of <italic>Heligmosomoides bakeri </italic>were fixed in glutaraldehyde, postfixed in osmium tetroxide, critical point dried and gold coated before examining in a Jeol JSM 840 scanning electron microscope. For further details see Stepek <italic>et al </italic>[<xref ref-type="bibr" rid="B107">107</xref>]. Reprinted with permission.</p>
+        </caption>
+        <graphic xlink:href="1756-3305-1-29-3"/>
+      </fig>
+      <p>Examination by transmission electron microscopy showed that soon after exposure, the outermost layer of the cuticle began to crinkle, and the ridges called cr&#xEA;tes (longitudinal cuticular ridges without an internal cuticularized supporting element [<xref ref-type="bibr" rid="B59">59</xref>]), lost their rigidity, gained electron dense interiors, and began to shrink (Fig. <xref ref-type="fig" rid="F4">4</xref>). Eventually, the whole of the architecture normally seen on the outside of the parasite, constituting its synlophe (a technical term for the whole complex of cr&#xEA;tes that together comprise the equipment through which the nematode attaches to host villi [<xref ref-type="bibr" rid="B59">59</xref>]), disappeared revealing underlying collagen fibres, and then, at the weakest point, the internal high hydrostatic pressure within the pseudocoelomic cavity caused the worms to burst open, often carrying externally sections of the intestine and gonads (See Additional file <xref ref-type="supplementary-material" rid="S1">1</xref>). Further incubation invariably resulted in the almost complete digestion of the cuticle of the worms. This sequence was evident on all three species examined by us, and also on the canine hookworm <italic>Ancylostoma ceylanicum </italic>[<xref ref-type="bibr" rid="B60">60</xref>]. Although the detail of our observations, under both scanning and transmission electron microscopes, on the changes taking place were original, the fact that parasitic worms dissolve in the presence of extracts from papaya, pineapple and figs is not itself new. It was first suggested in the late 1870s [<xref ref-type="bibr" rid="B61">61</xref>] and then shown convincingly in the last century, first with extracts of figs [<xref ref-type="bibr" rid="B40">40</xref>] and then pineapples [<xref ref-type="bibr" rid="B62">62</xref>] and papain on <italic>Ascaris suum </italic>[[<xref ref-type="bibr" rid="B63">63</xref>], cited as <italic>A. lumbricoides </italic>but obtained from pigs so more likely to be <italic>A. suum</italic>].</p>
+      <fig position="float" id="F4">
+        <label>Figure 4</label>
+        <caption>
+          <p>Transmission electron micrographs of the cuticle of adult <italic>Heligmosomoides bakeri </italic>exposed to crude papaya latex (CPL) (200 &#x3BC;M). After 10 minutes exposure the cuticle starts to exhibit swelling and wrinkling of the surface with the appearance of electron dense material and collapse of the cretes. Following 30 minutes of exposure to papaya latex much of the structure of the cuticle has been lost and detachment of the cuticle from the underlying hypodermis is apparent in places. For TEM preparation adult specimens of <italic>Heligmosomoides bakeri </italic>were fixed in glutaraladehyde, postfixed in osmium tetroxide, dehydrated in ethanol embedded in epoxy resin and sectioned. The sections were stained in lead citrate and uranyl acetate and examined in a Jeol 1010 transmission electron microscope.</p>
+        </caption>
+        <graphic xlink:href="1756-3305-1-29-4"/>
+      </fig>
+      <p>Even more surprisingly, we found that the surface of the tapeworm <italic>Rodentolepis microstoma </italic>also showed major structural changes (Fig. <xref ref-type="fig" rid="F5">5</xref>), reflected in damage evident at the scanning microscopical level to the surface of the syncytial external layer of the tegument. These studies on the effects of CPs on cestodes are still at a very early stage, and, currently, we have little information on the details of the process involved. In fact, the anthelmintic properties of pineapple extract against helminths other than nematodes, was reported as early as 1939 by Berger and Asenjo [<xref ref-type="bibr" rid="B62">62</xref>] who found that the porcine acanthocephalan parasite <italic>Macracanthorynchus hirundinaceus </italic>was dissolved in the presence of fresh pineapple juice. Later, the same authors found that papain did not have the same effect against the acanthocephalan [<xref ref-type="bibr" rid="B63">63</xref>]. The observations that CPs actually damage cestodes, and acanthocepahalans, albeit selectively, raise the possibility that some CPs may have a wider spectrum of activity than purely against nematodes. Interestingly, de Amorin <italic>et al</italic>. [<xref ref-type="bibr" rid="B64">64</xref>], failed to detect an in <italic>vivo </italic>effect of <italic>Ficus </italic>latex on <italic>Rodentolepis nana </italic>in mice. Nevertheless, the idea that there may be common target sites in proteins in the nematode cuticle and the cestode and acanthocephalan teguments is intriguing.</p>
+      <fig position="float" id="F5">
+        <label>Figure 5</label>
+        <caption>
+          <p>Scanning electron microscopy of the surface of <italic>Rodentolepis microstoma </italic>incubated with crude papaya latex (CPL) <italic>in vitro</italic>. The micrographs were taken at equivalent points along the worm surface, near the mid-point. The digestion of the tegumental surface was evident by 30 mins when the worms were incubated with 25 &#x3BC;M papaya latex. Lesions attributable to the activity of the CPs in papaya latex are highlighted by the arrows and the damage increased substantially between 30 and 60 mins after exposure. The tegument remained intact, with no visible damage, even after 2 hours, on incubation with Hanks' saline + 16 mM cysteine (not shown). Scale bar = 100 &#x3BC;m. (see reference [<xref ref-type="bibr" rid="B60">60</xref>]). Reprinted with permission.</p>
+        </caption>
+        <graphic xlink:href="1756-3305-1-29-5"/>
+      </fig>
+    </sec>
+    <sec>
+      <title>Effect of cysteine proteinases on worm burdens <italic>in vivo</italic></title>
+      <p>The real test of whether CPs have potential for development as novel anthelmintics is the demonstration that they actually reduce worm burdens in infected animals.</p>
+      <sec>
+        <title>Effect on helminth infections in humans</title>
+        <p>Indications that papaya latex and papain are actually active in this respect go back to the early 1800s, when they were used by physicians in Europe for treatment of nematode infections [<xref ref-type="bibr" rid="B29">29</xref>] at a time when there were few alternatives available and the synthetic drugs had not yet been invented. Among other reports, Fernan-Nunez [<xref ref-type="bibr" rid="B65">65</xref>] reported a centuries-old custom of native people in Columbia who used the sap of the fig <italic>F. laurifolia </italic>(known locally as Leche de Higueron) as a treatment for worm infections, especially <italic>Trichuris trichiura</italic>. Two further reports from this period, that are not based on full publications but are cited by others, include the recovery of up to 500 expelled <italic>T. trichiura </italic>from subjects treated with the sap of <italic>F. elastica </italic>in Panama by Schapiro [<xref ref-type="bibr" rid="B66">66</xref>] and the effective use of "Leche de Higueron" by Hall [<xref ref-type="bibr" rid="B67">67</xref>] against trichiuriasis in Nicaragua. Caldwell &amp; Caldwell [<xref ref-type="bibr" rid="B41">41</xref>] reported successful treatment of patients at the Scarcy Hospital for the insane at Mt. Vernon, Alabama where trichiuriasis was extensive, with Higuerolatex. This report documents faecal egg count reductions of up to 91%, and averaging 89.5%, exceeding quite markedly the average efficacy of modern anthelmintics [<xref ref-type="bibr" rid="B42">42</xref>] for <italic>T. trichiura </italic>infections. Higuerolatex was also found to be effective against <italic>A. lumbricoides</italic>, reducing faecal egg counts by 89.7%.</p>
+        <p>More recently, the commercially available formulation Vermizym, manufactured in Germany, (based on papain) was shown to be effective against human pinworm (<italic>Enterobius vermicularis</italic>) and round worm (<italic>Ascaris lumbricoides</italic>) infections in a trial involving 60 subjects, who were apparently completely cleared of worms [<xref ref-type="bibr" rid="B68">68</xref>]. Jonxis &amp; Bekins [<xref ref-type="bibr" rid="B43">43</xref>], in Holland, used a preparation called Velardon, also based on papain, to treat children less than 8 years old for <italic>Ascaris </italic>infections. Stransky &amp; Reyes [<xref ref-type="bibr" rid="B44">44</xref>], working in the Philippines, assessed Vermizyn, treating subjects with three doses at about one and a half hour intervals, each with a teaspoon of Vermizyn. They reported very high efficacy reflected in reduced faecal egg counts after treatment and expulsion of adult <italic>Ascaris </italic>from treated subjects. They also confirmed that <italic>Trichuris </italic>infections were markedly reduced but failed to detect any effect on hookworm infections. Another trial with the same product showed that it cured 70% of subjects with whipworm (<italic>Trichuris trichiura</italic>) infections [<xref ref-type="bibr" rid="B69">69</xref>].</p>
+        <p>A trial in Amazonia in the 1980s with the latex of <italic>F. glabrata </italic>(= <italic>F. laurifloria</italic>?, the oj&#xE9; tree) indicated strong efficacy against <italic>A. lumbricoides </italic>and <italic>Trichuris trichiura</italic>, and even <italic>Necator americanus </italic>in humans [<xref ref-type="bibr" rid="B70">70</xref>], but the study did not meet contemporary standards for such trials and lacked the necessary statistical analysis.</p>
+      </sec>
+      <sec>
+        <title>Effect on helminth infections in companion animals</title>
+        <p>There are few reports of the use of CPs to treat companion animals, but the successful use of the latex from papaya (at 1.3 ml/kg) to remove worms (most probably <italic>Toxocara</italic>, although reported as <italic>Ascaris</italic>) from dogs in Cairo was reported by Nagaty <italic>et al.</italic>, [<xref ref-type="bibr" rid="B71">71</xref>].</p>
+      </sec>
+      <sec>
+        <title>Effect on helminth infections in livestock</title>
+        <p>Evidence that papaya latex was highly effective against <italic>A. suum </italic>in pigs was provided by Satrija <italic>et al</italic>. [<xref ref-type="bibr" rid="B72">72</xref>], but we are not aware of any other trials in monogastric livestock. To our knowledge, there is only one reference to the effect of CPs on parasites of ruminants, in which the animals in question were treated orally with papaya latex [<xref ref-type="bibr" rid="B73">73</xref>], but this publication is unavailable in the West.</p>
+      </sec>
+      <sec>
+        <title>Effect on helminth infections in experimental rodent trials</title>
+        <p>Satrija <italic>et al </italic>[<xref ref-type="bibr" rid="B74">74</xref>] provided evidence that papaya latex was effective in removing <italic>H. bakeri </italic>from experimentally infected mice. The dose response reported in this paper indicated that a single treatment at 8 mg/kg body weight papaya latex caused an 84.5% reduction in worm burdens.</p>
+        <p>We gave mice infected with <italic>H. bakeri </italic>daily treatments of papaya latex for seven days, and assessed faecal egg counts (FEC) on three days before treatment and then on four days after treatment, including the final day when animals were culled for worm counts [<xref ref-type="bibr" rid="B75">75</xref>]. The data in Fig. <xref ref-type="fig" rid="F6">6a</xref> show that, soon after treatment with papaya latex commenced, faecal egg counts of <italic>H. bakeri </italic>fell, and, by day 25, FEC had fallen by 97% in the papaya latex-treated animals. When the animals were autopsied, the reduction in parasite burdens was 92%, although complete loss of worms was not achieved [<xref ref-type="bibr" rid="B75">75</xref>].</p>
+        <fig position="float" id="F6">
+          <label>Figure 6</label>
+          <caption>
+            <p>The effect of treatment with papaya latex on faecal egg counts in mice infected with 200 L3 of <italic>H. bakeri </italic>(A) or 100 eggs of <italic>T. muris </italic>(B). In some cases, the error bars do not show because they are very tight and obscured by the mean data point. In (A) treatment with papaya latex (133 nmol active cysteine proteinase/mouse/day) or water was initiated on day 18 and continued daily until day 24 [<xref ref-type="bibr" rid="B75">75</xref>]. In (B) the first dose of papaya latex (337 nmol active cysteine proteinase/mouse/day) or water was given on day 48 and continued daily until day 54 [<xref ref-type="bibr" rid="B76">76</xref>]. In both figures, the days of treatment are shown by vertical arrows on the abscissa. Reprinted with permission.</p>
+          </caption>
+          <graphic xlink:href="1756-3305-1-29-6"/>
+        </fig>
+        <p>Fig. <xref ref-type="fig" rid="F6">6b</xref> shows that treatment of mice infected with <italic>T. muris </italic>also resulted in rapid reduction of FEC, mean values dropping by 98% by day 55 post infection [<xref ref-type="bibr" rid="B76">76</xref>]. Worm burdens fell by 93% relative to the control group treated only with water. These results demonstrate convincingly that at least some enzyme activity can survive passage through the upper intestine and that sufficient amounts are present in the large intestine to cause the suppression of egg counts and loss of <italic>T. muris</italic>. In this respect, it is pertinent that Hale [<xref ref-type="bibr" rid="B77">77</xref>] showed proteolytic activity throughout the alimentary tract and even in the faeces of mice that had been treated with bromelain, and these observations concur with our data showing that papaya latex CP activity is recoverable throughout the intestine of mice in the hours after treatment, but accumulates particularly in the large intestine [<xref ref-type="bibr" rid="B58">58</xref>]. These experiments provide independent confirmation of the outcomes of earlier trials in humans, with worms living in both the small and large intestines [<xref ref-type="bibr" rid="B68">68</xref>-<xref ref-type="bibr" rid="B70">70</xref>].</p>
+        <p>Dose response experiments confirmed that the efficacy of papaya latex was based on low amounts of CP, with ED<sub>50</sub>s in the nanomolar range (Fig. <xref ref-type="fig" rid="F7">7</xref>). Such low amounts with the high anti-parasite activity that we observed indicate that much of the papaya latex is in fact non-active, and raises the possibility that refinement and concentration of the active principles will enable a reduction of the volumes and weights of papaya latex that have to be currently given to animals to cause loss of worms. Satrija <italic>et al</italic>. [<xref ref-type="bibr" rid="B74">74</xref>] administered milligram quantities to detect an effect on <italic>H. bakeri </italic>in mice and 4&#x2013;8 g/kg body weight (total doses exceeding 150 g/animal) to cause a reduction in <italic>Ascaris suum </italic>in pigs, and our experience with <italic>H. bakeri </italic>concur with these values. However, our demonstration that the active principles are actually present in much smaller concentrations provides the clue that concentration of the active principles may be a worthwhile avenue for refining the use of these agents. Our unpublished data indicate that the active principles are soluble and found in the supernatant fraction of papaya latex after centrifugation, encouraging us to believe that further refinement is a feasible option. As with <italic>in vitro </italic>experiments, we were able to demonstrate that <italic>in vivo </italic>activity also depended on the presence of active CPs, since papaya latex that had been treated with E-64, had no effect on worm burdens and E-64 by itself was also without any effect on worms (Fig. <xref ref-type="fig" rid="F8">8</xref>), [<xref ref-type="bibr" rid="B75">75</xref>]).</p>
+        <fig position="float" id="F7">
+          <label>Figure 7</label>
+          <caption>
+            <p>Dose response with papaya latex in mice infected with <italic>H. bakeri</italic>. Mice were infected with 200 <italic>H. bakeri </italic>and given varying doses of papaya latex corresponding to the nmol amounts of active enzyme illustrated in the figure. Worms were counted 25 days post infection. The log<sub>10 </sub>ED<sub>50 </sub>was calculated as 1.8 (95% CL = 1.72&#x2013;1.89), corresponding to 67nmoles of active cysteine proteinase. The log<sub>10 </sub>ED<sub>95 </sub>was 2.4 (95% CL = 2.14&#x2013;2.67), corresponding to 133nmoles of active enzyme. For full details and comprehensive analysis see, Stepek <italic>et al. </italic>[<xref ref-type="bibr" rid="B75">75</xref>]. Reprinted with permission.</p>
+          </caption>
+          <graphic xlink:href="1756-3305-1-29-7"/>
+        </fig>
+        <fig position="float" id="F8">
+          <label>Figure 8</label>
+          <caption>
+            <p>Evidence that the <italic>in vivo </italic>effect of papaya latex on <italic>H. bakeri </italic>is mediated through cysteine proteinases. Groups of mice infected with 200 L3 of <italic>H. bakeri </italic>were treated with water, E-64 alone, papaya latex (135 nmoles active enzyme) or papaya latex pre-incubated with E-64 (0.64 nM) for 15 minutes prior to oral delivery to mice. Only untreated papaya latex caused a significant reduction in worm burdens. For full analysis and further details, see Stepek <italic>et al </italic>[<xref ref-type="bibr" rid="B75">75</xref>]. Reprinted with permission.</p>
+          </caption>
+          <graphic xlink:href="1756-3305-1-29-8"/>
+        </fig>
+        <p>A relevant question to resolve was whether the mode of action of CPs in papaya latex <italic>in vivo </italic>was the same as that evident <italic>in vitro</italic>. One complication of addressing this question adequately is that as soon as worms are damaged they are likely to begin moving down the intestine, since they would become incapable of holding their position against the flow of ingesta as it is pushed down the intestine by peristalsis. Thus damaged worms are likely to be detected outside their normal site in the gut and it could be argued that the damage was not so much a reflection of the activity of the CPs but rather the consequence of moving into an abnormal site in the gut. However, our experiments contained natural controls that helped to dispel this concern. Papaya latex does not clear all the worms out at each treatment, so some worms remain in their normal anterior site. Indeed we found that 1 hour after treatment, worms could be detected in the lower intestine, showing damaged cuticle and signs of erosion of their surface much like those observed <italic>in vitro</italic>. Two hours after treatment some worms were in the colon with even more substantial damage to their surface, showing complete erosion of the surface layers of the cuticle and exposure of the underlying collagen fibers. However, even at 3 and 4 hours after treatment other worms were seen in the upper small intestine, in their normal site, showing a normal appearance of the synlophe with an undamaged cuticle. That, together with our observation that after treatment with conventional anthelmintics (such as pyrantel, which paralyses worms), no changes were seen in the cuticle as the worms were retrieved from the lower intestine, indicate that it is the CP activity, and not translocation into abnormal sectors of the gut, that is responsible for the damage to worms <italic>in vivo </italic>[<xref ref-type="bibr" rid="B75">75</xref>].</p>
+      </sec>
+    </sec>
+    <sec>
+      <title>The special case of worms that parasitize the stomach</title>
+      <p>The CPs found in the latices and extracts of fruits all have a neutral pH optimum of around 7, with a range, for example in the case of ficin, in which some activity is retained from pH 4 to 8.5 [<xref ref-type="bibr" rid="B40">40</xref>]. Fruit derived, secreted CPs cannot work effectively at lower or higher pH (although some intracellular CPs have lower optimal pHs), so we were not expecting to see an immediate effect on our model stomach worm <italic>P. muricola</italic>. It has even been suggested that the effect of acidity on CPs is irreversible [<xref ref-type="bibr" rid="B78">78</xref>], but quite clearly that cannot be the whole story because in our experiments and the earlier trials with human parasitic worms, the anthelmintic activity was convincingly demonstrated against worms in the small intestine and in the colon [<xref ref-type="bibr" rid="B75">75</xref>,<xref ref-type="bibr" rid="B76">76</xref>]. As expected, we initially observed no effects against <italic>P. muricola </italic>when the papaya latex was given orally. However, when acid secretion was temporarily blocked by giving the antacid cimetidine 30 minutes before the papaya latex, we observed loss of most female worms, although surprisingly no effect on males [<xref ref-type="bibr" rid="B58">58</xref>]. This curious sex bias may just be a question of the available cuticular surface, since female worms are substantially larger than males [<xref ref-type="bibr" rid="B79">79</xref>], although the surface area/volume ratio is larger in smaller organisms. It may also reflect molecular differences in the structural composition of the cuticles of the two sexes of this species. The observation that CPs in combination with cimetidine can be made to express anthelmintic activity in a site where the pH would normally be too acidic for them to be able to work effectively, opens the door to other refinements and combination treatments, although, as yet, this is an unexplored topic.</p>
+    </sec>
+    <sec>
+      <title>Limitations of plant derived CPs</title>
+      <p>In exploring the range of anthelmintic properties of CPs, we also encountered some limitations to their usefulness. For example, we found that they were without any significant effects either in terms of motility or actual evident cuticular damage to <italic>Caenorhabditis elegans </italic>(Stepek <italic>et al</italic>, unpublished observation). In some respects, this was a disappointing finding, since we had hoped that a rapid through-put assay could be developed to screen as yet untested plant sources for useful CP based anthelmintic properties. We even examined some surface cuticular mutant strains, but all to no avail (Stepek, Buttle, Lowe, Duce and Behnke, unpublished observations).</p>
+      <p>Papaya latex was also without any effect on the parasitic stages of nematodes that live in the mucosa as distinct from the lumen of the intestine. The early developmental stages of <italic>H. bakeri </italic>are located in the submucosa, often lying just underneath the serosa, and when treatment was given to coincide with this phase of infection, the worms were unaffected, maturing normally and emerging subsequently to live in the gut lumen [<xref ref-type="bibr" rid="B75">75</xref>]. Similarly, we found no effect on the early stages of <italic>T. muris</italic>, which burrow deep into the crypts in the large intestine [<xref ref-type="bibr" rid="B76">76</xref>]. In some respect, this may actually be a useful property of these agents since there is considerable concern about the development of resistance to the available synthetic anthelmintics, and the argument has been made that worms in refugia may help to offset the appearance of resistance and subsequent loss of activity [<xref ref-type="bibr" rid="B80">80</xref>,<xref ref-type="bibr" rid="B81">81</xref>]. Treatment with CPs would be selective in the sense that it would be stage-specific, therefore, damaging only those worms that actually expose parts of their surface in the gut lumen. Any developmental stage buried in the gut mucosa would escape treatment and help to repopulate the gut subsequently. This in turn would mean that treatment would need to be repeated frequently where the exposure to infective stages is high, such as among ruminants grazing contaminated pasture. However, the treatment would be directed at the adult stages that are seeding the pasture with eggs, and would therefore have an impact on transmission. On an even more positive note, it may be possible to modify feeding regimes to include CPs in the supplementary feed that is often given to grazing livestock to ensure that they have a balanced diet and do not lack essential ions and vitamins, particularly during pregnancy and lactation. An alternative strategy may be to provide fodder containing parts of pineapples, figs and papaya that are rich in naturally-occurring CPs. Such approaches are already being evaluated among small holder farmers keeping pigs, goats and cattle in Australasia [<xref ref-type="bibr" rid="B82">82</xref>,<xref ref-type="bibr" rid="B83">83</xref>].</p>
+      <p>We were surprised to find that the plant-derived CPs did not affect the motility or cuticle of free-living larvae (L1, L2 and L3) of <italic>H. bakeri</italic>, nor the development of larvae within eggs (Stepek <italic>et al</italic>., unpublished data). Given that <italic>C. elegans </italic>was not affected, this may indicate that free-living and soil-dwelling stages of parasitic nematodes, as well as totally free-living species, have a different composition to their outermost cuticular layers. CPs are not only found in plants; they are also secreted by some soil-dwelling bacteria and may be present in the soil [<xref ref-type="bibr" rid="B84">84</xref>] and hence, soil-dwelling nematodes may have evolved defences against CPs. On the other hand, the mammalian intestine does not secrete CPs, the key intestinal enzymes being either serine or aspartic proteinases, against which intestinal nematodes have defences [<xref ref-type="bibr" rid="B85">85</xref>,<xref ref-type="bibr" rid="B86">86</xref>]. In the absence of host secreted intestinal CPs, it is not unreasonable for parasitic stages to cease expression of defences against CPs since cystatins (inhibitors of CPs) would be largely superfluous but nevertheless metabolically demanding to manufacture. In a similar vane, the third stage larvae of <italic>P. muricola</italic>, which encyst in the haemocoele of insects, were also found not to be susceptible to CPs, and it is pertinent that the <italic>Drosophila melanogaster </italic>genome encodes 13 Family C1 proteases [<xref ref-type="bibr" rid="B87">87</xref>] perhaps suggesting that insect-parasitic larvae of nematodes may have evolved effective countermeasures as a consequence. Interestingly, some insects are susceptible to CPs from fruits, and indeed defence against insect pests is considered to be one of their essential functions [<xref ref-type="bibr" rid="B46">46</xref>,<xref ref-type="bibr" rid="B88">88</xref>]. This role is supported by the disappearance of the protective latex from fruits such as papaya once they have ripened, although pineapples are an obvious exception [<xref ref-type="bibr" rid="B89">89</xref>].</p>
+      <p>Although Satrija <italic>et al </italic>[<xref ref-type="bibr" rid="B73">73</xref>,<xref ref-type="bibr" rid="B90">90</xref>] failed to find a significant effect on the ruminant abomasal nematode <italic>H. contortus </italic>by oral delivery, we believe that alternative methods of administration, such as slow release from boluses, and combination treatments to temporarily suppress abomasal acidity, may succeed, but they have still to be evaluated. If useful efficacy against the intestinal parasites of ruminants were to be demonstrated convincingly, the industry may show some interest, since it is in their role in livestock agriculture that anthelmintics succeed or fail.</p>
+    </sec>
+    <sec>
+      <title>Competition with synthetic anthelmintics and the scope for improving formulation and delivery</title>
+      <p>There can be little doubt that in an environment where available anthelmintic drugs are rapidly losing efficacy, alternatives have to be sought before the current drugs cease having any useful effect. There are already signs that in some parts of the world livestock farming has become almost impossible and, for example, farmers have abandoned sheep husbandry because anthelmintics could no longer be used to control worm burdens [<xref ref-type="bibr" rid="B91">91</xref>-<xref ref-type="bibr" rid="B93">93</xref>]. The published information on naturally occurring CPs raises optimism that they may be useful additions to the available armoury of weapons against GI helminths. Where synthetic anthelmintics are still effective, CPs would stand little chance in direct competition (more complex manufacture and preparation, and expense), but they may be a useful weapon where resistance has already tightened its grip. They may also provide a useful control method where CP-producing plants are indigenous in tropical and sub-tropical countries where poor pastoral communities are the norm and nematode infections are endemic. In such areas, farmers could conceivably grow their own anthelmintic crops. However, for commercial production to become a reality, there is still a long way to go in terms of provision of adequate supplies and improvement of formulation and delivery. The pharmaceutical laboratories around the world have invented many sophisticated and elaborate delivery systems for drugs, and we believe that it is not beyond the scope of possibilities for contemporary methods of formulation and delivery to be adapted to improve the access of CPs to the sites within hosts where their target helminths live.</p>
+      <p>From an economic standpoint, ruminants must be the prime target hosts, since this is where anthelmintics succeed or fail in terms of their market success and profitability. Formulations that will enable the CPs to pass through the rumen, show efficacy in the abomasum and then in the small and large intestines are not beyond the scope of achievable objectives, given current advances in pharmacy.</p>
+      <p>As explained earlier there is already strong evidence that CPs show efficacy in monogastric hosts such as rodents, pigs, humans and even poultry. To our knowledge, they have not been tested in horses, but resistance among intestinal nematodes of horses is a big problem in the racing and leisure industries, and there are concerns in both that resistance is becoming more prevalent [<xref ref-type="bibr" rid="B6">6</xref>,<xref ref-type="bibr" rid="B94">94</xref>].</p>
+      <p>Satrija <italic>et al </italic>[<xref ref-type="bibr" rid="B72">72</xref>] showed that papaya latex effectively eliminated <italic>A. suum </italic>from pigs, but were concerned about some of the side effects in animals given the higher doses which were more effective at clearing worms (see below for more on pathology). Although pigs have their own spectrum of helminths, including several species of nematodes (Table <xref ref-type="table" rid="T2">2</xref>), there is little indication that these cause any significant economic losses on farms where the animals are raised intensively indoors [<xref ref-type="bibr" rid="B95">95</xref>]. However, there are reports that in developing countries pigs do harbour quite intense infections with nematodes and these may be responsible for losses in production efficiency [<xref ref-type="bibr" rid="B96">96</xref>,<xref ref-type="bibr" rid="B97">97</xref>]. There are also some indications of resistance [<xref ref-type="bibr" rid="B9">9</xref>], although this is not yet a serious problem in the pig industry worldwide. However, in developed countries there is now a strong trend for a return to outdoor, free-range pig husbandry, and free-range farming is undoubtedly going to lead to higher worm burdens since fields cannot be cleaned as easily or as frequently as indoor concrete pens [<xref ref-type="bibr" rid="B98">98</xref>]. Controlling worms through regular dosing of outdoor pigs is likely to see an exacerbation of resistance in the future.</p>
+      <p>As stated earlier, CPs, have been used as anthelmintics for humans in the past, even in Europe in the eighteenth century, but these and related products have never prospered commercially because GI nematode infections are not a real issue in Europe, and because they were overshadowed by the synthetic drugs [<xref ref-type="bibr" rid="B34">34</xref>]. However, there are indications that some species of human GI nematodes, notably hookworms, are beginning to show signs of resistance [<xref ref-type="bibr" rid="B12">12</xref>,<xref ref-type="bibr" rid="B15">15</xref>], and it may be that we will have to return to these older recipes in the future. Undoubtedly, the formulation and delivery of CPs for human use can be improved, and this may help to make them acceptable in modern medicine.</p>
+    </sec>
+    <sec>
+      <title>Other uses</title>
+      <p>The molecular basis of the effect on nematodes is a fertile field for future exploration. Nothing is known about the target sites of CPs on the nematode cuticle. These must be proteins, but what precise role do they play in the cuticle and where exactly are they situated in relation to other cuticular molecules such that their digestion has immediate dramatic consequences? And what of tapeworms and acanthocephalans? Do they share the same surface proteins? This is unlikely given the fundamental differences in structure between the nematode cuticle, and the platyhelminth and acanthocephalan teguments, but even if the affected proteins are quite distinct with common target sites, that in itself will be of considerable interest. Can further research into these aspects help to improve our understanding of the composition of the nematode cuticle and the platyhelminth and acanthocephalan teguments?</p>
+    </sec>
+    <sec>
+      <title>Side effects and pathology</title>
+      <p>The early reports of the use of papain for treatment of human infections generally found little or no evidence of side effects that could be ascribed as additional to the discomfort and pathology attributable to the worms. Jonxis &amp; Bekius [<xref ref-type="bibr" rid="B43">43</xref>] treated children less than 8 years old and reported that none of the children showed any problems during and after treatment. Likewise, our experiments in mice [<xref ref-type="bibr" rid="B75">75</xref>], mostly with papaya latex, and those of Satrija <italic>et al </italic>[<xref ref-type="bibr" rid="B72">72</xref>,<xref ref-type="bibr" rid="B74">74</xref>], have failed to indicate any significant side effects, although the latter authors found some signs of constipation at the higher doses that they employed. However, the intestinal mucosa appeared not to have been affected and this concurs with our own data, where the treated mice showed a temporary period of weight loss during the treatment phase, but even this was not substantial. Others have reported more substantial side effects. Satrija <italic>et al. </italic>[<xref ref-type="bibr" rid="B72">72</xref>] were concerned about the effects on the gut of pigs treated at the higher dose regimens. De Amorin <italic>et al </italic>[<xref ref-type="bibr" rid="B64">64</xref>] observed hemorrhagic microfoci in the mucosa of mice treated with the latices of <italic>F. insipida </italic>and <italic>F. carica</italic>, and commented on lethargy in mice treated at the highest levels, but we have not observed anything resembling these symptoms in mice treated with papaya latex. If these side effects are confirmed in respect of particular preparations of CPs, it is our belief that appropriate formulations may be devised to reduce their effects on the host, whilst preserving their anthelmintic properties.</p>
+      <p>CPs are renowned for their allergenic properties [<xref ref-type="bibr" rid="B99">99</xref>]. For example, <italic>Der p</italic>I from the house dust mite, which is responsible for many cases of asthma and various types of allergies, is related to those from fruits such as papaya [<xref ref-type="bibr" rid="B100">100</xref>]. As far as we are aware, the immunogenic properties of orally administered fruit-derived CPs have only been examined by Hale [<xref ref-type="bibr" rid="B77">77</xref>], who detected relatively low levels of circulating bromelain specific IgG after 18 weeks of daily oral treatment with bromelain. Nevertheless, papain is known to be allergenic when inhaled, and precautions would need to be taken if individuals or animals were presensitized [<xref ref-type="bibr" rid="B29">29</xref>].</p>
+    </sec>
+    <sec>
+      <title>Who will use and profit from naturally-occurring anthelmintics?</title>
+      <p>Whilst we believe that, with some investment, CPs could be developed into anthelmintics that would have a useful role in modern agriculture, in order to gain a licence for use in this capacity, they would have to be of medicinal quality. In other words, they would have to pass the standard randomised, double-blind, placebo-controlled trials, and this, we are confident, they can do in respect of humans and pigs.</p>
+      <p>However, there is another road. CPs are naturally-occurring proteins in food that is eaten by people and animals on a daily basis, and it may be that they will turn out to have a better future as cruder versions in food additives, perhaps in the niche market of organic farming. Whole fruits, stems, leaves and extracts may all find a role in this respect.</p>
+      <p>There is yet another group of potential users, among the small-holder farmers in developing countries, who are only too familiar with the losses caused by GI nematodes to their livestock [<xref ref-type="bibr" rid="B2">2</xref>]. Again, cruder versions of extracts from plants, or plants of local providence, may be the solution in these cases and, as pointed out earlier, such trials are already under way in Australasia.</p>
+      <p>For human use, the CPs would have to jump through the same legislative hoops as any other medicinal product for public use, and eventually they would need to be available in a tablet or syrup form, that is palatable. However, given the enormous, burgeoning market in the health industry, CPs may also find a place as herbal medicines on the shelves of health stores rather than on those of pharmacists, although there is much controversy and a fine line to tread with respect to what is medicine and what a health supplement. Acceptable and appropriate labelling of such products to ensure that they are not classified by health authorities as conventional medicines is all important.</p>
+      <p>The biggest challenge of all is to persuade the pharmaceutical industry to support the development of CPs as novel anthelmintics, but there are seemingly insurmountable obstacles. How can the problem of prior art be surmounted? There is already a lot of information in the public domain about the anthelmintic properties of CPs, as we have indicated in this review, and this presents an impediment to attempts to patent the agents, an essential step in protecting investments in development. There is no easy solution, but the fact that we have available natural products that are known to show strong anthelmintic properties in a world where parasitic worms continue to cause disease in human populations and losses to the livestock agriculture, and seemingly cannot find the support to develop them into effective medicines, speaks loudly about contemporary priorities.</p>
+      <p>Perhaps the most exciting aspect of the possibilities for CPs is the scope for developing new crops for farmers in the developing nations of this world [<xref ref-type="bibr" rid="B27">27</xref>]. Currently, only two species of fig latices have been examined, and yet the family of trees to which these belong is enormous. There are hundreds of species of figs that have yet to be tested, and many other plants also synthesize CPs [<xref ref-type="bibr" rid="B101">101</xref>-<xref ref-type="bibr" rid="B103">103</xref>]. Some are likely to harbour less, others more effective CPs. Recently, it has been discovered that highland papayas (<italic>Vasconcellea </italic>spp.), of which 21 species are known, contain considerably higher levels of CP activity, associated with more enzyme in the latex and have more constituent CPs than <italic>C. papaya </italic>[<xref ref-type="bibr" rid="B104">104</xref>]. Other known sources of CPs include the milkweed family (Asclepiadaceae), as for example <italic>Calotropis procerca </italic>[<xref ref-type="bibr" rid="B105">105</xref>,<xref ref-type="bibr" rid="B106">106</xref>] and <italic>Asclepias sinaica </italic>[<xref ref-type="bibr" rid="B107">107</xref>], although, unlike those of fruits, the latices of these plants also contain powerful toxins such as cardiac glycosides. Many more plant sources remain to be discovered, as shown by a recent survey of plants from Mali [<xref ref-type="bibr" rid="B103">103</xref>], which revealed 9 of ten plant species to express CP activity and particularly high levels in <italic>Cissus qaudrangularis</italic>, <italic>Securidaca longepedunculus </italic>and <italic>Stylosanthes erecta</italic>. Many of the source plants require a warm climate, so when suitable plant species are identified, and once the market for CPs grows, there will be opportunities for farmers to take on this new challenge, which in the end, may turn out to be more lucrative than current conventional crops.</p>
+      <p>Equally exciting is the possibility that through conventional breeding, scientists of the future may be able to develop new varieties of the existing species as well as of new species that have yet to be discovered, that will produce greater quantities of, or more effective, CPs. Where CPs are co-expressed with toxins, it may be possible through selective breeding to lose their toxicity without impairing the yield of CPs. Although controversial, the methodology of transgenesis is well established in this age, and offers a further approach to improving the outputs of CPs from plants [<xref ref-type="bibr" rid="B38">38</xref>].</p>
+      <p>Undoubtedly, there are serious obstacles ahead, and a long path to tread, but we believe that, in this current age, where despite all the attempts at control, parasitic nematodes are still widely distributed in human populations and livestock, we need to think ahead and prepare for the eventuality of all currently available synthetic anthelmintics failing in the near future. In this context, standby alternatives will have an important role to play, but more importantly we believe that, with investment in improving the delivery and formulations of available CPs, they can be developed into effective anthelmintics with roles to play both in the niche markets of organic farming, providing small holders throughout the developing world with easily accessible local remedies and perhaps eventually in modern intensive farming and medicine as well.</p>
+    </sec>
+    <sec>
+      <title>Competing interests</title>
+      <p>The authors declare that they have no competing interests.</p>
+    </sec>
+    <sec>
+      <title>Authors' contributions</title>
+      <p>JMB conceived the study, supervised the laboratory work and wrote the paper. DJB conceived the study, supervised the laboratory work and wrote the paper. GS carried out the laboratory work and wrote the paper. AL carried out the laboratory work and wrote the paper. IRD conceived the study, supervised the laboratory work and wrote the paper. All authors read and approved the final manuscript.</p>
+    </sec>
+    <sec sec-type="supplementary-material">
+      <title>Supplementary Material</title>
+      <supplementary-material content-type="local-data" id="S1">
+        <caption>
+          <title>Additional file 1</title>
+          <p>A single adult female living specimen of <italic>Heligmosomoides bakeri </italic>was mounted on a microscope slide in Hanks's saline and sandwiched beneath a glass coverslip supported on petroleum jelly. The worm was imaged using a Zeiss Axiovert 135TV inverted microscope and photographed using a Scion CFW 1310 M digital camera. A solution of 25 &#x3BC;M papain was introduced below the coverslip and images were captured on a PC using Streampix III time-lapse software at a frame rate of approximately 1 image every 3 seconds for 30 minutes. The video file was edited and exported as an mpeg running at 10 times the original speed. The file is titled "H. bakeri female papain.mpg" and initially shows the worm freely moving in the papain solution. After the animal forms a helical coil, a lesion appears on the left of the worm. This is followed by rupture of the worm and loss of the viscera through the rupture leading to the death of the parasite.</p>
+        </caption>
+        <media xlink:href="1756-3305-1-29-S1.mpg" mimetype="video" mime-subtype="mpeg">
+          <caption>
+            <p>Click here for file</p>
+          </caption>
+        </media>
+      </supplementary-material>
+    </sec>
+  </body>
+  <back>
+    <ack>
+      <sec>
+        <title>Acknowledgements</title>
+        <p>We thank the Leverhulme Trust for funding our research project. We are also grateful to Martin Garnett and Hany Elsheikha for their constructive advice on earlier drafts of this paper. We thank two anonymous referees, whose advice greatly improved the quality of this review.</p>
+      </sec>
+    </ack>
+    <ref-list>
+      <ref id="B1">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Nieuwhof</surname>
+              <given-names>GJ</given-names>
+            </name>
+            <name>
+              <surname>Bishop</surname>
+              <given-names>SC</given-names>
+            </name>
+          </person-group>
+          <article-title>Costs of the major endemic diseases of sheep in Great Britain and the potential benefits of reduction in disease impact</article-title>
+          <source>Anim Sci</source>
+          <year>2005</year>
+          <volume>81</volume>
+          <fpage>23</fpage>
+          <lpage>29</lpage>
+        </citation>
+      </ref>
+      <ref id="B2">
+        <citation citation-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Perry</surname>
+              <given-names>BD</given-names>
+            </name>
+            <name>
+              <surname>Randolph</surname>
+              <given-names>TF</given-names>
+            </name>
+            <name>
+              <surname>McDermott</surname>
+              <given-names>JJ</given-names>
+            </name>
+            <name>
+              <surname>Sones</surname>
+              <given-names>KR</given-names>
+            </name>
+            <name>
+              <surname>Thornton</surname>
+              <given-names>PK</given-names>
+            </name>
+          </person-group>
+          <source>Investing in Animal Health Research to Alleviate Poverty</source>
+          <year>2002</year>
+          <publisher-name>International Livestock Research Institute, Nairobi, Kenya</publisher-name>
+        </citation>
+      </ref>
+      <ref id="B3">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Bethony</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Brooker</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Albonico</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Geiger</surname>
+              <given-names>SM</given-names>
+            </name>
+            <name>
+              <surname>Loukas</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Diement</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Hotez</surname>
+              <given-names>PJ</given-names>
+            </name>
+          </person-group>
+          <article-title>Soil-transmitted helminth infections: ascariasis, trichuriasis, and hookworm</article-title>
+          <source>Lancet</source>
+          <year>2006</year>
+          <volume>367</volume>
+          <fpage>1521</fpage>
+          <lpage>1532</lpage>
+          <pub-id pub-id-type="pmid">16679166</pub-id>
+        </citation>
+      </ref>
+      <ref id="B4">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Horton</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>
+          <article-title>Human gastrointestinal helminth infections: are they now neglected diseases?</article-title>
+          <source>Trends Parasitol</source>
+          <year>2003</year>
+          <volume>19</volume>
+          <fpage>527</fpage>
+          <lpage>531</lpage>
+          <pub-id pub-id-type="pmid">14580965</pub-id>
+        </citation>
+      </ref>
+      <ref id="B5">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kaplan</surname>
+              <given-names>RM</given-names>
+            </name>
+          </person-group>
+          <article-title>Drug resistance in nematodes of veterinary importance</article-title>
+          <source>Trends Parasitol</source>
+          <year>2004</year>
+          <volume>20</volume>
+          <fpage>477</fpage>
+          <lpage>481</lpage>
+          <pub-id pub-id-type="pmid">15363441</pub-id>
+        </citation>
+      </ref>
+      <ref id="B6">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Little</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Flowers</surname>
+              <given-names>JR</given-names>
+            </name>
+            <name>
+              <surname>Hammerberg</surname>
+              <given-names>BH</given-names>
+            </name>
+            <name>
+              <surname>Gardner</surname>
+              <given-names>SY</given-names>
+            </name>
+          </person-group>
+          <article-title>Management of drug-resistant cyathostominosis on a breeding farm in central North Carolina</article-title>
+          <source>Equine Vet J</source>
+          <year>2003</year>
+          <volume>35</volume>
+          <fpage>246</fpage>
+          <lpage>251</lpage>
+          <pub-id pub-id-type="pmid">12755426</pub-id>
+        </citation>
+      </ref>
+      <ref id="B7">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kaplan</surname>
+              <given-names>RM</given-names>
+            </name>
+            <name>
+              <surname>Klei</surname>
+              <given-names>TR</given-names>
+            </name>
+            <name>
+              <surname>Lyons</surname>
+              <given-names>ET</given-names>
+            </name>
+            <name>
+              <surname>Lester</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Courtney</surname>
+              <given-names>CH</given-names>
+            </name>
+            <name>
+              <surname>French</surname>
+              <given-names>DD</given-names>
+            </name>
+            <name>
+              <surname>Tolliver</surname>
+              <given-names>SC</given-names>
+            </name>
+            <name>
+              <surname>Vidyashankar</surname>
+              <given-names>AN</given-names>
+            </name>
+            <name>
+              <surname>Zhao</surname>
+              <given-names>Y</given-names>
+            </name>
+          </person-group>
+          <article-title>Prevalence of anthelmintic resistant cyathostomes on horse farms</article-title>
+          <source>J Am Vet Med Assoc</source>
+          <year>2004</year>
+          <volume>225</volume>
+          <fpage>903</fpage>
+          <lpage>910</lpage>
+          <pub-id pub-id-type="pmid">15485051</pub-id>
+        </citation>
+      </ref>
+      <ref id="B8">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Suarez</surname>
+              <given-names>VH</given-names>
+            </name>
+            <name>
+              <surname>Cristel</surname>
+              <given-names>SL</given-names>
+            </name>
+          </person-group>
+          <article-title>Anthelmintic resistance in cattle nematodes in the western Pampeana Region of Argentina</article-title>
+          <source>Vet Parasitol</source>
+          <year>2007</year>
+          <volume>144</volume>
+          <fpage>111</fpage>
+          <lpage>117</lpage>
+          <pub-id pub-id-type="pmid">17049746</pub-id>
+        </citation>
+      </ref>
+      <ref id="B9">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gerwent</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Failing</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Bauer</surname>
+              <given-names>C</given-names>
+            </name>
+          </person-group>
+          <article-title>Prevalence of levamisole and benzimidazole resistance in <italic>Oesophagostomum </italic>populations of pig-breeding farms in North Rhine-Westphalia, Germany</article-title>
+          <source>Parasitol Res</source>
+          <year>2002</year>
+          <volume>88</volume>
+          <fpage>63</fpage>
+          <lpage>68</lpage>
+          <pub-id pub-id-type="pmid">11822739</pub-id>
+        </citation>
+      </ref>
+      <ref id="B10">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Coles</surname>
+              <given-names>GC</given-names>
+            </name>
+            <name>
+              <surname>Warren</surname>
+              <given-names>AK</given-names>
+            </name>
+            <name>
+              <surname>Best</surname>
+              <given-names>JR</given-names>
+            </name>
+          </person-group>
+          <article-title>Triple resistant <italic>Teladorsagia (Ostertagia) </italic>from Angora goats</article-title>
+          <source>Vet Rec</source>
+          <year>1996</year>
+          <volume>139</volume>
+          <fpage>299</fpage>
+          <lpage>300</lpage>
+          <pub-id pub-id-type="pmid">8890469</pub-id>
+        </citation>
+      </ref>
+      <ref id="B11">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Wrigley</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>McArthur</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>McKenna</surname>
+              <given-names>PB</given-names>
+            </name>
+            <name>
+              <surname>Mariadas</surname>
+              <given-names>B</given-names>
+            </name>
+          </person-group>
+          <article-title>Resistance to a triple combination of broad-spectrum anthelmintics in naturally-acquired <italic>Ostertagia circumcincta </italic>infections in sheep</article-title>
+          <source>N Z Vet J</source>
+          <year>2006</year>
+          <volume>54</volume>
+          <fpage>47</fpage>
+          <lpage>49</lpage>
+          <pub-id pub-id-type="pmid">16528395</pub-id>
+        </citation>
+      </ref>
+      <ref id="B12">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>De Clercq</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Sacko</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Behnke</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Gilbert</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Dorny</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Vercruysse</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>
+          <article-title>Failure of mebendazole in treatment of human hookworm infections in the Southern Region of Mali</article-title>
+          <source>Am J Trop Med Hyg</source>
+          <year>1997</year>
+          <volume>57</volume>
+          <fpage>25</fpage>
+          <lpage>30</lpage>
+          <pub-id pub-id-type="pmid">9242313</pub-id>
+        </citation>
+      </ref>
+      <ref id="B13">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Reynoldson</surname>
+              <given-names>JA</given-names>
+            </name>
+            <name>
+              <surname>Behnke</surname>
+              <given-names>JM</given-names>
+            </name>
+            <name>
+              <surname>Gracey</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Horton</surname>
+              <given-names>RJ</given-names>
+            </name>
+            <name>
+              <surname>Spargo</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Hopkins</surname>
+              <given-names>RM</given-names>
+            </name>
+            <name>
+              <surname>Constantine</surname>
+              <given-names>CC</given-names>
+            </name>
+            <name>
+              <surname>Gilbert</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Stead</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Hobbs</surname>
+              <given-names>RP</given-names>
+            </name>
+            <name>
+              <surname>Thompson</surname>
+              <given-names>RAC</given-names>
+            </name>
+          </person-group>
+          <article-title>Efficacy of albendazole against <italic>Giardia </italic>and hookworm in a remote Aboriginal community in the north of Western Australia</article-title>
+          <source>Acta Trop</source>
+          <year>1998</year>
+          <volume>71</volume>
+          <fpage>27</fpage>
+          <lpage>44</lpage>
+          <pub-id pub-id-type="pmid">9776141</pub-id>
+        </citation>
+      </ref>
+      <ref id="B14">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Flohr</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Tuyen</surname>
+              <given-names>LN</given-names>
+            </name>
+            <name>
+              <surname>Lewis</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Minh</surname>
+              <given-names>TT</given-names>
+            </name>
+            <name>
+              <surname>Campbell</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Britton</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Williams</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Hien</surname>
+              <given-names>TT</given-names>
+            </name>
+            <name>
+              <surname>Farrar</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Quinnell</surname>
+              <given-names>RJ</given-names>
+            </name>
+          </person-group>
+          <article-title>Low efficacy of mebendazole against hookworm in Vietnam: two randomized controlled trials</article-title>
+          <source>Am J Trop Med Hyg</source>
+          <year>2007</year>
+          <volume>76</volume>
+          <fpage>732</fpage>
+          <lpage>736</lpage>
+          <pub-id pub-id-type="pmid">17426180</pub-id>
+        </citation>
+      </ref>
+      <ref id="B15">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Albonico</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Ramsan</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Wright</surname>
+              <given-names>V</given-names>
+            </name>
+            <name>
+              <surname>Jape</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Haji</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Taylor</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Savioli</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Bickle</surname>
+              <given-names>Q</given-names>
+            </name>
+          </person-group>
+          <article-title>Soil-transmitted nematode infections and mebendazole treatment in Mafia island school-children</article-title>
+          <source>Ann Trop Med Parasitol</source>
+          <year>2002</year>
+          <volume>96</volume>
+          <fpage>717</fpage>
+          <lpage>26</lpage>
+          <pub-id pub-id-type="pmid">12537633</pub-id>
+        </citation>
+      </ref>
+      <ref id="B16">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Albonico</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Bickle</surname>
+              <given-names>Q</given-names>
+            </name>
+            <name>
+              <surname>Ramsan</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Montresor</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Savioli</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Taylor</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <article-title>Efficacy of mebendazole and levamisole alone or in combination against intestinal nematode infections after repeated targeted mebendazole treatment in Zanzibar</article-title>
+          <source>Bull World Health Organ</source>
+          <year>2003</year>
+          <volume>81</volume>
+          <fpage>343</fpage>
+          <lpage>352</lpage>
+          <pub-id pub-id-type="pmid">12856052</pub-id>
+        </citation>
+      </ref>
+      <ref id="B17">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Savioli</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Albonico</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Engels</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Montresor</surname>
+              <given-names>A</given-names>
+            </name>
+          </person-group>
+          <article-title>Progress in the prevention and control of schistosomiasis and soil-transmitted helminthiasis</article-title>
+          <source>Parasitol Int</source>
+          <year>2004</year>
+          <volume>53</volume>
+          <fpage>103</fpage>
+          <lpage>113</lpage>
+          <pub-id pub-id-type="pmid">15081942</pub-id>
+        </citation>
+      </ref>
+      <ref id="B18">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hotez</surname>
+              <given-names>PJ</given-names>
+            </name>
+            <name>
+              <surname>Molyneux</surname>
+              <given-names>DH</given-names>
+            </name>
+            <name>
+              <surname>Fenwick</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Ottesen</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Ehrlich Sachs</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Sachs</surname>
+              <given-names>JD</given-names>
+            </name>
+          </person-group>
+          <article-title>Incorporating a rapid-impact package for neglected tropical diseases with programs for HIV/AIDS, tuberculosis and malaria</article-title>
+          <source>PLoS Med</source>
+          <year>2006</year>
+          <volume>3</volume>
+          <fpage>576</fpage>
+          <lpage>584</lpage>
+        </citation>
+      </ref>
+      <ref id="B19">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hotez</surname>
+              <given-names>PJ</given-names>
+            </name>
+            <name>
+              <surname>Molyneux</surname>
+              <given-names>DH</given-names>
+            </name>
+            <name>
+              <surname>Fenwick</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Kumaresan</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Ehrlich Sachs</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Sachs</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Savioli</surname>
+              <given-names>L</given-names>
+            </name>
+          </person-group>
+          <article-title>Control of neglected tropical diseases</article-title>
+          <source>N Eng J Med</source>
+          <year>2007</year>
+          <volume>357</volume>
+          <fpage>1027</fpage>
+          <pub-id pub-id-type="pmid">17804846</pub-id>
+        </citation>
+      </ref>
+      <ref id="B20">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Coles</surname>
+              <given-names>GC</given-names>
+            </name>
+          </person-group>
+          <article-title>Chemotherapy of human nematodes: learning from the problems of sheep</article-title>
+          <source>J R Soc Med</source>
+          <year>1995</year>
+          <volume>88</volume>
+          <fpage>649P</fpage>
+          <lpage>651P</lpage>
+          <pub-id pub-id-type="pmid">8544152</pub-id>
+        </citation>
+      </ref>
+      <ref id="B21">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Geerts</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Gryseels</surname>
+              <given-names>B</given-names>
+            </name>
+          </person-group>
+          <article-title>Drug resistance in human helminths: current situation and lessons from livestock</article-title>
+          <source>Clin Microbiol Rev</source>
+          <year>2000</year>
+          <volume>13</volume>
+          <fpage>207</fpage>
+          <lpage>222</lpage>
+          <pub-id pub-id-type="pmid">10755998</pub-id>
+        </citation>
+      </ref>
+      <ref id="B22">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Geary</surname>
+              <given-names>TG</given-names>
+            </name>
+            <name>
+              <surname>Sangster</surname>
+              <given-names>NC</given-names>
+            </name>
+            <name>
+              <surname>Thompson</surname>
+              <given-names>DP</given-names>
+            </name>
+          </person-group>
+          <article-title>Frontiers in anthelmintic pharmacology</article-title>
+          <source>Vet Parasitol</source>
+          <year>1999</year>
+          <volume>84</volume>
+          <fpage>275</fpage>
+          <lpage>295</lpage>
+          <pub-id pub-id-type="pmid">10456419</pub-id>
+        </citation>
+      </ref>
+      <ref id="B23">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Xiao</surname>
+              <given-names>S-H</given-names>
+            </name>
+            <name>
+              <surname>Wu</surname>
+              <given-names>H-M</given-names>
+            </name>
+            <name>
+              <surname>Tanner</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Utzinger</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Chong</surname>
+              <given-names>W</given-names>
+            </name>
+          </person-group>
+          <article-title>Tribendimidine: a promising, safe and broad-spectrum anthelmintic agent from China</article-title>
+          <source>Acta Trop</source>
+          <year>2005</year>
+          <volume>94</volume>
+          <fpage>1</fpage>
+          <lpage>14</lpage>
+          <pub-id pub-id-type="pmid">15777691</pub-id>
+        </citation>
+      </ref>
+      <ref id="B24">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cappello</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Bungiro</surname>
+              <given-names>RD</given-names>
+            </name>
+            <name>
+              <surname>Harrison</surname>
+              <given-names>LM</given-names>
+            </name>
+            <name>
+              <surname>Bischof</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Griffitts</surname>
+              <given-names>JS</given-names>
+            </name>
+            <name>
+              <surname>Barrows</surname>
+              <given-names>BD</given-names>
+            </name>
+            <name>
+              <surname>Aroian</surname>
+              <given-names>RV</given-names>
+            </name>
+          </person-group>
+          <article-title>A purified <italic>Bacillus thuringiensis </italic>crystal protein with therapeutic activity against the hookworm parasite <italic>Ancylostoma ceylanicum</italic></article-title>
+          <source>Proc N Acad Sci USA</source>
+          <year>2006</year>
+          <volume>103</volume>
+          <fpage>15154</fpage>
+          <lpage>15159</lpage>
+        </citation>
+      </ref>
+      <ref id="B25">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Harder</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Holden-Dye</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Walker</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Wunderlich</surname>
+              <given-names>F</given-names>
+            </name>
+          </person-group>
+          <article-title>Mechanisms of action of emodepside</article-title>
+          <source>Parasitol Res</source>
+          <year>2005</year>
+          <volume>97</volume>
+          <fpage>S1</fpage>
+          <lpage>S10</lpage>
+          <pub-id pub-id-type="pmid">16228263</pub-id>
+        </citation>
+      </ref>
+      <ref id="B26">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kaminsky</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Ducray</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Jung</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Clover</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Rufener</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Bouvier</surname>
+              <given-names>J</given-names>
+            </name>
+            <collab>etc</collab>
+          </person-group>
+          <article-title>A new class of anthelmintics effective against drug-resistant nematodes</article-title>
+          <source>Nature</source>
+          <year>2008</year>
+          <volume>452</volume>
+          <fpage>176</fpage>
+          <lpage>180</lpage>
+          <pub-id pub-id-type="pmid">18337814</pub-id>
+        </citation>
+      </ref>
+      <ref id="B27">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hammond</surname>
+              <given-names>JA</given-names>
+            </name>
+            <name>
+              <surname>Fielding</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Bishop</surname>
+              <given-names>SC</given-names>
+            </name>
+          </person-group>
+          <article-title>Prospects for plant anthelmintics in tropical veterinary medicine</article-title>
+          <source>Vet Res Commun</source>
+          <year>1997</year>
+          <volume>21</volume>
+          <fpage>213</fpage>
+          <lpage>228</lpage>
+          <pub-id pub-id-type="pmid">9090048</pub-id>
+        </citation>
+      </ref>
+      <ref id="B28">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Waller</surname>
+              <given-names>PJ</given-names>
+            </name>
+            <name>
+              <surname>Bernes</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Thamsborg</surname>
+              <given-names>SM</given-names>
+            </name>
+            <name>
+              <surname>Sukura</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Richter</surname>
+              <given-names>SH</given-names>
+            </name>
+            <name>
+              <surname>Ingebrigtsen</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>H&#xF6;glund</surname>
+              <given-names/>
+            </name>
+          </person-group>
+          <article-title>Plants as de-worming agents of livestock in the Nordic Countries: historical perspective, popular beliefs and prospects for the future</article-title>
+          <source>Acta Vet Scand</source>
+          <year>2001</year>
+          <volume>42</volume>
+          <fpage>31</fpage>
+          <lpage>44</lpage>
+          <pub-id pub-id-type="pmid">11455900</pub-id>
+        </citation>
+      </ref>
+      <ref id="B29">
+        <citation citation-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mueller</surname>
+              <given-names>MS</given-names>
+            </name>
+            <name>
+              <surname>Mechler</surname>
+              <given-names>E</given-names>
+            </name>
+          </person-group>
+          <source>Medicinal Plants in Tropical Countries Traditional Use &#x2013; Experience-Facts</source>
+          <year>2005</year>
+          <publisher-name>Stuttgart: Thieme</publisher-name>
+        </citation>
+      </ref>
+      <ref id="B30">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Tagboto</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Townson</surname>
+              <given-names>S</given-names>
+            </name>
+          </person-group>
+          <article-title>Antiparasitic properties of medicinal plants and other naturally occurring products</article-title>
+          <source>Adv Parasitol</source>
+          <year>2001</year>
+          <volume>50</volume>
+          <fpage>199</fpage>
+          <lpage>295</lpage>
+          <pub-id pub-id-type="pmid">11757332</pub-id>
+        </citation>
+      </ref>
+      <ref id="B31">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Githiori</surname>
+              <given-names>JB</given-names>
+            </name>
+            <name>
+              <surname>Athanasiadou</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Thamsborg</surname>
+              <given-names>SM</given-names>
+            </name>
+          </person-group>
+          <article-title>Use of plants in novel approaches for control of gastrointestinal helminths in livestock with emphasis on small ruminants</article-title>
+          <source>Vet Parasitol</source>
+          <year>2006</year>
+          <volume>139</volume>
+          <fpage>308</fpage>
+          <lpage>320</lpage>
+          <pub-id pub-id-type="pmid">16725262</pub-id>
+        </citation>
+      </ref>
+      <ref id="B32">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gomez-Galera</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Pelacho</surname>
+              <given-names>AM</given-names>
+            </name>
+            <name>
+              <surname>Gene</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Capell</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Christou</surname>
+              <given-names>P</given-names>
+            </name>
+          </person-group>
+          <article-title>The genetic manipulation of medicinal and aromatic plants</article-title>
+          <source>Plant Cell Rep</source>
+          <year>2007</year>
+          <volume>26</volume>
+          <fpage>1689</fpage>
+          <lpage>1715</lpage>
+          <pub-id pub-id-type="pmid">17609957</pub-id>
+        </citation>
+      </ref>
+      <ref id="B33">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Githiori</surname>
+              <given-names>JB</given-names>
+            </name>
+            <name>
+              <surname>H&#xF6;glund</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Waller</surname>
+              <given-names>PJ</given-names>
+            </name>
+            <name>
+              <surname>Baker</surname>
+              <given-names>RL</given-names>
+            </name>
+          </person-group>
+          <article-title>The anthelmintic efficacy of the plant, <italic>Albizia anthelmintica</italic>, against the nematode parasite <italic>Haemonchus contortus </italic>of sheep and <italic>Heligmosomoides polygyrus </italic>in mice</article-title>
+          <source>Vet Parasitol</source>
+          <year>2003</year>
+          <volume>116</volume>
+          <fpage>23</fpage>
+          <lpage>34</lpage>
+          <pub-id pub-id-type="pmid">14519324</pub-id>
+        </citation>
+      </ref>
+      <ref id="B34">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Taylor</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Berridge</surname>
+              <given-names>V</given-names>
+            </name>
+          </person-group>
+          <article-title>Medicinal plants and malaria: an historical case study of research at the London School of Hygiene and Tropical Medicine in the twentieth century</article-title>
+          <source>Trans Roy Soc Trop Med Hyg</source>
+          <year>2006</year>
+          <volume>100</volume>
+          <fpage>707</fpage>
+          <lpage>714</lpage>
+          <pub-id pub-id-type="pmid">16546230</pub-id>
+        </citation>
+      </ref>
+      <ref id="B35">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Campbell</surname>
+              <given-names>WC</given-names>
+            </name>
+          </person-group>
+          <article-title>Ivermectin: an update</article-title>
+          <source>Parasitol Today</source>
+          <year>1985</year>
+          <volume>1</volume>
+          <fpage>10</fpage>
+          <lpage>16</lpage>
+          <pub-id pub-id-type="pmid">15275618</pub-id>
+        </citation>
+      </ref>
+      <ref id="B36">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Athanasiadou</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Gray</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Younie</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Tzamaloukas</surname>
+              <given-names>O</given-names>
+            </name>
+            <name>
+              <surname>Jackson</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Kyriazakis</surname>
+              <given-names>I</given-names>
+            </name>
+          </person-group>
+          <article-title>The use of chicory for parasite control in organic ewes and their lambs</article-title>
+          <source>Parasitology</source>
+          <year>2007</year>
+          <volume>134</volume>
+          <fpage>299</fpage>
+          <lpage>307</lpage>
+          <pub-id pub-id-type="pmid">17032469</pub-id>
+        </citation>
+      </ref>
+      <ref id="B37">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Shaik</surname>
+              <given-names>SA</given-names>
+            </name>
+            <name>
+              <surname>Terrill</surname>
+              <given-names>TH</given-names>
+            </name>
+            <name>
+              <surname>Miller</surname>
+              <given-names>JE</given-names>
+            </name>
+            <name>
+              <surname>Kouakou</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Kannan</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Kaplan</surname>
+              <given-names>RM</given-names>
+            </name>
+            <name>
+              <surname>Burke</surname>
+              <given-names>JM</given-names>
+            </name>
+            <name>
+              <surname>Mosjidis</surname>
+              <given-names>JA</given-names>
+            </name>
+          </person-group>
+          <article-title><italic>Sericea lespedeza </italic>hay as a natural deworming agent against gastrointestinal nematode infection in goats</article-title>
+          <source>Vet Parasitol</source>
+          <year>2006</year>
+          <volume>139</volume>
+          <fpage>150</fpage>
+          <lpage>157</lpage>
+          <pub-id pub-id-type="pmid">16564132</pub-id>
+        </citation>
+      </ref>
+      <ref id="B38">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Chandler</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Tanaka</surname>
+              <given-names>Y</given-names>
+            </name>
+          </person-group>
+          <article-title>Genetic modification in floriculture</article-title>
+          <source>Critical Rev Plant Sci</source>
+          <year>2007</year>
+          <volume>26</volume>
+          <fpage>169</fpage>
+          <lpage>197</lpage>
+        </citation>
+      </ref>
+      <ref id="B39">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Enserink</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <article-title>Tough lessons from Golden rice</article-title>
+          <source>Science</source>
+          <year>2008</year>
+          <volume>320</volume>
+          <fpage>468</fpage>
+          <lpage>471</lpage>
+          <pub-id pub-id-type="pmid">18436769</pub-id>
+        </citation>
+      </ref>
+      <ref id="B40">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Robbins</surname>
+              <given-names>B</given-names>
+            </name>
+          </person-group>
+          <article-title>A proteolytic enzyme in ficin, the anthelmintic principle of leche de higueron</article-title>
+          <source>J Biol Chem</source>
+          <year>1930</year>
+          <volume>87</volume>
+          <fpage>251</fpage>
+          <lpage>257</lpage>
+        </citation>
+      </ref>
+      <ref id="B41">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Caldwell</surname>
+              <given-names>FC</given-names>
+            </name>
+            <name>
+              <surname>Caldwell</surname>
+              <given-names>FL</given-names>
+            </name>
+          </person-group>
+          <article-title>A study of the anthelmintic efficacy of Higuerolatex in the treatment of trichuriasis, with comment as to its effectiveness against <italic>Ascaris </italic>infestation</article-title>
+          <source>Am J Trop Med</source>
+          <year>1929</year>
+          <volume>9</volume>
+          <fpage>471</fpage>
+          <lpage>482</lpage>
+        </citation>
+      </ref>
+      <ref id="B42">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Keiser</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Utzinger</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>
+          <article-title>Efficacy of current drugs against soil-transmitted helminth infections</article-title>
+          <source>JAMA</source>
+          <year>2008</year>
+          <volume>299</volume>
+          <fpage>1937</fpage>
+          <lpage>1948</lpage>
+          <pub-id pub-id-type="pmid">18430913</pub-id>
+        </citation>
+      </ref>
+      <ref id="B43">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Jonxis</surname>
+              <given-names>JHP</given-names>
+            </name>
+            <name>
+              <surname>Bekins</surname>
+              <given-names>H</given-names>
+            </name>
+          </person-group>
+          <article-title>Treatment of <italic>Ascaris </italic>infection with "Velardon"</article-title>
+          <source>Arch Dis Childh</source>
+          <year>1953</year>
+          <volume>28</volume>
+          <fpage>329</fpage>
+          <lpage>331</lpage>
+          <pub-id pub-id-type="pmid">13081173</pub-id>
+        </citation>
+      </ref>
+      <ref id="B44">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Stransky</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Reyes</surname>
+              <given-names>A</given-names>
+            </name>
+          </person-group>
+          <article-title>Ascariasis in the tropics (with considerations on its treatment)</article-title>
+          <source>J Trop Pediatr</source>
+          <year>1955</year>
+          <volume>1</volume>
+          <fpage>174</fpage>
+          <lpage>187</lpage>
+        </citation>
+      </ref>
+      <ref id="B45">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Walti</surname>
+              <given-names>A</given-names>
+            </name>
+          </person-group>
+          <article-title>Crystalline ficin</article-title>
+          <source>J Am Chem Soc</source>
+          <year>1938</year>
+          <volume>60</volume>
+          <fpage>493</fpage>
+        </citation>
+      </ref>
+      <ref id="B46">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Konno</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Hirayama</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Nakamura</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Tateishi</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Tamura</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Hattori</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Kohno</surname>
+              <given-names>K</given-names>
+            </name>
+          </person-group>
+          <article-title>Papain protects papaya tress from herbivorous insects: role of cysteine proteases in latex</article-title>
+          <source>Plant J</source>
+          <year>2004</year>
+          <volume>37</volume>
+          <fpage>370</fpage>
+          <lpage>378</lpage>
+          <pub-id pub-id-type="pmid">14731257</pub-id>
+        </citation>
+      </ref>
+      <ref id="B47">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Miller</surname>
+              <given-names>PM</given-names>
+            </name>
+            <name>
+              <surname>Sands</surname>
+              <given-names>DC</given-names>
+            </name>
+          </person-group>
+          <article-title>Effects of hydrolytic enzymes on plant-parasitic nematodes</article-title>
+          <source>J Nematol</source>
+          <year>1977</year>
+          <volume>9</volume>
+          <fpage>192</fpage>
+          <lpage>197</lpage>
+        </citation>
+      </ref>
+      <ref id="B48">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Stepek</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Curtis</surname>
+              <given-names>RHC</given-names>
+            </name>
+            <name>
+              <surname>Kerry</surname>
+              <given-names>BR</given-names>
+            </name>
+            <name>
+              <surname>Shewry</surname>
+              <given-names>PR</given-names>
+            </name>
+            <name>
+              <surname>Clark</surname>
+              <given-names>SJ</given-names>
+            </name>
+            <name>
+              <surname>Lowe</surname>
+              <given-names>AE</given-names>
+            </name>
+            <name>
+              <surname>Duce</surname>
+              <given-names>IR</given-names>
+            </name>
+            <name>
+              <surname>Buttle</surname>
+              <given-names>DJ</given-names>
+            </name>
+            <name>
+              <surname>Behnke</surname>
+              <given-names>JM</given-names>
+            </name>
+          </person-group>
+          <article-title>Nematicidal effects of cysteine proteinases against sedentary plant parasitic nematodes</article-title>
+          <source>Parasitology</source>
+          <year>2007</year>
+          <volume>134</volume>
+          <fpage>1831</fpage>
+          <lpage>1838</lpage>
+          <pub-id pub-id-type="pmid">17640402</pub-id>
+        </citation>
+      </ref>
+      <ref id="B49">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>El Moussaoui</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Nijs</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Wintjems</surname>
+              <given-names>CPR</given-names>
+            </name>
+            <name>
+              <surname>Vincentelli</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Azarkan</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Looze</surname>
+              <given-names>Y</given-names>
+            </name>
+          </person-group>
+          <article-title>Revisiting the enzymes stored in the laticifers of <italic>Carica papaya </italic>in the context of their possible participation in the plant defence mechanism</article-title>
+          <source>Cell Mol Life Sci</source>
+          <year>2001</year>
+          <volume>58</volume>
+          <fpage>556</fpage>
+          <lpage>570</lpage>
+          <pub-id pub-id-type="pmid">11361091</pub-id>
+        </citation>
+      </ref>
+      <ref id="B50">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Grudkowska</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Zagda&#x144;ska</surname>
+              <given-names>B</given-names>
+            </name>
+          </person-group>
+          <article-title>Multifunctional role of plant cysteine proteinases</article-title>
+          <source>Acta Biochim Polon</source>
+          <year>2004</year>
+          <volume>51</volume>
+          <fpage>609</fpage>
+          <lpage>624</lpage>
+          <pub-id pub-id-type="pmid">15448724</pub-id>
+        </citation>
+      </ref>
+      <ref id="B51">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Martinez</surname>
+              <given-names>DE</given-names>
+            </name>
+            <name>
+              <surname>Bartoli</surname>
+              <given-names>CG</given-names>
+            </name>
+            <name>
+              <surname>Grbic</surname>
+              <given-names>V</given-names>
+            </name>
+            <name>
+              <surname>Guiamet</surname>
+              <given-names>JJ</given-names>
+            </name>
+          </person-group>
+          <article-title>Vacuolar cysteine proteases of wheat (<italic>Triticum aestivum </italic>L.) are common to leaf senescence induced by different factors</article-title>
+          <source>J Exp Bot</source>
+          <year>2007</year>
+          <volume>58</volume>
+          <fpage>1099</fpage>
+          <lpage>1107</lpage>
+          <pub-id pub-id-type="pmid">17218544</pub-id>
+        </citation>
+      </ref>
+      <ref id="B52">
+        <citation citation-type="other">
+          <article-title>MEROPS, the peptidase database</article-title>
+          <ext-link ext-link-type="uri" xlink:href="http://merops.sanger.ac.uk/"/>
+        </citation>
+      </ref>
+      <ref id="B53">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Rawlings</surname>
+              <given-names>ND</given-names>
+            </name>
+            <name>
+              <surname>Morton</surname>
+              <given-names>FR</given-names>
+            </name>
+            <name>
+              <surname>Kok</surname>
+              <given-names>CY</given-names>
+            </name>
+            <name>
+              <surname>Kong</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Barrett</surname>
+              <given-names>AJ</given-names>
+            </name>
+          </person-group>
+          <article-title>MEROPS: the peptidase database</article-title>
+          <source>Nucl Acids Res</source>
+          <year>2008</year>
+          <volume>36</volume>
+          <fpage>D320</fpage>
+          <lpage>D325</lpage>
+          <pub-id pub-id-type="pmid">17991683</pub-id>
+        </citation>
+      </ref>
+      <ref id="B54">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cable</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Harris</surname>
+              <given-names>PD</given-names>
+            </name>
+            <name>
+              <surname>Lewis</surname>
+              <given-names>JW</given-names>
+            </name>
+            <name>
+              <surname>Behnke</surname>
+              <given-names>JM</given-names>
+            </name>
+          </person-group>
+          <article-title>Molecular evidence that <italic>Heligmosomoides polygyrus </italic>from laboratory mice and wood mice are separate species</article-title>
+          <source>Parasitology</source>
+          <year>2006</year>
+          <volume>133</volume>
+          <fpage>111</fpage>
+          <lpage>122</lpage>
+          <pub-id pub-id-type="pmid">16536883</pub-id>
+        </citation>
+      </ref>
+      <ref id="B55">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Robinson</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Wahid</surname>
+              <given-names>FN</given-names>
+            </name>
+            <name>
+              <surname>Behnke</surname>
+              <given-names>JM</given-names>
+            </name>
+            <name>
+              <surname>Gilbert</surname>
+              <given-names>FS</given-names>
+            </name>
+          </person-group>
+          <article-title>Immunological relationships during primary infection with <italic>Heligmosomoides polygyrus (Nematospiroides dubius)</italic>: dose-dependent expulsion of adult worms</article-title>
+          <source>Parasitology</source>
+          <year>1989</year>
+          <volume>98</volume>
+          <fpage>115</fpage>
+          <lpage>124</lpage>
+          <pub-id pub-id-type="pmid">2717211</pub-id>
+        </citation>
+      </ref>
+      <ref id="B56">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Behnke</surname>
+              <given-names>JM</given-names>
+            </name>
+            <name>
+              <surname>Harris</surname>
+              <given-names>PD</given-names>
+            </name>
+            <name>
+              <surname>Bajer</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Barnard</surname>
+              <given-names>CJ</given-names>
+            </name>
+            <name>
+              <surname>Sherif</surname>
+              <given-names>N</given-names>
+            </name>
+            <name>
+              <surname>Cliffe</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Hurst</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Lamb</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Rhodes</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>James</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Clifford</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Gilbert</surname>
+              <given-names>FS</given-names>
+            </name>
+            <name>
+              <surname>Zalat</surname>
+              <given-names>S</given-names>
+            </name>
+          </person-group>
+          <article-title>Variation in the helminth community structure in spiny mice (<italic>Acomys dimidiatus</italic>) from four montane wadis in the St. Katherine region of the Sinai Peninsula in Egypt</article-title>
+          <source>Parasitology</source>
+          <year>2004</year>
+          <volume>129</volume>
+          <fpage>379</fpage>
+          <lpage>398</lpage>
+          <pub-id pub-id-type="pmid">15471013</pub-id>
+        </citation>
+      </ref>
+      <ref id="B57">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lowrie</surname>
+              <given-names>FM</given-names>
+            </name>
+            <name>
+              <surname>Behnke</surname>
+              <given-names>JM</given-names>
+            </name>
+            <name>
+              <surname>Barnard</surname>
+              <given-names>CJ</given-names>
+            </name>
+          </person-group>
+          <article-title>Density-dependent effects on the survival and growth of the rodent stomach worm <italic>Protospirura muricola </italic>in laboratory mice</article-title>
+          <source>J Helminthol</source>
+          <year>2004</year>
+          <volume>78</volume>
+          <fpage>121</fpage>
+          <lpage>128</lpage>
+          <pub-id pub-id-type="pmid">15153283</pub-id>
+        </citation>
+      </ref>
+      <ref id="B58">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Stepek</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Lowe</surname>
+              <given-names>AE</given-names>
+            </name>
+            <name>
+              <surname>Buttle</surname>
+              <given-names>DJ</given-names>
+            </name>
+            <name>
+              <surname>Duce</surname>
+              <given-names>IR</given-names>
+            </name>
+            <name>
+              <surname>Behnke</surname>
+              <given-names>JM</given-names>
+            </name>
+          </person-group>
+          <article-title>Anthelmintic action of plant cysteine proteinases against the rodent stomach nematode, <italic>Protospirura muricola</italic>, <italic>in vitro </italic>and <italic>in vivo</italic></article-title>
+          <source> Parasitology</source>
+          <year>2007</year>
+          <volume>134</volume>
+          <fpage>103</fpage>
+          <lpage>112</lpage>
+          <pub-id pub-id-type="pmid">17032468</pub-id>
+        </citation>
+      </ref>
+      <ref id="B59">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Durette-Desset</surname>
+              <given-names>MC</given-names>
+            </name>
+          </person-group>
+          <article-title>Essai de classification des n&#xE9;matodes H&#xE9;ligmosomes. Corr&#xE9;lations avec la Pal&#xE9;obiog&#xE9;ographie des h&#xF4;tes</article-title>
+          <source>M&#xE9;m Mus Nat Hist Nat (Ser A Zoo)</source>
+          <year>1971</year>
+          <volume>69</volume>
+          <fpage>1</fpage>
+          <lpage>126</lpage>
+        </citation>
+      </ref>
+      <ref id="B60">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Stepek</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Lowe</surname>
+              <given-names>AE</given-names>
+            </name>
+            <name>
+              <surname>Buttle</surname>
+              <given-names>DJ</given-names>
+            </name>
+            <name>
+              <surname>Duce</surname>
+              <given-names>IR</given-names>
+            </name>
+            <name>
+              <surname>Behnke</surname>
+              <given-names>JM</given-names>
+            </name>
+          </person-group>
+          <article-title><italic>In vitro </italic>anthelmintic effects of cysteine proteinases from plants against intestinal helminths of rodents</article-title>
+          <source>J Helminthol</source>
+          <year>2007</year>
+          <volume>81</volume>
+          <fpage>353</fpage>
+          <lpage>360</lpage>
+          <pub-id pub-id-type="pmid">18005461</pub-id>
+        </citation>
+      </ref>
+      <ref id="B61">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Wurtz</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Bouchut</surname>
+              <given-names>E</given-names>
+            </name>
+          </person-group>
+          <article-title>Sur le ferment digestif du <italic>Carica papaya</italic></article-title>
+          <source>CR Acad Sci Paris</source>
+          <year>1879</year>
+          <volume>89</volume>
+          <fpage>425</fpage>
+          <lpage>428</lpage>
+        </citation>
+      </ref>
+      <ref id="B62">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Berger</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Asenjo</surname>
+              <given-names>CF</given-names>
+            </name>
+          </person-group>
+          <article-title>Anthelmintic activity of fresh pineapple juice</article-title>
+          <source>Science</source>
+          <year>1939</year>
+          <volume>90</volume>
+          <fpage>299</fpage>
+          <lpage>300</lpage>
+          <pub-id pub-id-type="pmid">17809477</pub-id>
+        </citation>
+      </ref>
+      <ref id="B63">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Berger</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Asenjo</surname>
+              <given-names>CF</given-names>
+            </name>
+          </person-group>
+          <article-title>Anthelmintic activity of crystalline papain</article-title>
+          <source>Science</source>
+          <year>1940</year>
+          <volume>91</volume>
+          <fpage>387</fpage>
+          <lpage>388</lpage>
+          <pub-id pub-id-type="pmid">17773432</pub-id>
+        </citation>
+      </ref>
+      <ref id="B64">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>De Amorin</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Borba</surname>
+              <given-names>HR</given-names>
+            </name>
+            <name>
+              <surname>Carauta</surname>
+              <given-names>JP</given-names>
+            </name>
+            <name>
+              <surname>Lopes</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Kaplan</surname>
+              <given-names>MA</given-names>
+            </name>
+          </person-group>
+          <article-title>Anthelmintic activity of the latex of <italic>Ficus </italic>species</article-title>
+          <source>J Ethnopharmacol</source>
+          <year>1999</year>
+          <volume>64</volume>
+          <fpage>255</fpage>
+          <lpage>258</lpage>
+          <pub-id pub-id-type="pmid">10363841</pub-id>
+        </citation>
+      </ref>
+      <ref id="B65">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Fernan-Nunez</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <article-title>A contribution to helmintic therapy</article-title>
+          <source>J Am Med Assn</source>
+          <year>1927</year>
+          <volume>99</volume>
+          <fpage>903</fpage>
+          <lpage>905</lpage>
+        </citation>
+      </ref>
+      <ref id="B66">
+        <citation citation-type="other">
+          <person-group person-group-type="author">
+            <collab>Schapiro</collab>
+          </person-group>
+          <article-title>Recovery of up to 500 expelled <italic>T. trichiura </italic>from subjects treated with the sap of <italic>F. elastica </italic>in Panama cited by Caldwell &amp; Caldwell [39] as derived from his "Statement to International Health Division of the Rockefeller Foundation</article-title>
+          <year>1925</year>
+        </citation>
+      </ref>
+      <ref id="B67">
+        <citation citation-type="other">
+          <person-group person-group-type="author">
+            <collab>Hall</collab>
+          </person-group>
+          <article-title>The effective use of "Leche de Higueron" cited by Caldwell &amp; Caldwell [39] as derived from his "Statement to International Health Division of the Rockefeller Foundation</article-title>
+          <year>1927</year>
+        </citation>
+      </ref>
+      <ref id="B68">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Weise</surname>
+              <given-names>H</given-names>
+            </name>
+          </person-group>
+          <article-title>Uber die wurmbekampfung durch enzyme</article-title>
+          <source>Med Klin</source>
+          <year>1950</year>
+          <volume>35</volume>
+          <fpage>1096</fpage>
+          <lpage>1098</lpage>
+          <pub-id pub-id-type="pmid">14779815</pub-id>
+        </citation>
+      </ref>
+      <ref id="B69">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hannack</surname>
+              <given-names>S</given-names>
+            </name>
+          </person-group>
+          <article-title>Symptomologie und Therapie der Trichuriasis</article-title>
+          <source>Med Welt</source>
+          <year>1951</year>
+          <volume>19</volume>
+          <fpage>1550</fpage>
+          <lpage>1552</lpage>
+        </citation>
+      </ref>
+      <ref id="B70">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hansson</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Veliz</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Naquira</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Amren</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Arroyo</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Arevalo</surname>
+              <given-names>G</given-names>
+            </name>
+          </person-group>
+          <article-title>Preclinical and clinical studies with latex from <italic>Ficus glabrata </italic>HBK, a traditional intestinal anthelminthic in the Amazonian area</article-title>
+          <source>J Ethnopharamacol</source>
+          <year>1986</year>
+          <volume>17</volume>
+          <fpage>105</fpage>
+          <lpage>138</lpage>
+        </citation>
+      </ref>
+      <ref id="B71">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Nagaty</surname>
+              <given-names>HF</given-names>
+            </name>
+            <name>
+              <surname>Rifaat</surname>
+              <given-names>MA</given-names>
+            </name>
+            <name>
+              <surname>Morsy</surname>
+              <given-names>TA</given-names>
+            </name>
+          </person-group>
+          <article-title>Antihelmintic effect produced by the latex of <italic>Carica papaya </italic>growing in Cairo gardens</article-title>
+          <source>Ann Trop Med Parasitol</source>
+          <year>1959</year>
+          <volume>53</volume>
+          <fpage>215</fpage>
+          <lpage>219</lpage>
+          <pub-id pub-id-type="pmid">14425780</pub-id>
+        </citation>
+      </ref>
+      <ref id="B72">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Satrija</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Nansen</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Bjorn</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Murtini</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>He</surname>
+              <given-names>S</given-names>
+            </name>
+          </person-group>
+          <article-title>Effect of papaya latex against <italic>Ascaris suum </italic>in naturally infected pigs</article-title>
+          <source>J Helminthol</source>
+          <year>1994</year>
+          <volume>68</volume>
+          <fpage>343</fpage>
+          <lpage>346</lpage>
+          <pub-id pub-id-type="pmid">7706684</pub-id>
+        </citation>
+      </ref>
+      <ref id="B73">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Satrija</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Ridwan</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Tiuria</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Retnani</surname>
+              <given-names>EB</given-names>
+            </name>
+          </person-group>
+          <article-title>Dampak pemberian getah pepaya dengan dosis berulang terhadap domba yang diinfeksi <italic>Haemonchus contortus</italic></article-title>
+          <source>Hemera Zoa</source>
+          <year>1999</year>
+          <volume>81</volume>
+          <fpage>9</fpage>
+          <lpage>15</lpage>
+        </citation>
+      </ref>
+      <ref id="B74">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Satrija</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Nansen</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Murtini</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>He</surname>
+              <given-names>S</given-names>
+            </name>
+          </person-group>
+          <article-title>Anthelmintic activity of papaya latex against patent <italic>Heligmosomoides polygyrus </italic>infections in mice</article-title>
+          <source>J Ethnopharmacol</source>
+          <year>1995</year>
+          <volume>48</volume>
+          <fpage>161</fpage>
+          <lpage>164</lpage>
+          <pub-id pub-id-type="pmid">8719976</pub-id>
+        </citation>
+      </ref>
+      <ref id="B75">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Stepek</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Lowe</surname>
+              <given-names>AE</given-names>
+            </name>
+            <name>
+              <surname>Buttle</surname>
+              <given-names>DJ</given-names>
+            </name>
+            <name>
+              <surname>Duce</surname>
+              <given-names>IR</given-names>
+            </name>
+            <name>
+              <surname>Behnke</surname>
+              <given-names>JM</given-names>
+            </name>
+          </person-group>
+          <article-title>The anthelmintic efficacy of plant-derived cysteine proteinases against the rodent gastrointestinal nematode, <italic>Heligmosomoides polygyrus</italic>, <italic>in vivo</italic></article-title>
+          <source>Parasitology</source>
+          <year>2007</year>
+          <volume>134</volume>
+          <fpage>1409</fpage>
+          <lpage>1419</lpage>
+          <pub-id pub-id-type="pmid">17475089</pub-id>
+        </citation>
+      </ref>
+      <ref id="B76">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Stepek</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Lowe</surname>
+              <given-names>AE</given-names>
+            </name>
+            <name>
+              <surname>Buttle</surname>
+              <given-names>DJ</given-names>
+            </name>
+            <name>
+              <surname>Duce</surname>
+              <given-names>IR</given-names>
+            </name>
+            <name>
+              <surname>Behnke</surname>
+              <given-names>JM</given-names>
+            </name>
+          </person-group>
+          <article-title><italic>In vitro </italic>and <italic>in vivo </italic>anthelmintic efficacy of plant cysteine proteinases against the rodent gastrointestinal nematode, <italic>Trichuris muris</italic></article-title>
+          <source> Parasitol</source>
+          <year>2006</year>
+          <volume>132</volume>
+          <fpage>681</fpage>
+          <lpage>689</lpage>
+        </citation>
+      </ref>
+      <ref id="B77">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hale</surname>
+              <given-names>LP</given-names>
+            </name>
+          </person-group>
+          <article-title>Proteolytic activity and immunogenicity of oral bromelain within the gastrointestinal tract of mice</article-title>
+          <source>Int Immunopharmacol</source>
+          <year>2004</year>
+          <volume>4</volume>
+          <fpage>255</fpage>
+          <lpage>264</lpage>
+          <pub-id pub-id-type="pmid">14996417</pub-id>
+        </citation>
+      </ref>
+      <ref id="B78">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Huet</surname>
+              <given-names>TJ</given-names>
+            </name>
+            <name>
+              <surname>Looze</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Bartik</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Raussens</surname>
+              <given-names>V</given-names>
+            </name>
+            <name>
+              <surname>Wintjens</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Boussard</surname>
+              <given-names>P</given-names>
+            </name>
+          </person-group>
+          <article-title>Structural characterization of the papaya cysteine proteinases at low pH</article-title>
+          <source>Biochem Biophys Res Commun</source>
+          <year>2006</year>
+          <volume>341</volume>
+          <fpage>620</fpage>
+          <lpage>626</lpage>
+          <pub-id pub-id-type="pmid">16434027</pub-id>
+        </citation>
+      </ref>
+      <ref id="B79">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Behnke</surname>
+              <given-names>JM</given-names>
+            </name>
+            <name>
+              <surname>Barnard</surname>
+              <given-names>CJ</given-names>
+            </name>
+            <name>
+              <surname>Mason</surname>
+              <given-names>N</given-names>
+            </name>
+            <name>
+              <surname>Harris</surname>
+              <given-names>PD</given-names>
+            </name>
+            <name>
+              <surname>Sherif</surname>
+              <given-names>NE</given-names>
+            </name>
+            <name>
+              <surname>Zalat</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Gilbert</surname>
+              <given-names>FS</given-names>
+            </name>
+          </person-group>
+          <article-title>Intestinal helminths of spiny mice (<italic>Acomys cahirinus dimidiatus</italic>) from St Katherine's Protectorate in the Sinai, Egypt</article-title>
+          <source>J Helminthol</source>
+          <year>2000</year>
+          <volume>74</volume>
+          <fpage>31</fpage>
+          <lpage>44</lpage>
+          <pub-id pub-id-type="pmid">10831051</pub-id>
+        </citation>
+      </ref>
+      <ref id="B80">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Martin</surname>
+              <given-names>PJ</given-names>
+            </name>
+            <name>
+              <surname>Le Jambre</surname>
+              <given-names>LF</given-names>
+            </name>
+            <name>
+              <surname>Claxton</surname>
+              <given-names>JH</given-names>
+            </name>
+          </person-group>
+          <article-title>The impact of refugia on the development of thiabendazole resistance in <italic>Haemonchus contortus</italic></article-title>
+          <source>Int J Parasitol</source>
+          <year>1981</year>
+          <volume>11</volume>
+          <fpage>35</fpage>
+          <lpage>41</lpage>
+          <pub-id pub-id-type="pmid">7228476</pub-id>
+        </citation>
+      </ref>
+      <ref id="B81">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Coles</surname>
+              <given-names>GC</given-names>
+            </name>
+          </person-group>
+          <article-title>Anthelmintic resistance-looking to the future: a UK perspective</article-title>
+          <source>Res Vet Sci</source>
+          <year>2005</year>
+          <volume>78</volume>
+          <fpage>99</fpage>
+          <lpage>108</lpage>
+          <pub-id pub-id-type="pmid">15563915</pub-id>
+        </citation>
+      </ref>
+      <ref id="B82">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Costa</surname>
+              <given-names>RG</given-names>
+            </name>
+            <name>
+              <surname>Correia</surname>
+              <given-names>MXC</given-names>
+            </name>
+            <name>
+              <surname>Da Silva</surname>
+              <given-names>JHV</given-names>
+            </name>
+            <name>
+              <surname>De Medeiros</surname>
+              <given-names>AN</given-names>
+            </name>
+            <name>
+              <surname>De Carvalho</surname>
+              <given-names>FFR</given-names>
+            </name>
+          </person-group>
+          <article-title>Effect of different levels of dehydrated pineapple by-products on intake, digestibility and performance of growing goats</article-title>
+          <source>Small Ruminants Res</source>
+          <year>2007</year>
+          <volume>71</volume>
+          <fpage>138</fpage>
+          <lpage>143</lpage>
+        </citation>
+      </ref>
+      <ref id="B83">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Rogerio</surname>
+              <given-names>MCP</given-names>
+            </name>
+            <name>
+              <surname>Borges</surname>
+              <given-names>I</given-names>
+            </name>
+            <name>
+              <surname>Neiva</surname>
+              <given-names>JNM</given-names>
+            </name>
+          </person-group>
+          <article-title>Nutritive value of pineapple by-product (<italic>Ananas comosus L.</italic>) in diets of sheep. 1. Intake, apparent digestibility, energetic and nitrogenous balance</article-title>
+          <source>Argent Brasil Med Vet Zootechnol</source>
+          <year>2007</year>
+          <volume>59</volume>
+          <fpage>773</fpage>
+          <lpage>781</lpage>
+        </citation>
+      </ref>
+      <ref id="B84">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Oh</surname>
+              <given-names>K-H</given-names>
+            </name>
+            <name>
+              <surname>Seong</surname>
+              <given-names>CS</given-names>
+            </name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>SW</given-names>
+            </name>
+            <name>
+              <surname>Kwon</surname>
+              <given-names>O-S</given-names>
+            </name>
+            <name>
+              <surname>Park</surname>
+              <given-names>YS</given-names>
+            </name>
+          </person-group>
+          <article-title>Isolation of a psychotrophic <italic>Azospirillum </italic>sp. and characterization of its extracellular protease</article-title>
+          <source>FEMS Microbiol Let</source>
+          <year>1999</year>
+          <volume>174</volume>
+          <fpage>173</fpage>
+          <lpage>178</lpage>
+          <pub-id pub-id-type="pmid">10234836</pub-id>
+        </citation>
+      </ref>
+      <ref id="B85">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hawley</surname>
+              <given-names>JH</given-names>
+            </name>
+            <name>
+              <surname>Martzen</surname>
+              <given-names>MR</given-names>
+            </name>
+            <name>
+              <surname>Peanasky</surname>
+              <given-names>RJ</given-names>
+            </name>
+          </person-group>
+          <article-title>Proteinase inhibitors in Ascarida</article-title>
+          <source>Parasitol Today</source>
+          <year>1994</year>
+          <volume>10</volume>
+          <fpage>308</fpage>
+          <lpage>313</lpage>
+          <pub-id pub-id-type="pmid">15275429</pub-id>
+        </citation>
+      </ref>
+      <ref id="B86">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Zang</surname>
+              <given-names>X</given-names>
+            </name>
+            <name>
+              <surname>Maizels</surname>
+              <given-names>RM</given-names>
+            </name>
+          </person-group>
+          <article-title>Serine proteinase inhibitors from nematodes and the arms race between host and pathogen</article-title>
+          <source>Trends Biochem Sci</source>
+          <year>2001</year>
+          <volume>26</volume>
+          <fpage>191</fpage>
+          <lpage>197</lpage>
+          <pub-id pub-id-type="pmid">11246026</pub-id>
+        </citation>
+      </ref>
+      <ref id="B87">
+        <citation citation-type="other">
+          <article-title>MEROPS, the peptidase database</article-title>
+          <ext-link ext-link-type="uri" xlink:href="http://merops.sanger.ac.uk"/>
+        </citation>
+      </ref>
+      <ref id="B88">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Dussourd</surname>
+              <given-names>DE</given-names>
+            </name>
+            <name>
+              <surname>Eisner</surname>
+              <given-names>T</given-names>
+            </name>
+          </person-group>
+          <article-title>Vein-cutting behavior: insect counterploy to the latex defense of plants</article-title>
+          <source>Science</source>
+          <year>1987</year>
+          <volume>237</volume>
+          <fpage>898</fpage>
+          <lpage>901</lpage>
+          <pub-id pub-id-type="pmid">3616620</pub-id>
+        </citation>
+      </ref>
+      <ref id="B89">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Becker</surname>
+              <given-names>S</given-names>
+            </name>
+          </person-group>
+          <article-title>The production of papain-an agricultural industry for Tropical America</article-title>
+          <source>Econ Bot</source>
+          <year>1958</year>
+          <volume>12</volume>
+          <fpage>62</fpage>
+          <lpage>79</lpage>
+        </citation>
+      </ref>
+      <ref id="B90">
+        <citation citation-type="other">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Satrija</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Retnani</surname>
+              <given-names>EB</given-names>
+            </name>
+            <name>
+              <surname>Ridwan</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Tiuria</surname>
+              <given-names>R</given-names>
+            </name>
+          </person-group>
+          <article-title>Potential use of herbal anthelmintics as alternative antiparasitic drugs for small holder farms in developing countries</article-title>
+          <source>Livestock Community and Environment Proceedings of the 10th Conference of the Association of Institutions for Tropical Veterinary Medicine, Copenhagen, Denmark</source>
+          <year>2001</year>
+          <ext-link ext-link-type="uri" xlink:href="http://www.aitvm.kvl.dk/E_periurban/E6Satrija.htm"/>
+        </citation>
+      </ref>
+      <ref id="B91">
+        <citation citation-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>van Wyk</surname>
+              <given-names>JA</given-names>
+            </name>
+          </person-group>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Boray JC, Martin PJ, Roush RT</surname>
+            </name>
+          </person-group>
+          <article-title>Occurrence and dissemination of anthelmintic resistance in South Africa, and management of resistant worm strains</article-title>
+          <source>Resistance of Parasites to Antiparasitic Drugs</source>
+          <year>1990</year>
+          <publisher-name>MSD, AGVET, Raway. N.J</publisher-name>
+          <fpage>103</fpage>
+          <lpage>114</lpage>
+        </citation>
+      </ref>
+      <ref id="B92">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sargison</surname>
+              <given-names>ND</given-names>
+            </name>
+            <name>
+              <surname>Jackson</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Bartley</surname>
+              <given-names>DJ</given-names>
+            </name>
+            <name>
+              <surname>Wilson</surname>
+              <given-names>DJ</given-names>
+            </name>
+            <name>
+              <surname>Stenhouse</surname>
+              <given-names>LJ</given-names>
+            </name>
+            <name>
+              <surname>Penny</surname>
+              <given-names>CD</given-names>
+            </name>
+          </person-group>
+          <article-title>Observations on the emergence of multiple anthelmintic resistance in sheep flocks in the south-east of Scotland</article-title>
+          <source>Vet Parasitol</source>
+          <year>2007</year>
+          <volume>145</volume>
+          <fpage>65</fpage>
+          <lpage>76</lpage>
+          <pub-id pub-id-type="pmid">17134836</pub-id>
+        </citation>
+      </ref>
+      <ref id="B93">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Coles</surname>
+              <given-names>GC</given-names>
+            </name>
+            <name>
+              <surname>Jackson</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Pomroy</surname>
+              <given-names>WE</given-names>
+            </name>
+            <name>
+              <surname>Prichard</surname>
+              <given-names>RK</given-names>
+            </name>
+            <name>
+              <surname>von Samson-Himmelstjerna</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Silvestre</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Taylor</surname>
+              <given-names>MA</given-names>
+            </name>
+            <name>
+              <surname>Vercruysse</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>
+          <article-title>The detection of anthelmintic resistance in nematodes of veterinary importance</article-title>
+          <source>Vet Parasitol</source>
+          <year>2006</year>
+          <volume>136</volume>
+          <fpage>167</fpage>
+          <lpage>185</lpage>
+          <pub-id pub-id-type="pmid">16427201</pub-id>
+        </citation>
+      </ref>
+      <ref id="B94">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sangster</surname>
+              <given-names>N</given-names>
+            </name>
+          </person-group>
+          <article-title>A practical approach to anthelmintic resistance</article-title>
+          <source>Equine Vet J</source>
+          <year>2003</year>
+          <volume>35</volume>
+          <fpage>218</fpage>
+          <lpage>219</lpage>
+          <pub-id pub-id-type="pmid">12755420</pub-id>
+        </citation>
+      </ref>
+      <ref id="B95">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Roepstorff</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Jorsal</surname>
+              <given-names>SE</given-names>
+            </name>
+          </person-group>
+          <article-title>Prevalence of helminth infections in swine in Denmark</article-title>
+          <source>Vet Parasitol</source>
+          <year>1989</year>
+          <volume>33</volume>
+          <fpage>231</fpage>
+          <lpage>239</lpage>
+          <pub-id pub-id-type="pmid">2815533</pub-id>
+        </citation>
+      </ref>
+      <ref id="B96">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Permin</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Yelifan</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Bloch</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Steenhard</surname>
+              <given-names>N</given-names>
+            </name>
+            <name>
+              <surname>Hansen</surname>
+              <given-names>NP</given-names>
+            </name>
+            <name>
+              <surname>Nansen</surname>
+              <given-names>P</given-names>
+            </name>
+          </person-group>
+          <article-title>Parasites in cross-bred pigs in the Upper East Region of Ghana</article-title>
+          <source>Vet Parasitol</source>
+          <year>1999</year>
+          <volume>87</volume>
+          <fpage>63</fpage>
+          <lpage>71</lpage>
+          <pub-id pub-id-type="pmid">10628701</pub-id>
+        </citation>
+      </ref>
+      <ref id="B97">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kagira</surname>
+              <given-names>JM</given-names>
+            </name>
+            <name>
+              <surname>Kanyari</surname>
+              <given-names>PWN</given-names>
+            </name>
+            <name>
+              <surname>Munyua</surname>
+              <given-names>WK</given-names>
+            </name>
+            <name>
+              <surname>Waruiru</surname>
+              <given-names>RM</given-names>
+            </name>
+          </person-group>
+          <article-title>The prevalence of gastrointestinal parasites in commercial pig farms in Thika District, Kenya</article-title>
+          <source>Bull Anim Health Prod Afr</source>
+          <year>2002</year>
+          <volume>50</volume>
+          <fpage>1</fpage>
+          <lpage>11</lpage>
+        </citation>
+      </ref>
+      <ref id="B98">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Thomsen</surname>
+              <given-names>LE</given-names>
+            </name>
+            <name>
+              <surname>Mejer</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Wendt</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Roepstorff</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Hindsbo</surname>
+              <given-names>O</given-names>
+            </name>
+          </person-group>
+          <article-title>The influence of stocking rate on transmission of helminth parasites in pigs on permanent pasture during two consecutive summers</article-title>
+          <source>Vet Parasitol</source>
+          <year>2001</year>
+          <volume>99</volume>
+          <fpage>129</fpage>
+          <lpage>146</lpage>
+          <pub-id pub-id-type="pmid">11470180</pub-id>
+        </citation>
+      </ref>
+      <ref id="B99">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Dando</surname>
+              <given-names>PM</given-names>
+            </name>
+            <name>
+              <surname>Sharp</surname>
+              <given-names>SL</given-names>
+            </name>
+            <name>
+              <surname>Buttle</surname>
+              <given-names>DJ</given-names>
+            </name>
+            <name>
+              <surname>Barrett</surname>
+              <given-names>AJ</given-names>
+            </name>
+          </person-group>
+          <article-title>Immunoglobulin E antibodies to papaya proteinases and their relevance to chemonucleolysis</article-title>
+          <source>Spine</source>
+          <year>1995</year>
+          <volume>20</volume>
+          <fpage>981</fpage>
+          <lpage>985</lpage>
+          <pub-id pub-id-type="pmid">7631245</pub-id>
+        </citation>
+      </ref>
+      <ref id="B100">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Schulz</surname>
+              <given-names>O</given-names>
+            </name>
+            <name>
+              <surname>Laing</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Sewell</surname>
+              <given-names>HF</given-names>
+            </name>
+            <name>
+              <surname>Shakib</surname>
+              <given-names>F</given-names>
+            </name>
+          </person-group>
+          <article-title><italic>Der p </italic>I, a major allergen of the house dust mite, proteolytically cleaves the low affinity receptor for human IgE (CD23)</article-title>
+          <source>Eur J Immunol</source>
+          <year>1995</year>
+          <volume>25</volume>
+          <fpage>3191</fpage>
+          <lpage>3194</lpage>
+          <pub-id pub-id-type="pmid">7489763</pub-id>
+        </citation>
+      </ref>
+      <ref id="B101">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Van der Hoorn</surname>
+              <given-names>RAL</given-names>
+            </name>
+            <name>
+              <surname>Leewenburgh</surname>
+              <given-names>MA</given-names>
+            </name>
+            <name>
+              <surname>Bogyo</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Joosten</surname>
+              <given-names>MHAJ</given-names>
+            </name>
+            <name>
+              <surname>Peck</surname>
+              <given-names>SC</given-names>
+            </name>
+          </person-group>
+          <article-title>Activity profiling of papain-like cysteine proteases in plants</article-title>
+          <source>Plant Physiol</source>
+          <year>2004</year>
+          <volume>135</volume>
+          <fpage>1170</fpage>
+          <lpage>1178</lpage>
+          <pub-id pub-id-type="pmid">15266051</pub-id>
+        </citation>
+      </ref>
+      <ref id="B102">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Thakurta</surname>
+              <given-names>PG</given-names>
+            </name>
+            <name>
+              <surname>Biswas</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Chakrabarti</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Sundd</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Jagannadham</surname>
+              <given-names>MV</given-names>
+            </name>
+            <name>
+              <surname>Dattagupta</surname>
+              <given-names>JK</given-names>
+            </name>
+          </person-group>
+          <article-title>Structural basis of the unusual stability and substrate specificity of Ervatamin C, a plant cysteine protease from <italic>Ervatamia coronaria</italic></article-title>
+          <source>Biochemistry</source>
+          <year>2004</year>
+          <volume>43</volume>
+          <fpage>1532</fpage>
+          <lpage>1540</lpage>
+          <pub-id pub-id-type="pmid">14769029</pub-id>
+        </citation>
+      </ref>
+      <ref id="B103">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Bah</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Paulsen</surname>
+              <given-names>BS</given-names>
+            </name>
+            <name>
+              <surname>Diallo</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Johansen</surname>
+              <given-names>HT</given-names>
+            </name>
+          </person-group>
+          <article-title>Characterization of cysteine proteases in Malian medicinal plants</article-title>
+          <source>J Ethnopharmacol</source>
+          <year>2006</year>
+          <volume>107</volume>
+          <fpage>189</fpage>
+          <lpage>198</lpage>
+          <pub-id pub-id-type="pmid">16621376</pub-id>
+        </citation>
+      </ref>
+      <ref id="B104">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kyndt</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Van Damme</surname>
+              <given-names>EJM</given-names>
+            </name>
+            <name>
+              <surname>Beeumen</surname>
+              <given-names>JV</given-names>
+            </name>
+            <name>
+              <surname>Gheysen</surname>
+              <given-names>G</given-names>
+            </name>
+          </person-group>
+          <article-title>Purification and characterization of the cysteine proteinases in the latex of <italic>Vasconcellea </italic>spp</article-title>
+          <source>FEBS Journal</source>
+          <year>2007</year>
+          <volume>274</volume>
+          <fpage>451</fpage>
+          <lpage>462</lpage>
+          <pub-id pub-id-type="pmid">17229150</pub-id>
+        </citation>
+      </ref>
+      <ref id="B105">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Dubey</surname>
+              <given-names>VK</given-names>
+            </name>
+            <name>
+              <surname>Jagannadham</surname>
+              <given-names>MV</given-names>
+            </name>
+          </person-group>
+          <article-title>Procerain, a stable cysteine protease from the latex of <italic>Calotropis procerca</italic></article-title>
+          <source>Phytochemistry</source>
+          <year>2003</year>
+          <volume>62</volume>
+          <fpage>1057</fpage>
+          <lpage>1071</lpage>
+          <pub-id pub-id-type="pmid">12591258</pub-id>
+        </citation>
+      </ref>
+      <ref id="B106">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Freitas</surname>
+              <given-names>CDT</given-names>
+            </name>
+            <name>
+              <surname>Oliveira</surname>
+              <given-names>JS</given-names>
+            </name>
+            <name>
+              <surname>Miranda</surname>
+              <given-names>MRA</given-names>
+            </name>
+            <name>
+              <surname>Macedo</surname>
+              <given-names>NMR</given-names>
+            </name>
+            <name>
+              <surname>Sales</surname>
+              <given-names>MP</given-names>
+            </name>
+            <name>
+              <surname>Villas-Boas</surname>
+              <given-names>LA</given-names>
+            </name>
+            <name>
+              <surname>Ramos</surname>
+              <given-names>MV</given-names>
+            </name>
+          </person-group>
+          <article-title>Enzymatic activities and protein profile of latex from <italic>Calotropis procerca</italic></article-title>
+          <source>Plant Physiol Biochem</source>
+          <year>2007</year>
+          <volume>45</volume>
+          <fpage>781</fpage>
+          <lpage>789</lpage>
+          <pub-id pub-id-type="pmid">17888673</pub-id>
+        </citation>
+      </ref>
+      <ref id="B107">
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Stepek</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Buttle</surname>
+              <given-names>DJ</given-names>
+            </name>
+            <name>
+              <surname>Duce</surname>
+              <given-names>IR</given-names>
+            </name>
+            <name>
+              <surname>Behnke</surname>
+              <given-names>JM</given-names>
+            </name>
+          </person-group>
+          <article-title>Assessment of the anthelmintic effect of natural plant cysteine proteinases against the gastrointestinal nematode, <italic>Heligmosmoides polygyrus in vitro</italic></article-title>
+          <source>Parasitology</source>
+          <year>2005</year>
+          <volume>130</volume>
+          <fpage>203</fpage>
+          <lpage>211</lpage>
+          <pub-id pub-id-type="pmid">15727070</pub-id>
+        </citation>
+      </ref>
+      <ref id="B108">
+        <citation citation-type="other">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Conroy</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Thakur</surname>
+              <given-names>YA</given-names>
+            </name>
+          </person-group>
+          <article-title>A local plant for de-worming goats</article-title>
+          <source>LEISA</source>
+          <year>2005</year>
+          <fpage>24</fpage>
+        </citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
+</pmc-articleset>

@@ -21,8 +21,12 @@ BUFSIZE = 33554432
 
 def download_metadata(target_directory):
     """
-    Downloads files from PubMed FTP server into given directory.
+    Downloads files from PubMed FTP server into given directory,
+    yielding download status. This function is invoked by oa-get.
+
+    This function is a generator and should only be invoked as such.
     """
+    # This function has no doctest, because the files are too big.
     urls = [
         'ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/articles.A-B.tar.gz',
         'ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/articles.C-H.tar.gz',
@@ -62,8 +66,15 @@ def download_metadata(target_directory):
 
 def list_articles(target_directory, supplementary_materials=False, skip=[]):
     """
-    Iterates over archive files in target_directory, yielding article information.
+    Iterates over archive files in target_directory, yielding article
+    information in a dictionary. This function is invoked by oa-cache.
+
+    The function utilizes the tarfile module so it does not have to
+    store several Gigabytes of XML on space-limited permanent storage.
+
+    This function is a generator and should only be invoked as such.
     """
+    # This method has no doctest because the needed files are too big.
     listing = listdir(target_directory)
     for filename in listing:
         with tarfile.open(path.join(target_directory, filename)) as archive:
@@ -115,6 +126,8 @@ def _get_article_categories(tree):
     """
     Given an ElementTree, return (some) article categories.
     """
+    # This function currently has no doctest because the XML file used
+    # for the other tests does not contain any categories.
     categories = []
     article_categories = ElementTree(tree).find('.//*article-categories')
     for subject_group in article_categories.iter('subj-group'):
@@ -145,6 +158,12 @@ def _get_article_categories(tree):
 def _get_article_contrib_authors(tree):
     """
     Given an ElementTree, returns article authors in a format suitable for citation.
+
+    >>> with open('pmc_doi.xml') as content:
+    ...     tree = ElementTree().parse(content)
+    ...     for article_tree in tree.iterfind('article'):
+    ...         _get_article_contrib_authors(article_tree)
+    'Behnke J, Buttle D, Stepek G, Lowe A, Duce I'
     """
     authors = []
     front = ElementTree(tree).find('front')
@@ -178,6 +197,12 @@ def _get_article_contrib_authors(tree):
 def _get_article_title(tree):
     """
     Given an ElementTree, returns article title.
+
+    >>> with open('pmc_doi.xml') as content:
+    ...     tree = ElementTree().parse(content)
+    ...     for article_tree in tree.iterfind('article'):
+    ...         _get_article_title(article_tree)
+    'Developing novel anthelmintics from plant cysteine proteinases'
     """
     title = ElementTree(tree).find('front/article-meta/title-group/article-title')
     if title is None:
@@ -187,6 +212,12 @@ def _get_article_title(tree):
 def _get_article_abstract(tree):
     """
     Given an ElementTree, returns article abstract.
+
+    >>> with open('pmc_doi.xml') as content:
+    ...     tree = ElementTree().parse(content)
+    ...     for article_tree in tree.iterfind('article'):
+    ...         _get_article_abstract(article_tree)
+    'Intestinal helminth infections of livestock and humans are predominantly controlled by treatment with three classes of synthetic drugs, but some livestock nematodes have now developed resistance to all three classes and there are signs that human hookworms are becoming less responsive to the two classes (benzimidazoles and the nicotinic acetylcholine agonists) that are licensed for treatment of humans. New anthelmintics are urgently needed, and whilst development of new synthetic drugs is ongoing, it is slow and there are no signs yet that novel compounds operating through different modes of action, will be available on the market in the current decade. The development of naturally-occurring compounds as medicines for human use and for treatment of animals is fraught with problems. In this paper we review the current status of cysteine proteinases from fruits and protective plant latices as novel anthelmintics, we consider some of the problems inherent in taking laboratory findings and those derived from folk-medicine to the market and we suggest that there is a wealth of new compounds still to be discovered that could be harvested to benefit humans and livestock.'
     """
     for abstract in ElementTree(tree).iterfind('.//*abstract'):
         if 'abstract-type' in abstract.attrib:  # toc or summary
@@ -198,6 +229,12 @@ def _get_article_abstract(tree):
 def _get_journal_title(tree):
     """
     Given an ElementTree, returns journal title.
+
+    >>> with open('pmc_doi.xml') as content:
+    ...     tree = ElementTree().parse(content)
+    ...     for article_tree in tree.iterfind('article'):
+    ...         _get_journal_title(article_tree)
+    'Parasites & Vectors'
     """
     front = ElementTree(tree).find('front')
     for journal_meta in front.iter('journal-meta'):
@@ -210,8 +247,14 @@ def _get_journal_title(tree):
 
 def _get_article_date(tree):
     """
-    Given an ElementTree, returns article date as list of integers in
-    the format [year, month, day].
+    Given an ElementTree, returns article date as tuple of integers in
+    the format (year, month, day).
+
+    >>> with open('pmc_doi.xml') as content:
+    ...     tree = ElementTree().parse(content)
+    ...     for article_tree in tree.iterfind('article'):
+    ...         _get_article_date(article_tree)
+    (2008, None, None)
     """
     article_meta = tree.find('front/article-meta')
     for pub_date in article_meta.iter('pub-date'):
@@ -230,6 +273,12 @@ def _get_article_date(tree):
 def _get_article_url(tree):
     """
     Given an ElementTree, returns article URL.
+
+    >>> with open('pmc_doi.xml') as content:
+    ...     tree = ElementTree().parse(content)
+    ...     for article_tree in tree.iterfind('article'):
+    ...         _get_article_url(article_tree)
+    'http://dx.doi.org/10.1186/1756-3305-1-29'
     """
     doi = _get_article_doi(tree)
     if doi:
@@ -484,7 +533,14 @@ license_url_fixes = {
 
 def _get_article_licensing(tree):
     """
-    Given an ElementTree, returns article license URL.
+    Given an ElementTree, return tuple consisting of article license
+    URL, article license text, article copyright statement text.
+
+    >>> with open('pmc_doi.xml') as content:
+    ...     tree = ElementTree().parse(content)
+    ...     for article_tree in tree.iterfind('article'):
+    ...         _get_article_licensing(article_tree)
+    ('http://creativecommons.org/licenses/by/2.0/', None, None)
     """
     license_text = None
     license_url = None
@@ -533,6 +589,9 @@ def _get_article_licensing(tree):
                 logging.error('Unknown copyright statement: %s', copyright_statement_text)
 
     def _fix_license_url(license_url):
+        """
+        Return canonical license URL.
+        """
         if license_url in license_url_fixes.keys():
             return license_url_fixes[license_url]
         return license_url
@@ -551,6 +610,12 @@ def _get_article_licensing(tree):
 def _get_article_copyright_holder(tree):
     """
     Given an ElementTree, returns article copyright holder.
+
+    >>> with open('pmc_doi.xml') as content:
+    ...     tree = ElementTree().parse(content)
+    ...     for article_tree in tree.iterfind('article'):
+    ...         _get_article_copyright_holder(article_tree)
+    'Behnke et al; licensee BioMed Central Ltd.'
     """
     copyright_holder = tree.find(
         'front/article-meta/permissions/copyright-holder'
@@ -575,6 +640,27 @@ def _get_article_copyright_holder(tree):
 def _get_supplementary_materials(tree):
     """
     Given an ElementTree, returns a list of article supplementary materials.
+
+    >>> with open('pmc_doi.xml') as content:
+    ...     tree = ElementTree().parse(content)
+    ...     for article_tree in tree.iterfind('article'):
+    ...         materials = _get_supplementary_materials(article_tree)
+
+    The materials list contains dictionaries for each supplementary material:
+
+    >>> materials[0]['mimetype']
+    'video'
+    >>> materials[0]['title']
+    'Additional file 1'
+    >>> materials[0]['url']
+    'http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2559997/bin/1756-3305-1-29-S1.mpg'
+    >>> materials[0]['mime-subtype']
+    'mpeg'
+    >>> materials[0]['label']
+    ''
+    >>> materials[0]['caption'][0:22] + u'...'
+    u'A single adult female ...'
+
     """
     materials = []
     for sup in tree.iter('supplementary-material'):
@@ -591,6 +677,25 @@ def _get_supplementary_material(tree, sup):
     """
     Given an ElementTree returns supplementary materials as a
     dictionary containing url, mimetype and label and caption.
+
+    >>> with open('pmc_doi.xml') as content:
+    ...     tree = ElementTree().parse(content)
+    ...     for article_tree in tree.iterfind('article'):
+    ...         for sup in article_tree.iter('supplementary-material'):
+    ...            material = _get_supplementary_material(article_tree, sup)
+
+    >>> material['mimetype']
+    'video'
+    >>> material['title']
+    'Additional file 1'
+    >>> material['url']
+    'http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2559997/bin/1756-3305-1-29-S1.mpg'
+    >>> material['mime-subtype']
+    'mpeg'
+    >>> material['label']
+    ''
+    >>> material['caption'][0:22] + u'...'
+    u'A single adult female ...'
     """
     result = {}
     sup_tree = ElementTree(sup)
@@ -637,7 +742,13 @@ def _get_supplementary_material(tree, sup):
 
 def _get_pmcid(tree):
     """
-    Given an ElementTree, returns PubMed Central ID.
+    Given an ElementTree, returns PubMed Central ID of article.
+
+    >>> with open('pmc_doi.xml') as content:
+    ...     tree = ElementTree().parse(content)
+    ...     for article_tree in tree.iterfind('article'):
+    ...         _get_pmcid(article_tree)
+    '2559997'
     """
     front = ElementTree(tree).find('front')
     for article_id in front.iter('article-id'):
@@ -646,7 +757,14 @@ def _get_pmcid(tree):
 
 def _get_article_doi(tree):
     """
-    Given an ElementTree, returns DOI.
+    Given an ElementTree, returns DOI for article.
+
+    >>> with open('pmc_doi.xml') as content:
+    ...     tree = ElementTree().parse(content)
+    ...     for article_tree in tree.iterfind('article'):
+    ...         _get_article_doi(article_tree)
+    '10.1186/1756-3305-1-29'
+
     """
     front = ElementTree(tree).find('front')
     for article_id in front.iter('article-id'):
