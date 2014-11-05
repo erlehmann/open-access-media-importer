@@ -29,6 +29,9 @@ To use the upload feature of oa-put, copy the userconfig.example file to
 
 A screencast showing usage can be played back with “ttyplay screencast”.
 
+Useful notes:
+    http://chrismaloney.org/notes/OAMI
+
 To plot mimetypes occurring in sources, install python-matplotlib and pipe the output of “oa-cache stats [source]” to the included plot-helper script.
 
 License:
