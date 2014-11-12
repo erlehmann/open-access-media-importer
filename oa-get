@@ -33,7 +33,7 @@ def detect_duplicates(source):
     See function mediawiki.is_uploaded for details regarding duplicate
     detection.
     """
-    source_module = set_source(args.target)
+    source_module = set_source(source)
     materials = SupplementaryMaterial.query.filter(
         (SupplementaryMaterial.mimetype_reported=='audio') |
         (SupplementaryMaterial.mimetype_reported=='video')
@@ -65,7 +65,7 @@ def update_mimetypes(source):
     """
     ms = magic.open(magic.MIME_TYPE)
     ms.load()
-    source_module = set_source(args.target)
+    source_module = set_source(source)
     materials = SupplementaryMaterial.query.filter_by(
         mimetype_reported=None,
         mime_subtype_reported=None
@@ -152,7 +152,7 @@ def update_mimetypes(source):
 
 def download_metadata(source):
     """Download metadata for given OAMI source."""
-    source_path = config.get_metadata_raw_source_path(target)
+    source_path = config.get_metadata_raw_source_path(source)
     url = None
     for result in source_module.download_metadata(source_path):
         if result['url'] != url:
@@ -165,8 +165,8 @@ def download_metadata(source):
 
 def download_media(source):
     """Download media files for given OAMI source."""
-    media_path = config.get_media_raw_source_path(target)
-    source_module = set_source(args.target)
+    media_path = config.get_media_raw_source_path(source)
+    source_module = set_source(source)
     materials = SupplementaryMaterial.query.filter_by(
         downloaded=False
     ).all()
