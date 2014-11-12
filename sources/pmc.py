@@ -159,7 +159,7 @@ def _get_article_contrib_authors(tree):
     """
     Given an ElementTree, returns article authors in a format suitable for citation.
 
-    >>> with open('pmc_doi.xml') as content:
+    >>> with open('tests/10.1186/1756-3305-1-29.xml') as content:
     ...     tree = ElementTree().parse(content)
     ...     for article_tree in tree.iterfind('article'):
     ...         _get_article_contrib_authors(article_tree)
@@ -198,7 +198,7 @@ def _get_article_title(tree):
     """
     Given an ElementTree, returns article title.
 
-    >>> with open('pmc_doi.xml') as content:
+    >>> with open('tests/10.1186/1756-3305-1-29.xml') as content:
     ...     tree = ElementTree().parse(content)
     ...     for article_tree in tree.iterfind('article'):
     ...         _get_article_title(article_tree)
@@ -213,7 +213,7 @@ def _get_article_abstract(tree):
     """
     Given an ElementTree, returns article abstract.
 
-    >>> with open('pmc_doi.xml') as content:
+    >>> with open('tests/10.1186/1756-3305-1-29.xml') as content:
     ...     tree = ElementTree().parse(content)
     ...     for article_tree in tree.iterfind('article'):
     ...         _get_article_abstract(article_tree)
@@ -230,7 +230,7 @@ def _get_journal_title(tree):
     """
     Given an ElementTree, returns journal title.
 
-    >>> with open('pmc_doi.xml') as content:
+    >>> with open('tests/10.1186/1756-3305-1-29.xml') as content:
     ...     tree = ElementTree().parse(content)
     ...     for article_tree in tree.iterfind('article'):
     ...         _get_journal_title(article_tree)
@@ -250,7 +250,7 @@ def _get_article_date(tree):
     Given an ElementTree, returns article date as tuple of integers in
     the format (year, month, day).
 
-    >>> with open('pmc_doi.xml') as content:
+    >>> with open('tests/10.1186/1756-3305-1-29.xml') as content:
     ...     tree = ElementTree().parse(content)
     ...     for article_tree in tree.iterfind('article'):
     ...         _get_article_date(article_tree)
@@ -274,7 +274,7 @@ def _get_article_url(tree):
     """
     Given an ElementTree, returns article URL.
 
-    >>> with open('pmc_doi.xml') as content:
+    >>> with open('tests/10.1186/1756-3305-1-29.xml') as content:
     ...     tree = ElementTree().parse(content)
     ...     for article_tree in tree.iterfind('article'):
     ...         _get_article_url(article_tree)
@@ -536,7 +536,10 @@ def _get_article_licensing(tree):
     Given an ElementTree, return tuple consisting of article license
     URL, article license text, article copyright statement text.
 
-    >>> with open('pmc_doi.xml') as content:
+    Some articles contain a license URL within the xlink:href
+    attribute of a <license> element:
+
+    >>> with open('tests/10.1186/1756-3305-1-29.xml') as content:
     ...     tree = ElementTree().parse(content)
     ...     for article_tree in tree.iterfind('article'):
     ...         _get_article_licensing(article_tree)
@@ -618,7 +621,7 @@ def _get_article_copyright_holder(tree):
     """
     Given an ElementTree, returns article copyright holder.
 
-    >>> with open('pmc_doi.xml') as content:
+    >>> with open('tests/10.1186/1756-3305-1-29.xml') as content:
     ...     tree = ElementTree().parse(content)
     ...     for article_tree in tree.iterfind('article'):
     ...         _get_article_copyright_holder(article_tree)
@@ -648,7 +651,7 @@ def _get_supplementary_materials(tree):
     """
     Given an ElementTree, returns a list of article supplementary materials.
 
-    >>> with open('pmc_doi.xml') as content:
+    >>> with open('tests/10.1186/1756-3305-1-29.xml') as content:
     ...     tree = ElementTree().parse(content)
     ...     for article_tree in tree.iterfind('article'):
     ...         materials = _get_supplementary_materials(article_tree)
@@ -685,7 +688,7 @@ def _get_supplementary_material(tree, sup):
     Given an ElementTree returns supplementary materials as a
     dictionary containing url, mimetype and label and caption.
 
-    >>> with open('pmc_doi.xml') as content:
+    >>> with open('tests/10.1186/1756-3305-1-29.xml') as content:
     ...     tree = ElementTree().parse(content)
     ...     for article_tree in tree.iterfind('article'):
     ...         for sup in article_tree.iter('supplementary-material'):
@@ -751,7 +754,7 @@ def _get_pmcid(tree):
     """
     Given an ElementTree, returns PubMed Central ID of article.
 
-    >>> with open('pmc_doi.xml') as content:
+    >>> with open('tests/10.1186/1756-3305-1-29.xml') as content:
     ...     tree = ElementTree().parse(content)
     ...     for article_tree in tree.iterfind('article'):
     ...         _get_pmcid(article_tree)
@@ -766,7 +769,7 @@ def _get_article_doi(tree):
     """
     Given an ElementTree, returns DOI for article.
 
-    >>> with open('pmc_doi.xml') as content:
+    >>> with open('tests/10.1186/1756-3305-1-29.xml') as content:
     ...     tree = ElementTree().parse(content)
     ...     for article_tree in tree.iterfind('article'):
     ...         _get_article_doi(article_tree)
