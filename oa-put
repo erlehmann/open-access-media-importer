@@ -18,93 +18,99 @@ from urllib2 import urlparse
 from helpers import config, efetch, filename_from_url, mediawiki, template
 from model import session, set_source, Article, Journal, SupplementaryMaterial
 
+
+def upload_material(material):
+    """Uploads a single supplementary material to Mediawiki."""
+    media_refined_directory = config.get_media_refined_source_path(source)
+    filename = filename_from_url(material.url) + '.ogg'
+    media_refined_path = path.join(media_refined_directory, filename)
+
+    if (path.getsize(media_refined_path) == 0):
+        material.converted=False
+        continue
+
+    if mediawiki.is_uploaded(material):
+        logging.warning("Skipping “%s”, already exists at %s." % (
+            media_refined_path.encode('utf-8'),
+            mediawiki.get_wiki_name()
+        ))
+        material.uploaded=True
+        continue
+
+    article_doi = material.article.doi
+    article_pmid = efetch.get_pmid_from_doi(article_doi)
+    article_pmcid = efetch.get_pmcid_from_doi(article_doi)
+    authors = material.article.contrib_authors
+    article_title = material.article.title
+    journal_title = material.article.journal.title
+    article_year = material.article.year
+    article_month = material.article.month
+    article_day = material.article.day
+    article_url = material.article.url
+    license_url = material.article.license_url
+    rights_holder = material.article.copyright_holder
+    label = material.label
+    title = material.title
+    caption = material.caption
+    mimetype = material.mimetype
+    material_url = material.url
+    categories = [category.name for category in material.article.categories]
+    if article_pmid is not None:
+        categories += efetch.get_categories_from_pmid(article_pmid)
+
+    #TODO: file extension should be adapted for other file formats
+    url_path = urlparse.urlsplit(material.url).path
+    source_filename = url_path.split('/')[-1]
+    assert(mimetype in ('audio', 'video'))
+    if mimetype == 'audio':
+        extension = 'oga'
+    elif mimetype == 'video':
+        extension = 'ogv'
+    wiki_filename = path.splitext(source_filename)[0] + '.' + extension
+    if article_title is not None:
+        dirty_prefix = article_title
+        dirty_prefix = dirty_prefix.replace('\n', '')
+        dirty_prefix = ' '.join(dirty_prefix.split()) # remove multiple spaces
+        forbidden_chars = u"""?,;:^/!<>"`'±#[]|{}ʻʾʿ᾿῾‘’“”"""
+        for character in forbidden_chars:
+            dirty_prefix = dirty_prefix.replace(character, '')
+        # prefix is first hundred chars of title sans forbidden characters
+        prefix = '-'.join(dirty_prefix[:100].split(' '))
+        # if original title is longer than cleaned up title, remove last word
+        if len(dirty_prefix) > len(prefix):
+            prefix = '-'.join(prefix.split('-')[:-1])
+        if prefix[-1] != '-':
+           prefix += '-'
+        wiki_filename = prefix + wiki_filename
+
+    page_template = template.page(article_doi, article_pmid, \
+        article_pmcid, authors, article_title, journal_title, \
+        article_year, article_month, article_day, article_url, \
+        license_url, label, caption, title, categories, mimetype, \
+                                      material_url)
+
+    mediawiki.upload(media_refined_path, wiki_filename, page_template)
+
+    logging.info("“%s” uploaded to <%s>." % (
+        media_refined_path.encode('utf-8'),
+        config.api_url.encode('utf-8')
+    ))
+
+    material.uploaded = True
+    session.commit()
+
+
 def upload_media(source):
     """Upload converted media files to Mediawiki."""
     set_source(args.target)
-    media_refined_directory = config.get_media_refined_source_path(source)
-
     materials = SupplementaryMaterial.query.filter_by(
         converted=True,
         uploaded=False
     ).all()
     for material in materials:
-        filename = filename_from_url(material.url) + '.ogg'
-        media_refined_path = path.join(media_refined_directory, filename)
-
-        if (path.getsize(media_refined_path) == 0):
-            material.converted=False
-            continue
-
-        if mediawiki.is_uploaded(material):
-            logging.warning("Skipping “%s”, already exists at %s." % (
-                media_refined_path.encode('utf-8'),
-                mediawiki.get_wiki_name()
-            ))
-            material.uploaded=True
-            continue
-
-        article_doi = material.article.doi
-        article_pmid = efetch.get_pmid_from_doi(article_doi)
-        article_pmcid = efetch.get_pmcid_from_doi(article_doi)
-        authors = material.article.contrib_authors
-        article_title = material.article.title
-        journal_title = material.article.journal.title
-        article_year = material.article.year
-        article_month = material.article.month
-        article_day = material.article.day
-        article_url = material.article.url
-        license_url = material.article.license_url
-        rights_holder = material.article.copyright_holder
-        label = material.label
-        title = material.title
-        caption = material.caption
-        mimetype = material.mimetype
-        material_url = material.url
-        categories = [category.name for category in material.article.categories]
-        if article_pmid is not None:
-            categories += efetch.get_categories_from_pmid(article_pmid)
-
-        #TODO: file extension should be adapted for other file formats
-        url_path = urlparse.urlsplit(material.url).path
-        source_filename = url_path.split('/')[-1]
-        assert(mimetype in ('audio', 'video'))
-        if mimetype == 'audio':
-            extension = 'oga'
-        elif mimetype == 'video':
-            extension = 'ogv'
-        wiki_filename = path.splitext(source_filename)[0] + '.' + extension
-        if article_title is not None:
-            dirty_prefix = article_title
-            dirty_prefix = dirty_prefix.replace('\n', '')
-            dirty_prefix = ' '.join(dirty_prefix.split()) # remove multiple spaces
-            forbidden_chars = u"""?,;:^/!<>"`'±#[]|{}ʻʾʿ᾿῾‘’“”"""
-            for character in forbidden_chars:
-                dirty_prefix = dirty_prefix.replace(character, '')
-            # prefix is first hundred chars of title sans forbidden characters
-            prefix = '-'.join(dirty_prefix[:100].split(' '))
-            # if original title is longer than cleaned up title, remove last word
-            if len(dirty_prefix) > len(prefix):
-                prefix = '-'.join(prefix.split('-')[:-1])
-            if prefix[-1] != '-':
-               prefix += '-'
-            wiki_filename = prefix + wiki_filename
-
-        page_template = template.page(article_doi, article_pmid, \
-            article_pmcid, authors, article_title, journal_title, \
-            article_year, article_month, article_day, article_url, \
-            license_url, label, caption, title, categories, mimetype, \
-                                          material_url)
-
-        mediawiki.upload(media_refined_path, wiki_filename, page_template)
-
-        logging.info("“%s” uploaded to <%s>." % (
-            media_refined_path.encode('utf-8'),
-            config.api_url.encode('utf-8')
-        ))
-
-        material.uploaded = True
-        session.commit()
+        upload_material(material)
         sleep(10)  # 6 uploads per minute
+
 
 if args.action == 'upload-media':
     upload_media(args.target)
