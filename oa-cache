@@ -362,7 +362,7 @@ def stats(source):
                 mimetypes_publishers['correct'][doi_prefix] += 1
         except TypeError:  # oa-get update-mimetypes was not run
             mimetypes_publishers['unknown'][doi_prefix] += 1
-        if license_url in config.free_license_urls:
+        if is_free_license(license_url):
             licenses['free'][license_url] += 1
             mimetypes['free'][mimetype_composite] += 1
             mimetypes_prefix_publishers['free'][mimetype][doi_prefix] += 1
