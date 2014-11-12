@@ -154,6 +154,7 @@ def update_mimetypes(source):
 def download_metadata(source):
     """Download metadata for given OAMI source."""
     source_path = config.get_metadata_raw_source_path(source)
+    source_module = set_source(source)
     url = None
     for result in source_module.download_metadata(source_path):
         if result['url'] != url:
