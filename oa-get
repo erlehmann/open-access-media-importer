@@ -20,8 +20,6 @@ from os import path
 from sys import argv, stdout
 from urllib2 import urlopen, Request, HTTPError
 
-BUFSIZE = 1024000  # (1024KB)
-
 from model import session, set_source, Article, Journal, SupplementaryMaterial
 
 from helpers import config, mediawiki, filename_from_url
@@ -205,7 +203,7 @@ def download_media(source):
 
         with open(local_filename,'wb') as local_file:
             while True:
-                chunk = remote_file.read(BUFSIZE)
+                chunk = remote_file.read(1024000)  # chunk size 1024KB
                 if chunk != '':
                     local_file.write(chunk)
                     completed += len(chunk)
