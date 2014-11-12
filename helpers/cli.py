@@ -87,7 +87,7 @@ def init_logging(verbose):
         loglevel = logging.WARN
     if verbose == 2:
         loglevel = logging.INFO
-    if verbose == 3:
+    if verbose >= 3:
         loglevel = logging.DEBUG
 
     logging.basicConfig(
