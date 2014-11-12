@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from helpers.cli import ArgumentParser
-parser = OAMIArgumentParser(choices=[
+parser = ArgumentParser(choices=[
         'upload-media'
 ])
 args = parser.parse_args()

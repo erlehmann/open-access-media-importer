@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from helpers.cli import ArgumentParser
-parser = OAMIArgumentParser(choices=[
+parser = ArgumentParser(choices=[
     'detect-duplicates',
     'download-metadata',
     'download-media',
