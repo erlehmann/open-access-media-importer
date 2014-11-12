@@ -1,6 +1,32 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from argparse import ArgumentParser
+parser = ArgumentParser()
+parser.add_argument('action', choices=[
+    'detect-duplicates',
+    'download-metadata',
+    'download-media',
+    'update-mimetypes',
+    ])
+parser.add_argument(
+    'target',
+    help='OAMI metadata source (e.g. pmc, pmc_doi, pmc_pmcid)'
+    )
+parser.add_argument(
+    '-v',
+    '--verbose',
+    help='Verbose output.',
+    action='store_true'
+    )
+args = parser.parse_args()
+
+if args.verbose:
+    logging.basicConfig(
+        format='%(levelname)s: %(message)s',
+        level=logging.DEBUG
+        )
+
 import progressbar
 import magic
 
@@ -45,7 +71,8 @@ setup_all(True)
 
 from helpers import config, mediawiki, filename_from_url
 
-if action == 'detect-duplicates':
+
+def detect_duplicates(source):
     materials = SupplementaryMaterial.query.filter(
         (SupplementaryMaterial.mimetype_reported=='audio') |
         (SupplementaryMaterial.mimetype_reported=='video')
@@ -67,7 +94,8 @@ if action == 'detect-duplicates':
                     material.label
                     ))
 
-if action == 'update-mimetypes':
+
+def update_mimetypes(source):
     ms = magic.open(magic.MIME_TYPE)
     ms.load()
     materials = SupplementaryMaterial.query.filter_by(
@@ -154,7 +182,8 @@ if action == 'update-mimetypes':
             material.mime_subtype_reported = get_mime_subtype(reported_mimetype)
         session.commit()
 
-if action == 'download-metadata':
+
+def download_metadata(source):
     source_path = config.get_metadata_raw_source_path(target)
     url = None
     for result in source_module.download_metadata(source_path):
@@ -165,7 +194,8 @@ if action == 'download-metadata':
             p = progressbar.ProgressBar(maxval=result['total']).start()
         p.update(result['completed'])
 
-if action == 'download-media':
+
+def download_media(source):
     media_path = config.get_media_raw_source_path(target)
     materials = SupplementaryMaterial.query.filter_by(
         downloaded=False
@@ -230,3 +260,16 @@ if action == 'download-media':
 
                 material.downloaded = True
                 session.commit()
+
+
+if args.action == 'detect-duplicates':
+    detect_duplicates(args.target)
+
+if args.action == 'download-metadata':
+    download_metadata(args.target)
+
+if args.action == 'download-media':
+    download_media(args.target)
+
+if args.action == 'update-mimetypes':
+    update_mimetypes(args.target)
