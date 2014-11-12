@@ -18,11 +18,8 @@ from helpers import config, efetch, filename_from_url, mediawiki, template
 from model import session, set_source, Article, Journal, SupplementaryMaterial
 
 
-def upload_material(material):
+def upload_material(material, media_refined_path):
     """Uploads a single supplementary material to Mediawiki."""
-    media_refined_directory = config.get_media_refined_source_path(source)
-    filename = filename_from_url(material.url) + '.ogg'
-    media_refined_path = path.join(media_refined_directory, filename)
 
     article_doi=material.article.doi
     article_pmid=efetch.get_pmid_from_doi(article_doi)
@@ -82,12 +79,16 @@ def upload_media(source):
             uploaded=False,
             ).all()
     for material in materials:
+        media_refined_directory = config.get_media_refined_source_path(source)
+        filename = filename_from_url(material.url) + '.ogg'
+        media_refined_path = path.join(media_refined_directory, filename)
+
         if (path.getsize(media_refined_path) == 0):
             material.converted=False
-            continue
+            return
 
         if not mediawiki.is_uploaded(material):
-            upload_material(material)
+            upload_material(material, media_refined_path)
             sleep(10)  # 6 uploads per minute
         else:
             logging.warning("Skipping “%s”, already exists at %s." % (
