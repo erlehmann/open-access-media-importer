@@ -26,6 +26,13 @@ from helpers import config, mediawiki, filename_from_url
 
 
 def detect_duplicates(source):
+    """
+    Print DOI, title and label of materials in OAMI database that are
+    already uploaded on Mediawiki on standard output, divided by tabs.
+
+    See function mediawiki.is_uploaded for details regarding duplicate
+    detection.
+    """
     set_source(args.target)
     materials = SupplementaryMaterial.query.filter(
         (SupplementaryMaterial.mimetype_reported=='audio') |
@@ -48,6 +55,14 @@ def detect_duplicates(source):
 
 
 def update_mimetypes(source):
+    """
+    Update internet media type of supplementary materials.
+
+    This function is needed because publishers often misreport media
+    types. For Details, see the article “Inconsistent XML as a Barrier
+    to Reuse of Open Access Content” from Mietchen, Maloney, Moskopp.
+    <http://www.ncbi.nlm.nih.gov/books/NBK159964/#mietchen-mt-problems>
+    """
     ms = magic.open(magic.MIME_TYPE)
     ms.load()
     set_source(args.target)
@@ -136,6 +151,7 @@ def update_mimetypes(source):
 
 
 def download_metadata(source):
+    """Download metadata for given OAMI source."""
     source_path = config.get_metadata_raw_source_path(target)
     url = None
     for result in source_module.download_metadata(source_path):
@@ -148,6 +164,7 @@ def download_metadata(source):
 
 
 def download_media(source):
+    """Download media files for given OAMI source."""
     media_path = config.get_media_raw_source_path(target)
     set_source(args.target)
     materials = SupplementaryMaterial.query.filter_by(
