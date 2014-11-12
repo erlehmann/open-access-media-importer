@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from helpers.cli import ArgumentParser
+from helpers.cli import ArgumentParser, add_force_download_option
 parser = ArgumentParser(choices=[
     'detect-duplicates',
     'download-metadata',
     'download-media',
     'update-mimetypes',
     ])
+parser = add_force_download_option(parser)
 args = parser.parse_args()
 
 from helpers.cli import init_logging

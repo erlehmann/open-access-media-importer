@@ -32,6 +32,24 @@ def add_force_conversion_option(parser):
     return parser
 
 
+def add_force_download_option(parser):
+    """
+    Add force-download option to an argparse.ArgumentParser parser.
+
+    >>> from argparse import ArgumentParser
+    >>> parser = ArgumentParser()
+    >>> parser = add_force_download_option(parser)
+    >>> parser.parse_args(['--force-download'])
+    Namespace(force_download=True)
+    """
+    parser.add_argument(
+        '--force-download',
+        help='Force download of supplementary materials already downloaded.',
+        action='store_true'
+        )
+    return parser
+
+
 def add_force_upload_option(parser):
     """
     Add force-upload option to an argparse.ArgumentParser parser.
