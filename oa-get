@@ -166,16 +166,22 @@ def download_metadata(source):
 def download_media(source):
     """Download media files for given OAMI source."""
     media_path = config.get_media_raw_source_path(source)
+    logging.debug("Media path: %s" % media_path)
     source_module = set_source(source)
     materials = SupplementaryMaterial.query.filter_by(
         downloaded=False
     ).all()
     for material in materials:
+        logging.debug("Material %s\t%s\t%s." % (
+                      material.url,
+                      material.mimetype,
+                      material.article.doi,
+                      ))
         license_url = material.article.license_url
         if license_url == '':
             continue
         if not license_url in config.free_license_urls:
-            logging.warning('Unknown, possibly non-free license: <%s>\n' %
+            logging.warning('Unknown, possibly non-free license: <%s>' %
                 license_url)
             continue
 
@@ -184,7 +190,7 @@ def download_media(source):
             continue
 
         if mediawiki.is_uploaded(material):
-            logging.info("Skipping <%s>, already exists at %s.\n" % (
+            logging.info("Skipping <%s>, already exists at %s." % (
                 material.url,
                 mediawiki.get_wiki_name()
             ))
