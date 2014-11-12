@@ -79,11 +79,17 @@ def upload_media(source):
             uploaded=False,
             ).all()
     for material in materials:
+        logging.debug('Material %s\t%s\t%s' % (
+                material.url,
+                material.mimetype,
+                material.article.doi,
+                ))
         media_refined_directory = config.get_media_refined_source_path(source)
         filename = filename_from_url(material.url) + '.ogg'
         media_refined_path = path.join(media_refined_directory, filename)
 
         if (path.getsize(media_refined_path) == 0):
+            logging.warning("Empty file: %s" % media_refined_path)
             material.converted=False
             return
 
