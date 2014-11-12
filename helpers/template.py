@@ -156,7 +156,34 @@ def make_description(title, caption):
     return description
 
 
-def page(article_doi, article_pmid, article_pmcid, authors, article_title, journal_title, \
+def make_wiki_filename(material_url, mimetype, article_title):
+    url_path = urlparse.urlsplit(material_url).path
+    source_filename = url_path.split('/')[-1]
+    assert(mimetype in ('audio', 'video'))
+    if mimetype == 'audio':
+        extension = 'oga'
+    elif mimetype == 'video':
+        extension = 'ogv'
+    wiki_filename = path.splitext(source_filename)[0] + '.' + extension
+    if article_title is not None:
+        dirty_prefix = article_title
+        dirty_prefix = dirty_prefix.replace('\n', '')
+        dirty_prefix = ' '.join(dirty_prefix.split()) # remove multiple spaces
+        forbidden_chars = u"""?,;:^/!<>"`'±#[]|{}ʻʾʿ᾿῾‘’“”"""
+        for character in forbidden_chars:
+            dirty_prefix = dirty_prefix.replace(character, '')
+        # prefix is first hundred chars of title sans forbidden characters
+        prefix = '-'.join(dirty_prefix[:100].split(' '))
+        # if original title is longer than cleaned up title, remove last word
+        if len(dirty_prefix) > len(prefix):
+            prefix = '-'.join(prefix.split('-')[:-1])
+        if prefix[-1] != '-':
+           prefix += '-'
+        wiki_filename = prefix + wiki_filename
+    return wiki_filename
+
+
+def make_wiki_page(article_doi, article_pmid, article_pmcid, authors, article_title, journal_title, \
     article_year, article_month, article_day, article_url, license_url, label, caption, \
     title, categories, mimetype, material_url):
     """Return MediaWiki markup of page for given supplementary material."""
