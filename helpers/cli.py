@@ -50,6 +50,24 @@ def add_force_download_option(parser):
     return parser
 
 
+def add_force_find_option(parser):
+    """
+    Add force-find option to an argparse.ArgumentParser parser.
+
+    >>> from argparse import ArgumentParser
+    >>> parser = ArgumentParser()
+    >>> parser = add_force_find_option(parser)
+    >>> parser.parse_args(['--force-find'])
+    Namespace(force_find=True)
+    """
+    parser.add_argument(
+        '--force-find',
+        help='Force finding of supplementary materials already found.',
+        action='store_true'
+        )
+    return parser
+
+
 def add_force_upload_option(parser):
     """
     Add force-upload option to an argparse.ArgumentParser parser.

@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from helpers.cli import ArgumentParser, add_force_conversion_option
+from helpers.cli import ArgumentParser, add_force_conversion_option, \
+    add_force_find_option
 parser = ArgumentParser(choices=[
     'clear-media',
     'clear-database',
@@ -14,6 +15,7 @@ parser = ArgumentParser(choices=[
     'stats',
     ])
 parser = add_force_conversion_option(parser)
+parser = add_force_find_option(parser)
 args = parser.parse_args()
 
 from helpers.cli import init_logging
@@ -206,7 +208,10 @@ def forget_uploaded():
 def find_media(source):
     """Find supplementary materials suitable for conversion."""
     source_module = set_source(args.target)
-    skip = [article.name for article in Article.query.all()]
+    if args.force_find:
+        skip = []
+    else:
+        skip = [article.name for article in Article.query.all()]
     if len(skip) > 0:
         logging.info("Skipping %s records … \n" % len(skip))
     source_path = config.get_metadata_raw_source_path(source)
