@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from helpers.cli import ArgumentParser
+from helpers.cli import ArgumentParser, add_force_conversion_option
 parser = ArgumentParser(choices=[
     'clear-media',
     'clear-database',
@@ -13,6 +13,7 @@ parser = ArgumentParser(choices=[
     'print-database-path',
     'stats',
     ])
+parser = add_force_conversion_option(parser)
 args = parser.parse_args()
 
 from helpers.cli import init_logging
@@ -71,11 +72,22 @@ def clear_media(source):
 def convert_media(source):
     """Converts downloaded supplementary materials that are not converted."""
     source_module = set_source(args.target)
-    materials = SupplementaryMaterial.query.filter_by(
-        downloaded=True,
-        converted=False
-    ).all()
+    if args.force_conversion:
+        materials = SupplementaryMaterial.query.filter_by(
+            downloaded=True,
+            ).all()
+    else:
+        materials = SupplementaryMaterial.query.filter_by(
+            downloaded=True,
+            converted=False
+            ).all()
+    logging.info("%i materials found." % len(materials))
     for material in materials:
+        logging.debug("Converting %s\t%s\t%s." %
+                      material.url,
+                      material.mimetype,
+                      material.article.doi,
+                      )
         media_refined_directory = \
             config.get_media_refined_source_path(source)
         media_raw_directory = \

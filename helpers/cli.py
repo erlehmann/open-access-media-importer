@@ -14,6 +14,24 @@ def ArgumentParser(choices):
     return parser
 
 
+def add_force_conversion_option(parser):
+    """
+    Add force-conversion option to an argparse.ArgumentParser parser.
+
+    >>> from argparse import ArgumentParser
+    >>> parser = ArgumentParser()
+    >>> parser = add_force_conversion_option(parser)
+    >>> parser.parse_args(['--force-conversion'])
+    Namespace(force_conversion=True)
+    """
+    parser.add_argument(
+        '--force-conversion',
+        help='Force conversion of supplementary materials already converted.',
+        action='store_true'
+        )
+    return parser
+
+
 def add_force_upload_option(parser):
     """
     Add force option to an argparse.ArgumentParser parser.
