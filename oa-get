@@ -41,7 +41,7 @@ def detect_duplicates(source):
     if len(materials) == 0:
         logging.warning('No audio or video materials found.')
     for material in materials:
-        logging.debug("Checking material %s %s %s" % (
+        logging.debug("Checking %s\t%s\t%s" % (
                 material.article.doi,
                 material.title,
                 material.label,
