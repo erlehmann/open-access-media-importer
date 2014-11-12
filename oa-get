@@ -77,6 +77,9 @@ def update_mimetypes(source):
         ]
     materials = free_materials  # Checking MIME types of non-free
                                 # supplementary materials costs time.
+    if len(materials) == 0:
+        logging.warning('No free supplementary materials found.')
+        exit(0)
     logging.info('Checking MIME types …\n')
     try:
         widgets = [
