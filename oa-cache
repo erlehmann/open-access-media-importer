@@ -12,25 +12,17 @@ parser.add_argument('action', choices=[
     'forget-downloaded',
     'forget-uploaded',
     'print-database-path',
-    'stats'
+    'stats',
     ])
 parser.add_argument(
     'target',
     help='OAMI metadata source (e.g. pmc, pmc_doi, pmc_pmcid)'
     )
-parser.add_argument(
-    '-v',
-    '--verbose',
-    help='Verbose output.',
-    action='store_true'
-    )
-args = parser.parse_args()
 
-if args.verbose:
-    logging.basicConfig(
-        format='%(levelname)s: %(message)s',
-        level=logging.DEBUG
-        )
+from helpers import add_verbose_option, init_logging
+parser = add_verbose_option(parser)
+args = parser.parse_args()
+logging = init_logging(args.verbose)
 
 from os import listdir, path, remove, rename
 from sys import argv, exit, stderr, stdout
@@ -41,7 +33,6 @@ import pygst
 pygst.require("0.10")
 
 import gst
-import logging
 import progressbar
 
 import mutagen.oggtheora
