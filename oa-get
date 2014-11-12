@@ -23,7 +23,7 @@ from urllib2 import urlopen, Request, HTTPError
 
 from model import session, set_source, Article, Journal, SupplementaryMaterial
 
-from helpers import config, mediawiki, filename_from_url
+from helpers import config, mediawiki, filename_from_url, is_free_license
 
 
 def detect_duplicates(source):
@@ -179,12 +179,13 @@ def download_media(source):
                       material.mimetype,
                       material.article.doi,
                       ))
+
         license_url = material.article.license_url
-        if license_url == '':
-            continue
-        if not license_url in config.free_license_urls:
-            logging.warning('Unknown, possibly non-free license: <%s>' %
-                license_url)
+        if not is_free_license(material.article.license_url):
+            logging.warning(u"<http://dx.doi.org/%s> has non-free license <%s>." % (
+                    material.article.doi,
+                    license_url,
+                    ))
             continue
 
         mimetype = mimetype = material.mimetype
