@@ -157,6 +157,17 @@ def make_description(title, caption):
 
 
 def make_wiki_filename(material_url, mimetype, article_title):
+    """
+    Return a file name for a supplementary material suitable for use
+    in MediaWiki.
+
+    The file name is constructed from the supplementary material's
+    URL, its media type and the title of the article to which the
+    supplementary material belongs.
+
+    >>> make_wiki_filename('http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4210201/bin/pone.0110628.s008.mp4', 'video', 'Looking the Cow in the Eye: Deletion in the NID1 Gene Is Associated with Recessive Inherited Cataract in Romagnola Cattle')
+    u'Looking-the-Cow-in-the-Eye-Deletion-in-the-NID1-Gene-Is-Associated-with-Recessive-Inherited-pone.0110628.s008.ogv'
+    """
     url_path = urlparse.urlsplit(material_url).path
     source_filename = url_path.split('/')[-1]
     assert(mimetype in ('audio', 'video'))
