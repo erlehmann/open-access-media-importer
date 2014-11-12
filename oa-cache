@@ -85,11 +85,11 @@ def convert_media(source):
             ).all()
     logging.info("%i materials found." % len(materials))
     for material in materials:
-        logging.debug("Converting %s\t%s\t%s." %
-                      material.url,
-                      material.mimetype,
-                      material.article.doi,
-                      )
+        logging.debug("Converting %s\t%s\t%s." % (
+                material.url,
+                material.mimetype,
+                material.article.doi,
+                ))
         media_refined_directory = \
             config.get_media_refined_source_path(source)
         media_raw_directory = \
