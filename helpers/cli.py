@@ -14,6 +14,24 @@ def ArgumentParser(choices):
     return parser
 
 
+def add_force_upload_option(parser):
+    """
+    Add force option to an argparse.ArgumentParser parser.
+
+    >>> from argparse import ArgumentParser
+    >>> parser = ArgumentParser()
+    >>> parser = add_force_upload_option(parser)
+    >>> parser.parse_args(['--force-upload'])
+    Namespace(force_upload=True)
+    """
+    parser.add_argument(
+        '--force-upload',
+        help='Force upload of supplementary material.',
+        action='store_true'
+        )
+    return parser
+
+
 def add_target_argument(parser):
     """
     Add target argument to an argparse.ArgumentParser parser.

@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from helpers.cli import ArgumentParser
+from helpers.cli import ArgumentParser, add_force_upload_option
 parser = ArgumentParser(choices=[
         'upload-media'
 ])
+parser = add_force_upload_option(parser)
 args = parser.parse_args()
 
 from helpers.cli import init_logging
@@ -22,18 +23,6 @@ def upload_material(material):
     media_refined_directory = config.get_media_refined_source_path(source)
     filename = filename_from_url(material.url) + '.ogg'
     media_refined_path = path.join(media_refined_directory, filename)
-
-    if (path.getsize(media_refined_path) == 0):
-        material.converted=False
-        continue
-
-    if mediawiki.is_uploaded(material):
-        logging.warning("Skipping “%s”, already exists at %s." % (
-            media_refined_path.encode('utf-8'),
-            mediawiki.get_wiki_name()
-        ))
-        material.uploaded=True
-        continue
 
     article_doi=material.article.doi
     article_pmid=efetch.get_pmid_from_doi(article_doi)
@@ -80,14 +69,33 @@ def upload_material(material):
 
 def upload_media(source):
     """Upload converted media files to Mediawiki."""
-    set_source(args.target)
-    materials = SupplementaryMaterial.query.filter_by(
-        converted=True,
-        uploaded=False
-    ).all()
+    source_module = set_source(args.target)
+    if args.force_upload == True:
+        logging.debug('Uploading converted materials.')
+        materials = SupplementaryMaterial.query.filter_by(
+            converted=True,
+            ).all()
+    else:
+        logging.debug('Uploading converted materials not uploaded.')
+        materials = SupplementaryMaterial.query.filter_by(
+            converted=True,
+            uploaded=False,
+            ).all()
     for material in materials:
-        upload_material(material)
-        sleep(10)  # 6 uploads per minute
+        if (path.getsize(media_refined_path) == 0):
+            material.converted=False
+            continue
+
+        if not mediawiki.is_uploaded(material):
+            upload_material(material)
+            sleep(10)  # 6 uploads per minute
+        else:
+            logging.warning("Skipping “%s”, already exists at %s." % (
+                    media_refined_path.encode('utf-8'),
+                    mediawiki.get_wiki_name()
+                    ))
+            material.uploaded=True
+            continue
 
 
 if args.action == 'upload-media':
