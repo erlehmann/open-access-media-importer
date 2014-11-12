@@ -188,7 +188,7 @@ def download_media(source):
                     ))
             continue
 
-        mimetype = mimetype = material.mimetype
+        mimetype =  material.mimetype
         if mimetype not in ['audio', 'video']:
             continue
 
