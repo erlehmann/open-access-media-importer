@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from os import path
+from urllib2 import urlparse
+
+
 def make_datestring(year, month=None, day=None):
     """
     Return a date string constructed from given year, month, day.
