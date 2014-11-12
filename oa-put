@@ -16,19 +16,10 @@ from time import sleep
 from urllib2 import urlparse
 
 from helpers import config, efetch, filename_from_url, mediawiki, template
-from model import session, setup_all, create_all, set_source, \
-    Article, Journal, SupplementaryMaterial
-
-try:
-    exec "from sources import %s as source_module" % args.target
-except ImportError:  # invalid source
-    logging.error("Unknown source “%s”.\n" % args.target)
-    exit(3)
-
-set_source(args.target)
-setup_all(True)
+from model import session, set_source, Article, Journal, SupplementaryMaterial
 
 def upload_media(source):
+    set_source(args.target)
     media_refined_directory = config.get_media_refined_source_path(source)
 
     materials = SupplementaryMaterial.query.filter_by(

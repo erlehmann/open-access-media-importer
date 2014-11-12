@@ -6,8 +6,22 @@ from os import path
 
 from helpers import config
 
+import logging
+
+def source_module_exists(source):
+    try:
+        exec "from sources import %s as source_module" % source
+    except ImportError:
+        return False
+    return True
+
 def set_source(source):
-    metadata.bind = 'sqlite:///%s' % config.database_path(source)
+    if source_module_exists(source):
+        metadata.bind = 'sqlite:///%s' % config.database_path(source)
+        setup_all(True)
+    else:
+        logging.error("Unknown source “%s”.\n" % source)
+        exit(3)
 
 class Journal(Entity):
     title = Field(UnicodeText, primary_key=True)
