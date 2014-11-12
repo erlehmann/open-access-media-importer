@@ -19,6 +19,7 @@ from helpers import config, efetch, filename_from_url, mediawiki, template
 from model import session, set_source, Article, Journal, SupplementaryMaterial
 
 def upload_media(source):
+    """Upload converted media files to Mediawiki."""
     set_source(args.target)
     media_refined_directory = config.get_media_refined_source_path(source)
 
