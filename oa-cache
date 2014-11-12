@@ -70,7 +70,7 @@ def clear_media(source):
 
 def convert_media(source):
     """Converts downloaded supplementary materials that are not converted."""
-    set_source(args.target)
+    source_module = set_source(args.target)
     materials = SupplementaryMaterial.query.filter_by(
         downloaded=True,
         converted=False
@@ -157,7 +157,7 @@ def convert_media(source):
 
 def forget_converted(source):
     """Reset conversion flag of all supplementary materials."""
-    set_source(args.target)
+    source_module = set_source(args.target)
     materials = SupplementaryMaterial.query.filter_by(
         converted=True
     ).all()
@@ -169,7 +169,7 @@ def forget_converted(source):
 
 def forget_downloaded(source):
     """Reset download flag of all supplementary materials."""
-    set_source(args.target)
+    source_module = set_source(args.target)
     materials = SupplementaryMaterial.query.filter_by(
         downloaded=True
     ).all()
@@ -181,7 +181,7 @@ def forget_downloaded(source):
 
 def forget_uploaded():
     """Reset upload flag of all supplementary materials."""
-    set_source(args.target)
+    source_module = set_source(args.target)
     materials = SupplementaryMaterial.query.filter_by(
         uploaded=True
     ).all()
@@ -193,7 +193,7 @@ def forget_uploaded():
 
 def find_media(source):
     """Find supplementary materials suitable for conversion."""
-    set_source(args.target)
+    source_module = set_source(args.target)
     skip = [article.name for article in Article.query.all()]
     if len(skip) > 0:
         logging.info("Skipping %s records … \n" % len(skip))
@@ -292,7 +292,7 @@ def find_media(source):
 
 def stats(source):
     """Output statistics regarding supplementary materials as a dictionary."""
-    set_source(args.target)
+    source_module = set_source(args.target)
     logging.info('Counting supplementary materials … ')
     materials = SupplementaryMaterial.query.all()
     logging.info(str(len(materials)) + ' supplementary materials found.\n')

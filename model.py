@@ -19,6 +19,8 @@ def set_source(source):
     if source_module_exists(source):
         metadata.bind = 'sqlite:///%s' % config.database_path(source)
         setup_all(True)
+        exec "from sources import %s as source_module" % source
+        return source_module
     else:
         logging.error("Unknown source “%s”.\n" % source)
         exit(3)
