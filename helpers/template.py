@@ -51,6 +51,7 @@ def _escape(text):
             pass
     return text
 
+
 def _trim(text):
     """
     Return given text with spaces collapsed to one space and trimmed.
@@ -59,6 +60,7 @@ def _trim(text):
     'The quick brown fox jumps over the lazy dog.'
     """
     return ' '.join(text.split())
+
 
 def _capitalize_properly(word):
     """
@@ -76,6 +78,7 @@ def _capitalize_properly(word):
         return word.lower()
     else:  # words like 'DNA' or 'HeLa' should not be touched
         return word
+
 
 def _postprocess_category(category):
     """
@@ -110,6 +113,7 @@ def _postprocess_category(category):
     category = ' '.join(processed_category)
     return category[0].capitalize() + category[1:]
 
+
 def get_license_template(url):
     """
     Return MediaWiki template markup for given license URL.
@@ -128,6 +132,7 @@ def get_license_template(url):
         u'http://creativecommons.org/licenses/by-sa/4.0/': '{{cc-by-sa-4.0}}'
     }
     return license_templates[url]
+
 
 def make_description(title, caption):
     """
@@ -149,6 +154,7 @@ def make_description(title, caption):
     else:
         description = "%s %s" % (_escape(title), _escape(caption))
     return description
+
 
 def page(article_doi, article_pmid, article_pmcid, authors, article_title, journal_title, \
     article_year, article_month, article_day, article_url, license_url, label, caption, \
