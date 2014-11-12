@@ -11,7 +11,7 @@ from helpers.cli import init_logging
 logging = init_logging(args.verbose)
 
 from os import path
-from sys import argv, stderr
+from sys import argv
 from time import sleep
 from urllib2 import urlparse
 
@@ -22,7 +22,7 @@ from model import session, setup_all, create_all, set_source, \
 try:
     exec "from sources import %s as source_module" % args.target
 except ImportError:  # invalid source
-    stderr.write("Unknown source “%s”.\n" % args.target)
+    logging.error("Unknown source “%s”.\n" % args.target)
     exit(3)
 
 set_source(args.target)
@@ -44,7 +44,7 @@ def upload_media(source):
             continue
 
         if mediawiki.is_uploaded(material):
-            stderr.write("Skipping “%s”, already exists at %s.\n" % (
+            logging.warning("Skipping “%s”, already exists at %s." % (
                 media_refined_path.encode('utf-8'),
                 mediawiki.get_wiki_name()
             ))
@@ -105,7 +105,7 @@ def upload_media(source):
 
         mediawiki.upload(media_refined_path, wiki_filename, page_template)
 
-        stderr.write("“%s” uploaded to <%s>.\n" % (
+        logging.info("“%s” uploaded to <%s>." % (
             media_refined_path.encode('utf-8'),
             config.api_url.encode('utf-8')
         ))
