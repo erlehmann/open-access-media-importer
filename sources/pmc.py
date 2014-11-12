@@ -541,6 +541,13 @@ def _get_article_licensing(tree):
     ...     for article_tree in tree.iterfind('article'):
     ...         _get_article_licensing(article_tree)
     ('http://creativecommons.org/licenses/by/2.0/', None, None)
+
+    Some articles contain licensing text inside a <license-p> element:
+
+    >>> with open('tests/10.1371/journal.pone.0062199.xml') as content:
+    ...     tree = ElementTree().parse(content)
+    ...     for article_tree in tree.iterfind('article'):
+    ...         _get_article_licensing(article_tree)
     """
     license_text = None
     license_url = None

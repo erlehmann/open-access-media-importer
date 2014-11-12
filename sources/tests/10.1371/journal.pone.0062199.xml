@@ -1,0 +1,488 @@
+<?xml version="1.0"?>
+<!DOCTYPE pmc-articleset PUBLIC "-//NLM//DTD ARTICLE SET 2.0//EN" "http://dtd.nlm.nih.gov/ncbi/pmc/articleset/nlm-articleset-2.0.dtd">
+<pmc-articleset><article xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" article-type="research-article">
+  <?properties open_access?>
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">PLoS One</journal-id>
+      <journal-id journal-id-type="iso-abbrev">PLoS ONE</journal-id>
+      <journal-id journal-id-type="publisher-id">plos</journal-id>
+      <journal-id journal-id-type="pmc">plosone</journal-id>
+      <journal-title-group>
+        <journal-title>PLoS ONE</journal-title>
+      </journal-title-group>
+      <issn pub-type="epub">1932-6203</issn>
+      <publisher>
+        <publisher-name>Public Library of Science</publisher-name>
+        <publisher-loc>San Francisco, USA</publisher-loc>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="pmid">23620812</article-id>
+      <article-id pub-id-type="pmc">3631234</article-id>
+      <article-id pub-id-type="publisher-id">PONE-D-13-03774</article-id>
+      <article-id pub-id-type="doi">10.1371/journal.pone.0062199</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Research Article</subject>
+        </subj-group>
+        <subj-group subj-group-type="Discipline-v2">
+          <subject>Biology</subject>
+          <subj-group>
+            <subject>Anatomy and Physiology</subject>
+            <subj-group>
+              <subject>Neurological System</subject>
+              <subj-group>
+                <subject>Sensory Physiology</subject>
+              </subj-group>
+            </subj-group>
+          </subj-group>
+          <subj-group>
+            <subject>Biochemistry</subject>
+            <subj-group>
+              <subject>Neurochemistry</subject>
+              <subj-group>
+                <subject>Synaptic Plasticity</subject>
+              </subj-group>
+            </subj-group>
+          </subj-group>
+          <subj-group>
+            <subject>Model Organisms</subject>
+            <subj-group>
+              <subject>Animal Models</subject>
+              <subj-group>
+                <subject>Drosophila Melanogaster</subject>
+              </subj-group>
+            </subj-group>
+          </subj-group>
+          <subj-group>
+            <subject>Neuroscience</subject>
+            <subj-group>
+              <subject>Developmental Neuroscience</subject>
+              <subj-group>
+                <subject>Synaptic Plasticity</subject>
+              </subj-group>
+            </subj-group>
+            <subj-group>
+              <subject>Motor Systems</subject>
+              <subject>Sensory Perception</subject>
+              <subject>Sensory Systems</subject>
+            </subj-group>
+          </subj-group>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Role of Sensory Experience in Functional Development of <italic>Drosophila</italic> Motor Circuits</article-title>
+        <alt-title alt-title-type="running-head">Role of Sensory Experience in Motor Development</alt-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Fushiki</surname>
+            <given-names>Akira</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Kohsaka</surname>
+            <given-names>Hiroshi</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Nose</surname>
+            <given-names>Akinao</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+          <xref ref-type="aff" rid="aff2">
+            <sup>2</sup>
+          </xref>
+          <xref ref-type="corresp" rid="cor1">
+            <sup>*</sup>
+          </xref>
+        </contrib>
+      </contrib-group>
+      <aff id="aff1">
+        <label>1</label>
+        <addr-line>Department of Complexity Science and Engineering, Graduate School of Frontier Sciences, University of Tokyo, Kashiwa, Chiba, Japan</addr-line>
+      </aff>
+      <aff id="aff2">
+        <label>2</label>
+        <addr-line>Department of Physics, Graduate School of Science, University of Tokyo, Bunkyo-ku, Tokyo, Japan</addr-line>
+      </aff>
+      <contrib-group>
+        <contrib contrib-type="editor">
+          <name>
+            <surname>McCabe</surname>
+            <given-names>Brian D.</given-names>
+          </name>
+          <role>Editor</role>
+          <xref ref-type="aff" rid="edit1"/>
+        </contrib>
+      </contrib-group>
+      <aff id="edit1">
+        <addr-line>Columbia University, United States of America</addr-line>
+      </aff>
+      <author-notes>
+        <corresp id="cor1">* E-mail: <email>nose@k.u-tokyo.ac.jp</email></corresp>
+        <fn fn-type="conflict">
+          <p><bold>Competing Interests: </bold>The authors have declared that no competing interests exist.</p>
+        </fn>
+        <fn fn-type="con">
+          <p>Conceived and designed the experiments: AF HK AN. Performed the experiments: AF. Analyzed the data: AF. Wrote the paper: AF HK AN.</p>
+        </fn>
+      </author-notes>
+      <pub-date pub-type="collection">
+        <year>2013</year>
+      </pub-date>
+      <pub-date pub-type="epub">
+        <day>19</day>
+        <month>4</month>
+        <year>2013</year>
+      </pub-date>
+      <volume>8</volume>
+      <issue>4</issue>
+      <elocation-id>e62199</elocation-id>
+      <history>
+        <date date-type="received">
+          <day>22</day>
+          <month>1</month>
+          <year>2013</year>
+        </date>
+        <date date-type="accepted">
+          <day>18</day>
+          <month>3</month>
+          <year>2013</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-year>2013</copyright-year>
+        <copyright-holder>Fushiki et al</copyright-holder>
+        <license>
+          <license-p>This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</license-p>
+        </license>
+      </permissions>
+      <abstract>
+        <p>Neuronal circuits are formed according to a genetically predetermined program and then reconstructed in an experience-dependent manner. While the existence of experience-dependent plasticity has been demonstrated for the visual and other sensory systems, it remains unknown whether this is also the case for motor systems. Here we examined the effects of eliminating sensory inputs on the development of peristaltic movements in <italic>Drosophila</italic> embryos and larvae. The peristalsis is initially slow and uncoordinated, but gradually develops into a mature pattern during late embryonic stages. We tested whether inhibiting the transmission of specific sensory neurons during this period would have lasting effects on the properties of the sensorimotor circuits. We applied Shibire-mediated inhibition for six hours during embryonic development (15&#x2013;21 h after egg laying [AEL]) and studied its effects on peristalsis in the mature second- and third-instar larvae. We found that inhibition of chordotonal organs, but not multidendritic neurons, led to a lasting decrease in the speed of larval locomotion. To narrow down the sensitive period, we applied shorter inhibition at various embryonic and larval stages and found that two-hour inhibition during 16&#x2013;20 h AEL, but not at earlier or later stages, was sufficient to cause the effect. These results suggest that neural activity mediated by specific sensory neurons is involved in the maturation of sensorimotor circuits in <italic>Drosophila</italic> and that there is a critical period for this plastic change. Consistent with a role of chordotonal neurons in sensory feedback, these neurons were activated during larval peristalsis and acute inhibition of their activity decreased the speed of larval locomotion.</p>
+      </abstract>
+      <funding-group>
+        <funding-statement>This study was supported by a Grant-in-Aid for Scientific Research on Innovative Areas &#x201C;Mesoscopic Neurocircuitry&#x201D; (No. 22115002) of The Ministry of Education, Culture, Sports, Science, and Technology, Japan (<ext-link ext-link-type="uri" xlink:href="http://www.mext.go.jp/">http://www.mext.go.jp/</ext-link>), and for Scientific Research (B) (No. 23300114) of Japan Society for the Promotion of Science (JSPS), to A.N. and Grant-in-Aid for Young Scientists (B) (No. 21700344) of Japan Society for the Promotion of Science (JSPS) to H.K (<ext-link ext-link-type="uri" xlink:href="http://www.jsps.go.jp/">http://www.jsps.go.jp/</ext-link>) and Global COE Program &#x201C;the Physical Sciences Frontier&#x201D; to A.F (<ext-link ext-link-type="uri" xlink:href="http://www.phys.s.u-tokyo.ac.jp/gcoe/">http://www.phys.s.u-tokyo.ac.jp/gcoe/</ext-link>). The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.</funding-statement>
+      </funding-group>
+      <counts>
+        <page-count count="10"/>
+      </counts>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="s1">
+      <title>Introduction</title>
+      <p>Neural control of almost all rhythmic behaviors, such as walking, chewing and swimming, are thought to be generated by neural circuits called central pattern generators (CPGs). CPGs are networks of neurons that produce rhythmic motor outputs without depending on sensory inputs <xref ref-type="bibr" rid="pone.0062199-Brown1">[1]</xref>, <xref ref-type="bibr" rid="pone.0062199-Grillner1">[2]</xref>. From the beginning of the last century, CPGs have been found in many kinds of animals and are shown to play critical roles in motor generation.</p>
+      <p>During movement, sensory signals from muscles and other body regions often alter the pattern of CPG activity. For example, in the walking stick insect <italic>Carausius morosus</italic>, sensory information from leg proprioceptors is utilized to modify the strength of the muscle contractions <xref ref-type="bibr" rid="pone.0062199-Buschges1">[3]</xref>. Sensory feedback may help to generate a functional locomotive pattern by adapting an animal&#x2019;s movements to its environmental demands. Although sensory feedback is not necessary for generating the rhythms, it may therefore play an important role in shaping the motor patterns.</p>
+      <p>Does sensory feedback also play a role in the development of the motor system? Sensory experience plays critical roles in the development of the sensory systems <xref ref-type="bibr" rid="pone.0062199-Buonomano1">[4]</xref>. Genetic programs can form rough patterns in sensory circuits in the absence of neural activity, but the final tuning and refinement of the circuits depends on neural activity induced by sensory experience. In many systems, there is a critical period, a strict time window during which sensory experience is particularly important for the fine-tuning of the circuits. A well-known example is the development of mammalian binocular vision <xref ref-type="bibr" rid="pone.0062199-Hubel1">[5]</xref>. Since sensory systems monitor the output of motor circuits and feed the information back to the central circuits, sensory feedback may well be important for activity-dependent refinement of the motor system. However, there is little information about sensory contributions to the development of the motor system.</p>
+      <p><italic>Drosophila</italic> larval locomotion is an attractive model to investigate the role of sensory experience in the development of motor circuits <xref ref-type="bibr" rid="pone.0062199-Kohsaka1">[6]</xref>. In addition to the availability of powerful tools for genetic manipulation in this species, <italic>Drosophila</italic> larval locomotion is a simple behavior based on a repetitive pattern that can be easily quantified. Forward larval locomotion is accomplished through propagation of muscle contractions from the posterior to anterior of the body. Several studies have demonstrated that sensory feedback is a critical component for normal locomotion <xref ref-type="bibr" rid="pone.0062199-Suster1">[7]</xref>, <xref ref-type="bibr" rid="pone.0062199-Hughes1">[8]</xref>. The peripheral nervous system (PNS) in <italic>Drosophila</italic> larvae comprises distinct cell types, each with characteristic dendritic projections. These include external sensory (es) neurons and chordotonal organs (chos), which terminate in a single ciliated dendrite, as well as multiple dendritic (md) neurons, which project multiple dendrites <xref ref-type="bibr" rid="pone.0062199-Merritt1">[9]</xref>. Multiple dendritic neurons are further classified, based on the complexity of their dendritic arbors, into bipolar dendritic (bd) neurons and four classes of dendritic arborization (da) neurons (I&#x2013;IV) <xref ref-type="bibr" rid="pone.0062199-Grueber1">[10]</xref>. Among these, bd and class-I da neurons, which have relatively simple dendritic arbors, appear to be particularly important for normal larval locomotion (hereafter, we refer to these neurons as md neurons for simplicity) <xref ref-type="bibr" rid="pone.0062199-Hughes1">[8]</xref>, <xref ref-type="bibr" rid="pone.0062199-Cheng1">[11]</xref>, <xref ref-type="bibr" rid="pone.0062199-Song1">[12]</xref>. When function of the md neurons is temporally inhibited, the speed of locomotion is greatly reduced. Thus, it has been proposed that these neurons function as proprioceptors that feed back the status of the muscle contraction, and this feedback information is critical for fast wave propagation. While temporal inhibition of other sensory neurons does not cause strong crawling defects, some of these neurons may play minor roles in sensory regulation of larval locomotion <xref ref-type="bibr" rid="pone.0062199-Hughes1">[8]</xref>, <xref ref-type="bibr" rid="pone.0062199-Song1">[12]</xref>. In mutant flies with no or defective chos, the duration of linear locomotion is decreased and frequency of turning is increased <xref ref-type="bibr" rid="pone.0062199-Caldwell1">[13]</xref>. In these mutants, the speed of locomotion is also reduced, although the reduction is much smaller than what is seen when the function of the md neurons is inhibited.</p>
+      <p>Initial peristaltic movement is seen in developing embryos several hours before hatching <xref ref-type="bibr" rid="pone.0062199-Pereanu1">[14]</xref>, <xref ref-type="bibr" rid="pone.0062199-Crisp1">[15]</xref>. At &#x223C;4 hours before hatching, episodic bursts of uncoordinated muscle movements, which are driven by the developing neural circuits, first appear. The movements are initially asynchronous across all segments, and then they gradually develop into complete waves that travel sequentially along the entire body of the embryo. The first complete wave, which occurs &#x223C;3 h before hatching, is slow (propagation duration&#x200A;=&#x200A;&#x223C;10 sec) and uncoordinated, and then it gradually develops to a mature pattern during late embryonic and early larval stages. The final pattern of peristalsis (propagation duration&#x200A;=&#x200A;&#x223C;1 sec) is completed within several hours after hatching, and the speed of peristalsis stays the same throughout the larval period. These observations suggest that the motor circuits mature while the animals are performing premature locomotive motion.</p>
+      <p>In this study, we tested whether the sensory experience of the muscle movements is required for proper development of motor circuits. To do this, we inhibited the function of putative sensory feedback neurons, md neurons or chos, during embryonic development and examined whether the manipulation elicited any change in the properties of the mature circuits. We found that inhibition of chos but not md neurons caused a long-lasting decrease in the speed of larval locomotion. Furthermore, there was a critical time window in which the activity of chos was required for proper development of the motor circuits. These results provide evidence for a role of sensory experience in the development of motor circuits.</p>
+    </sec>
+    <sec sec-type="materials|methods" id="s2">
+      <title>Materials and Methods</title>
+      <sec id="s2a">
+        <title>Fly Strains</title>
+        <p>The following fly strains were used: <italic>iav(inactive)-GAL4</italic>
+<xref ref-type="bibr" rid="pone.0062199-Kwon1">[16]</xref>, <italic>109(2)80-GAL4</italic>
+<xref ref-type="bibr" rid="pone.0062199-Hughes1">[8]</xref>, <italic>UAS-GCaMP3</italic>
+<xref ref-type="bibr" rid="pone.0062199-Tian1">[17]</xref>, <italic>UAS-Shibire<sup>ts</sup></italic>
+<xref ref-type="bibr" rid="pone.0062199-Kitamoto1">[18]</xref>, <italic>UAS-TeTxLc</italic>
+<xref ref-type="bibr" rid="pone.0062199-Keller1">[19]</xref> and <italic>iav</italic><sup>1</sup>
+<xref ref-type="bibr" rid="pone.0062199-ODell1">[20]</xref>. Flies were raised on conventional cornmeal agar medium at 25&#xB0;C.</p>
+      </sec>
+      <sec id="s2b">
+        <title>Behavioral Analysis</title>
+        <p>Second- and third-instar larvae were gently washed in deionized water and then placed on an apple juice agar plate. After acclimation (5 min), we measured the duration of peristalsis (elapsed time between the landing of the posterior end and elongation of the head, also called propagation duration, <xref ref-type="fig" rid="pone-0062199-g001">Figure 1</xref>). The movements of the larvae were videotaped under a microscope (SZX16, Olympus, Japan) using a XCD-V60 CCD camera (30 frames/sec for 30 seconds) and the movies were downloaded into VFS-42 (Vision Freezer, Chori imaging). We manually calculated the propagation duration (10 waves per larva) using ImageJ 1.44 software.</p>
+        <fig id="pone-0062199-g001" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0062199.g001</object-id>
+          <label>Figure 1</label>
+          <caption>
+            <title>Behavioral analysis (locomotion analysis).</title>
+            <p>To measure larval propagation duration, we videotaped the animals&#x2019; behavior using a CCD camera (30 frames/sec for 30 seconds). We manually calculated the duration of waves (10 waves per larva) using ImageJ software.</p>
+          </caption>
+          <graphic xlink:href="pone.0062199.g001"/>
+        </fig>
+      </sec>
+      <sec id="s2c">
+        <title>Temperature Shift Experiments</title>
+        <p>Parental flies were reared in an egg collection cup with an agar plate at 25&#xB0;C. Eggs were laid for 1 h on an agar plate containing yeast paste. &#x223C;30 embryos were then transferred to a new plate without yeast paste. For the conditional inhibition assay using <italic>Shibire<sup>ts</sup></italic>, the plates were held at a restrictive temperature (RT, 32&#xB0;C) on a heat plate (Thermo Plate, Tokai Hit, Japan) during the desired developmental periods. After the conditional inhibition, the embryos/larvae were transferred to a new plate with yeast paste and reared at the permissive temperature (PT, 25&#xB0;C).</p>
+      </sec>
+      <sec id="s2d">
+        <title>Calcium Imaging</title>
+        <p>Wandering third-instar larvae were selected, gently washed, and pinned on a sylgard-coated dish. Larvae were dissected in Ca<sup>2+</sup>-free normal saline (NaCl 140 mM, KCl 2 mM, MgCl<sub>2</sub> 6 mM, Hepes-NaOH 5 mM, Sucrose 36 mM (pH 7.1)). The internal organs were removed without scratching the ventral nerve cord (VNC) and axons. After rinsing the sample with Ca<sup>2+</sup>-free normal saline, the buffer was replaced with 2 mM Ca<sup>2+</sup> Ringer solution (NaCl 130 mM, KCl 5 mM, MgCl<sub>2</sub> 2 mM, CaCl<sub>2</sub> 2 mM, Hepes-NaOH 5 mM, Sucrose 36 mM (pH 7.3)). To fix the position of the VNC, a pin was placed between the brain and the mouth hook. Imaging was performed on a fluorescence microscope (MVX10, Olympus, Japan) equipped with a CCD camera (XCD-V60, Sony, Japan). The images were acquired and downloaded into VFS-42 (Vision Freezer, Chori imaging) at 30 frames/sec, 640&#xD7;480 pixels. For image analyses, ImageJ was used. The pseudocolored images were made using RGB color to observe the autofluorescence of muscle contractions.</p>
+      </sec>
+      <sec id="s2e">
+        <title>Immunocytochemistry</title>
+        <p>Dissected larvae were fixed in phosphate buffered saline (PBS, NaCl 137 mM, KCl 2.7 mM, Na<sub>2</sub>HPO<sub>4</sub> 8.1 mM, KH<sub>2</sub>PO<sub>4</sub> 1.5 mM (pH 7.3)) containing 4% paraformaldehyde for 30 min at room temperature. After two 15 min washes with 0.2% Triton X-100 in PBS (PBT), the larvae were incubated with 5% normal goat serum in PBT for 30 min. The larvae were then incubated overnight at 4&#xB0;C with the primary antibody (rabbit anti-GFP, A2020, Frontier Institute, 1&#x2236;1000). After two 15 min washes, the larvae were incubated overnight at 4&#xB0;C with the secondary antibody (Alexa Fluor 488-conjugated goat anti-rabbit IgG, A11034, Invitrogen, 1&#x2236;300). Images were acquired using a confocal microscope (FV1000, Olympus, Japan).</p>
+      </sec>
+      <sec id="s2f">
+        <title>Statistical Analysis</title>
+        <p>We analyzed the data using Welch&#x2019;s <italic>t</italic> test, Mann-Whitney <italic>U</italic> test, and one-way analysis of variance (ANOVA) followed by Tukey&#x2019;s or Dunnett&#x2019;s tests for multiple comparisons. Statistical significance is denoted by asterisks: ***P&lt;0.001; **P&lt;0.01; *P&lt;0.05. All statistical tests were performed using R-project software (<ext-link ext-link-type="uri" xlink:href="http://www.r-project.org">http://www.r-project.org</ext-link>). The results are stated as mean &#xB1; s.d., unless otherwise noted.</p>
+      </sec>
+    </sec>
+    <sec id="s3">
+      <title>Results</title>
+      <sec id="s3a">
+        <title>Temporal Inhibition of Chordotonal Organs at Late Embryonic Periods Alters the Properties of Larval Motor Circuits</title>
+        <p>Initial embryonic motor events start at stage 16 (&#x223C;15 h AEL) as brief, myogenic muscle twitches. Nerve-driven muscle contraction initiates at &#x223C;17 h AEL as episodes of uncoordinated bursting activity. Shortly thereafter, partial waves that involve multiple segments appear, followed by the appearance of complete waves. The waves are initially slow (&#x223C;10 sec per wave) and uncoordinated, but gradually speed up to become a mature pattern (&#x223C;1 sec per wave) several hours after hatching <xref ref-type="bibr" rid="pone.0062199-Crisp1">[15]</xref>. Thus, the motor circuits likely develop into mature circuits during these late embryonic periods.</p>
+        <p>Given that neural circuits are often plastic and highly susceptible to environmental changes during their formation, we reasoned that inhibiting the activity of sensory input in late embryonic periods may change the properties of the circuits. We therefore examined whether temporal inhibition of putative sensory feedback neurons, md neurons and chos, has a lasting effect on the properties of the motor system. As a quantitative measure of the properties of motor circuits, we used propagation duration of peristalsis, which provides an indirect measure of the locomotion speed. The speed of locomotion increases during the maturation period of the motor circuits but remains stable when the circuits mature in the late first-instar larval stage. Furthermore, the speed is reasonably constant among different genotypes. (Note, however, that the speed varies at different temperatures: larvae crawl faster at higher temperatures (e.g., &#x223C;30&#xB0;C) compared to room temperature). We applied Shibire-mediated neural inhibition for six hours at late embryonic stages (15&#x2013;21 h AEL) and analyzed the effects on larval locomotion at the second- or third-instar larval stage. The <italic>Shibire</italic> transgene (<italic>UAS- Shibire<sup>ts</sup></italic>) blocks synaptic vesicle recycling and disrupts synaptic transmission at restrictive temperatures (&gt;29&#xB0;C) <xref ref-type="bibr" rid="pone.0062199-Kitamoto1">[18]</xref>. Induction and reversal occurs within a few minutes after the temperature shift between the permissive temperature (PT) and the restrictive temperature (RT). To express <italic>Shibire<sup>ts</sup></italic> in md neurons or chos, we used GAL4 drivers, <italic>109(2)80-GAL4</italic> and <italic>iav-GAL4</italic> respectively. The driver <italic>109(2)80-GAL4</italic> is expressed in all the md neurons and in small subsets of cells in the CNS <xref ref-type="bibr" rid="pone.0062199-Hughes1">[8]</xref>. A previous study has shown that a maximum level of inhibition of md neurons can be achieved with <italic>109(2)80-GAL4,</italic> suggesting that this GAL4 line drives expression in all or most of the md sensory feedback neurons. The driver <italic>iav-GAL4</italic> is expressed only in chos: no detectable expression is seen in other sensory neurons or cells in the CNS.</p>
+        <p>We observed a significant increase in propagation duration when the Shibire-mediated inhibition was applied to chos (<xref ref-type="fig" rid="pone-0062199-g002">Figure 2A</xref>; 1.22&#xB1;0.19 sec compared to 1.00&#xB1;0.09 in the control larvae, which have the same genotype but did not undergo the temperature shift; p&lt;0.01). Slower locomotion was seen at the second- and third- instar larval stage, indicating that the plastic change can last more than three days (<xref ref-type="fig" rid="pone-0062199-g002">Figure 2B</xref>; 1.13&#xB1;0.14 sec compared to 0.97&#xB1;0.05 in the control larvae; p&lt;0.01). These results suggest that temporal inhibition of chos during late embryonic periods has lasting effects on the properties of the motor circuits. In contrast, inhibition of md neurons caused no alteration in the speed of larval locomotion (<xref ref-type="fig" rid="pone-0062199-g002">Figure 2A and B</xref>; propagation duration, 0.94&#xB1;0.05 sec compared to 0.90&#xB1;0.06 in the control larvae [analysed at 48 h AEL], 1.11&#xB1;0.15 sec compared to 1.20&#xB1;0.08 in the control larvae [analysed at 96 h AEL]; p&gt;0.05). These results suggest that the sensory experience mediated by chos, but not by md neurons, at late embryonic periods is required for proper maturation of the motor circuits.</p>
+        <fig id="pone-0062199-g002" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0062199.g002</object-id>
+          <label>Figure 2</label>
+          <caption>
+            <title>Inhibition of chos at late embryonic stage affects peristalsis in mature larvae.</title>
+            <p>Effects of inhibiting the activity of multidendritic neurons (md neurons, mds) or chordotonal organs (chos) during 15&#x2013;21 h AEL. Inhibition of chos (orange boxes) but not md neurons (blue boxes) led to propagation defects in the second (A) and third (B) instar. Box plots indicate the median value (horizontal line inside the box), 25&#x2013;75% quartiles (box), and the data range (whiskers). Statistical significance was determined by Mann-Whitney <italic>U</italic> test (**P&lt;0.01; n.s., not significant). For all conditions, n&#x200A;=&#x200A;10. RT, restrictive temperature. <italic>109(2)80-GAL4</italic> and <italic>iav-GAL4</italic> were used as md neurons and chos drivers, respectively.</p>
+          </caption>
+          <graphic xlink:href="pone.0062199.g002"/>
+        </fig>
+      </sec>
+      <sec id="s3b">
+        <title>The Role of Chordotonal Organs in the Regulation of Mature Motor Circuits</title>
+        <p>The observed effects of chos inhibition on larval locomotion suggest that these neurons convey some sensory information to the motor circuits in the embryos and that sensory inputs are important for proper development of the motor circuits. This observation prompted us to reexamine the role of chos in larval locomotion. Previous studies showed that mutant larvae that have no or defective chos show some defects in locomotion (see Introduction). However, the precise role of chos in larval locomotion has not been examined. In particular, the effects of temporal inhibition of chos activity have not been analyzed in a quantitative manner. Using propagation duration as a quantitative measure, we first confirmed previous reports showing that dysfunction of chos results in malfunction of motor abilities <xref ref-type="bibr" rid="pone.0062199-Caldwell1">[13]</xref>. In third instar larvae mutant for the <italic>inactive</italic> (<italic>iav</italic>) gene, which encodes a transient receptor potential vanilloid (TRPV) channel that is essential for neuronal function, there was a significant increase in the propagation duration (<xref ref-type="fig" rid="pone-0062199-g003">Figure 3A</xref>). A similar increase in the propagation duration was observed when the function of chos was inhibited by expression of the tetanus toxin light chain (<italic>UAS-TeTxLc</italic>), which irreversibly cleaves synaptobrevin and disrupts chemical synaptic transmission (<xref ref-type="fig" rid="pone-0062199-g003">Figure 3B</xref>) <xref ref-type="bibr" rid="pone.0062199-Keller1">[19]</xref>. Finally, we studied the effects of acute inhibition of chos by expressing <italic>Shibire<sup>ts</sup></italic> in these neurons. When the function of chos was temporally inhibited with <italic>Shibire<sup>ts</sup></italic>, there was a significant increase in the propagation duration, compared to the control larvae at the same temperature (32&#xB0;C) (<xref ref-type="fig" rid="pone-0062199-g003">Figure 3C</xref>; 1.06&#xB1;0.09 sec in <italic>iav-Gal4/UAS-Shibire<sup>ts</sup></italic> compared to 0.78&#xB1;0.04 in the control [<italic>+/UAS-Shibire<sup>ts</sup></italic>]; p&lt;0.001). The effect was not as dramatic, however, as when the function of md neurons is inhibited (<xref ref-type="bibr" rid="pone.0062199-Hughes1">[8]</xref>; our own observation). As another control, we also compared propagation duration of <italic>iav-Gal4/UAS-Shibire<sup>ts</sup></italic> larvae at a PT (25&#xB0;C) to that at a RT (32&#xB0;C). Even though the speed of larval locomotion is normally higher at restrictive temperatures (compare propagation at PT and RT of control larvae in <xref ref-type="fig" rid="pone-0062199-g003">Figure 3C</xref>), larvae expressing <italic>Shibire<sup>ts</sup></italic> crawl more slowly at RTs than at PTs (propagation duration, 1.06&#xB1;0.09 sec at 32&#xB0;C compared to 0.97&#xB1;0.05 at 25&#xB0;C; p&lt;0.05). Thus, the speed of larval locomotion decreases when the function of chos is compromised. These results suggest that chos send sensory feedback to the CNS, which contributes to an increase in the speed of locomotion.</p>
+        <fig id="pone-0062199-g003" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0062199.g003</object-id>
+          <label>Figure 3</label>
+          <caption>
+            <title>Chordotonal organs regulate locomotion through sensory feedback to the CNS.</title>
+            <p>(A, B) Increase in propagation duration in <italic>iav<sup>1</sup></italic> mutants (A) and in larvae expressing <italic>TeTxLc</italic> (<italic>TTX</italic>) in chos (B). (C) Acute inhibition of chos with <italic>Shibire<sup>ts</sup></italic> increased the propagation duration of the larvae. Statistical analysis was done by Welch&#x2019;s <italic>t</italic> test (***P&lt;0.001; *P&lt;0.05; n.s., not significant). For all conditions, n&#x200A;=&#x200A;10. RT, restrictive temperature. Controls were as follows: <italic>yw</italic> (A), <italic>yw&gt;UAS-TTX</italic> (B), <italic>yw&gt;UAS-Shi</italic> (C).</p>
+          </caption>
+          <graphic xlink:href="pone.0062199.g003"/>
+        </fig>
+      </sec>
+      <sec id="s3c">
+        <title>Calcium Imaging of Chordotonal Organs during Peristaltic Muscle Contractions</title>
+        <p>Chos are internal sensory organs that are thought to function as proprioceptors and/or mechanoreceptors <xref ref-type="bibr" rid="pone.0062199-Field1">[21]</xref>. They may therefore detect changes in the position or tension of the body wall muscles during peristalsis, and then relay the information to the CNS. If this is the case, chos should be activated in a manner correlated with peristaltic motion. To pursue this idea, we conducted calcium imaging of chos. We expressed a genetically coded calcium sensor (<italic>GCaMP3</italic>) <xref ref-type="bibr" rid="pone.0062199-Tian1">[17]</xref> in chos and performed calcium imaging in dissected larvae undergoing peristalsis. We focused on the signal change in the axon terminals of chos in the ventral nerve cord, which extend along a longitudinal tract in the ventral neuropile <xref ref-type="bibr" rid="pone.0062199-Merritt1">[9]</xref>. We observed strong calcium signals in each neuromere, which propagates along the AP axis concomitant with the propagation of muscular contraction (<xref ref-type="fig" rid="pone-0062199-g004">Figure 4</xref> and <xref ref-type="supplementary-material" rid="pone.0062199.s002">Movie S1</xref>). Thus, chos are activated during peristalsis with a similar timing as the contraction of the body-wall muscles. This observation is consistent with the idea that chos convey sensory-feedback information about muscular contraction. We also detected sporadic activities of chos, which did not coincide with motor activity. The signal level of such spontaneous activity was much lower than the level of activity seen during peristalsis.</p>
+        <fig id="pone-0062199-g004" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0062199.g004</object-id>
+          <label>Figure 4</label>
+          <caption>
+            <title>Calcium imaging in chordotonal organs during muscle contractions.</title>
+            <p>GCaMP-based calcium imaging in chos. (A) Representative fluorescence change (&#x394;F/F<sub>0</sub>) of GCaMP3 in the axon terminals of chos in a posterior (ROI1, blue) and an anterior (ROI2, red) region of the CNS were plotted (bottom). Note that the signal rise in the posterior region precedes that in the anterior region in consecutive rounds of activity propagation. The amplitude of calcium signals was smoothed (moving average of 60 points). The top panel shows the position of the ROIs. (B) Time-lapse images of the fluorescent intensities (t<sub>1</sub> to t<sub>4</sub>). Anterior is to the left and posterior is to the right. Arrows denote the signal rise in chos terminals in the ventral nerve cord. Arrowheads denote positions of muscle contractions, which were detected using the autofluorescence images of muscles. Note that the activation of chos and segmental muscle contraction propagate at a similar timing (see <xref ref-type="supplementary-material" rid="pone.0062199.s002">Movie S1</xref>). Scale bars represent 250 &#xB5;m.</p>
+          </caption>
+          <graphic xlink:href="pone.0062199.g004"/>
+        </fig>
+      </sec>
+      <sec id="s3d">
+        <title>Existence of a Critical Period for Plastic Change Induced by Sensory Inhibition</title>
+        <p>As described above, inhibition of chos during a six-hour period (15&#x2013;21 h AEL) in late embryonic development had a lasting effect on the crawling speed of the larvae. We next asked whether inhibition of chos for a shorter period also alters larval locomotion and, if so, whether there is a developmental time window in which the animal are particularly sensitive to sensory manipulation. We also asked whether similar inhibition of chos in larval stages induces the plastic change in larval behavior. To do this, we applied Shibire-mediated inhibition for two hours in different embryonic and larval time windows and analyzed the animals for locomotion defects at later stages.</p>
+        <p>We first induced 2-h inhibition periods in the embryos at different time windows between 15 and 21 h AEL and examined larval locomotion in second- and third- instar larval stages (48 h and 96 h AEL, respectively) (<xref ref-type="fig" rid="pone-0062199-g005">Figure 5</xref>). Analysis of the locomotion in second instar larvae showed that the two-hour inhibition applied between 16 and 20 h AEL significantly increased the propagation duration (<xref ref-type="fig" rid="pone-0062199-g005">Figure 5A</xref>; 1.40&#xB1;0.23 sec [16&#x2013;18 h AEL temperature shift], 1.36&#xB1;0.36 sec [17&#x2013;19 h AEL] and 1.35&#xB1;0.29 sec [18&#x2013;20 h AEL] compared to 1.00&#xB1;0.09 in the control larvae without the temperature shift; p&lt;0.01). No such increase in propagation duration was seen when inhibition was applied at an earlier or later stage (<xref ref-type="fig" rid="pone-0062199-g005">Figure 5A</xref>; 1.07&#xB1;0.07 sec [15&#x2013;17 h AEL temperature shift] and 1.10&#xB1;0.26 sec [19&#x2013;21 h AEL]; p&gt;0.05). When the same two-hour temperature shift was applied to control larvae, there was no change in the propagation duration, indicating that a temperature shift in these embryonic periods itself has no effect on the development of motor behavior (<xref ref-type="fig" rid="pone-0062199-g005">Figure 5B</xref>; 0.98&#xB1;0.06 sec [16&#x2013;18 h AEL temperature shift], 1.01&#xB1;0.03 sec [17&#x2013;19 h AEL] and 0.96&#xB1;0.07 sec [18&#x2013;20 h AEL] compared to 1.05&#xB1;0.07 sec in the control larvae without the temperature shift; p&gt;0.05). The degree of the increase in the propagation duration was similar to that seen when six-hour inhibition was applied (p&gt;0.05, data not shown). These results show that inhibition of chos activity for two hours is sufficient to change properties of the motor circuits and there is a critical period for when the circuits are particularly sensitive to the inhibition. Similar effects were seen when the locomotion assay was performed at the third-instar larval stage (<xref ref-type="fig" rid="pone-0062199-g005">Figure 5C and D</xref>; 1.10&#xB1;0.06 sec [16&#x2013;18 h AEL temperature shift], 1.11&#xB1;0.13 sec [17&#x2013;19 h AEL] and 1.13&#xB1;0.13 sec [18&#x2013;20 h AEL] compared to 0.97&#xB1;0.05 in the control larvae without the temperature shift; p&lt;0.05). Thus, the effects of the two-hour inhibition in the embryos were long lasting. Note, however, that the effects observed in third instar larvae were less dramatic than those observed in the second instar larvae, suggesting that the defects were partially restored during the larval life.</p>
+        <fig id="pone-0062199-g005" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0062199.g005</object-id>
+          <label>Figure 5</label>
+          <caption>
+            <title>A critical period for the maturation of the sensorimotor circuit.</title>
+            <p>(A, C) The effects of temporal inhibition of chos neurons at various embryonic stages on larval locomotion, analyzed at the second (A, 48 h AEL) and third instar (C, 96 h AEL) stage. A two-hour temperature shift to a restricted temperature was applied to <italic>iav-GAL4</italic>&gt;<italic>UAS-Shi<sup>ts</sup></italic> embryos at various stages during embryogenesis. The temperature shift at specific embryonic periods increased the propagation duration. (B, D) The same temperature shift applied to control embryos (<italic>yw</italic>&gt;<italic>UAS-Shi<sup>ts</sup></italic> ) had no effect on locomotion, when analyzed at the second (B) and third instar (D) stage. Statistical significance was determined by one-way ANOVA followed by Dunnett&#x2019;s test for multiple comparisons (**P&lt;0.01; *P&lt;0.05; n.s., not significant compared with <italic>iav-GAL4</italic>&gt;<italic>UAS-Shi<sup>ts</sup></italic> (none) control). For all conditions, n&#x200A;=&#x200A;10. RT, restrictive temperature.</p>
+          </caption>
+          <graphic xlink:href="pone.0062199.g005"/>
+        </fig>
+        <p>We next studied whether plastic change can occur when chos are inhibited during larval periods. Two-hour temperature shifts were applied at two different stages of larval development, 32&#x2013;34 h and 70&#x2013;72 h AEL, and the effects on locomotion were analyzed at 48 h and 96 h AEL, respectively. No alteration in the speed of locomotion was observed after these manipulations (<xref ref-type="fig" rid="pone-0062199-g006">Figure 6A and B</xref>) (0.99&#xB1;0.07 sec [32&#x2013;34 h AEL temperature shift], 0.95&#xB1;0.05 sec [70&#x2013;72 h AEL] compared to 1.00&#xB1;0.09, 0.97&#xB1;0.05 in the control larvae without the temperature shift; p&gt;0.05). These results suggest that the plastic change in motor circuits can only be induced when the sensory inhibition occurs during specific periods of late embryonic development.</p>
+        <fig id="pone-0062199-g006" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0062199.g006</object-id>
+          <label>Figure 6</label>
+          <caption>
+            <title>Inhibition of chordotonal organs at larval stage has no effect on the speed of larval locomotion.</title>
+            <p>In contrast to the two-hour inhibition during the embryonic stage (17&#x2013;19 h AEL), those during first (A, 32&#x2013;34 h AEL) and third (B, 70&#x2013;72 h AEL) instar stage had no effect on the speed of locomotion. Analyzed at second (A, 48 h AEL) and third instar (B, 96 h AEL) stages. Statistical significance was determined by one-way ANOVA followed by Tukey&#x2019;s test for multiple comparisons (***P&lt;0.001; **P&lt;0.01). For all conditions, n&#x200A;=&#x200A;10. RT, restrictive temperature.</p>
+          </caption>
+          <graphic xlink:href="pone.0062199.g006"/>
+        </fig>
+      </sec>
+    </sec>
+    <sec id="s4">
+      <title>Discussion</title>
+      <sec id="s4a">
+        <title>Role of Sensory Feedback in the Maturation of Motor Circuits</title>
+        <p>Animals modify the activity of locomotor outputs when their surroundings change, which is an efficient strategy that enables them to react appropriately to a wide variety of possible environmental situations. Modifications are mediated by sensory feedback about the current status of the locomotor organs and their interaction with the environment; this information is transmitted to the central nervous system. While the role of sensory feedback in the modulation of the mature motor circuits is well established, it has been unclear whether sensory feedback also plays a role during the construction of the motor circuits during development. In this study, we found that the activity of chos during embryonic development is required for proper formation of motor circuits. Furthermore, there was a critical developmental period during which this activity-dependent modulation can occur.</p>
+        <p>We inhibited neural transmission mediated by specific sensory neurons, md neurons and chos, during late embryonic periods to determine whether sensory information plays a role in the development of motor circuits in <italic>Drosophila</italic>. Even though md neurons play a major role in the regulation of locomotion speed in third instar larvae, inhibition of these neurons in the embryonic period did not cause detectable changes in larval locomotion. In contrast, we found a modest but reproducible alteration in the properties of the mature motor circuits when we temporally inhibited the neural transmission of chos. This observed cell-type specificity suggests that it is not the general lack of sensory feedback but rather inputs conveyed by specific sensory pathways that are important for proper development of motor circuits. However, we cannot completely exclude the possibility that md neurons might also be important for motor circuit development because the GAL4 line used in this study (<italic>109(2)80-GAL4</italic>) drives expression not only in class I md neurons but also in all other md neurons (class II, III and IV) and in some CNS interneurons. It is possible that the effects of inhibition of class I during a critical period may have been masked by the opposite effects caused by inhibition of some other GAL4-positive neurons.</p>
+        <p>Here we blocked the neural transmission of chos with <italic>Shibire<sup>ts</sup></italic> during the embryonic period when motor circuits mature (15&#x2013;21 h AEL) to realize a mature speed of locomotion. We found that the temporal inhibition perturbed maturation and caused an enduring effect on the speed of larval locomotion that lasts until the second or third instar larval stages. Further narrowing of the temporal window revealed that two-hour inhibitions during 16&#x2013;20 h AEL, but not those during earlier or later time periods, are sufficient to cause the plastic change. A concern using <italic>Shibire<sup>ts</sup></italic> for temporal inhibition is possible continuation of the effect after the temperature shift back to a permissive temperature <xref ref-type="bibr" rid="pone.0062199-Thum1">[22]</xref>. The lasting effects we observed therefore could simply be due to an enduring effect of <italic>Shibire<sup>ts</sup></italic> in the larvae. However, the cell-type and temporal specificity we observed argues against this possibility and points to a specific role of chos-mediated neural transmission in the maturation of motor circuits.</p>
+      </sec>
+      <sec id="s4b">
+        <title>Role of Chordotonal Organs in Sensory Feedback</title>
+        <p>The effect of chos inhibition on the maturation of motor circuits prompted us to reevaluate the role of chos in the regulation of larval locomotion. The role of chos in the regulation of locomotion has been controversial. While several previous studies have suggested a role for chordotonal mutants in locomotion, other studies report that depriving chos-mediated transmission had no apparent effect on larval locomotion <xref ref-type="bibr" rid="pone.0062199-Hughes1">[8]</xref>, <xref ref-type="bibr" rid="pone.0062199-Song1">[12]</xref>, <xref ref-type="bibr" rid="pone.0062199-Caldwell1">[13]</xref>, <xref ref-type="bibr" rid="pone.0062199-Kwon1">[16]</xref>. However, these previous studies largely relied on qualitative analyses of the behavior of the larvae. We therefore used quantitative analyses of the change in speed of locomotion to investigate the role of chos in larval locomotion. We first confirmed previous observations that the speed of larval locomotion decreases in <italic>inactive</italic> mutants <xref ref-type="bibr" rid="pone.0062199-Kwon1">[16]</xref>, <xref ref-type="bibr" rid="pone.0062199-ODell1">[20]</xref>. Since this gene is expressed exclusively in chos, the locomotion defect is probably caused by the malfunction of these neurons. We also observed a similar decrease in the speed of locomotion when we blocked the function of chos with <italic>TeTxLc</italic>. Finally, we found that acute inhibition of chos with <italic>Shibire<sup>ts</sup></italic> decreased the speed of locomotion. The effect of inhibiting chos was not as dramatic as when the function of md neurons was compromised. However, these results suggest that chos contribute in a minor manner to the regulation of speed of larval locomotion. Our calcium imaging analyses further supported this notion. We observed that chos are activated along the segments coincidentally with the wave of muscular contraction. This is consistent with the idea that chos sense and are activated by the mechanical force generated by muscle contraction and convey the information to the CNS. Since the speed of locomotion is decreased upon inhibition of chos, sensory feedback likely contributes to fast propagation of motor activities in the CNS, as has been proposed for md neurons <xref ref-type="bibr" rid="pone.0062199-Hughes1">[8]</xref>. A recent study showed a role for larval chos in the sensation of vibration <xref ref-type="bibr" rid="pone.0062199-Wu1">[23]</xref>. It could be that chos are multimodal, sensing and conveying multiple stimuli, as has been proposed for other sensory neurons in <italic>Drosophila</italic>.</p>
+      </sec>
+      <sec id="s4c">
+        <title>Critical Periods for Activity-dependent Maturation of Motor Circuits</title>
+        <p>There are well-established critical periods for activity-dependent maturation or reorganization of neural circuits during the development of the sensory system <xref ref-type="bibr" rid="pone.0062199-Hensch1">[24]</xref>, <xref ref-type="bibr" rid="pone.0062199-Erzurumlu1">[25]</xref>. Well-investigated examples include binocular vision in mammals and song learning in birds <xref ref-type="bibr" rid="pone.0062199-Hubel1">[5]</xref>, <xref ref-type="bibr" rid="pone.0062199-Konishi1">[26]</xref>. Recent studies have shown that experience-dependent modifications of the sensory system also occur in <italic>Drosophila</italic>, whose nervous system was generally believed to be hard-wired <xref ref-type="bibr" rid="pone.0062199-Yuan1">[27]</xref>, <xref ref-type="bibr" rid="pone.0062199-Sachse1">[28]</xref>. In the <italic>Drosophila</italic> larval visual system, changes in light experience induce homeostatic alterations in the functional and structural properties of an interneuron population in the circuits <xref ref-type="bibr" rid="pone.0062199-Yuan1">[27]</xref>. Similarly, excessive exposure to CO<sub>2</sub> induces structural and functional changes in interneurons in the olfactory circuits in adults <xref ref-type="bibr" rid="pone.0062199-Sachse1">[28]</xref>. In the latter case, the plastic change has been reported to occur only within a critical time window. However, whether such experience- or activity-dependent modifications of neural circuits occur in the motor system and whether there is a critical period for the plastic changes have not been well investigated in any organisms. In this study, we showed that neural activity mediated by putative sensory-feedback neurons is required for proper maturation of the motor circuits in <italic>Drosophila</italic> larvae during a specific developmental period.</p>
+        <p>While our study was in progress, Crisp et al. (2011) reported that blocking neuronal transmission or inducing abnormal patterns of neural activity delays the first appearance of coordinated movements in the embryos <xref ref-type="bibr" rid="pone.0062199-Crisp2">[29]</xref>. They found a sensitive period for this manipulation during late embryonic development, which overlaps with the critical period we observed for the manipulation of chos transmission. However, since the activity manipulation was applied to all neurons, the neurons responsible for the plastic change were not identified. And possible lasting effects of the manipulation later in larval life were not investigated, either. Our study complements and extends the work by Crisp et al. (2011) by showing that activity manipulation of specific sensory neurons during a critical developmental time window has lasting effects on the maturation of the motor circuits.</p>
+        <p>We found that two-hour perturbation of neural transmission by chos during a developmental window at 16&#x2013;20 h AEL, but not at other embryonic and larval periods, has a lasting effect on the speed of locomotion. This critical time window corresponds to the developmental period when the circuits mature to generate locomotion with appropriate speed. Our results are thus consistent with the idea that sensory experience of the animals&#x2019; own movement, conveyed by chos, contributes to the maturation of the motor circuits. The critical period also corresponds to the period when sensory neurons and motor neurons elaborate axon terminals and dendrites, respectively, in the CNS <xref ref-type="bibr" rid="pone.0062199-Schrader1">[30]</xref>&#x2013;<xref ref-type="bibr" rid="pone.0062199-Grueber2">[32]</xref>. Chos themselves are known to develop their axon terminals during this period <xref ref-type="bibr" rid="pone.0062199-Merritt1">[9]</xref>, <xref ref-type="bibr" rid="pone.0062199-Wu1">[23]</xref>, <xref ref-type="bibr" rid="pone.0062199-Schrader1">[30]</xref>. Elaboration of the dendrites of motor neurons is known to occur in a manner that depends on presynaptic activity <xref ref-type="bibr" rid="pone.0062199-Tripodi1">[31]</xref>. It is possible that final refinements of the synaptic connections of sensory neurons and interneurons similarly occur in an activity-dependent manner. The plastic change upon the manipulation of chos activity therefore likely occurs at the level of synaptic connection in sensorimotor circuits, as has been proposed for the sensory systems. Gross connectivity of chos as visualized with mCD8::GFP was normal upon the activity manipulation (<xref ref-type="supplementary-material" rid="pone.0062199.s001">Figure S1</xref>). Therefore, the plasticity may be mediated by fine-scale change(s) in the synaptic connections. Identifying the underlying structural and functional substrates for the observed behavioral plasticity is an important future research direction.</p>
+      </sec>
+    </sec>
+    <sec sec-type="supplementary-material" id="s5">
+      <title>Supporting Information</title>
+      <supplementary-material content-type="local-data" id="pone.0062199.s001">
+        <label>Figure S1</label>
+        <caption>
+          <p><bold>No gross defects were seen in the connectivity of chos upon the activity manipulation.</bold> Morphological analysis of the third instar larvae (96 h AEL; <italic>iav-GAL4&gt;UAS-Shi<sup>ts</sup>, UAS-mCD8::GFP</italic>) with no temperature shift control (A) and with two-hour inhibition during embryonic stage (B, 17&#x2013;19 h AEL). There were no gross defects in the projection and arborization of chos axons upon the activity manipulation (n&#x200A;=&#x200A;4). Before the morphological analyses, behavioral analyses were performed to confirm the change in the speed of locomotion.</p>
+          <p>(TIF)</p>
+        </caption>
+        <media xlink:href="pone.0062199.s001.tif" mimetype="image" mime-subtype="tiff">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pone.0062199.s002">
+        <label>Movie S1</label>
+        <caption>
+          <p><bold>Calcium imaging in chordotonal organs during muscle contractions.</bold> Calcium imaging of chordotonal organs (chos) in dissected larva undergoing peristalsis (Quad-Speed, <italic>iav-GAL4&gt;UAS-GCaMP3</italic>). Note that the activation of chos and segmental muscle contraction propagate at a similar timing. (9.5 MB MOV).</p>
+          <p>(MOV)</p>
+        </caption>
+        <media xlink:href="pone.0062199.s002.mov" mimetype="video" mime-subtype="quicktime">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+    </sec>
+  </body>
+  <back>
+    <ack>
+      <p>We are grateful to C.Montell, L.L.Looger, T.Kitamoto and the Bloomington Stock Center for fly stocks. We thank members of Nose lab for valuable discussions and technical assistance.</p>
+    </ack>
+    <ref-list>
+      <title>References</title>
+      <ref id="pone.0062199-Brown1">
+        <label>1</label>
+        <mixed-citation publication-type="journal"><name><surname>Brown</surname><given-names>TG</given-names></name> (<year>1911</year>) <article-title>The intrinsic factors in the act of progression in the mammal</article-title>. <source>Proceedings of the Royal Society of London Series B-Containing Papers of a Biological Character</source><volume>84</volume>: <fpage>308</fpage>&#x2013;<lpage>319</lpage></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Grillner1">
+        <label>2</label>
+        <mixed-citation publication-type="journal"><name><surname>Grillner</surname><given-names>S</given-names></name>, <name><surname>Wallen</surname><given-names>P</given-names></name> (<year>1985</year>) <article-title>Central pattern generators for locomotion, with special reference to vertebrates</article-title>. <source>Annu Rev Neurosci</source><volume>8</volume>: <fpage>233</fpage>&#x2013;<lpage>261</lpage><pub-id pub-id-type="pmid">2984978</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Buschges1">
+        <label>3</label>
+        <mixed-citation publication-type="journal"><name><surname>Buschges</surname><given-names>A</given-names></name> (<year>2005</year>) <article-title>Sensory control and organization of neural networks mediating coordination of multisegmental organs for locomotion</article-title>. <source>J Neurophysiol</source><volume>93</volume>: <fpage>1127</fpage>&#x2013;<lpage>1135</lpage><pub-id pub-id-type="pmid">15738270</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Buonomano1">
+        <label>4</label>
+        <mixed-citation publication-type="journal"><name><surname>Buonomano</surname><given-names>DV</given-names></name>, <name><surname>Merzenich</surname><given-names>MM</given-names></name> (<year>1998</year>) <article-title>Cortical plasticity: from synapses to maps</article-title>. <source>Annu Rev Neurosci</source><volume>21</volume>: <fpage>149</fpage>&#x2013;<lpage>186</lpage><pub-id pub-id-type="pmid">9530495</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Hubel1">
+        <label>5</label>
+        <mixed-citation publication-type="journal"><name><surname>Hubel</surname><given-names>DH</given-names></name>, <name><surname>Wiesel</surname><given-names>TN</given-names></name> (<year>1970</year>) <article-title>The period of susceptibility to the physiological effects of unilateral eye closure in kittens</article-title>. <source>J Physiol</source><volume>206</volume>: <fpage>419</fpage>&#x2013;<lpage>436</lpage><pub-id pub-id-type="pmid">5498493</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Kohsaka1">
+        <label>6</label>
+        <mixed-citation publication-type="journal"><name><surname>Kohsaka</surname><given-names>H</given-names></name>, <name><surname>Okusawa</surname><given-names>S</given-names></name>, <name><surname>Itakura</surname><given-names>Y</given-names></name>, <name><surname>Fushiki</surname><given-names>A</given-names></name>, <name><surname>Nose</surname><given-names>A</given-names></name> (<year>2012</year>) <article-title>Development of larval motor circuits in Drosophila</article-title>. <source>Dev Growth Differ</source><volume>54</volume>: <fpage>408</fpage>&#x2013;<lpage>419</lpage><pub-id pub-id-type="pmid">22524610</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Suster1">
+        <label>7</label>
+        <mixed-citation publication-type="journal"><name><surname>Suster</surname><given-names>ML</given-names></name>, <name><surname>Bate</surname><given-names>M</given-names></name> (<year>2002</year>) <article-title>Embryonic assembly of a central pattern generator without sensory input</article-title>. <source>Nature</source><volume>416</volume>: <fpage>174</fpage>&#x2013;<lpage>178</lpage><pub-id pub-id-type="pmid">11894094</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Hughes1">
+        <label>8</label>
+        <mixed-citation publication-type="journal"><name><surname>Hughes</surname><given-names>CL</given-names></name>, <name><surname>Thomas</surname><given-names>JB</given-names></name> (<year>2007</year>) <article-title>A sensory feedback circuit coordinates muscle activity in Drosophila</article-title>. <source>Mol Cell Neurosci</source><volume>35</volume>: <fpage>383</fpage>&#x2013;<lpage>396</lpage><pub-id pub-id-type="pmid">17498969</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Merritt1">
+        <label>9</label>
+        <mixed-citation publication-type="journal"><name><surname>Merritt</surname><given-names>DJ</given-names></name>, <name><surname>Whitington</surname><given-names>PM</given-names></name> (<year>1995</year>) <article-title>Central projections of sensory neurons in the Drosophila embryo correlate with sensory modality, soma position, and proneural gene function</article-title>. <source>J Neurosci</source><volume>15</volume>: <fpage>1755</fpage>&#x2013;<lpage>1767</lpage><pub-id pub-id-type="pmid">7891133</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Grueber1">
+        <label>10</label>
+        <mixed-citation publication-type="journal"><name><surname>Grueber</surname><given-names>WB</given-names></name>, <name><surname>Jan</surname><given-names>LY</given-names></name>, <name><surname>Jan</surname><given-names>YN</given-names></name> (<year>2002</year>) <article-title>Tiling of the Drosophila epidermis by multidendritic sensory neurons</article-title>. <source>Development</source><volume>129</volume>: <fpage>2867</fpage>&#x2013;<lpage>2878</lpage><pub-id pub-id-type="pmid">12050135</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Cheng1">
+        <label>11</label>
+        <mixed-citation publication-type="journal"><name><surname>Cheng</surname><given-names>LE</given-names></name>, <name><surname>Song</surname><given-names>W</given-names></name>, <name><surname>Looger</surname><given-names>LL</given-names></name>, <name><surname>Jan</surname><given-names>LY</given-names></name>, <name><surname>Jan</surname><given-names>YN</given-names></name> (<year>2010</year>) <article-title>The role of the TRP channel NompC in Drosophila larval and adult locomotion</article-title>. <source>Neuron</source><volume>67</volume>: <fpage>373</fpage>&#x2013;<lpage>380</lpage><pub-id pub-id-type="pmid">20696376</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Song1">
+        <label>12</label>
+        <mixed-citation publication-type="journal"><name><surname>Song</surname><given-names>W</given-names></name>, <name><surname>Onishi</surname><given-names>M</given-names></name>, <name><surname>Jan</surname><given-names>LY</given-names></name>, <name><surname>Jan</surname><given-names>YN</given-names></name> (<year>2007</year>) <article-title>Peripheral multidendritic sensory neurons are necessary for rhythmic locomotion behavior in Drosophila larvae</article-title>. <source>Proc Natl Acad Sci U S A</source><volume>104</volume>: <fpage>5199</fpage>&#x2013;<lpage>5204</lpage><pub-id pub-id-type="pmid">17360325</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Caldwell1">
+        <label>13</label>
+        <mixed-citation publication-type="journal"><name><surname>Caldwell</surname><given-names>JC</given-names></name>, <name><surname>Miller</surname><given-names>MM</given-names></name>, <name><surname>Wing</surname><given-names>S</given-names></name>, <name><surname>Soll</surname><given-names>DR</given-names></name>, <name><surname>Eberl</surname><given-names>DF</given-names></name> (<year>2003</year>) <article-title>Dynamic analysis of larval locomotion in Drosophila chordotonal organ mutants</article-title>. <source>Proc Natl Acad Sci U S A</source><volume>100</volume>: <fpage>16053</fpage>&#x2013;<lpage>16058</lpage><pub-id pub-id-type="pmid">14673076</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Pereanu1">
+        <label>14</label>
+        <mixed-citation publication-type="journal"><name><surname>Pereanu</surname><given-names>W</given-names></name>, <name><surname>Spindler</surname><given-names>S</given-names></name>, <name><surname>Im</surname><given-names>E</given-names></name>, <name><surname>Buu</surname><given-names>N</given-names></name>, <name><surname>Hartenstein</surname><given-names>V</given-names></name> (<year>2007</year>) <article-title>The emergence of patterned movement during late embryogenesis of Drosophila</article-title>. <source>Dev Neurobiol</source><volume>67</volume>: <fpage>1669</fpage>&#x2013;<lpage>1685</lpage><pub-id pub-id-type="pmid">17577205</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Crisp1">
+        <label>15</label>
+        <mixed-citation publication-type="journal"><name><surname>Crisp</surname><given-names>S</given-names></name>, <name><surname>Evers</surname><given-names>JF</given-names></name>, <name><surname>Fiala</surname><given-names>A</given-names></name>, <name><surname>Bate</surname><given-names>M</given-names></name> (<year>2008</year>) <article-title>The development of motor coordination in Drosophila embryos</article-title>. <source>Development</source><volume>135</volume>: <fpage>3707</fpage>&#x2013;<lpage>3717</lpage><pub-id pub-id-type="pmid">18927150</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Kwon1">
+        <label>16</label>
+        <mixed-citation publication-type="journal"><name><surname>Kwon</surname><given-names>Y</given-names></name>, <name><surname>Shen</surname><given-names>WL</given-names></name>, <name><surname>Shim</surname><given-names>HS</given-names></name>, <name><surname>Montell</surname><given-names>C</given-names></name> (<year>2010</year>) <article-title>Fine thermotactic discrimination between the optimal and slightly cooler temperatures via a TRPV channel in chordotonal neurons</article-title>. <source>J Neurosci</source><volume>30</volume>: <fpage>10465</fpage>&#x2013;<lpage>10471</lpage><pub-id pub-id-type="pmid">20685989</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Tian1">
+        <label>17</label>
+        <mixed-citation publication-type="journal"><name><surname>Tian</surname><given-names>L</given-names></name>, <name><surname>Hires</surname><given-names>SA</given-names></name>, <name><surname>Mao</surname><given-names>T</given-names></name>, <name><surname>Huber</surname><given-names>D</given-names></name>, <name><surname>Chiappe</surname><given-names>ME</given-names></name>, <etal>et al</etal> (<year>2009</year>) <article-title>Imaging neural activity in worms, flies and mice with improved GCaMP calcium indicators</article-title>. <source>Nat Methods</source><volume>6</volume>: <fpage>875</fpage>&#x2013;<lpage>881</lpage><pub-id pub-id-type="pmid">19898485</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Kitamoto1">
+        <label>18</label>
+        <mixed-citation publication-type="journal"><name><surname>Kitamoto</surname><given-names>T</given-names></name> (<year>2001</year>) <article-title>Conditional modification of behavior in Drosophila by targeted expression of a temperature-sensitive shibire allele in defined neurons</article-title>. <source>J Neurobiol</source><volume>47</volume>: <fpage>81</fpage>&#x2013;<lpage>92</lpage><pub-id pub-id-type="pmid">11291099</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Keller1">
+        <label>19</label>
+        <mixed-citation publication-type="journal"><name><surname>Keller</surname><given-names>A</given-names></name>, <name><surname>Sweeney</surname><given-names>ST</given-names></name>, <name><surname>Zars</surname><given-names>T</given-names></name>, <name><surname>O&#x2019;Kane</surname><given-names>CJ</given-names></name>, <name><surname>Heisenberg</surname><given-names>M</given-names></name> (<year>2002</year>) <article-title>Targeted expression of tetanus neurotoxin interferes with behavioral responses to sensory input in Drosophila</article-title>. <source>J Neurobiol</source><volume>50</volume>: <fpage>221</fpage>&#x2013;<lpage>233</lpage><pub-id pub-id-type="pmid">11810637</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-ODell1">
+        <label>20</label>
+        <mixed-citation publication-type="journal"><name><surname>O&#x2019;Dell</surname><given-names>K</given-names></name>, <name><surname>Burnet</surname><given-names>B</given-names></name> (<year>1988</year>) <article-title>The effects on locomotor activity and reactivity of the <italic>hypoactive</italic> and <italic>inactive</italic> mutations of <italic>Drosophila melanogaster</italic></article-title>. <source>Heredity</source><volume>61</volume>: <fpage>199</fpage>&#x2013;<lpage>207</lpage></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Field1">
+        <label>21</label>
+        <mixed-citation publication-type="journal"><name><surname>Field</surname><given-names>LH</given-names></name>, <name><surname>Matheson</surname><given-names>T</given-names></name> (<year>1998</year>) <article-title>Chordotonal organs of insects</article-title>. <source>Advances in Insect Physiology, Vol 27</source><volume>27</volume>: <fpage>1</fpage>&#x2013;<lpage>228</lpage></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Thum1">
+        <label>22</label>
+        <mixed-citation publication-type="journal"><name><surname>Thum</surname><given-names>AS</given-names></name>, <name><surname>Knapek</surname><given-names>S</given-names></name>, <name><surname>Rister</surname><given-names>J</given-names></name>, <name><surname>Dierichs-Schmitt</surname><given-names>E</given-names></name>, <name><surname>Heisenberg</surname><given-names>M</given-names></name>, <etal>et al</etal> (<year>2006</year>) <article-title>Differential potencies of effector genes in adult Drosophila</article-title>. <source>J Comp Neurol</source><volume>498</volume>: <fpage>194</fpage>&#x2013;<lpage>203</lpage><pub-id pub-id-type="pmid">16856137</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Wu1">
+        <label>23</label>
+        <mixed-citation publication-type="journal"><name><surname>Wu</surname><given-names>Z</given-names></name>, <name><surname>Sweeney</surname><given-names>LB</given-names></name>, <name><surname>Ayoob</surname><given-names>JC</given-names></name>, <name><surname>Chak</surname><given-names>K</given-names></name>, <name><surname>Andreone</surname><given-names>BJ</given-names></name>, <etal>et al</etal> (<year>2011</year>) <article-title>A combinatorial semaphorin code instructs the initial steps of sensory circuit assembly in the Drosophila CNS</article-title>. <source>Neuron</source><volume>70</volume>: <fpage>281</fpage>&#x2013;<lpage>298</lpage><pub-id pub-id-type="pmid">21521614</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Hensch1">
+        <label>24</label>
+        <mixed-citation publication-type="journal"><name><surname>Hensch</surname><given-names>TK</given-names></name> (<year>2005</year>) <article-title>Critical period mechanisms in developing visual cortex</article-title>. <source>Curr Top Dev Biol</source><volume>69</volume>: <fpage>215</fpage>&#x2013;<lpage>237</lpage><pub-id pub-id-type="pmid">16243601</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Erzurumlu1">
+        <label>25</label>
+        <mixed-citation publication-type="journal"><name><surname>Erzurumlu</surname><given-names>RS</given-names></name>, <name><surname>Gaspar</surname><given-names>P</given-names></name> (<year>2012</year>) <article-title>Development and critical period plasticity of the barrel cortex</article-title>. <source>Eur J Neurosci</source><volume>35</volume>: <fpage>1540</fpage>&#x2013;<lpage>1553</lpage><pub-id pub-id-type="pmid">22607000</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Konishi1">
+        <label>26</label>
+        <mixed-citation publication-type="journal"><name><surname>Konishi</surname><given-names>M</given-names></name> (<year>1985</year>) <article-title>Birdsong: from behavior to neuron</article-title>. <source>Annu Rev Neurosci</source><volume>8</volume>: <fpage>125</fpage>&#x2013;<lpage>170</lpage><pub-id pub-id-type="pmid">3885827</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Yuan1">
+        <label>27</label>
+        <mixed-citation publication-type="journal"><name><surname>Yuan</surname><given-names>Q</given-names></name>, <name><surname>Xiang</surname><given-names>Y</given-names></name>, <name><surname>Yan</surname><given-names>Z</given-names></name>, <name><surname>Han</surname><given-names>C</given-names></name>, <name><surname>Jan</surname><given-names>LY</given-names></name>, <etal>et al</etal> (<year>2011</year>) <article-title>Light-induced structural and functional plasticity in Drosophila larval visual system</article-title>. <source>Science</source><volume>333</volume>: <fpage>1458</fpage>&#x2013;<lpage>1462</lpage><pub-id pub-id-type="pmid">21903815</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Sachse1">
+        <label>28</label>
+        <mixed-citation publication-type="journal"><name><surname>Sachse</surname><given-names>S</given-names></name>, <name><surname>Rueckert</surname><given-names>E</given-names></name>, <name><surname>Keller</surname><given-names>A</given-names></name>, <name><surname>Okada</surname><given-names>R</given-names></name>, <name><surname>Tanaka</surname><given-names>NK</given-names></name>, <etal>et al</etal> (<year>2007</year>) <article-title>Activity-dependent plasticity in an olfactory circuit</article-title>. <source>Neuron</source><volume>56</volume>: <fpage>838</fpage>&#x2013;<lpage>850</lpage><pub-id pub-id-type="pmid">18054860</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Crisp2">
+        <label>29</label>
+        <mixed-citation publication-type="journal"><name><surname>Crisp</surname><given-names>SJ</given-names></name>, <name><surname>Evers</surname><given-names>JF</given-names></name>, <name><surname>Bate</surname><given-names>M</given-names></name> (<year>2011</year>) <article-title>Endogenous patterns of activity are required for the maturation of a motor network</article-title>. <source>J Neurosci</source><volume>31</volume>: <fpage>10445</fpage>&#x2013;<lpage>10450</lpage><pub-id pub-id-type="pmid">21775590</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Schrader1">
+        <label>30</label>
+        <mixed-citation publication-type="journal"><name><surname>Schrader</surname><given-names>S</given-names></name>, <name><surname>Merritt</surname><given-names>DJ</given-names></name> (<year>2000</year>) <article-title>Central projections of Drosophila sensory neurons in the transition from embryo to larva</article-title>. <source>J Comp Neurol</source><volume>425</volume>: <fpage>34</fpage>&#x2013;<lpage>44</lpage><pub-id pub-id-type="pmid">10940940</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Tripodi1">
+        <label>31</label>
+        <mixed-citation publication-type="journal"><name><surname>Tripodi</surname><given-names>M</given-names></name>, <name><surname>Evers</surname><given-names>JF</given-names></name>, <name><surname>Mauss</surname><given-names>A</given-names></name>, <name><surname>Bate</surname><given-names>M</given-names></name>, <name><surname>Landgraf</surname><given-names>M</given-names></name> (<year>2008</year>) <article-title>Structural homeostasis: compensatory adjustments of dendritic arbor geometry in response to variations of synaptic input</article-title>. <source>PLoS Biol</source><volume>6</volume>: <fpage>e260</fpage><pub-id pub-id-type="pmid">18959482</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0062199-Grueber2">
+        <label>32</label>
+        <mixed-citation publication-type="journal"><name><surname>Grueber</surname><given-names>WB</given-names></name>, <name><surname>Ye</surname><given-names>B</given-names></name>, <name><surname>Yang</surname><given-names>CH</given-names></name>, <name><surname>Younger</surname><given-names>S</given-names></name>, <name><surname>Borden</surname><given-names>K</given-names></name>, <etal>et al</etal> (<year>2007</year>) <article-title>Projections of Drosophila multidendritic neurons in the central nervous system: links with peripheral dendrite morphology</article-title>. <source>Development</source><volume>134</volume>: <fpage>55</fpage>&#x2013;<lpage>64</lpage><pub-id pub-id-type="pmid">17164414</pub-id></mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
+</pmc-articleset>
