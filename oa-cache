@@ -14,12 +14,9 @@ parser.add_argument('action', choices=[
     'print-database-path',
     'stats',
     ])
-parser.add_argument(
-    'target',
-    help='OAMI metadata source (e.g. pmc, pmc_doi, pmc_pmcid)'
-    )
 
-from helpers import add_verbose_option, init_logging
+from helpers import add_target_argument, add_verbose_option, init_logging
+parser = add_target_argument(parser)
 parser = add_verbose_option(parser)
 args = parser.parse_args()
 logging = init_logging(args.verbose)

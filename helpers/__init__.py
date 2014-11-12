@@ -15,6 +15,23 @@ def filename_from_url(url):
     return quote(url, safe='')
 
 
+def add_target_argument(parser):
+    """
+    Add target argument to an argparse.ArgumentParser parser.
+
+    >>> from argparse import ArgumentParser
+    >>> parser = ArgumentParser()
+    >>> parser = add_target_argument(parser)
+    >>> parser.parse_args(['dummy'])
+    Namespace(target='dummy')
+    """
+    parser.add_argument(
+        'target',
+        help='OAMI metadata source (e.g. pmc, pmc_doi, pmc_pmcid)'
+        )
+    return parser
+
+
 def add_verbose_option(parser):
     """
     Add verbosity option to an argparse.ArgumentParser parser.
