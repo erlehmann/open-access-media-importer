@@ -40,30 +40,9 @@ from model import session, setup_all, create_all, set_source, \
     Article, Journal, SupplementaryMaterial
 
 try:
-    action = argv[1]
-    target = argv[2]
-except IndexError:  # no arguments given
-    stderr.write("""
-oa-get – Open Access Media Importer download operations
-
-usage:  oa-get detect-duplicates [source] |
-        oa-get download-metadata [source] |
-        oa-get download-media [source] |
-        oa-get update-mimetypes [source]
-
-""")
-    exit(1)
-
-try:
-    assert(action in ['detect-duplicates', 'download-media', 'download-metadata', 'update-mimetypes'])
-except AssertionError:  # invalid action
-    stderr.write("Unknown action “%s”.\n" % action)
-    exit(2)
-
-try:
-    exec "from sources import %s as source_module" % target
+    exec "from sources import %s as source_module" % args.target
 except ImportError:  # invalid source
-    stderr.write("Unknown source “%s”.\n" % target)
+    stderr.write("Unknown source “%s”.\n" % args.target)
     exit(3)
 
 set_source(target)
