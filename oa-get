@@ -17,7 +17,7 @@ import progressbar
 import magic
 
 from os import path
-from sys import argv, stdout
+from sys import stdout
 from urllib2 import urlopen, Request, HTTPError
 
 from model import session, set_source, Article, Journal, SupplementaryMaterial

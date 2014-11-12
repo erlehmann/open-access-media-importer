@@ -11,9 +11,7 @@ from helpers.cli import init_logging
 logging = init_logging(args.verbose)
 
 from os import path
-from sys import argv
 from time import sleep
-from urllib2 import urlparse
 
 from helpers import config, efetch, filename_from_url, mediawiki, template
 from model import session, set_source, Article, Journal, SupplementaryMaterial
