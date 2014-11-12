@@ -31,7 +31,7 @@ except ImportError:  # invalid source
     stderr.write("Unknown source “%s”.\n" % args.target)
     exit(3)
 
-set_source(target)
+set_source(args.target)
 setup_all(True)
 
 from helpers import config, mediawiki, filename_from_url
