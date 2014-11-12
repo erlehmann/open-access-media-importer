@@ -34,7 +34,7 @@ def add_force_conversion_option(parser):
 
 def add_force_upload_option(parser):
     """
-    Add force option to an argparse.ArgumentParser parser.
+    Add force-upload option to an argparse.ArgumentParser parser.
 
     >>> from argparse import ArgumentParser
     >>> parser = ArgumentParser()
@@ -44,7 +44,7 @@ def add_force_upload_option(parser):
     """
     parser.add_argument(
         '--force-upload',
-        help='Force upload of supplementary material.',
+        help='Force upload of supplementary materials already uploaded.',
         action='store_true'
         )
     return parser
