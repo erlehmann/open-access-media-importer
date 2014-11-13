@@ -536,11 +536,23 @@ def _get_article_license_url(tree):
     """
     Given an ElementTree, return license URL.
 
+    The license URL can be found URL in the xlink:href attribute of a
+    <license> element:
+
     >>> with open('tests/10.1186/1756-3305-1-29.xml') as content:
     ...     tree = ElementTree().parse(content)
     ...     for article_tree in tree.iterfind('article'):
     ...         _get_article_license_url(article_tree)
     'http://creativecommons.org/licenses/by/2.0'
+
+    The license URL can be found in the xlink:href attribute of a
+    <ext-link> element that is a child of a <license-p> element:
+
+    >>> with open('tests/10.1371/journal.pone.0087644.xml') as content:
+    ...     tree = ElementTree().parse(content)
+    ...     for article_tree in tree.iterfind('article'):
+    ...         _get_article_license_url(article_tree)
+    'http://creativecommons.org/licenses/by/4.0/'
     """
     url = None
     license = tree.find('front//*license')
