@@ -657,9 +657,9 @@ def _get_article_licensing(tree):
 
     if license_url is None:
         license_url = \
-            _guess_license_url_from_copyright_statement(copyright_statement_text)
+            _guess_license_url_from_copyright_statement(copyright_statement)
 
-    return license_url, license_text, copyright_statement_text
+    return license_url, license_text, copyright_statement
 
 
 def _get_article_copyright_holder(tree):
