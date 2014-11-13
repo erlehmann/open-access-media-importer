@@ -531,91 +531,136 @@ license_url_fixes = {
     'http://creativecommons.org/licenses/by/4.0/legalcode': 'http://creativecommons.org/licenses/by/4.0/'
 }
 
-def _get_article_licensing(tree):
-    """
-    Given an ElementTree, return tuple consisting of article license
-    URL, article license text, article copyright statement text.
 
-    Some articles contain a license URL within the xlink:href
-    attribute of a <license> element:
+def _get_article_license_url(tree):
+    """
+    Given an ElementTree, return license URL.
 
     >>> with open('tests/10.1186/1756-3305-1-29.xml') as content:
     ...     tree = ElementTree().parse(content)
     ...     for article_tree in tree.iterfind('article'):
-    ...         _get_article_licensing(article_tree)
-    ('http://creativecommons.org/licenses/by/2.0/', None, None)
+    ...         _get_article_license_url(article_tree)
+    'http://creativecommons.org/licenses/by/2.0'
+    """
+    url = None
+    license = tree.find('front//*license')
+    if license is not None:
+        try:
+            url = license.attrib['{http://www.w3.org/1999/xlink}href']
+        except KeyError:
+            try:
+                ext_link = license.find('license-p/ext-link')
+                if ext_link is not None:
+                    url = ext_link.attrib['{http://www.w3.org/1999/xlink}href']
+            except KeyError:
+                pass
+    return url
 
-    Some articles contain licensing text inside a <license-p> element:
+
+def _get_article_license_text(tree):
+    """
+    Given an ElementTree, return license text.
 
     >>> with open('tests/10.1371/journal.pone.0062199.xml') as content:
     ...     tree = ElementTree().parse(content)
     ...     for article_tree in tree.iterfind('article'):
-    ...         _get_article_licensing(article_tree)
+    ...         _get_article_license_text(article_tree)
+    u'This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.'
     """
-    license_text = None
-    license_url = None
-    copyright_statement_text = None
-
+    text = None
     license = tree.find('front//*license')
-    copyright_statement = tree.find('front//*copyright-statement')
-
-    def _get_text_from_element(element):
-        text = ' '.join(element.itertext()).encode('utf-8')  # clean encoding
-        text = ' '.join(text.split())  # clean whitespace
-        return text
-
     if license is not None:
+        text = u' '.join(license.itertext()).strip()
+    return text
+
+
+def _get_article_copyright_statement(tree):
+    """
+    Given an ElementTree, return copyright statement text.
+    >>> with open('tests/10.1186/1756-3305-1-29.xml') as content:
+    ...     tree = ElementTree().parse(content)
+    ...     for article_tree in tree.iterfind('article'):
+    ...         _get_article_copyright_statement(article_tree)
+    u'Copyright \\xa9 2008 Behnke et al; licensee BioMed Central Ltd.'
+    """
+    text = None
+    copyright_statement = tree.find('front//*copyright-statement')
+    if copyright_statement is not None:
+        text = u' '.join(copyright_statement.itertext()).strip()
+    return text
+
+
+def _guess_license_url_from_license_url(url):
+    """
+    Return license URL for a given license URL.
+
+    This function is intended to fix typos.
+
+    >>> url = 'http://(http://creativecommons.org/licenses/by/2.0)'
+    >>> _guess_license_url_from_license_url(url)
+    'http://creativecommons.org/licenses/by/2.0/'
+    """
+    if url in license_url_fixes.keys():
+        url = license_url_fixes[url]
+    return url
+
+
+def _guess_license_url_from_license_text(text):
+    """
+    Return license URL for a given license text.
+
+    >>> text = u'License information: This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.'
+    >>> _guess_license_url_from_license_text(text)
+    'http://creativecommons.org/licenses/by/3.0'
+    """
+    url = None
+    if text is not None:
         try:
-            license_url = license.attrib['{http://www.w3.org/1999/xlink}href']
-        except KeyError: # license URL is possibly in in <ext-link> element
-            try:
-                ext_link = license.find('license-p/ext-link')
-                if ext_link is not None:
-                    license_url = \
-                        ext_link.attrib['{http://www.w3.org/1999/xlink}href']
-            except KeyError: # license statement is in plain text
-                license_text = _get_text_from_element(license)
-    elif copyright_statement is not None:
-        copyright_statement_text = _get_text_from_element(copyright_statement)
-    else:
-        logging.error('No <license> or <copyright-statement> element found in XML.')
-        return None, None, None
+            url = license_url_equivalents[text]
+        except KeyError:
+            logging.warning('Unknown license: %s', text)
+    return url
 
-    if license_url is None:
-        if license_text is not None:
-           try:
-               license_url = license_url_equivalents[license_text]
-           except:
-             logging.error('Unknown license: %s', license_text)
 
-        elif copyright_statement_text is not None:
-            copyright_statement_found = False
-            for text in copyright_statement_url_equivalents.keys():
-                if copyright_statement_text.endswith(text):
-                    license_url = copyright_statement_url_equivalents[text]
-                    copyright_statement_found = True
-                    break
-            if not copyright_statement_found:
-                logging.error('Unknown copyright statement: %s', copyright_statement_text)
+def _guess_license_url_from_copyright_statement(text):
+    """
+    Return license URL for a given copyright statement.
 
-    def _fix_license_url(license_url):
-        """
-        Return canonical license URL.
-        """
-        if license_url in license_url_fixes.keys():
-            return license_url_fixes[license_url]
-        return license_url
+    >>> text = u'This is an open-access article, free of all copyright, and may be freely reproduced, distributed, transmitted, modified, built upon, or otherwise used by anyone for any lawful purpose. The work is made available under the Creative Commons CC0 public domain dedication.'
+    >>> _guess_license_url_from_copyright_statement(text)
+    'http://creativecommons.org/publicdomain/zero/1.0/'
+    """
+    url = None
+    if text is not None:
+        for key_text in copyright_statement_url_equivalents.keys():
+            if text.endswith(key_text):
+                url = copyright_statement_url_equivalents[key_text]
+        if url is None:
+            logging.warning('Unknown copyright statement :%s', text)
+    return url
 
-    if license_text is not None:
-        license_text = license_text.decode('utf-8')
 
-    if copyright_statement_text is not None:
-        copyright_statement_text = copyright_statement_text.decode('utf-8')
+def _get_article_licensing(tree):
+    """
+    Given an ElementTree, return tuple consisting of article license
+    URL, article license text, article copyright statement text.
+    """
+    license_text = _get_article_license_text(tree)
+    license_url = _get_article_license_url(tree)
+    copyright_statement = _get_article_copyright_statement(tree)
 
     if license_url is not None:
-        return _fix_license_url(license_url), license_text, copyright_statement_text
-    else:
-        return None, license_text, copyright_statement_text
+        license_url = _guess_license_url_from_license_url(license_url)
+
+    if license_url is None:
+        license_url = _guess_license_url_from_license_text(license_text)
+
+    if license_url is None:
+        license_url = \
+            _guess_license_url_from_copyright_statement(copyright_statement_text)
+
+    return license_url, license_text, copyright_statement_text
+
 
 def _get_article_copyright_holder(tree):
     """
