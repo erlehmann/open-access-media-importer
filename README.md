@@ -1,3 +1,4 @@
+```html
 <h1>Open Access Media Importer</h1>
 <p>The aim of this project is to write a tool that would:
 <ul>
@@ -38,3 +39,4 @@
 <p>To plot mimetypes occurring in sources, install python-matplotlib and pipe the output of <kbd>oa-cache stats $SOURCE</kbd> to <code>plot-helper</code>, where <code>$SOURCE</code> is either <code>pmc</code>, <code>pmc_doi</code> or <code>pmc_pmcid</code>.
 <h2>License</h2>
 <p>The Open Access Media Importer is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License  as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+```
