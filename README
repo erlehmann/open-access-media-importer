@@ -1,46 +1,40 @@
-The aim of this project is to write a tool that would:
-* regularly spider PubMed Central to locate audio and video files published in the supplementary materials of CC BY-licensed articles in the Open subset
-* convert these files to OGG
-* upload them to Wikimedia Commons, along with the respective metadata
-* provide for easy extension to other CC-BY sources, beyond PubMed Central
-* (possibly) suggest Wikipedia articles for which the video might be relevant
-
-Wiki page:
-    http://en.wikiversity.org/wiki/User:OpenScientist/Open_grant_writing/Wissenswert_2011
-
-Configuration:
-    Copy the userconfig.example file to $HOME/config/open-access-media-importer/userconfig”. Uncomment the lines for “username” and “password” and fill in your username and password for Wikimedia Commons.
-
-Import of supplementary materials by DOI:
-    1. Look up the DOIs of one or more open access articles with supplementary materials.
-    2. Pipe the DOIs to the oami_pmc_doi_import script, like “echo 10.1371/journal.pcbi.0030212 | oami_pmc_doi_import”
-
-Import of supplementary materials by PMCID:
-    1. Look up the PMCIDs of one or more open access articles with supplementary materials.
-    2. Pipe the PMCIDs to the oami_pmc_pmcid_import script, like “echo PMC3751716 | oami_pmc_pmcid_import”
-
-A screencast showing usage can be played back with “ttyplay screencast”.
-
-Dependencies:
-    python-dateutil <http://pypi.python.org/pypi/python-dateutil>
-    python-elixir <http://elixir.ematia.de/trac/wiki>
-    python-gst0.10 <http://gstreamer.freedesktop.org/modules/gst-python.html>
-    python-magic <http://www.darwinsys.com/file/>
-    python-mutagen <http://code.google.com/p/mutagen/>
-    python-progressbar <http://pypi.python.org/pypi/progressbar/2.2>
-    python-xdg <http://freedesktop.org/wiki/Software/pyxdg>
-    python-werkzeug <http://werkzeug.pocoo.org/>
-    python-wikitools <http://code.google.com/p/python-wikitools/> (python-wikitools was imported into our tree and patched to ease deployment)
-
-Useful notes:
-    http://chrismaloney.org/notes/OAMI
-
-To plot mimetypes occurring in sources, install python-matplotlib and pipe the output of “oa-cache stats [source]” to the included plot-helper script.
-
-License:
-The Open Access Media Importer is free software: 
-you can redistribute it and/or modify it 
-under the terms of the GNU General Public License 
-as published by the Free Software Foundation, 
-either version 3 of the License, 
-or (at your option) any later version.
+<h1>Open Access Media Importer</h1>
+<p>The aim of this project is to write a tool that would:
+<ul>
+<li>regularly spider PubMed Central to locate audio and video files published in the supplementary materials of CC BY-licensed articles in the Open subset
+<li>convert these files to OGG
+<li>upload them to Wikimedia Commons, along with the respective metadata
+<li>provide for easy extension to other CC-BY sources, beyond PubMed Central
+<li>(possibly) suggest Wikipedia articles for which the video might be relevant
+</ul>
+<p><a href="http://en.wikiversity.org/wiki/User:OpenScientist/Open_grant_writing/Wissenswert_2011">Open Grant Writing for Open Access Media Importer</a>
+<p><a href="http://chrismaloney.org/notes/OAMI">Notes on the Open Access Media Importer by Chris Maloney</a>
+<p>A screencast showing usage can be played back with <kbd>ttyplay screencast</kbd>.
+<h2>Configuration</h2>
+<p>Copy the <code>userconfig.example</code> file to <code>$HOME/config/open-access-media-importer/userconfig</code>, uncomment the lines beginning with <code># username</code> and <code># password</code> and fill in your username and password for <i>Wikimedia Commons</i>.
+<h2>Import of supplementary materials by DOI</h2>
+<ol>
+<li>Look up the DOIs of one or more open access articles.
+<li>Pipe the DOIs to <code>oami_pmc_doi_import</code>, e.g. <kbd>echo 10.1371/journal.pcbi.0030212 | oami_pmc_doi_import</kbd>.
+</ol>
+<h2>Import of supplementary materials by PMCID</h2>
+<ol>
+<li>Look up the PMCIDs of one or more open access articles.
+<li>Pipe the PMCIDs to <code>oami_pmc_pmcid_import</code>, e.g. <kbd>echo PMC3751716 | oami_pmc_pmcid_import</kbd>.
+</ol>
+<p>You can fetch PMCIDs for articles with <code>oa-pmc-ids</code>; try <kbd>oa-pmc-ids --help</kbd>.
+<h2>Dependencies</h2>
+<ul>
+<li>python-dateutil <http://pypi.python.org/pypi/python-dateutil>
+<li>python-elixir <http://elixir.ematia.de/trac/wiki>
+<li>python-gst0.10 <http://gstreamer.freedesktop.org/modules/gst-python.html>
+<li>python-magic <http://www.darwinsys.com/file/>
+<li>python-mutagen <http://code.google.com/p/mutagen/>
+<li>python-progressbar <http://pypi.python.org/pypi/progressbar/2.2>
+<li>python-xdg <http://freedesktop.org/wiki/Software/pyxdg>
+<li>python-werkzeug <http://werkzeug.pocoo.org/>
+<li>python-wikitools <http://code.google.com/p/python-wikitools/> (python-wikitools was imported into our tree and patched to ease deployment)
+</ul>
+<p>To plot mimetypes occurring in sources, install python-matplotlib and pipe the output of <kbd>oa-cache stats $SOURCE</kbd> to <code>plot-helper</code>, where <code>$SOURCE</code> is either <code>pmc</code>, <code>pmc_doi</code> or <code>pmc_pmcid</code>.
+<h2>License</h2>
+<p>The Open Access Media Importer is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License  as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
