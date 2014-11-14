@@ -8,10 +8,18 @@ The aim of this project is to write a tool that would:
 Wiki page:
     http://en.wikiversity.org/wiki/User:OpenScientist/Open_grant_writing/Wissenswert_2011
 
-Commands:
-    oa-get [download-metadata|download-media] [dummy|pmc|pmc_doi]
-    oa-cache [clear-database|clear-media|convert-media|find-media|list-articles|stats] [dummy|pmc|pmc_doi]
-    oa-put upload-media [dummy|pmc|pmc_doi]
+Configuration:
+    Copy the userconfig.example file to $HOME/config/open-access-media-importer/userconfig”. Uncomment the lines for “username” and “password” and fill in your username and password for Wikimedia Commons.
+
+Import of supplementary materials by DOI:
+    1. Look up the DOIs of one or more open access articles with supplementary materials.
+    2. Pipe the DOIs to the oami_pmc_doi_import script, like “echo 10.1371/journal.pcbi.0030212 | oami_pmc_doi_import”
+
+Import of supplementary materials by PMCID:
+    1. Look up the PMCIDs of one or more open access articles with supplementary materials.
+    2. Pipe the PMCIDs to the oami_pmc_pmcid_import script, like “echo PMC3751716 | oami_pmc_pmcid_import”
+
+A screencast showing usage can be played back with “ttyplay screencast”.
 
 Dependencies:
     python-dateutil <http://pypi.python.org/pypi/python-dateutil>
@@ -23,11 +31,6 @@ Dependencies:
     python-xdg <http://freedesktop.org/wiki/Software/pyxdg>
     python-werkzeug <http://werkzeug.pocoo.org/>
     python-wikitools <http://code.google.com/p/python-wikitools/> (python-wikitools was imported into our tree and patched to ease deployment)
-
-To use the upload feature of oa-put, copy the userconfig.example file to
-“$HOME/config/open-access-media-importer/userconfig”.
-
-A screencast showing usage can be played back with “ttyplay screencast”.
 
 Useful notes:
     http://chrismaloney.org/notes/OAMI
