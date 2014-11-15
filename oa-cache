@@ -38,8 +38,9 @@ import pprint
 
 import subprocess
 
-from helpers import autovividict, filename_from_url, media
+from helpers import autovividict, filename_from_url
 from helpers.template import make_datestring
+from helpers.transcoder import Transcoder
 from model import session, set_source, Article, Category, Journal, SupplementaryMaterial
 
 from helpers import config
@@ -126,15 +127,8 @@ def convert_media(source):
                 )
             )
 
-        # loop = gobject.MainLoop()
-        m = media.Media(media_raw_path)
-        try:
-            m.find_streams()
-            m.convert(temporary_media_path)
-        except RuntimeError, e:
-            logging.error("%s: Skipping conversion of “%s”.",
-                          e, media_raw_path.encode('utf-8'))
-            continue
+        t = Transcoder(media_raw_path, temporary_media_path)
+        t.run()
 
         try:
             f = mutagen.oggtheora.OggTheora(temporary_media_path)

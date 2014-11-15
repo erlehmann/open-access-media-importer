@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from helpers import media
+from helpers.transcoder import Transcoder
 from sys import argv, stderr
 from urllib2 import urlopen, Request
 
@@ -23,11 +23,7 @@ with open(input_filename, 'w') as input_file:
 stderr.write("done.\n")
 
 stderr.write("Setting up Media helper for “%s”… " % input_filename)
-m = media.Media(input_filename)
-stderr.write("done.\n")
-
-stderr.write("Attempting finding streams of “%s” … " % input_filename)
-m.find_streams()
+t = Transcoder(input_filename, output_filename)
 stderr.write("done.\n")
 
 stderr.write("Attempting conversion of “%s”, writing into “%s” … " % \
@@ -36,5 +32,5 @@ stderr.write("Attempting conversion of “%s”, writing into “%s” … " % \
         output_filename
     )
 )
-m.convert(output_filename)
+t.run()
 stderr.write("done.\n")
