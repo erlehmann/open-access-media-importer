@@ -25,11 +25,7 @@ from os import listdir, path, remove, rename
 from sys import exit, stderr, stdout
 
 import errno
-import gobject
-import pygst
-pygst.require("0.10")
 
-import gst
 import progressbar
 
 import mutagen.oggtheora
