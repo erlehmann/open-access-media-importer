@@ -12,7 +12,8 @@ from sys import stderr
 
 from helpers import mediawiki
 
-uploads = mediawiki.get_uploads()
+username = 'Open_Access_Media_Importer_Bot'
+uploads = mediawiki.get_uploads(username)
 
 pylab.figure(figsize=(20.0, 12.0))
 

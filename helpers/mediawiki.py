@@ -20,9 +20,9 @@ def query(params):
         stderr.write('Mediawiki API request failed, retrying.\n')
         return query(request)
 
-def get_uploads():
+def get_uploads(username):
     """
-    Return OAMI uploads for “File” namespace (MediaWiki namespace 6).
+    Return uploads for username for “File” namespace (MediaWiki ns 6).
 
     See documentation for built-in MediaWiki Namespace numbering:
     <http://www.mediawiki.org/wiki/Manual:Namespace#Built-in_namespaces>
@@ -30,7 +30,7 @@ def get_uploads():
     params = {
         'action': 'query',
         'list': 'usercontribs',
-        'ucuser': config.username
+        'ucuser': username
         }
     result = query(params)
     return [
