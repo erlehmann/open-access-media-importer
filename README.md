@@ -27,7 +27,13 @@
 <ul>
 <li>python-dateutil <http://pypi.python.org/pypi/python-dateutil>
 <li>python-elixir <http://elixir.ematia.de/trac/wiki>
-<li>python-gst0.10 <http://gstreamer.freedesktop.org/modules/gst-python.html>
+<li>python-gi
+<li>gir1.2-gstreamer-1.0
+<li>gir1.2-gst-plugins-base-1.0
+<li>gstreamer1.0-plugins-good
+<li>gstreamer1.0-plugins-ugly
+<li>gstreamer1.0-plugins-bad
+<li>gstreamer1.0-libav
 <li>python-magic <http://www.darwinsys.com/file/>
 <li>python-mutagen <http://code.google.com/p/mutagen/>
 <li>python-progressbar <http://pypi.python.org/pypi/progressbar/2.2>
