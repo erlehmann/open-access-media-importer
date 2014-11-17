@@ -126,6 +126,7 @@ def get_license_template(url):
     '{{cc-by-sa-4.0}}'
     """
     license_templates = {
+        u'http://creativecommons.org/publicdomain/zero/1.0/': '{{cc-zero}}',
         u'http://creativecommons.org/licenses/by/2.0/': '{{cc-by-2.0}}',
         u'http://creativecommons.org/licenses/by-sa/2.0/': '{{cc-by-sa-2.0}}',
         u'http://creativecommons.org/licenses/by/2.5/': '{{cc-by-2.5}}',
