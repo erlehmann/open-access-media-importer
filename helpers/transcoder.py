@@ -15,6 +15,9 @@ Gst.init(None)
 
 
 class AudioEncoder(Gst.Bin):
+    """
+    GStreamer pipeline part to encode audio input to Vorbis.
+    """
     def __init__(self):
         super(AudioEncoder, self).__init__()
 
@@ -51,6 +54,9 @@ class AudioEncoder(Gst.Bin):
 
 
 class VideoEncoder(Gst.Bin):
+    """
+    GStreamer pipeline part to encode video input to Theora.
+    """
     def __init__(self):
         super(VideoEncoder, self).__init__()
 
@@ -81,6 +87,22 @@ class VideoEncoder(Gst.Bin):
 
 
 class Transcoder:
+    """
+    Encodes media file containing audio and / or video data.
+    Input format can be anything that GStreamer understands.
+
+    >>> from os import path
+    >>> for infile in ('sample-videos/small.mp4', 'sample-videos/small.flv'):
+    ...     outfile = infile + '.ogv'
+    ...     t = Transcoder(infile, outfile)
+    ...     t.run()
+    ...     if path.exists(outfile):
+    ...         print outfile
+    sample-videos/small.mp4.ogv
+    sample-videos/small.flv.ogv
+
+    If the input file does not exist, a RuntimeError is raised upon converting.
+    """
     def __init__(self, input_filename, output_filename):
         self.input_filename = input_filename
         self.output_filename = output_filename
@@ -142,10 +164,16 @@ class Transcoder:
             pad.link(self.video.get_static_pad('sink'))
 
     def on_eos(self, bus, msg):
-        print('on_eos()')
+        # Kill pipeline when reaching end of stream.
         self.kill()
 
     def on_error(self, bus, msg):
-        print('on_error():', msg.parse_error())
+        # Kill pipeline on error.
         self.kill()
+        raise RuntimeError, msg.parse_error()
 
+
+if __name__ == '__main__':
+    """Start doctests."""
+    import doctest
+    doctest.testmod()
