@@ -656,6 +656,12 @@ def _get_article_licensing(tree):
     """
     Given an ElementTree, return tuple consisting of article license
     URL, article license text, article copyright statement text.
+
+    >>> with open('tests/10.1371/journal.pcbi.1003447.xml') as content:
+    ...     tree = ElementTree().parse(content)
+    ...     for article_tree in tree.iterfind('article'):
+    ...         _get_article_licensing(article_tree)
+    ('http://creativecommons.org/publicdomain/zero/1.0/', u'This is an open-access article, free of all copyright, and may be freely reproduced, distributed, transmitted, modified, built upon, or otherwise used by anyone for any lawful purpose. The work is made available under the Creative Commons CC0 public domain dedication.', None)
     """
     license_text = _get_article_license_text(tree)
     license_url = _get_article_license_url(tree)

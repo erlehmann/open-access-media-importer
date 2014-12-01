@@ -1,0 +1,926 @@
+<?xml version="1.0"?>
+<!DOCTYPE pmc-articleset PUBLIC "-//NLM//DTD ARTICLE SET 2.0//EN" "http://dtd.nlm.nih.gov/ncbi/pmc/articleset/nlm-articleset-2.0.dtd">
+<pmc-articleset><article xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" article-type="research-article">
+  <?properties open_access?>
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">PLoS Comput Biol</journal-id>
+      <journal-id journal-id-type="iso-abbrev">PLoS Comput. Biol</journal-id>
+      <journal-id journal-id-type="publisher-id">plos</journal-id>
+      <journal-id journal-id-type="pmc">ploscomp</journal-id>
+      <journal-title-group>
+        <journal-title>PLoS Computational Biology</journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">1553-734X</issn>
+      <issn pub-type="epub">1553-7358</issn>
+      <publisher>
+        <publisher-name>Public Library of Science</publisher-name>
+        <publisher-loc>San Francisco, USA</publisher-loc>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="pmid">24499933</article-id>
+      <article-id pub-id-type="pmc">3907294</article-id>
+      <article-id pub-id-type="publisher-id">PCOMPBIOL-D-13-01048</article-id>
+      <article-id pub-id-type="doi">10.1371/journal.pcbi.1003447</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Research Article</subject>
+        </subj-group>
+        <subj-group subj-group-type="Discipline-v2">
+          <subject>Biology</subject>
+          <subj-group>
+            <subject>Computational Biology</subject>
+            <subj-group>
+              <subject>Genomics</subject>
+              <subj-group>
+                <subject>Comparative Genomics</subject>
+              </subj-group>
+            </subj-group>
+            <subj-group>
+              <subject>Molecular Genetics</subject>
+              <subj-group>
+                <subject>Gene Duplication</subject>
+              </subj-group>
+            </subj-group>
+          </subj-group>
+          <subj-group>
+            <subject>Developmental Biology</subject>
+            <subj-group>
+              <subject>Evolutionary Developmental Biology</subject>
+              <subject>Morphogenesis</subject>
+              <subject>Pattern Formation</subject>
+              <subject>Plant Growth and Development</subject>
+            </subj-group>
+          </subj-group>
+          <subj-group>
+            <subject>Evolutionary Biology</subject>
+            <subj-group>
+              <subject>Evolutionary Developmental Biology</subject>
+            </subj-group>
+          </subj-group>
+          <subj-group>
+            <subject>Model Organisms</subject>
+            <subj-group>
+              <subject>Plant and Algal Models</subject>
+              <subj-group>
+                <subject>Arabidopsis Thaliana</subject>
+                <subject>Maize</subject>
+              </subj-group>
+            </subj-group>
+          </subj-group>
+          <subj-group>
+            <subject>Molecular Cell Biology</subject>
+            <subj-group>
+              <subject>Plant Cell Biology</subject>
+              <subj-group>
+                <subject>Xylem</subject>
+              </subj-group>
+            </subj-group>
+          </subj-group>
+          <subj-group>
+            <subject>Plant Science</subject>
+            <subj-group>
+              <subject>Plant Growth and Development</subject>
+            </subj-group>
+          </subj-group>
+        </subj-group>
+        <subj-group subj-group-type="Discipline-v2">
+          <subject>Computer Science</subject>
+        </subj-group>
+        <subj-group subj-group-type="Discipline-v2">
+          <subject>Mathematics</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>A Division in PIN-Mediated Auxin Patterning during Organ Initiation in Grasses</article-title>
+        <alt-title alt-title-type="running-head">PIN Division in Grasses</alt-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>O'Connor</surname>
+            <given-names>Devin L.</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+          <xref ref-type="aff" rid="aff2">
+            <sup>2</sup>
+          </xref>
+          <xref ref-type="corresp" rid="cor1">
+            <sup>*</sup>
+          </xref>
+          <xref ref-type="author-notes" rid="fn1">
+            <sup>&#xA4;</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Runions</surname>
+            <given-names>Adam</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff3">
+            <sup>3</sup>
+          </xref>
+          <xref ref-type="author-notes" rid="fn2">
+            <sup>&#xB6;</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Sluis</surname>
+            <given-names>Aaron</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+          <xref ref-type="aff" rid="aff2">
+            <sup>2</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Bragg</surname>
+            <given-names>Jennifer</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff4">
+            <sup>4</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Vogel</surname>
+            <given-names>John P.</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff4">
+            <sup>4</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author" equal-contrib="yes">
+          <name>
+            <surname>Prusinkiewicz</surname>
+            <given-names>Przemyslaw</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff3">
+            <sup>3</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author" equal-contrib="yes">
+          <name>
+            <surname>Hake</surname>
+            <given-names>Sarah</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+          <xref ref-type="aff" rid="aff2">
+            <sup>2</sup>
+          </xref>
+        </contrib>
+      </contrib-group>
+      <aff id="aff1">
+        <label>1</label>
+        <addr-line>Plant and Microbial Biology Department, University of California at Berkeley, Berkeley, California, United States of America</addr-line>
+      </aff>
+      <aff id="aff2">
+        <label>2</label>
+        <addr-line>Plant Gene Expression Center, United States Department of Agriculture - Agricultural Research Service (USDA-ARS), Albany, California, United States of America</addr-line>
+      </aff>
+      <aff id="aff3">
+        <label>3</label>
+        <addr-line>Department of Computer Science, University of Calgary, Calgary, Alberta, Canada</addr-line>
+      </aff>
+      <aff id="aff4">
+        <label>4</label>
+        <addr-line>Western Regional Research Center, United States Department of Agriculture - Agriculture Research Service (USDA-ARS), Albany, California, United States of America</addr-line>
+      </aff>
+      <contrib-group>
+        <contrib contrib-type="editor">
+          <name>
+            <surname>Vernoux</surname>
+            <given-names>Teva</given-names>
+          </name>
+          <role>Editor</role>
+          <xref ref-type="aff" rid="edit1"/>
+        </contrib>
+      </contrib-group>
+      <aff id="edit1">
+        <addr-line>ENS de Lyon, France</addr-line>
+      </aff>
+      <author-notes>
+        <corresp id="cor1">* E-mail: <email>devin.oconnor@slcu.cam.ac.uk</email></corresp>
+        <fn fn-type="conflict">
+          <p>The authors have declared that no competing interests exist.</p>
+        </fn>
+        <fn fn-type="con">
+          <p>Conceived and designed the experiments: DLO AR PP SH. Performed the experiments: DLO AR AS JB. Analyzed the data: DLO AR PP SH. Contributed reagents/materials/analysis tools: JPV. Wrote the paper: DLO AR PP SH.</p>
+        </fn>
+        <fn id="fn1" fn-type="current-aff">
+          <label>&#xA4;</label>
+          <p>Current address: Sainsbury Laboratory, Cambridge University, Cambridge, United Kingdom</p>
+        </fn>
+        <fn id="fn2" fn-type="other">
+          <p>&#xB6; For correspondence in regards to computer model: <email>runionsa@cpsc.ucalgary.ca</email></p>
+        </fn>
+      </author-notes>
+      <pub-date pub-type="collection">
+        <month>1</month>
+        <year>2014</year>
+      </pub-date>
+      <pub-date pub-type="epub">
+        <day>30</day>
+        <month>1</month>
+        <year>2014</year>
+      </pub-date>
+      <volume>10</volume>
+      <issue>1</issue>
+      <elocation-id>e1003447</elocation-id>
+      <history>
+        <date date-type="received">
+          <day>12</day>
+          <month>6</month>
+          <year>2013</year>
+        </date>
+        <date date-type="accepted">
+          <day>6</day>
+          <month>12</month>
+          <year>2013</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-year>2014</copyright-year>
+        <license>
+          <license-p>This is an open-access article, free of all copyright, and may be freely reproduced, distributed, transmitted, modified, built upon, or otherwise used by anyone for any lawful purpose. The work is made available under the Creative Commons CC0 public domain dedication.</license-p>
+        </license>
+      </permissions>
+      <abstract>
+        <p>The hormone auxin plays a crucial role in plant morphogenesis. In the shoot apical meristem, the PIN-FORMED1 (PIN1) efflux carrier concentrates auxin into local maxima in the epidermis, which position incipient leaf or floral primordia. From these maxima, PIN1 transports auxin into internal tissues along emergent paths that pattern leaf and stem vasculature. In <italic>Arabidopsis thaliana</italic>, these functions are attributed to a single PIN1 protein. Using phylogenetic and gene synteny analysis we identified an angiosperm <italic>PIN</italic> clade sister to <italic>PIN1</italic>, here termed <italic>Sister-of-PIN1</italic> (<italic>SoPIN1</italic>), which is present in all sampled angiosperms except for Brassicaceae, including <italic>Arabidopsis</italic>. Additionally, we identified a conserved duplication of <italic>PIN1</italic> in the grasse<italic>s</italic>: <italic>PIN1a</italic> and <italic>PIN1b</italic>. In <italic>Brachypodium distachyon</italic>, SoPIN1 is highly expressed in the epidermis and is consistently polarized toward regions of high expression of the DR5 auxin-signaling reporter, which suggests that SoPIN1 functions in the localization of new primordia. In contrast, PIN1a and PIN1b are highly expressed in internal tissues, suggesting a role in vascular patterning. PIN1b is expressed in broad regions spanning the space between new primordia and previously formed vasculature, suggesting a role in connecting new organs to auxin sinks in the older tissues. Within these regions, PIN1a forms narrow canals that likely pattern future veins. Using a computer model, we reproduced the observed spatio-temporal expression and localization patterns of these proteins by assuming that SoPIN1 is polarized up the auxin gradient, and PIN1a and PIN1b are polarized to different degrees with the auxin flux. Our results suggest that examination and modeling of PIN dynamics in plants outside of Brassicaceae will offer insights into auxin-driven patterning obscured by the loss of the SoPIN1 clade in Brassicaceae.</p>
+      </abstract>
+      <abstract abstract-type="summary">
+        <title>Author Summary</title>
+        <p>Computational models and functional studies using the plant <italic>Arabidopsis thaliana</italic> have led to competing models for how the PIN-FORMED1 (PIN1) auxin transporter polarizes in the cell to create both the maxima required for organ initiation and the narrow streams required for vein patterning. Here we identify a previously uncharacterized PIN protein most closely related to PIN1 that is present in all flowering plants but lost in the Brassicaceae, including <italic>Arabidopsis</italic>. We localized this protein, here termed Sister-of-PIN1 (SoPIN1), along with duplicate members of PIN1 (PIN1a and PIN1b), in two grass species. Our localization data provide striking evidence for a spatial and temporal split between SoPIN1 and the two PIN1s during organ initiation in grasses. Based on our localization results we created a computational model showing that the observed patterns of expression and polarization of the grass PINs can emerge assuming SoPIN1 polarizes up the gradient of auxin concentration while the PIN1 members polarize with the auxin flux. This model reveals a minimal framework of necessary functions involved in auxin-transport-mediated patterning in the shoot and demonstrates that work outside of <italic>Arabidopsis</italic> is essential to understanding how auxin-transport mediates patterning in most flowering plants.</p>
+      </abstract>
+      <funding-group>
+        <funding-statement>This work was supported by NSF DBI-0604923 (SH), ARS-USDA (SH and JPV), the U.S. Department of Energy Interagency Agreement nos. DE-AI02-07ER64452 and DE-SC0001526 (JPV), HFSP Research Grant RGP0047/2010 (PP) and NSERC Discovery Grant 130084 (PP). The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.</funding-statement>
+      </funding-group>
+      <counts>
+        <page-count count="14"/>
+      </counts>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="s1">
+      <title>Introduction</title>
+      <p>Active transport of the plant hormone auxin provides key positional and environmental cues during plant development <xref rid="pcbi.1003447-Dettmer1" ref-type="bibr">[1]</xref>, <xref rid="pcbi.1003447-Leyser1" ref-type="bibr">[2]</xref>. Of the numerous auxin transport proteins <xref rid="pcbi.1003447-Petrsek1" ref-type="bibr">[3]</xref>, the membrane-localized PIN-FORMED (PIN) proteins appear to define the direction and rate of auxin movement in many contexts <xref rid="pcbi.1003447-Petrsek2" ref-type="bibr">[4]</xref>, <xref rid="pcbi.1003447-Wisniewska1" ref-type="bibr">[5]</xref>. The angiosperm PIN family can be divided into &#x201C;short&#x201D; and &#x201C;long&#x201D; classes based on the length of the hydrophilic region <xref rid="pcbi.1003447-Krecek1" ref-type="bibr">[6]</xref>, <xref rid="pcbi.1003447-Viaene1" ref-type="bibr">[7]</xref>. Short PIN proteins are likely involved in auxin homoeostasis within the cell <xref rid="pcbi.1003447-Mravec1" ref-type="bibr">[8]</xref>. Long PINs show a characteristic polar localization in the cell plasma membrane that provides directionality to auxin transport <xref rid="pcbi.1003447-Benkov1" ref-type="bibr">[9]</xref>&#x2013;<xref rid="pcbi.1003447-Scarpella1" ref-type="bibr">[13]</xref>. The hydrophilic loop domains of long PIN proteins contain phosphorylation sites that control PIN cellular localization <xref rid="pcbi.1003447-Dhonukshe1" ref-type="bibr">[14]</xref>&#x2013;<xref rid="pcbi.1003447-Zhang1" ref-type="bibr">[16]</xref>. Thus it is likely that variation in function between PIN family members is at least in part due to differing protein domains within this region.</p>
+      <p>Localization and genetic studies have identified the long PIN group member PIN1 as the major auxin transporter involved in leaf initiation, leaf margin definition, and vascular patterning in shoots <xref rid="pcbi.1003447-Benkov1" ref-type="bibr">[9]</xref>, <xref rid="pcbi.1003447-Reinhardt1" ref-type="bibr">[12]</xref>, <xref rid="pcbi.1003447-Scarpella1" ref-type="bibr">[13]</xref>, <xref rid="pcbi.1003447-Bilsborough1" ref-type="bibr">[17]</xref>, <xref rid="pcbi.1003447-Hay1" ref-type="bibr">[18]</xref>. The convergence point hypothesis posits that the creation of auxin maxima by convergent localization of PIN1 defines the locations of initiating leaves, serrations, lobes and vasculature <xref rid="pcbi.1003447-Reinhardt1" ref-type="bibr">[12]</xref>, <xref rid="pcbi.1003447-Scarpella1" ref-type="bibr">[13]</xref>, <xref rid="pcbi.1003447-Bilsborough1" ref-type="bibr">[17]</xref>, <xref rid="pcbi.1003447-Hay2" ref-type="bibr">[19]</xref>, <xref rid="pcbi.1003447-Reinhardt2" ref-type="bibr">[20]</xref>. Most models of how convergent localization of PIN1 facilitates formation of auxin maxima propose positive feedback regulation where PIN1 is allocated to the cell membrane adjacent to the neighboring cell with the highest auxin concentration, thus moving auxin against the concentration gradient <xref rid="pcbi.1003447-Bilsborough1" ref-type="bibr">[17]</xref>, <xref rid="pcbi.1003447-Jnsson1" ref-type="bibr">[21]</xref>&#x2013;<xref rid="pcbi.1003447-Merks1" ref-type="bibr">[24]</xref>. Such <italic>up-the-gradient</italic> models are able to accurately recapitulate the initial phase of organ initiation, the formation of PIN1 convergence points and auxin maxima in the correct phyllotactic patterns. These models can also generate files of cells with aligned PIN polarities, similar to those observed during vascular development <xref rid="pcbi.1003447-Merks1" ref-type="bibr">[24]</xref>, but do not reproduce localization data showing PIN1 oriented away from auxin maxima, measured using the DR5::GFP reporter, during patterning of leaf veins <xref rid="pcbi.1003447-Reinhardt1" ref-type="bibr">[12]</xref>, <xref rid="pcbi.1003447-Scarpella1" ref-type="bibr">[13]</xref>, <xref rid="pcbi.1003447-Bilsborough1" ref-type="bibr">[17]</xref>, <xref rid="pcbi.1003447-Hay2" ref-type="bibr">[19]</xref>, <xref rid="pcbi.1003447-Reinhardt2" ref-type="bibr">[20]</xref>.</p>
+      <p>Complementary models based on the canalization hypothesis <xref rid="pcbi.1003447-Sachs1" ref-type="bibr">[25]</xref>, <xref rid="pcbi.1003447-Sachs2" ref-type="bibr">[26]</xref> propose an alternate positive feedback where auxin transport is facilitated in the direction of highest auxin flux <xref rid="pcbi.1003447-Mitchison1" ref-type="bibr">[27]</xref>&#x2013;<xref rid="pcbi.1003447-Feugier1" ref-type="bibr">[31]</xref>. Simulations of this <italic>with-the-flux</italic> type of polarization can accurately recapitulate formation of canalized traces and are useful in explaining how PIN1 mediates vein patterning <xref rid="pcbi.1003447-RollandLagan1" ref-type="bibr">[29]</xref>. While with-the-flux polarization models can create convergent PIN localization when PIN is assumed to polarize weakly with-the-flux in the epidermis and strongly with-the-flux in subepidermal layers <xref rid="pcbi.1003447-Stoma1" ref-type="bibr">[30]</xref>, these models predict dynamics that do not match experimental observations. Specifically, they do not predict the observed transient localization of PIN towards the convergence point in internal layers <xref rid="pcbi.1003447-Bayer1" ref-type="bibr">[32]</xref>. In addition, they display a transient dip in auxin concentration at the convergence point, which is not observed experimentally <xref rid="pcbi.1003447-Smith1" ref-type="bibr">[22]</xref>, <xref rid="pcbi.1003447-Bayer1" ref-type="bibr">[32]</xref>. A model that dynamically combines up-the-gradient and with-the-flux modes according to auxin concentration is able to recapitulate the observed DR5 dynamics as well as PIN1 polarization during convergence point formation and vein canalization <xref rid="pcbi.1003447-Bayer1" ref-type="bibr">[32]</xref>. However, this <italic>dual polarization</italic> model requires a hypothetical signal from pre-existing veins in order for new canalization events to consistently connect to the existing vasculature, a pattern that is highly regular in vascular development <xref rid="pcbi.1003447-Bayer1" ref-type="bibr">[32]</xref>. Reliably connecting auxin sources and sinks is a noted problem in models of vein formation <xref rid="pcbi.1003447-Smith2" ref-type="bibr">[33]</xref>.</p>
+      <p>Here we describe the phylogenetic analysis of angiosperm long PIN coding sequences. We provide evidence that <italic>Arabidopsis</italic> and other members of the Brassicaceae have lost a clade of long PIN genes that is conserved in all other angiosperms sampled, a clade we designate <italic>Sister-of-PIN1</italic> (<italic>SoPIN1</italic>). We then localize SoPIN1 along with the PIN1 clade members PIN1a and PIN1b in <italic>Brachypodium distachyon</italic> (<italic>Brachypodium</italic>) and maize. These two clades exhibit dramatically different expression and polarization patterns, suggesting a role for SoPIN1 in maximum formation, and for PIN1a and PIN1b in vein patterning. Our computational model shows that these patterns can emerge assuming a combined action of SoPIN1 polarizing up the gradient of auxin concentration and PIN1 members polarizing with the auxin flux. The model also shows how newly formed auxin transport axes may reliably connect to older organs without a hypothetical signal from pre-existing veins.</p>
+    </sec>
+    <sec id="s2">
+      <title>Results</title>
+      <sec id="s2a">
+        <title>Four canonical long PINs in the angiosperms</title>
+        <p>Our phylogenetic analysis defines four major long PIN clades within the sampled angiosperms (<xref ref-type="fig" rid="pcbi-1003447-g001">Figure 1A,B</xref>). Because of the large body of previous work on <italic>Arabidopsis thaliana</italic> (<italic>Arabidopsis</italic>) PINs, we named three clades, PIN1, PIN2, and PIN3/4/7, based on the previously characterized <italic>Arabidopsis</italic> proteins that nested within these clades. All sampled angiosperms have at least one member in each of these three canonical long PIN clades. However, we also found strong support for a fourth clade placed sister to <italic>PIN1</italic>, here designated &#x201C;<italic>Sister-of-PIN1</italic>&#x201D; (<italic>SoPIN1</italic>), which contains sequences from all sampled angiosperms except species within the Brassicaceae, including <italic>Brassica rapa</italic>, <italic>Arabidopsis lyrata</italic>, and <italic>Arabidopsis thaliana</italic> (<xref ref-type="fig" rid="pcbi-1003447-g001">Figure 1</xref>). In previous smaller phylogenetic analyses SoPIN1 proteins were placed in the same clade as <italic>PIN1</italic> members <xref rid="pcbi.1003447-Bayer1" ref-type="bibr">[32]</xref>, <xref rid="pcbi.1003447-Brooks1" ref-type="bibr">[34]</xref>, <xref rid="pcbi.1003447-Peng1" ref-type="bibr">[35]</xref>. In support of our phylogeny that suggests <italic>SoPIN1</italic> is a unique clade, we identified several conserved regions within the variable cytosolic loop of both PIN1 and SoPIN1 proteins that are unique to each clade (<xref ref-type="supplementary-material" rid="pcbi.1003447.s003">Figure S2</xref>).</p>
+        <fig id="pcbi-1003447-g001" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pcbi.1003447.g001</object-id>
+          <label>Figure 1</label>
+          <caption>
+            <title>Four canonical long PIN clades are found in the angiosperms.</title>
+            <p>(A) Bayesian phylogram of angiosperm long PIN sequences. Basal plant groups (<italic>Physcomitrella patens</italic> and <italic>Selaginella moellendorffii</italic>) are not visible, see <xref ref-type="supplementary-material" rid="pcbi.1003447.s002">Figure S1</xref> in supplementary material for complete phylogeny. All nodes without asterisks (*) have at least 0.95 posterior probability. <italic>Arabidopsis</italic> sequences are marked with stars. <italic>Brachypodium SoPIN1</italic>, <italic>PIN1a</italic>, and <italic>PIN1b</italic> are marked with arrows. Major clades are labeled at right. Plant families at major phylogenetic nodes are colored according to (B). Each sequence name is followed by a family abbreviation also defined in (B). (B) Summary tree showing the relationships amongst the angiosperm families sampled in (A), monocot and eudicot groups are labeled <xref rid="pcbi.1003447-Bremer1" ref-type="bibr">[57]</xref>. (C) Summary of inferred phylogenetic relationships between <italic>Arabidopsis PIN1</italic> and <italic>Brachypodium SoPIN1</italic>, <italic>PIN1a</italic>, and <italic>PIN1b</italic>. The &#x201C;X&#x201D; indicates the loss of <italic>Arabidopsis SoPIN1</italic>. Scale: 0.08 substitutions per site.</p>
+          </caption>
+          <graphic xlink:href="pcbi.1003447.g001"/>
+        </fig>
+        <p>These results suggest that <italic>SoPIN1</italic> was lost in the lineage leading to the Brassicaceae sometime after diverging from papaya. In support of this loss, we identified syntenic chromosomal regions across a subset of angiosperms and found that <italic>SoPIN1</italic> was absent in the syntenic chromosomes of all sequenced Brassicaceae species despite overall conservation of gene order with other angiosperms that still have <italic>SoPIN1</italic> (<xref ref-type="supplementary-material" rid="pcbi.1003447.s004">Figure S3</xref>). Thus, <italic>Arabidopsis</italic> and other Brassicaceae members have lost <italic>SoPIN1</italic>, one of the four canonical long PIN clades conserved in all other sampled angiosperms.</p>
+        <p>Within the grasses our phylogenies support a lineage-specific duplication in the <italic>PIN1</italic> clade, termed <italic>PIN1a</italic> and <italic>PIN1b</italic> based on previous maize annotations (<xref ref-type="fig" rid="pcbi-1003447-g001">Figure 1A</xref>) <xref rid="pcbi.1003447-Carraro1" ref-type="bibr">[36]</xref>&#x2013;<xref rid="pcbi.1003447-Forestan1" ref-type="bibr">[38]</xref>. Overall, both PIN1a and PIN1b protein sequences resemble other eudicot PIN1 proteins, but in some regions of the variable cytosolic loop PIN1a and PIN1b have grass-specific sequences (<xref ref-type="supplementary-material" rid="pcbi.1003447.s003">Figure S2</xref>). While several species-specific duplication events have occurred in rice, <italic>Setaria</italic>, and maize, both <italic>Brachypodium</italic> and <italic>Sorghum</italic> grasses contain single members within the <italic>PIN1a</italic>, <italic>PIN1b</italic> and <italic>SoPIN1</italic> clades. The relationship of <italic>Brachypodium SoPIN1</italic>, <italic>PIN1a</italic> and <italic>PIN1b</italic> to <italic>Arabidopsis PIN1</italic> is summarized in <xref ref-type="fig" rid="pcbi-1003447-g001">Figure 1C</xref>.</p>
+      </sec>
+      <sec id="s2b">
+        <title>SoPIN1, PIN1a, and PIN1b have distinct but overlapping expression domains in the <italic>Brachypodium</italic> spikelet meristem</title>
+        <p>To explore the significance of the loss of <italic>SoPIN1</italic> in the Brassicaceae and the duplication of <italic>PIN1</italic> in the grasses, we examined expression and localization of PIN1a, PIN1b and SoPIN1 during <italic>Brachypodium</italic> spikelet development. Each <italic>Brachypodium</italic> spikelet meristem is indeterminate, and initiates two sterile bracts followed by 7 to 14 floral meristems in an alternate distichous phyllotaxy before terminating (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2A,B</xref>) <xref rid="pcbi.1003447-Derbyshire1" ref-type="bibr">[39]</xref>. The first product of each floral meristem is the lemma, a leaf-like organ that surrounds the remaining floral organs (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2B</xref>).</p>
+        <fig id="pcbi-1003447-g002" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pcbi.1003447.g002</object-id>
+          <label>Figure 2</label>
+          <caption>
+            <title>SoPIN1, PIN1a, PIN1b, and DR5 expression in the <italic>Brachypodium</italic> spikelet meristem.</title>
+            <p>(A) Organization of the <italic>Brachypodium</italic> spikelet meristem. Lemma primordia are colored red, floral meristems blue. Lemma primordia are labeled, I2, I1, P1, P2, P3 (see text). The spikelet meristem (SM), a single floral meristem (FM) and the P2 lemma (L) are labeled. Dashed box indicates area of detail images in <xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3A&#x2013;F</xref>. (B) Right, mature inflorescence with one lateral and one terminal spikelet, in brackets. Middle, a spikelet broken into the 2 bracts and 10 individual florets. Left, a single floret lemma, not to scale. (B Inset) Look-up-table scales for all fluorescence images. (C&#x2013;H) Confocal maximum projections of PIN-Citrine and DR5-RFP expression in staged spikelet meristems. See supplemental <xref ref-type="supplementary-material" rid="pcbi.1003447.s017">Video S1</xref>. (C) SoPIN1 maximum projection including epidermal sections. (D) Internal SoPIN1 sections in same sample as (C), the spikelet meristem, floral meristems and lemma primordia are outlined in white for clarity. (E,G,H) Internal confocal sections of PIN1a and DR5 from a single plant expressing PIN1a and DR5. (E) PIN1a channel only, (G) DR5 only, and (H) DR5 and PIN1a. (F) Complete maximum projection showing PIN1b. Asterisks in (A), (C), and (D) show lemma midvein convergence points. Circles in (A) and (C) show lemma lateral vein convergence points on one side of meristem, see also <xref ref-type="supplementary-material" rid="pcbi.1003447.s017">Video S1</xref>. Ratios below each figure label indicate the number of times each phenomenon discussed in the text was observed out of the total imaged. Scale bars: 1 cm in (B), 25 &#xB5;m in (C&#x2013;H).</p>
+          </caption>
+          <graphic xlink:href="pcbi.1003447.g002"/>
+        </fig>
+        <p>We examined PIN expression and localization during lemma initiation in the first few florets. This stage had several advantages for live imaging: the spikelet meristem is relatively exposed early during spikelet development, and the indeterminate nature of the <italic>Brachypodium</italic> spikelet meristem allows visualization of a developmental series of one leaf initiation event (lemma) and one axillary branch initiation event (floral meristem) at each node in a distichous phyllotaxy (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2A</xref>). To visualize each PIN, we created stable transgenic plants containing full-length Citrine (a variant of Yellow Fluorescent Protein, YFP) fluorescent protein fusion constructs under their native promoters.</p>
+        <p>SoPIN1, PIN1a, and PIN1b have partially overlapping but unique expression domains in the spikelet meristem (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2C&#x2013;F</xref> and <xref ref-type="supplementary-material" rid="pcbi.1003447.s017">Video S1</xref> in supplementary material). SoPIN1 expression is highest in the epidermal cell layer (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2C</xref>), and substantial internal expression is restricted to the sites of initiating organs (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2D</xref>). In contrast, PIN1a and PIN1b are primarily expressed in the internal cell layers along the presumed paths of incipient lemma veins (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2E,F</xref>). PIN1b is also expressed in the center of both spikelet and floral meristems at this stage (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2F</xref>). In the epidermis, PIN1a and PIN1b are only expressed in a few cells at the distal tips of both mid and lateral vein traces (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2E,F</xref> and <xref ref-type="supplementary-material" rid="pcbi.1003447.s017">Video S1</xref>).</p>
+        <p>To visualize the entire potential path of auxin transport in the <italic>Brachypodium</italic> spikelet, we examined DR5 expression during lemma initiation. Although indirect, DR5 is a standard reporter used to estimate relative auxin concentrations during development <xref rid="pcbi.1003447-Scarpella1" ref-type="bibr">[13]</xref>, <xref rid="pcbi.1003447-Smith1" ref-type="bibr">[22]</xref>, <xref rid="pcbi.1003447-Gallavotti1" ref-type="bibr">[37]</xref>, <xref rid="pcbi.1003447-Heisler1" ref-type="bibr">[40]</xref>, <xref rid="pcbi.1003447-AvsianKretchmer1" ref-type="bibr">[41]</xref>. In the <italic>Brachypodium</italic> spikelet DR5 expression is highest in the epidermis of both spikelet and floral meristems, at the tip of each lemma primordium, along the path of each incipient vein, and in a broad column down the center of the spikelet (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2G</xref>). Only combined SoPIN1, PIN1a, and PIN1b expression matches the entire DR5 expression pattern (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2C&#x2013;H</xref>, <xref ref-type="supplementary-material" rid="pcbi.1003447.s017">Video S1</xref>). These data suggest that all three PINs act in concert to create the auxin transport path in the <italic>Brachypodium</italic> spikelet meristem, but each PIN may have a unique role.</p>
+      </sec>
+      <sec id="s2c">
+        <title>SoPIN1 convergence points mark organ initiation</title>
+        <p>The tunica-corpus theory of meristem organization divides the meristem into the tunica, where cell divisions are primarily anticlinal, or perpendicular to the meristem surface, and the corpus, which undergoes cell divisions in several planes. We examined the cell division planes in the <italic>Brachypodium</italic> spikelet meristem and found that the outer two cell layers in the meristem apex, L1 and L2, are dominated by anticlinal divisions (<xref ref-type="supplementary-material" rid="pcbi.1003447.s005">Figure S4</xref>). This suggests that, similar to wheat and <italic>Arabidopsis</italic>
+<xref rid="pcbi.1003447-Medford1" ref-type="bibr">[42]</xref>, <xref rid="pcbi.1003447-Evans1" ref-type="bibr">[43]</xref>, <italic>Brachypodium</italic> has a two-layered tunica. Cell divisions in the tunica layers that are parallel to the meristem surface (periclinal) mark the beginning of leaf morphogenesis, and allowed us to easily identify incipient lemma primordia <xref rid="pcbi.1003447-Sharman1" ref-type="bibr">[44]</xref> (<xref ref-type="supplementary-material" rid="pcbi.1003447.s005">Figure S4</xref>, arrows).</p>
+        <p>Because organ initiation in <italic>Brachypodium</italic> is distichous and the spikelet meristem indeterminate, we were able to define two stages of SoPIN1 expression prior to visible lemma morphogenesis, numbered I1 and I2 in order of their appearance (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2A</xref> box, 3A). At I2, SoPIN1 expression is highest in the epidermal cell layer and polarity begins to converge, with shootward polarity in abaxial cells and rootward polarity in adaxial cells (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3A</xref>, red arrows). DR5 expression at this stage is highest in the apical epidermis and is limited in the internal cell layers (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3B</xref>, <xref ref-type="supplementary-material" rid="pcbi.1003447.s006">S5</xref>). At the I1 stage, SoPIN1 expression increases in both the epidermal and internal cell layers (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3G</xref>, <xref ref-type="supplementary-material" rid="pcbi.1003447.s007">S6</xref>). Cellular localization of SoPIN1 at I1 shows strong convergent polarization in the epidermis as well as along the presumptive midvein axis, and is coincident with an increase in DR5 expression in the epidermis as well as internally (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3G</xref>, <xref ref-type="supplementary-material" rid="pcbi.1003447.s007">S6</xref>). In later stage I1 primordia, SoPIN1 convergence surrounds the periclinal cell divisions in both tunica layers which are a hallmark of leaf initiation in grasses <xref rid="pcbi.1003447-Sharman1" ref-type="bibr">[44]</xref> (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3A,H</xref>, <xref ref-type="supplementary-material" rid="pcbi.1003447.s008">S7</xref>). SoPIN1 is polarized toward the new cell plate in the daughter cells resulting from these periclinal divisions.</p>
+        <fig id="pcbi-1003447-g003" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pcbi.1003447.g003</object-id>
+          <label>Figure 3</label>
+          <caption>
+            <title>SoPIN1, PIN1a, and PIN1b localization during lemma initiation.</title>
+            <p>Internal confocal maximum projections showing cellular localization of SoPIN1, PIN1a, PIN1b and DR5 in I2-P1 lemma primordia. (A) SoPIN1. Inset shows an alternate confocal section of the I1 primordium with an epidermal (L1) periclinal cell division. (B) SoPIN1 and DR5 localization in an alternate sample at an earlier stage than (A). (C) PIN1a and DR5. (D&#x2013;E) PIN1b, (D) at earlier stage than (E). Double arrow shows the forming I1 midvein trace. (F), same dataset as (C), DR5 channel only. Large arrow shows region of lowered DR5 expression along the P1 midvein spanned by PIN1a, see (C). (G&#x2013;H) I1 details of SoPIN1 and DR5 localization in two different samples, (H) at a later stage than (G). (I) PIN1a in I2 at similar stage as (H). Note polarization towards the center of the meristem, surrounding the L2 periclinal division. (J&#x2013;L) DR5 expression is reduced in areas of high PIN1b expression. (J) PIN1b, (K) DR5, and (L) merged images of a P1 lemma primordium. Large arrow in (K) shows region of reduced DR5 in the PIN1b midvein domain. Double arrow in (J) and (L) shows beginning of PIN1b expression during formation of the I1 midvein. (M) Detail of SoPIN1 and DR5 in P1 midvein. (N) Detail of PIN1a and DR5 in P1 midvein. Images in A, C, E, F are details of same samples as <xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2C&#x2013;H</xref>. Detail area for (A&#x2013;F) is indicated by the dashed box in <xref ref-type="fig" rid="pcbi-1003447-g001">Figure 1A</xref>. See Figures S5, S6, S7, S8, S9, S10 for split DR5 and PIN channel images of (B), (C), (G), (H), (M), and (N). Ratios below each figure label indicate the number of times a given phenomena discussed in the text was observed out of the total imaged. Primordia I2, I1 and P1 are labeled. Asterisks show SoPIN1 convergence points in (A), (B), (G), (H), and (M). Small arrows indicate inferred polarity of PIN. Scale Bars: 10 &#xB5;m.</p>
+          </caption>
+          <graphic xlink:href="pcbi.1003447.g003"/>
+        </fig>
+        <p>After morphogenesis begins, primordia are designated P1, P2, P3, etc., from youngest to oldest (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2A</xref>). In P1 primordia, SoPIN1 convergence narrows around a DR5 maximum present in a few cells at the midvein tip (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3B</xref>, <xref ref-type="supplementary-material" rid="pcbi.1003447.s006">S5</xref>). As the lemma expands, SoPIN1 expression briefly persists at low levels along the axis of the midvein oriented both toward the DR5 maximum at the tip and parallel to the midvein axis (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3M</xref>, <xref ref-type="supplementary-material" rid="pcbi.1003447.s009">S8</xref>). At the same time, SoPIN1 expression increases at two secondary convergence points equidistant around the circumference of the meristem (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2C</xref> circles), marking the initiation of two symmetrical secondary lemma veins (<xref ref-type="supplementary-material" rid="pcbi.1003447.s017">Video S1</xref>). At later stages SoPIN1 expression decreases at each midvein convergence point, and by P3 expression along the midvein is almost gone (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2D</xref>, <xref ref-type="supplementary-material" rid="pcbi.1003447.s017">Video S1</xref>).</p>
+      </sec>
+      <sec id="s2d">
+        <title>PIN1a and PIN1b pattern vein development</title>
+        <p>PIN1b expression is absent from I2 but was observed at several stages during the formation of the I1 midvein. In a small proportion of spikelets, PIN1b expression was observed to varying degrees in the center of the spikelet meristem apical dome connecting to the P1 midvein trace. This expression appears initially as a small ill-defined spike protruding from the top of the P1 midvein into the apical dome (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3J,L</xref>, double arrow). In what is likely a later stage, PIN1b is expressed well inside the meristem apex, consistently limited to the corpus cell layers (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3D</xref>, double arrow). PIN1b polarity at these early stages is often unclear, and expression is relatively low. In a larger proportion of the meristems examined, presumably at an even later developmental stage after convergence point formation in I1 by SoPIN1, PIN1b expression narrows and is loosely polarized along the presumptive path of the I1 midvein, connecting the I1 epidermis to the midvein trace of P1 (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3E</xref>, double arrow). In summary, we infer a likely progression of PIN1b during the I1 stage, first extending from the P1 midvein (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3J</xref>), into the apical dome (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3D</xref>), then connecting to the I1 epidermis after maxima formation (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3E</xref>).</p>
+        <p>PIN1a expression is completely absent at the I2 stage. PIN1a expression begins in only a few cells of I1, usually highest in the L2 layer (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3C</xref>, <xref ref-type="supplementary-material" rid="pcbi.1003447.s010">S9</xref>). In later stages, expression is present in both the epidermis and internally (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3I</xref>). PIN1a polarity in I1 is consistently oriented either away from the epidermis (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3I</xref>) or rootward (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3C</xref>). The area of highest PIN1a expression in I1 correlates with the periclinal divisions that mark the beginning of lemma morphogenesis (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3I</xref>).</p>
+        <p>By P1, PIN1a and PIN1b expression increases, overlapping in a distinct midvein trace. As the P1 primordium extends, the polarity of PIN1a and PIN1b becomes more ordered, oriented along the midvein trace axis into the center of the spikelet and then rootward (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3C,E</xref>, <xref ref-type="supplementary-material" rid="pcbi.1003447.s010">S9</xref>). While PIN1b expression remains relatively broad and extends completely across the spikelet, connecting to the midvein trace of P2 (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2F</xref>), expression of PIN1a is narrow and terminates in the center of the spikelet (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3C,N</xref>, <xref ref-type="supplementary-material" rid="pcbi.1003447.s011">S10</xref>). PIN1b expression is highest in P1 and P2 and decreases by P3, but is continuously connected between all primordia (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2F</xref>). In contrast, PIN1a remains strongly expressed in a narrow path along each presumptive lemma midvein. In each successive older primordium expression extends further rootward into the center of the spikelet toward the midvein of the next older primordium (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2E</xref>). We observed PIN1a connecting to older primordia only in much later stages, where the tissue thickness made clear imaging difficult (not shown).</p>
+        <p>In general, DR5 expression follows the combined expression pattern of PIN1a and PIN1b. Significant expression along the developing midvein occurs in later-stage I1 primordia, and is maintained in each successive older vein trace (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2G</xref>). DR5 expression in older primordia is highest in the epidermal maximum at the midvein tip and in the central column where PIN1b is expressed (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3L</xref>). Remarkably, in the P1 trace both PIN1a (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3C,F</xref> large arrow, <xref ref-type="supplementary-material" rid="pcbi.1003447.s017">Video S1</xref>) and PIN1b (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3J&#x2013;L</xref>, large arrow) usually span a region of lowered DR5 expression between the central column of high DR5 and the maximum in the epidermis.</p>
+      </sec>
+      <sec id="s2e">
+        <title>SoPIN1 and PIN1 separation is conserved in maize spikelet development</title>
+        <p>To support our reporter analysis in <italic>Brachypodium</italic>, we immuno-localized SoPIN1 in maize spikelet meristems (<xref ref-type="supplementary-material" rid="pcbi.1003447.s012">Figure S11A</xref>) and found a similar expression pattern where convergent localization of SoPIN1 marked the sites of incipient primordia (Compare <xref ref-type="supplementary-material" rid="pcbi.1003447.s012">Figure S11A</xref> to <xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3A</xref>). We also observed a localization pattern similar to the combined expression pattern of PIN1a and PIN1b using antibodies that likely detect both PIN1 proteins in maize (Compare <xref ref-type="supplementary-material" rid="pcbi.1003447.s012">Figure S11B</xref> to <xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3E</xref>), suggesting that the split between SoPIN1 and PIN1 is conserved between these two grass species.</p>
+      </sec>
+      <sec id="s2f">
+        <title>Conceptual model</title>
+        <p>We observed that the spatio-temporal patterns of SoPIN1, PIN1a, and PIN1b expression and polarization, as well as the pattern of auxin concentration as reported by DR5, are consistent with aspects of previous models of PIN1 polarization in response to auxin. In general, the progressive convergence of SoPIN1 is coincident with increasing DR5 expression, and thus the formation of presumed auxin maxima in the tunica layers. The resulting SoPIN1 convergence points around DR5 maxima mark the sites of initiating organs and precede PIN1a and PIN1b expression. The observed polarization of SoPIN1 is consistent with the up-the-gradient model of PIN1 polarization leading to the formation of convergence points in the tunica <xref rid="pcbi.1003447-Jnsson1" ref-type="bibr">[21]</xref>, <xref rid="pcbi.1003447-Smith1" ref-type="bibr">[22]</xref>. In contrast, both PIN1a and PIN1b are expressed mainly in the corpus. As development proceeds, they become gradually polarized away from convergence points, and along presumptive vein traces. The expression and polarization of PIN1a is consistent with the with-the-flux model of vein canalization <xref rid="pcbi.1003447-Sachs1" ref-type="bibr">[25]</xref>&#x2013;<xref rid="pcbi.1003447-Mitchison2" ref-type="bibr">[28]</xref>. The relatively broad expression characteristic of PIN1b was considered from a theoretical perspective by Feugier et al. <xref rid="pcbi.1003447-Feugier1" ref-type="bibr">[31]</xref> and Stoma et al. <xref rid="pcbi.1003447-Stoma1" ref-type="bibr">[30]</xref>, who observed that a weak polarizing response to auxin flux can generate broad regions of PIN1 polarization towards the sink. We postulate that PIN1b in <italic>Brachypodium</italic> behaves in a similar fashion. To verify whether this conceptual model can plausibly capture the experimentally observed spatio-temporal pattern of expression and polarities of the three PINs in <italic>Brachypodium</italic> during the initiation of convergence points and vascular strands, we constructed a computational model, described below.</p>
+      </sec>
+      <sec id="s2g">
+        <title>Computational model</title>
+        <p>A longitudinal section of a <italic>Brachypodium</italic> apex was modeled as a regular 2D array of hexagonal cells (<xref ref-type="fig" rid="pcbi-1003447-g004">Figure 4A</xref>). Associated with each cell is the concentration of auxin and the distributions of SoPIN1, PIN1a and PIN1b proteins (<xref ref-type="fig" rid="pcbi-1003447-g004">Figure 4B</xref>). These distributions are represented by storing concentrations of the three PINs separately for each segment of the cell membrane (colored edge of each hexagonal cell). PIN production is assumed to be auxin dependent, permitting expression levels to vary from cell to cell. See the Computational Model Description S1 (CMD S1) Eqs. 7, 8 and 10 in the supplementary materials. Each cell stores a concentration of unallocated PINs (colored circles in <xref ref-type="fig" rid="pcbi-1003447-g004">Figure 4B</xref>), which are moved to the cell membrane by exocytosis (green arrows) and removed from the membrane by endocytosis (red arrows). For PIN1a, exocytosis is increased by total auxin flux through the membrane, and endocytosis is increased by influx through the membrane (CMD S1 Eq. 5). For PIN1b, exocytosis is increased by auxin outflux through the membrane, and endocytosis is increased by influx (CMD S1 Eq. 4). For SoPIN1, allocation to the membrane is increased by high auxin concentration in the neighboring cell (CMD S1 Eq. 9). Cellular auxin concentration (CMD S1 Eq. 1) changes based on biosynthesis, turnover, and the flux due to auxin transport between neighboring cells (CMD S1 Eqs. 2&#x2013;3). Additional mathematical details of PIN production and allocation can be found in Section 3 of the Computational Model Description S1.</p>
+        <fig id="pcbi-1003447-g004" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pcbi.1003447.g004</object-id>
+          <label>Figure 4</label>
+          <caption>
+            <title>Basic features of the proposed model of polar auxin transport.</title>
+            <p>(A) The layout of cells in the tissue model used to simulate convergence point and vascular strand patterning. Cells in the L1 are colored green, those in the L2 blue, and corpus cells are colored red. Cells assumed to export auxin outside the explicitly modeled part of the shoot are stippled. In addition, a sink is located at the base of the tissue (black cell). Faded cells represent parts of the tissue outside the scope of the model. (B) Schematic view of a cell and its neighbors that illustrates the factors determining PIN allocation to segments of the cell membrane. PIN1a is shown in white, PIN1b in blue and SoPIN1 in yellow. Exocytosis is represented by green arrows, endocytosis by red arrows.</p>
+          </caption>
+          <graphic xlink:href="pcbi.1003447.g004"/>
+        </fig>
+        <p>To capture the tissue specific differences in the <italic>Brachypodium</italic> spikelet meristem observed in our analysis of cell division patterns during lemma initiation (<xref ref-type="supplementary-material" rid="pcbi.1003447.s005">Figure S4</xref>), we divided the cellular array into the tunica layers, L1 and L2, and the sub-epidermal corpus (<xref ref-type="fig" rid="pcbi-1003447-g004">Figure 4A</xref>, CMD S1 Section 4.1). Following previous work <xref rid="pcbi.1003447-Reinhardt1" ref-type="bibr">[12]</xref>, <xref rid="pcbi.1003447-Bayer1" ref-type="bibr">[32]</xref>, we assumed that up-the-gradient patterning is particularly strong in the tunica layers. This was implemented by increasing auxin-dependent production of SoPIN1 in the L1 and decreasing auxin-dependent production of both PIN1a and PIN1b in the L1 and L2 layers, consistent with the observed expression patterns (<xref ref-type="fig" rid="pcbi-1003447-g002">Figures 2</xref> and <xref ref-type="fig" rid="pcbi-1003447-g003">3</xref>). In addition, we assumed that auxin biosynthesis is increased (two fold) in the L1 <xref rid="pcbi.1003447-Smith1" ref-type="bibr">[22]</xref>, <xref rid="pcbi.1003447-Bayer1" ref-type="bibr">[32]</xref>, which is consistent with observed DR5 expression in the spikelet meristem, and that communication between the L1 and inner tissues is reduced (See CMD S1 Section 4.1) <xref rid="pcbi.1003447-Bayer1" ref-type="bibr">[32]</xref>, <xref rid="pcbi.1003447-Rinne1" ref-type="bibr">[45]</xref>, <xref rid="pcbi.1003447-Bainbridge1" ref-type="bibr">[46]</xref>.</p>
+        <p>The model is limited to a segment of meristem immediately below the central zone. Growth is introduced by adding rows of cells to the top end of this segment at regular time intervals. The impact of tissues outside the scope of the model is approximated by boundary conditions (CMD S1 Section 4.2). The effect of older primordia at the base is simulated by withdrawing auxin from the lowest bottom left cell and four bottom right cells in the L1 (<xref ref-type="fig" rid="pcbi-1003447-g004">Figure 4A</xref>). This asymmetry reflects the alternating distichous phyllotaxy of <italic>Brachypodium</italic>. A single sink cell, placed in the center of the bottom row, provides a target for auxin flow along the axis of the meristem (<xref ref-type="fig" rid="pcbi-1003447-g004">Figure 4A</xref>).</p>
+      </sec>
+      <sec id="s2h">
+        <title>Simulation results</title>
+        <p>Primordia and the associated vascular strands are produced periodically in the spikelet meristem. <xref ref-type="fig" rid="pcbi-1003447-g005">Figure 5</xref> shows the simulated dynamics of auxin and PIN distribution during a single period (plastochron). Column 1 shows the state of the simulation at the beginning of this period. A single maximum of auxin concentration, resulting from the convergent polarization of SoPIN1, is present in the L1 layer on the left side of the tissue section shown (<xref ref-type="fig" rid="pcbi-1003447-g005">Figure 5</xref>, Panel 1A). SoPIN1 expression is evident in the L1 and L2 layers, where the production of SoPIN1 is greater than in the sub-epidermal layers (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3A</xref>). The convergence point is connected to the sink at the base of the tissue with a single strand of high PIN1b (Panel 1B) and PIN1a (Panel 1C) expression. The high auxin flux in this strand makes it act as an auxin sink for cells closer to the apex. Consequently, PIN1b proteins and auxin transport are polarized towards the strand (Panel 1B, blue arrows). This polarization is the strongest near the vein and gradually decreases closer to the apex. Except for near the convergence point, PIN1b and PIN1a are predominantly expressed in sub-epidermal layers, where their production was observed to be higher than in L1 and L2 (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3C,D</xref>).</p>
+        <fig id="pcbi-1003447-g005" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pcbi.1003447.g005</object-id>
+          <label>Figure 5</label>
+          <caption>
+            <title>Simulated dynamics of SoPIN1, PIN1b, and PIN1a during the initiation of a single convergence point and vein segment.</title>
+            <p>Columns (1&#x2013;5) correspond to progress of time (5960, 6100, 6430, 6610, 6850 simulation time units). Row (A) SoPIN1, (B) PIN1b, (C) PIN1a, and (D) combined. The concentration of each PIN in the cell membrane is indicated by the width of the colored wedges along each cell (increasing with concentration). The concentrations of each PIN on the membrane, and auxin in each cell, are also indicated by colors, as shown by the scale bars on the right. In rows (B) and (D), the direction and magnitude of PIN1b polarization is further highlighted by a blue arrow in each cell. Cells in the region outlined in white in Panel 2B exhibit increased polarization following the formation of a new convergence point (compare to Panel 1B). The region outlined in white in Panel 3B is the triangular fan of cells with increased polarization at the rootward end of the developing vein. The white arrow in Panel 3C points to a gap in auxin concentration along an emerging vein. The white arrow in Panel 4C points to two cells exhibiting a transient increase in auxin concentration.</p>
+          </caption>
+          <graphic xlink:href="pcbi.1003447.g005"/>
+        </fig>
+        <p>As the simulation progresses (<xref ref-type="fig" rid="pcbi-1003447-g005">Figure 5</xref>, Column 2), additional rows of cells are added to the top of the tissue (not shown) and increase auxin supply. Transient variation in the auxin concentration triggers an emergent reinforcement of concentration differences in the L1/L2 layers by SoPIN1, leading to the formation of a second SoPIN1 convergence point and auxin maximum opposite to and above the first one (Panel 2A). The auxin that forms the maximum at the new convergence point is supplied by neighboring cells, in which auxin concentration thus decreases, and by increased local auxin production in the new convergence point (see Section 4.3 in the Computational Model Description S1 in the supplementary materials). Auxin from the new maximum enters the sub-epidermal layers and is transported towards the vascular strand below by PIN1b. This transport is coupled with an increase in PIN1b expression in L1/L2 layers, a substantial increase in PIN1b polarization near the convergence point (Panel 2B, region outlined in white) and a broad strengthening of polarization in the region between the new convergence point and the previous vascular strand (Panel 2B). This pattern of PIN1b expression and localization is consistent with the observed progression during the formation of the I1 midvein in the <italic>Brachypodium</italic> spikelet (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3J,D,E</xref>)</p>
+        <p>The next phase of the simulation (Column 3) is marked by the onset of PIN1a expression at the convergence point, and its gradual extension towards the vascular strand below (Panel 3C). This extension is guided by the broad expression of PIN1b (Panel 3B). This PIN1a expression generates a high-flux strand canalizing auxin transport, and refines the broad field of PIN1b expression into a narrow strand coinciding with that of PIN1a (Panel 3B). Leaving the incipient vein tip, auxin is carried by PIN1b towards the previous vein, forming an approximately triangular region of increased auxin concentration and PIN1b polarization (Panel 3B, region outlined in white). This region is continually refined, both guiding the progressive extension of the incipient PIN1a vein towards the previous strand and being guided by it. Concurrently, PIN1b proteins in the nearby cells become polarized towards this vein (Panel 3B). Combined, these dynamics are consistent with PIN1a and PIN1b expression and localization observed in the formation of the <italic>Brachypodium</italic> P1 primordia (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3C,E</xref>).</p>
+        <p>The transport of auxin by SoPIN1 towards the convergence point in the L1 and L2 layers, combined with efficient transport by PIN1a and PIN1b along the emerging vein, creates a gap in auxin concentration near the convergence point (arrow in Panel 3C). This gap is consistent with experimental data (large arrow in <xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3F,K</xref>).</p>
+        <p>As the simulation proceeds, the strand of PIN1a expression extends until it joins the previously patterned vein (Column 4). At this point, PIN1b expression and polarization largely coincide with that of PIN1a (compare Panel 4B and Panel 4C). The last two cells of the strand (Panel 4C, white arrow) exhibit a transient increase in auxin concentration as they progress from a low-flux to high-flux state (compare Panel 4C to Panel 5C). The focused flux of auxin canalized by PIN1a completes the patterning of the incipient vein (Column 5). The increased auxin flux generated by strong PIN1a expression causes PIN1b in nearby cells to polarize towards the newly formed strand, thus indicating its transformation into an auxin sink (Panel 5B).</p>
+        <p>With the addition of a new primordium and the corresponding vascular strand, the pattern of SoPIN1, PIN1a and PIN1b localization and expression, as well as auxin concentration, in the cells near the apex mirror those that existed prior to initiation of the new primordium (compare Panel 1D and Panel 5D). A new convergence point and midvein trace have been added to the stem. Iteration of this process leads to the formation of convergence points and vascular strands arranged in an alternate branching pattern (<xref ref-type="fig" rid="pcbi-1003447-g006">Figure 6</xref> and Videos S2 and S3), as observed experimentally (<xref ref-type="fig" rid="pcbi-1003447-g002">Figure 2</xref>).</p>
+        <fig id="pcbi-1003447-g006" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pcbi.1003447.g006</object-id>
+          <label>Figure 6</label>
+          <caption>
+            <title>The state of the simulation after the successive emergence of five convergence points.</title>
+            <p>The concentration of auxin in each cell, PIN on each cell membrane and PIN1b polarities are represented as in <xref ref-type="fig" rid="pcbi-1003447-g005">Figure 5</xref>. (A&#x2013;C) The expression of each PIN protein: (A) SoPIN1, (B) PIN1b, and (C) PIN1a. (D) The combined expression of the three PINs.</p>
+          </caption>
+          <graphic xlink:href="pcbi.1003447.g006"/>
+        </fig>
+        <p>To examine the dependence of simulation results on the choice of cellular template we constructed a second model operating on a 2D array of square cells (<xref ref-type="supplementary-material" rid="pcbi.1003447.s013">Figure S12</xref> and <xref ref-type="supplementary-material" rid="pcbi.1003447.s020">Video S4</xref>). With small changes to model parameters (see <xref ref-type="supplementary-material" rid="pcbi.1003447.s015">Tables S2</xref>, <xref ref-type="supplementary-material" rid="pcbi.1003447.s016">S3</xref> in the supplementary materials), we were able to obtain qualitatively similar results to those described above for a 2D array of hexagonal cells. This indicates that the proposed model is not dependent on the choice of a hexagonal cellular template, and can generate equivalent patterns when other cellular topologies are employed.</p>
+      </sec>
+    </sec>
+    <sec id="s3">
+      <title>Discussion</title>
+      <p>The patterning mechanisms resulting in leaf initiation and vein patterning integrate three distinct processes: determination of organ placement and vein origins, guidance of newly forming veins towards appropriate end points, and the refinement of emerging veins into narrow canals patterning the procambial tissue. While in previous work these processes have been attributed to a single PIN protein in the shoot, PIN1, our results suggest that outside of the Brassicaceae they are associated with different PIN proteins.</p>
+      <p>In the grass species <italic>Brachypodium</italic> and maize the division of these processes between different PIN proteins appears to be particularly crisp. The observed expression and convergent localization of SoPIN1 in the tunica suggests a role for SoPIN1 in the formation of auxin maxima. The expression and localization of PIN1b indicates a broad domain of auxin transport preceding vein formation that connects to previous organs (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3D</xref>). Following the formation of a convergence point by SoPIN1, PIN1a appears to refine the broad PIN1b-promoted auxin transport into a narrow auxin stream, leading to the formation of a procambial strand. Based on these expression and localization patterns we propose that each PIN has a distinct role in pattern formation in the shoot: SoPIN1 forms convergence points which determine the sites of organ initiation and position of veins, PIN1b directs the developing veins to target locations, and PIN1a transforms broad regions of polar auxin flux into narrow canals (<xref ref-type="fig" rid="pcbi-1003447-g007">Figure 7</xref>).</p>
+      <fig id="pcbi-1003447-g007" orientation="portrait" position="float">
+        <object-id pub-id-type="doi">10.1371/journal.pcbi.1003447.g007</object-id>
+        <label>Figure 7</label>
+        <caption>
+          <title>SoPIN1, PIN1a and PIN1b act in concert during leaf initiation.</title>
+          <p>(A) SoPIN1 acts up-the-gradient to create an auxin maximum, which is directed to the sink by PIN1b (B), and refined by PIN1a (C), both acting with-the-flux. In (C) PIN1b begins to polarize the adjoining tissue, converting the newly formed trace into a sink for new organs. Auxin concentration as inferred by DR5 is colored red, SoPIN1 green, PIN1b blue and PIN1a red. Arrows show the direction of transport and the relative polarity of the tissue.</p>
+        </caption>
+        <graphic xlink:href="pcbi.1003447.g007"/>
+      </fig>
+      <p>We used a computer model to show that the experimentally observed spatio-temporal pattern of expression and polarization of SoPIN1, PIN1a and PIN1b can result from distinct polarization regimes of the three proteins. Specifically, we assumed that SoPIN1 is polarized up the gradient of auxin concentration, PIN1b polarization is a relatively weak linear function of the flux, and PIN1a polarization is a stronger, non-linear (power) function of the flux. The concurrent operation of up-the-gradient and with-the-flux polarization modes is consistent with the previously proposed dual polarization model of primordia initiation and vein formation <xref rid="pcbi.1003447-Bayer1" ref-type="bibr">[32]</xref>. Our results provide another example where these two modes suffice to explain the observed localizations of PIN and concentrations of auxin reported by DR5. At the same time, the nature of molecular mechanisms polarizing PIN remains an open problem, and we cannot preclude the possibility that we observe two facets of a single lower-level molecular mechanism.</p>
+      <p>Several arguments support a functional division between the <italic>SoPIN1</italic> and <italic>PIN1</italic> clades. First, these two clades are conserved across most angiosperms, which suggests that both are functionally important. Second, there are significant differences in protein sequence between SoPIN1 and PIN1 proteins, which suggests that they may be functionally distinct. Most of these sequence differences are in the intervening hydrophilic loop domain (<xref ref-type="supplementary-material" rid="pcbi.1003447.s003">Figure S2</xref>), a region that contains phosphorylation sites involved in PIN1 localization in <italic>Arabidopsis</italic>
+<xref rid="pcbi.1003447-Dhonukshe1" ref-type="bibr">[14]</xref>&#x2013;<xref rid="pcbi.1003447-Zhang1" ref-type="bibr">[16]</xref>. Third, our evidence suggests that SoPIN1 and PIN1a can have opposing polarities within a single cell, consistent with the presence of different mechanisms controlling their cellular localization. The periclinal cell divisions in the I1 primordia mark a unique place and developmental time point. Our comparison of PIN1a and SoPIN1 polarization at the periclinal cell division in the L2 layer of I1 primordia shows that SoPIN1 is polarized toward the new periclinal cell plate in the L2 division (in <xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3H</xref>), whereas PIN1a is polarized away from the new cell plate, towards the center of the inflorescence meristem (<xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3I</xref>). This opposing polarization pattern persists along the axis of the midvein of P1 lemmas (Compare <xref ref-type="fig" rid="pcbi-1003447-g003">Figure 3M to 3N</xref>). While further work is needed to clarify the functional separation between the <italic>PIN1</italic> and <italic>SoPIN1</italic> clades, our results support a model in which epidermal convergence point formation and internal vein patterning involve different molecular mechanisms.</p>
+      <p>Our model for the overlapping roles of PIN1a and PIN1b during vein patterning further suggests that the guiding of new auxin traces to existing sinks (sink finding) can be mechanistically distinguished from patterning the final vascular trace (canalization). In our model PIN1b provides a reliable guiding mechanism allowing new veins to consistently connect with older traces and form the regular pattern of connections observed in <italic>Brachypodium</italic>. In the context of the river network metaphor proposed for the canalization hypothesis <xref rid="pcbi.1003447-Sachs1" ref-type="bibr">[25]</xref>, <xref rid="pcbi.1003447-Sachs2" ref-type="bibr">[26]</xref>, the broad polarization of PIN1b is analogous to a broad slope that orients the overall direction of water flow towards the river mouth. In this setting, the initial flow of water is thus guided by the direction of the slope, which subsequently orients the overall direction of canals that emerge via erosion. Likewise, as PIN1b polarizes towards auxin sinks, the &#x201C;slope&#x201D; it provides directs emerging strands towards these sinks. The necessity of supplementing the canalization hypothesis with a guiding mechanism that directs veins towards their target locations (sinks) was observed by Bayer et al. <xref rid="pcbi.1003447-Bayer1" ref-type="bibr">[32]</xref>. However, the postulated distinction between PIN1a and PIN1b provides a mechanism for guiding developing veins towards their target locations that is different from the hypothetical guidance by a diffusing substance postulated by Bayer at al.</p>
+      <p>The question arises to what degree the postulated roles of SoPIN1 in auxin maximum formation, PIN1b in sink-finding, and PIN1a in canalization (<xref ref-type="fig" rid="pcbi-1003447-g007">Figure 7</xref>) can be generalized to diverse angiosperms. In <italic>Arabidopsis thaliana</italic> and <italic>Cardamine hirsuta</italic>, a single PIN1 appears to both form convergence points and effect canalization <xref rid="pcbi.1003447-Reinhardt1" ref-type="bibr">[12]</xref>, <xref rid="pcbi.1003447-Barkoulas1" ref-type="bibr">[47]</xref>. According to the dual polarization model, this behavior results from PIN1 combining up-the-gradient and with-the-flux polarization modes in context-dependent proportions <xref rid="pcbi.1003447-Bayer1" ref-type="bibr">[32]</xref> (alternative explanations have also been proposed <xref rid="pcbi.1003447-Merks1" ref-type="bibr">[24]</xref>, <xref rid="pcbi.1003447-Stoma1" ref-type="bibr">[30]</xref>, as reviewed in <xref rid="pcbi.1003447-Prusinkiewicz1" ref-type="bibr">[48]</xref>). Such integration of polarization modes appears to be limited to Brassicaceae, since all angiosperm species sampled outside of the Brassicaceae have distinct SoPIN1 and PIN1 proteins (<xref ref-type="fig" rid="pcbi-1003447-g001">Figure 1</xref>).</p>
+      <p>It should be noted that the dual polarization model was largely based on tomato, which has both <italic>PIN1</italic> and <italic>SoPIN1</italic> members, rather than <italic>Arabidopsis</italic>. In the experiments of Bayer et al. <xref rid="pcbi.1003447-Bayer1" ref-type="bibr">[32]</xref>, the localization of the presumed tomato <italic>AtPIN1</italic> ortholog was inferred using the AtPIN1::AtPIN1:GFP reporter. Our phylogenetic analysis suggests that the presumed tomato PIN1 ortholog in Bayer et al. is in fact a member of the SoPIN1 clade (Accession HQ127075 in <xref ref-type="fig" rid="pcbi-1003447-g001">Figure 1A</xref>). Remarkably, the expression of the AtPIN1::GFP reporter in tomato appears almost identical to immuno-localization using peptide antibodies targeting this member of the <italic>SoPIN1</italic> clade <xref rid="pcbi.1003447-Bayer1" ref-type="bibr">[32]</xref>. Both the tomato <italic>SoPIN1</italic> clade member and the AtPIN1::GFP reporter are expressed in convergence points as well as along the emerging veins of tomato leaf primordia. This indicates that the apparently sharp distinction between the convergence point formation by SoPIN1 and vein patterning by PIN1 in grasses may not be as precise in other species with both clades. These discrepancies could suggest that all PINs combine with-the-flux and up-the-gradient modes in some proportions, or possibly, that a so far unidentified mechanism controls PIN polarity in response to auxin.</p>
+      <p>Finally, while PIN1b in <italic>Brachypodium</italic> provides a striking demonstration of sink-finding behavior, the PIN1a/b duplication was only identified in grass species. Thus the proposed division of roles between PIN1b involved in finding vein targets and PIN1a refining veins does not hold for tomato. A possible solution to the problem of finding the vein target may be a context-dependent transition between weaker (linear) and stronger (non-linear) flux-driven polarization of the so far uncharacterized tomato <italic>PIN1</italic> member (HQ127074 in <xref ref-type="fig" rid="pcbi-1003447-g001">Figure 1A</xref>), thus combining the functions of PIN1a and PIN1b. Alternatively, PIN1 in tomato may function similar to PIN1b in <italic>Brachypodium</italic>, while SoPIN1 in tomato would combine functions of <italic>Brachypodium</italic> SoPIN1 and PIN1a. One can envision different partitioning of functions between SoPIN1, PIN1 and their variants, with unique solutions in diverse species. Such cross-species comparisons highlight the risks of using well established model species as representatives for large groups. It is likely that considerable variation exists in the systems of auxin self-organization, and further comparative work is essential to outline general mechanisms. The question of whether different solutions drive morphological diversity remains to be tested.</p>
+      <p>While molecular mechanisms that polarize PIN remain an area of intensive research <xref rid="pcbi.1003447-Kramer1" ref-type="bibr">[49]</xref>&#x2013;<xref rid="pcbi.1003447-Wabnik1" ref-type="bibr">[52]</xref>, our results point to the minimal set of functions that are needed to pattern organ initiation and vasculature in the shoot: convergence point formation, sink finding, and canalization. Our computational model of the behavior of SoPIN1, PIN1a and PIN1b shows that splitting up-the-gradient and with-the-flux modes between separate proteins can provide a robust patterning mechanism consistent with the available localization data. Further examination of the split between SoPIN1 and PIN1 is essential to the understanding of PIN function and the patterning of organs in flowering plants outside the Brassicaceae.</p>
+    </sec>
+    <sec sec-type="materials|methods" id="s4">
+      <title>Materials and Methods</title>
+      <sec id="s4a">
+        <title>Phylogenetic and synteny analysis</title>
+        <p>Coding sequences from Phytozome (<ext-link ext-link-type="uri" xlink:href="http://www.phytozome.org/">http://www.phytozome.org/</ext-link>), NCBI (<ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/">http://www.ncbi.nlm.nih.gov/</ext-link>), and CoGe (<ext-link ext-link-type="uri" xlink:href="http://genomevolution.org/CoGe/">http://genomevolution.org/CoGe/</ext-link>) were analyzed with Geneious (<ext-link ext-link-type="uri" xlink:href="http://www.geneious.com/">http://www.geneious.com/</ext-link>). We found that the third codon position was GC base rich in monocots (60% monocots, 45% eudicots) and biased phylogenetic analyses, thus after MUSCLE alignment, this position was removed. Analysis of GC normalized sequences (33% monocots, 30.2% eudicots) was performed with MrBayes 2.0.3 (<ext-link ext-link-type="uri" xlink:href="http://mrbayes.sourceforge.net/">http://mrbayes.sourceforge.net/</ext-link>) on GreenButton (geneious.greenbutton.net) using the Jukes-Cantor model of nucleotide evolution (selected using the AIC: MEGA 5.0, <ext-link ext-link-type="uri" xlink:href="http://www.megasoftware.net/">http://www.megasoftware.net/</ext-link>). Four chains, sampled every 200 generations, were run until convergence (1,013,000 generations, standard deviation of split frequencies below 0.01). After examination of the likelihood scores, 25% of trees were discarded as burnin. <italic>P. patens</italic> - Pp1s10_17V6.1 was used as the outgroup. The final tree is available for download on Treebase: <ext-link ext-link-type="uri" xlink:href="http://purl.org/phylo/treebase/phylows/study/TB2:S15020">http://purl.org/phylo/treebase/phylows/study/TB2:S15020</ext-link>. BLAST searches using both DNA and protein sequences of <italic>SoPIN1</italic> members identified only <italic>PIN1</italic> clade members in the Brassicaceae. To identify the <italic>SoPIN1</italic> syntenic regions across the angiosperms the sequence for a gene neighboring <italic>SoPIN1</italic> in <italic>Papaya</italic> was used in CoGe.</p>
+      </sec>
+      <sec id="s4b">
+        <title>Reporter constructs and plant transformation</title>
+        <p>Internal fluorescent protein fusions were generated in a similar position to <xref rid="pcbi.1003447-Gallavotti1" ref-type="bibr">[37]</xref>, <xref rid="pcbi.1003447-Heisler1" ref-type="bibr">[40]</xref>. <italic>Brachypodium PIN</italic> promoters and the 5&#x2032; part of each coding region were cloned into pDONR-P4-P1R. The YFP variant Citrine was cloned into pDONR221 with 5&#xD7; Ala linkers. The 3&#x2032; part of each coding region and downstream sequences were cloned into pDONR-P2R-P3. Genomic regions 3045, 5164, and 3147 nt upstream of the ATG, and 1652, 1512, 1403 nt downstream of the stop codon were cloned for PIN1a, PIN1b, and SoPIN1 respectively (see supplementary <xref ref-type="supplementary-material" rid="pcbi.1003447.s014">Table S1</xref> for primers). Fragments were recombined using Multisite Gateway (Invitrogen, Grand Island, NY) into pH7m34GW (<ext-link ext-link-type="uri" xlink:href="http://gateway.psb.ugent.be/search">http://gateway.psb.ugent.be/search</ext-link>). The DR5 synthetic auxin signaling promoter driving expression of an endoplasmic reticulum-localized monomeric RFP (DR5 in text) was described previously <xref rid="pcbi.1003447-Gallavotti1" ref-type="bibr">[37]</xref>. <italic>Brachypodium</italic> transformation was performed as described <xref rid="pcbi.1003447-Vogel1" ref-type="bibr">[53]</xref>. At least three events were characterized for each PIN-Citrine reporter. Two DR5-RFP events were recovered and showed identical expression, similar to maize <xref rid="pcbi.1003447-Gallavotti1" ref-type="bibr">[37]</xref>.</p>
+      </sec>
+      <sec id="s4c">
+        <title>Image acquisition and analysis</title>
+        <p>Images were captured on a Leica TCS-SP5 laser-scanning confocal equipped with a water-dipping 20&#xD7; objective (NA 0.7) (<ext-link ext-link-type="uri" xlink:href="http://www.leica-microsystems.com/">http://www.leica-microsystems.com/</ext-link>) and processed with ImageJ (<ext-link ext-link-type="uri" xlink:href="http://rsbweb.nih.gov/ij/">http://rsbweb.nih.gov/ij/</ext-link>). Citrine was excited at 514 nm and mRFP at 561 nm. The pinhole was set to one Airy unit. For each z-stack, transmitted light was detected and flattened using an extended-depth-of-field plugin (<ext-link ext-link-type="uri" xlink:href="http://bigwww.epfl.ch/demo/edf/">http://bigwww.epfl.ch/demo/edf/</ext-link>). Fluorescent channels were processed with a median filter to reduce noise and were recombined with the processed transmitted light image either as single z-planes or maximum projections. In most images maximum projections were limited to internal sections in order to reveal sub-epidermal localization and midvein development. Brightness and contrast were adjusted after fluorescence channels were pseudo-colored with look-up tables. PIN cellular polarity was observed through multiple confocal sections, and similar to previous work was defined by a characteristic arching shape <xref rid="pcbi.1003447-Reinhardt1" ref-type="bibr">[12]</xref>, <xref rid="pcbi.1003447-Scarpella1" ref-type="bibr">[13]</xref>, <xref rid="pcbi.1003447-Bayer1" ref-type="bibr">[32]</xref>, <xref rid="pcbi.1003447-Heisler1" ref-type="bibr">[40]</xref>. Multiple samples were analyzed at each developmental stage, and ratios printed below each figure label reflect the number of times phenomena discussed in the text were observed out of the total images captured. FM4-64 staining was performed as described in <xref rid="pcbi.1003447-Grandjean1" ref-type="bibr">[54]</xref>.</p>
+      </sec>
+      <sec id="s4d">
+        <title>Immuno-localization</title>
+        <p>Purified protein of residues 188&#x2013;407 of maize SoPIN1 and 188&#x2013;414 of maize PIN1c were created as described in <xref rid="pcbi.1003447-Chuck1" ref-type="bibr">[55]</xref> and injected into Guinea pigs (Cocalico, Reamstown, PA). Western blots with primary serum showed preference of anti-SoPIN1 for SoPIN1 recombinant protein and anti-PIN1c for PIN1a/b/c recombinant proteins (not shown). Serum was used directly for immuno-localization. Dilutions: 1&#x2236;200 anti-SoPIN1, 1&#x2236;200 anti-PIN1c. Tissue was fixed in FAA and imbedded in Steedman's wax (Electron Microscopy Sciences, <ext-link ext-link-type="uri" xlink:href="http://www.emsdiasum.com/microscopy/default.aspx">http://www.emsdiasum.com/microscopy/default.aspx</ext-link>). 9 &#xB5;m sections were mounted, dewaxed in ethanol, dried, rehydrated into PBS, blocked with 5% Donkey serum in PBS, then probed. Secondary antibody dilution: 1&#x2236;200 anti-Guinea Pig cy3 (Jackson ImmunoResearch, <ext-link ext-link-type="uri" xlink:href="http://www.jacksonimmuno.com/">http://www.jacksonimmuno.com/</ext-link>). Washes were performed with 1% Fish Gelatin in PBS (Sigma, <ext-link ext-link-type="uri" xlink:href="http://www.sigmaaldrich.com/">http://www.sigmaaldrich.com/</ext-link>).</p>
+      </sec>
+      <sec id="s4e">
+        <title>Computational model</title>
+        <p>The computational model was implemented in C++ using the VVE system (an extension of the Vertex-Vertex (VV) system <xref rid="pcbi.1003447-Smith3" ref-type="bibr">[56]</xref> used in <xref rid="pcbi.1003447-Smith1" ref-type="bibr">[22]</xref>, <xref rid="pcbi.1003447-Bayer1" ref-type="bibr">[32]</xref>), which provides a data-structure and libraries for representing cellular tissues. Details of the model are presented in the Computational Model Description S1 in the supplementary materials.</p>
+      </sec>
+    </sec>
+    <sec sec-type="supplementary-material" id="s5">
+      <title>Supporting Information</title>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s001">
+        <label>Computational Model Description S1</label>
+        <caption>
+          <p>
+            <bold>Details of the computational model of auxin transport and polarization of PIN1a, PIN1b and SoPIN1 presented in the main text.</bold>
+          </p>
+          <p>(PDF)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s001.pdf">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s002">
+        <label>Figure S1</label>
+        <caption>
+          <p><bold>Full long PIN phylogeny with support.</bold> Full long PIN phylogeny with basal plant groups that were omitted in <xref ref-type="fig" rid="pcbi-1003447-g001">Figure 1A</xref>. Support values are posterior probabilities. Sequence labels are the same as in <xref ref-type="fig" rid="pcbi-1003447-g001">Figure 1A</xref>. Scale: 0.08 substitutions per site.</p>
+          <p>(TIF)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s002.tif">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s003">
+        <label>Figure S2</label>
+        <caption>
+          <p><bold>PIN1 and SoPIN1 proteins have different conserved domains in the hydrophilic region.</bold> Protein alignment of a portion of the variable hydrophilic domain of select PIN1a, PIN1b, PIN1 and SoPIN1 proteins. Clades are labeled at the end of the alignment. Amino acids are shaded according to similarity. Blue rectangles indicate domains that are conserved in PIN1, PIN1a and PIN1b proteins but are absent in SoPIN1 proteins. The red rectangle indicates a SoPIN1-specific domain. The blue arrow shows a region within a PIN1-conserved domain that is absent in PIN1b members. Over their entire length, <italic>Brachypodium</italic> PIN1a and PIN1b have 81% identity, whereas <italic>Brachypodium</italic> SoPIN1 has 58.9% identity with PIN1b and 61.1% identity with PIN1a.</p>
+          <p>(TIF)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s003.tif">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s004">
+        <label>Figure S3</label>
+        <caption>
+          <p><bold><italic>SoPIN1</italic> is not present in <italic>Arabidopsis</italic> syntenic regions.</bold> CoGe analysis of syntenic chromosomal regions from <italic>Solanum lycopersicum</italic>, <italic>Carica papaya</italic>, <italic>Medicago truncatula</italic>, <italic>Brachypodium distachyon</italic>, <italic>Oryza sativa</italic>, and <italic>Arabidopsis thaliana</italic> (duplication <italic>alpha</italic> in upper track and <italic>beta</italic> in lower track). Each row shows a syntenic region from each organism. Gene models are blue and green, and are centered vertically on each track. Black boxes outline <italic>SoPIN1</italic> orthologs in species where <italic>SoPIN1</italic> has not been lost. Colored blocks above and below gene models are BLAST high scoring pairs (HSPs) between different organisms and are connected by colored lines. Synteny is partially preserved, and several genes adjacent to <italic>SoPIN1</italic> are syntenic across all samples. However, <italic>SoPIN1</italic> is not present in this region in any Brassicaceae species sampled (other Brassicaceae species not shown). Genes adjacent to SoPIN1 that are conserved across most species are marked with red (5&#x2032; of SoPIN1) or blue (3&#x2032; of SoPIN1) brackets.</p>
+          <p>(TIF)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s004.tif">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s005">
+        <label>Figure S4</label>
+        <caption>
+          <p><bold><italic>Brachypodium</italic></bold><bold> meristem organization.</bold> FM4-64 stained <italic>Brachypodium</italic> spikelet meristem showing the planes of cell division. I2, I1 and P1 primordia are labeled. Note that only anticlinal divisions are present in the L1 (shaded blue) and L2 (shaded yellow) layers of the apical dome. Periclinal divisions are present in the internal layers, as well as in the I1 primordia at the beginning of morphogenesis (arrows). Scale bar: 25 &#xB5;m.</p>
+          <p>(TIF)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s005.tif">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s006">
+        <label>Figure S5</label>
+        <caption>
+          <p><bold>Bright-field (A), merged DR5 and SoPIN1 (B), DR5 only (C), and SoPIN1 only (D), channels from</bold>
+<xref ref-type="fig" rid="pcbi-1003447-g003"><bold>Figure 3B</bold></xref><bold>.</bold> Scale bars: 10 &#xB5;m.</p>
+          <p>(TIF)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s006.tif">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s007">
+        <label>Figure S6</label>
+        <caption>
+          <p><bold>Bright-field (A), merged DR5 and SoPIN1 (B), DR5 only (C), and SoPIN1 only (D), channels from</bold>
+<xref ref-type="fig" rid="pcbi-1003447-g003"><bold>Figure 3G</bold></xref><bold>.</bold> Scale bars: 10 &#xB5;m.</p>
+          <p>(TIF)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s007.tif">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s008">
+        <label>Figure S7</label>
+        <caption>
+          <p><bold>Bright-field (A), merged DR5 and SoPIN1 (B), DR5 only (C), and SoPIN1 only (D), channels from</bold>
+<xref ref-type="fig" rid="pcbi-1003447-g003"><bold>Figure 3H</bold></xref><bold>.</bold> Scale bars: 10 &#xB5;m.</p>
+          <p>(TIF)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s008.tif">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s009">
+        <label>Figure S8</label>
+        <caption>
+          <p><bold>Bright-field (A), merged DR5 and SoPIN1 (B), DR5 only (C), and SoPIN1 only (D), channels from</bold>
+<xref ref-type="fig" rid="pcbi-1003447-g003"><bold>Figure 3M</bold></xref><bold>.</bold> Scale bars 10 &#xB5;m.</p>
+          <p>(TIF)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s009.tif">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s010">
+        <label>Figure S9</label>
+        <caption>
+          <p><bold>Bright-field (A), merged DR5 and PIN1a (B), DR5 only (C), and PIN1a only (D), channels from</bold>
+<xref ref-type="fig" rid="pcbi-1003447-g003"><bold>Figure 3C</bold></xref><bold>.</bold> Scale bars 10 &#xB5;m.</p>
+          <p>(TIF)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s010.tif">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s011">
+        <label>Figure S10</label>
+        <caption>
+          <p><bold>Bright-field (A), merged DR5 and PIN1a (B), DR5 only (C), and PIN1a only (D), channels from</bold>
+<xref ref-type="fig" rid="pcbi-1003447-g003"><bold>Figure 3N</bold></xref><bold>.</bold> Scale bars 10 &#xB5;m.</p>
+          <p>(TIF)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s011.tif">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s012">
+        <label>Figure S11</label>
+        <caption>
+          <p><bold>Separation of SoPIN1 and PIN1a/b/c expression domains is conserved in maize spikelet development.</bold> (A) Anti-SoPIN1, and (B) Anti-PIN1a/b/c immuno-localization in adjacent sections of a maize spikelet meristem. I2, I1 and P1 primordia are labeled. Asterisks indicate midvein SoPIN1 convergence points. Arrows indicate inferred polarity of PIN. Scale bars: 25 &#xB5;m.</p>
+          <p>(TIF)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s012.tif">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s013">
+        <label>Figure S12</label>
+        <caption>
+          <p><bold>The state of the simulation after the successive emergence of five convergence points on a square cellular grid.</bold> The concentration of auxin in each cell, PIN on each cell membrane, and PIN1b polarities are represented as in <xref ref-type="fig" rid="pcbi-1003447-g005">Figure 5</xref>. (A) The combined expression of all three PINs, (B) SoPIN1, (C) PIN1b, and (D) PIN1a.</p>
+          <p>(TIF)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s013.tif">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s014">
+        <label>Table S1</label>
+        <caption>
+          <p><bold>Oligos.</bold> The oligos used to make the <italic>Brachypodium</italic> SoPIN1, PIN1a, and PIN1b fluorescent reporter constructs.</p>
+          <p>(PDF)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s014.pdf">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s015">
+        <label>Table S2</label>
+        <caption>
+          <p>
+            <bold>Corpus-specific simulation parameters.</bold>
+          </p>
+          <p>(PDF)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s015.pdf">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s016">
+        <label>Table S3</label>
+        <caption>
+          <p>
+            <bold>Tunica-specific simulation parameters.</bold>
+          </p>
+          <p>(PDF)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s016.pdf">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s017">
+        <label>Video S1</label>
+        <caption>
+          <p><bold>Synchronized longitudinal confocal Z-stacks of DR5, SoPIN1, PIN1a and PIN1b in staged <italic>Brachypodium</italic> spikelet meristems.</bold> Video loops through the Z-stack then ends with a final maximum projection. DR5 and PIN1a maximum projections show an internal subset of confocal sections to show midvein paths. Same samples as <xref ref-type="fig" rid="pcbi-1003447-g001">Figure 1C&#x2013;H</xref>. Scale bars 25 &#xB5;m.</p>
+          <p>(MOV)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s017.mov">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s018">
+        <label>Video S2</label>
+        <caption>
+          <p><bold>Computer simulation of the successive emergence of five convergence points.</bold> The concentration of auxin in each cell, PINs on each cell membrane, and PIN1b polarities are represented as in <xref ref-type="fig" rid="pcbi-1003447-g005">Figure 5</xref>.</p>
+          <p>(M4V)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s018.m4v">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s019">
+        <label>Video S3</label>
+        <caption>
+          <p><bold>Computer simulation of the successive emergence of five convergence points (extended view).</bold> The concentration of auxin in each cell, PINs on each cell membrane, and PIN1b polarities are represented as in <xref ref-type="fig" rid="pcbi-1003447-g005">Figure 5</xref>. Ordered from left to right: combined visualization of auxin concentration, SoPIN1, PIN1a, and PIN1b; visualization of SoPIN1 only; visualization of PIN1b only; and visualization of PIN1a only.</p>
+          <p>(M4V)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s019.m4v">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="pcbi.1003447.s020">
+        <label>Video S4</label>
+        <caption>
+          <p><bold>Computer simulation of the successive emergence of five convergence points on a square grid.</bold> The concentration of auxin in each cell, PINs on each cell membrane, and PIN1b polarities are represented as in <xref ref-type="fig" rid="pcbi-1003447-g005">Figure 5</xref>. Ordered from left to right: combined visualization of auxin concentration, SoPIN1, PIN1a, and PIN1b; visualization of SoPIN1 only; visualization of PIN1b only; and visualization of PIN1a only.</p>
+          <p>(MOV)</p>
+        </caption>
+        <media xlink:href="pcbi.1003447.s020.mov">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+    </sec>
+  </body>
+  <back>
+    <ack>
+      <p>We are grateful to Dave Jackson and Andrea Gallavotti for DR5, Pierre Barbier de Reuile for VVE, and Anna Bates for help with the USDA confocal. Thanks also to Alana Clark and Rita Nieu for transformation help, and to Scott Hirose, Ranjani Lakshmin, Connie Lee, and Steven Sun for their hands. Finally, thanks to the Hake lab, Madelaine Bartlett, Tom Bennett, Nathalie Bolduc, Mary Byrne, Ottoline Leyser, China Lunde, Graeme Mitchison, and Martin van Rongen for helpful comments.</p>
+    </ack>
+    <ref-list>
+      <title>References</title>
+      <ref id="pcbi.1003447-Dettmer1">
+        <label>1</label>
+        <mixed-citation publication-type="journal"><name><surname>Dettmer</surname><given-names>J</given-names></name>, <name><surname>Friml</surname><given-names>J</given-names></name> (<year>2011</year>) <article-title>Cell polarity in plants: when two do the same, it is not the same&#x2026;</article-title>. <source>Curr Opin Cell Biol</source><volume>23</volume>: <fpage>686</fpage>&#x2013;<lpage>696</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1016/j.ceb.2011.09.006">10.1016/j.ceb.2011.09.006</ext-link></comment><pub-id pub-id-type="pmid">21962973</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Leyser1">
+        <label>2</label>
+        <mixed-citation publication-type="journal"><name><surname>Leyser</surname><given-names>OM</given-names></name> (<year>2011</year>) <article-title>Auxin, self-organisation, and the colonial nature of plants</article-title>. <source>Current Biology</source><volume>21</volume>: <fpage>R331</fpage>&#x2013;<lpage>R337</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1016/j.cub.2011.02.031">10.1016/j.cub.2011.02.031</ext-link></comment><pub-id pub-id-type="pmid">21549955</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Petrsek1">
+        <label>3</label>
+        <mixed-citation publication-type="journal"><name><surname>Petr&#xE1;sek</surname><given-names>J</given-names></name>, <name><surname>Friml</surname><given-names>J</given-names></name> (<year>2009</year>) <article-title>Auxin transport routes in plant development</article-title>. <source>Development</source><volume>136</volume>: <fpage>2675</fpage>&#x2013;<lpage>2688</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1242/dev.030353">10.1242/dev.030353</ext-link></comment><pub-id pub-id-type="pmid">19633168</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Petrsek2">
+        <label>4</label>
+        <mixed-citation publication-type="journal"><name><surname>Petr&#xE1;sek</surname><given-names>J</given-names></name>, <name><surname>Mravec</surname><given-names>J</given-names></name>, <name><surname>Bouchard</surname><given-names>R</given-names></name>, <name><surname>Blakeslee</surname><given-names>JJ</given-names></name>, <name><surname>Abas</surname><given-names>M</given-names></name>, <etal>et al</etal> (<year>2006</year>) <article-title>PIN proteins perform a rate-limiting function in cellular auxin efflux</article-title>. <source>Science</source><volume>312</volume>: <fpage>914</fpage>&#x2013;<lpage>918</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1126/science.1123542">10.1126/science.1123542</ext-link></comment><pub-id pub-id-type="pmid">16601150</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Wisniewska1">
+        <label>5</label>
+        <mixed-citation publication-type="journal"><name><surname>Wisniewska</surname><given-names>J</given-names></name>, <name><surname>Xu</surname><given-names>J</given-names></name>, <name><surname>Seifertov&#xE1;</surname><given-names>D</given-names></name>, <name><surname>Brewer</surname><given-names>PB</given-names></name>, <name><surname>Ruzicka</surname><given-names>K</given-names></name>, <etal>et al</etal> (<year>2006</year>) <article-title>Polar PIN localization directs auxin flow in plants</article-title>. <source>Science</source><volume>312</volume>: <fpage>883</fpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1126/science.1121356">10.1126/science.1121356</ext-link></comment><pub-id pub-id-type="pmid">16601151</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Krecek1">
+        <label>6</label>
+        <mixed-citation publication-type="journal"><name><surname>Krecek</surname><given-names>P</given-names></name>, <name><surname>Sk&#x16F;pa</surname><given-names>P</given-names></name>, <name><surname>Libus</surname><given-names>J</given-names></name>, <name><surname>Naramoto</surname><given-names>S</given-names></name>, <name><surname>Tejos</surname><given-names>R</given-names></name>, <etal>et al</etal> (<year>2009</year>) <article-title>The PIN-FORMED (PIN) protein family of auxin transporters</article-title>. <source>Genome Biol</source><volume>10</volume>: <fpage>249</fpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1186/gb-2009-10-12-249">10.1186/gb-2009-10-12-249</ext-link></comment><pub-id pub-id-type="pmid">20053306</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Viaene1">
+        <label>7</label>
+        <mixed-citation publication-type="journal"><name><surname>Viaene</surname><given-names>T</given-names></name>, <name><surname>Delwiche</surname><given-names>CF</given-names></name>, <name><surname>Rensing</surname><given-names>SA</given-names></name>, <name><surname>Friml</surname><given-names>J</given-names></name> (<year>2012</year>) <article-title>Origin and evolution of PIN auxin transporters in the green lineage</article-title>. <source>Trends Plant Sci</source><volume>18</volume><issue>1</issue>: <fpage>5</fpage>&#x2013;<lpage>10</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1016/j.tplants.2012.08.009">10.1016/j.tplants.2012.08.009</ext-link></comment><pub-id pub-id-type="pmid">22981345</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Mravec1">
+        <label>8</label>
+        <mixed-citation publication-type="journal"><name><surname>Mravec</surname><given-names>J</given-names></name>, <name><surname>Sk&#x16F;pa</surname><given-names>P</given-names></name>, <name><surname>Bailly</surname><given-names>A</given-names></name>, <name><surname>Hoyerov&#xE1;</surname><given-names>K</given-names></name>, <name><surname>Krecek</surname><given-names>P</given-names></name>, <etal>et al</etal> (<year>2009</year>) <article-title>Subcellular homeostasis of phytohormone auxin is mediated by the ER-localized PIN5 transporter</article-title>. <source>Nature</source><volume>459</volume>: <fpage>1136</fpage>&#x2013;<lpage>1140</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1038/nature08066">10.1038/nature08066</ext-link></comment><pub-id pub-id-type="pmid">19506555</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Benkov1">
+        <label>9</label>
+        <mixed-citation publication-type="journal"><name><surname>Benkov&#xE1;</surname><given-names>E</given-names></name>, <name><surname>Michniewicz</surname><given-names>M</given-names></name>, <name><surname>Sauer</surname><given-names>M</given-names></name>, <name><surname>Teichmann</surname><given-names>T</given-names></name>, <name><surname>Seifertov&#xE1;</surname><given-names>D</given-names></name>, <etal>et al</etal> (<year>2003</year>) <article-title>Local, efflux-dependent auxin gradients as a common module for plant organ formation</article-title>. <source>Cell</source><volume>115</volume>: <fpage>591</fpage>&#x2013;<lpage>602</lpage><pub-id pub-id-type="pmid">14651850</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Blilou1">
+        <label>10</label>
+        <mixed-citation publication-type="journal"><name><surname>Blilou</surname><given-names>I</given-names></name>, <name><surname>Xu</surname><given-names>J</given-names></name>, <name><surname>Wildwater</surname><given-names>M</given-names></name>, <name><surname>Willemsen</surname><given-names>V</given-names></name>, <name><surname>Paponov</surname><given-names>I</given-names></name>, <etal>et al</etal> (<year>2005</year>) <article-title>The PIN auxin efflux facilitator network controls growth and patterning in <italic>Arabidopsis</italic> roots</article-title>. <source>Nature</source><volume>433</volume>: <fpage>39</fpage>&#x2013;<lpage>44</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1038/nature03184">10.1038/nature03184</ext-link></comment><pub-id pub-id-type="pmid">15635403</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Friml1">
+        <label>11</label>
+        <mixed-citation publication-type="journal"><name><surname>Friml</surname><given-names>J</given-names></name>, <name><surname>Vieten</surname><given-names>A</given-names></name>, <name><surname>Sauer</surname><given-names>M</given-names></name>, <name><surname>Weijers</surname><given-names>D</given-names></name>, <name><surname>Schwarz</surname><given-names>H</given-names></name>, <etal>et al</etal> (<year>2003</year>) <article-title>Efflux-dependent auxin gradients establish the apical-basal axis of <italic>Arabidopsis</italic></article-title>. <source>Nature</source><volume>426</volume>: <fpage>147</fpage>&#x2013;<lpage>153</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1038/nature02085">10.1038/nature02085</ext-link></comment><pub-id pub-id-type="pmid">14614497</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Reinhardt1">
+        <label>12</label>
+        <mixed-citation publication-type="journal"><name><surname>Reinhardt</surname><given-names>D</given-names></name>, <name><surname>Pesce</surname><given-names>E-R</given-names></name>, <name><surname>Stieger</surname><given-names>P</given-names></name>, <name><surname>Mandel</surname><given-names>T</given-names></name>, <name><surname>Baltensperger</surname><given-names>K</given-names></name>, <etal>et al</etal> (<year>2003</year>) <article-title>Regulation of phyllotaxis by polar auxin transport</article-title>. <source>Nat Cell Biol</source><volume>426</volume>: <fpage>255</fpage>&#x2013;<lpage>260</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1038/nature02081">10.1038/nature02081</ext-link></comment></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Scarpella1">
+        <label>13</label>
+        <mixed-citation publication-type="journal"><name><surname>Scarpella</surname><given-names>E</given-names></name>, <name><surname>Marcos</surname><given-names>D</given-names></name>, <name><surname>Friml</surname><given-names>J</given-names></name>, <name><surname>Berleth</surname><given-names>T</given-names></name> (<year>2006</year>) <article-title>Control of leaf vascular patterning by polar auxin transport</article-title>. <source>Genes Dev</source><volume>20</volume>: <fpage>1015</fpage>&#x2013;<lpage>1027</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1101/gad.1402406">10.1101/gad.1402406</ext-link></comment><pub-id pub-id-type="pmid">16618807</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Dhonukshe1">
+        <label>14</label>
+        <mixed-citation publication-type="journal"><name><surname>Dhonukshe</surname><given-names>P</given-names></name>, <name><surname>Huang</surname><given-names>F</given-names></name>, <name><surname>Galv&#xE1;n-Ampudia</surname><given-names>CS</given-names></name>, <name><surname>M&#xE4;h&#xF6;nen</surname><given-names>AP</given-names></name>, <name><surname>Kleine-Vehn</surname><given-names>J</given-names></name>, <etal>et al</etal> (<year>2010</year>) <article-title>Plasma membrane-bound AGC3 kinases phosphorylate PIN auxin carriers at TPRXS(N/S) motifs to direct apical PIN recycling</article-title>. <source>Development</source><volume>137</volume>: <fpage>3245</fpage>&#x2013;<lpage>3255</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1242/dev.052456">10.1242/dev.052456</ext-link></comment><pub-id pub-id-type="pmid">20823065</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Huang1">
+        <label>15</label>
+        <mixed-citation publication-type="journal"><name><surname>Huang</surname><given-names>F</given-names></name>, <name><surname>Zago</surname><given-names>MK</given-names></name>, <name><surname>Abas</surname><given-names>L</given-names></name>, <name><surname>van Marion</surname><given-names>A</given-names></name>, <name><surname>Galv&#xE1;n-Ampudia</surname><given-names>CS</given-names></name>, <etal>et al</etal> (<year>2010</year>) <article-title>Phosphorylation of conserved PIN motifs directs <italic>Arabidopsis</italic> PIN1 polarity and auxin transport</article-title>. <source>Plant Cell</source><volume>22</volume>: <fpage>1129</fpage>&#x2013;<lpage>1142</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1105/tpc.109.072678">10.1105/tpc.109.072678</ext-link></comment><pub-id pub-id-type="pmid">20407025</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Zhang1">
+        <label>16</label>
+        <mixed-citation publication-type="journal"><name><surname>Zhang</surname><given-names>J</given-names></name>, <name><surname>Nodzynski</surname><given-names>T</given-names></name>, <name><surname>Penc&#xED;k</surname><given-names>A</given-names></name>, <name><surname>Rolc&#xED;k</surname><given-names>J</given-names></name>, <name><surname>Friml</surname><given-names>J</given-names></name> (<year>2010</year>) <article-title>PIN phosphorylation is sufficient to mediate PIN polarity and direct auxin transport</article-title>. <source>Proc Natl Acad Sci USA</source><volume>107</volume>: <fpage>918</fpage>&#x2013;<lpage>922</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1073/pnas.0909460107">10.1073/pnas.0909460107</ext-link></comment><pub-id pub-id-type="pmid">20080776</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Bilsborough1">
+        <label>17</label>
+        <mixed-citation publication-type="journal"><name><surname>Bilsborough</surname><given-names>GD</given-names></name>, <name><surname>Runions</surname><given-names>A</given-names></name>, <name><surname>Barkoulas</surname><given-names>M</given-names></name>, <name><surname>Jenkins</surname><given-names>HW</given-names></name>, <name><surname>Hasson</surname><given-names>A</given-names></name>, <etal>et al</etal> (<year>2011</year>) <article-title>Model for the regulation of <italic>Arabidopsis thaliana</italic> leaf margin development</article-title>. <source>Proc Natl Acad Sci USA</source><volume>108</volume>: <fpage>3424</fpage>&#x2013;<lpage>3429</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1073/pnas.1015162108">10.1073/pnas.1015162108</ext-link></comment><pub-id pub-id-type="pmid">21300866</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Hay1">
+        <label>18</label>
+        <mixed-citation publication-type="journal"><name><surname>Hay</surname><given-names>A</given-names></name>, <name><surname>Barkoulas</surname><given-names>M</given-names></name>, <name><surname>Tsiantis</surname><given-names>M</given-names></name> (<year>2006</year>) <article-title>ASYMMETRIC LEAVES1 and auxin activities converge to repress <italic>BREVIPEDICELLUS</italic> expression and promote leaf development in <italic>Arabidopsis</italic></article-title>. <source>Development</source><volume>133</volume>: <fpage>3955</fpage>&#x2013;<lpage>3961</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1242/dev.02545">10.1242/dev.02545</ext-link></comment><pub-id pub-id-type="pmid">16971475</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Hay2">
+        <label>19</label>
+        <mixed-citation publication-type="journal"><name><surname>Hay</surname><given-names>A</given-names></name>, <name><surname>Tsiantis</surname><given-names>M</given-names></name> (<year>2006</year>) <article-title>The genetic basis for differences in leaf form between <italic>Arabidopsis thaliana</italic> and its wild relative <italic>Cardamine hirsuta</italic></article-title>. <source>Nat Genet</source><volume>38</volume>: <fpage>942</fpage>&#x2013;<lpage>947</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1038/ng1835">10.1038/ng1835</ext-link></comment><pub-id pub-id-type="pmid">16823378</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Reinhardt2">
+        <label>20</label>
+        <mixed-citation publication-type="journal"><name><surname>Reinhardt</surname><given-names>D</given-names></name>, <name><surname>Mandel</surname><given-names>T</given-names></name>, <name><surname>Kuhlemeier</surname><given-names>C</given-names></name> (<year>2000</year>) <article-title>Auxin regulates the initiation and radial position of plant lateral organs</article-title>. <source>Plant Cell</source><volume>12</volume>: <fpage>507</fpage>&#x2013;<lpage>518</lpage><pub-id pub-id-type="pmid">10760240</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Jnsson1">
+        <label>21</label>
+        <mixed-citation publication-type="journal"><name><surname>J&#xF6;nsson</surname><given-names>H</given-names></name>, <name><surname>Heisler</surname><given-names>MG</given-names></name>, <name><surname>Shapiro</surname><given-names>BE</given-names></name>, <name><surname>Meyerowitz</surname><given-names>EM</given-names></name>, <name><surname>Mjolsness</surname><given-names>E</given-names></name> (<year>2006</year>) <article-title>An auxin-driven polarized transport model for phyllotaxis</article-title>. <source>Proc Natl Acad Sci USA</source><volume>103</volume>: <fpage>1633</fpage>&#x2013;<lpage>1638</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1073/pnas.0509839103">10.1073/pnas.0509839103</ext-link></comment><pub-id pub-id-type="pmid">16415160</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Smith1">
+        <label>22</label>
+        <mixed-citation publication-type="journal"><name><surname>Smith</surname><given-names>RS</given-names></name>, <name><surname>Guyomarc'h</surname><given-names>S</given-names></name>, <name><surname>Mandel</surname><given-names>T</given-names></name>, <name><surname>Reinhardt</surname><given-names>D</given-names></name>, <name><surname>Kuhlemeier</surname><given-names>C</given-names></name>, <etal>et al</etal> (<year>2006</year>) <article-title>A plausible model of phyllotaxis</article-title>. <source>Proc Natl Acad Sci USA</source><volume>103</volume>: <fpage>1301</fpage>&#x2013;<lpage>1306</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1073/pnas.0510457103">10.1073/pnas.0510457103</ext-link></comment><pub-id pub-id-type="pmid">16432192</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-vanMourik1">
+        <label>23</label>
+        <mixed-citation publication-type="journal"><name><surname>van Mourik</surname><given-names>S</given-names></name>, <name><surname>Kaufmann</surname><given-names>K</given-names></name>, <name><surname>van Dijk</surname><given-names>ADJ</given-names></name>, <name><surname>Angenent</surname><given-names>GC</given-names></name>, <name><surname>Merks</surname><given-names>RMH</given-names></name>, <etal>et al</etal> (<year>2012</year>) <article-title>Simulation of organ patterning on the floral meristem using a polar auxin transport model</article-title>. <source>PLoS ONE</source><volume>7</volume>: <fpage>e28762</fpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1371/journal.pone.0028762">10.1371/journal.pone.0028762</ext-link></comment><pub-id pub-id-type="pmid">22291882</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Merks1">
+        <label>24</label>
+        <mixed-citation publication-type="journal"><name><surname>Merks</surname><given-names>RMH</given-names></name>, <name><surname>Van de Peer</surname><given-names>Y</given-names></name>, <name><surname>Inz&#xE9;</surname><given-names>D</given-names></name>, <name><surname>Beemster</surname><given-names>GTS</given-names></name> (<year>2007</year>) <article-title>Canalization without flux sensors: a traveling-wave hypothesis</article-title>. <source>Trends Plant Sci</source><volume>12</volume>: <fpage>384</fpage>&#x2013;<lpage>390</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1016/j.tplants.2007.08.004">10.1016/j.tplants.2007.08.004</ext-link></comment><pub-id pub-id-type="pmid">17765595</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Sachs1">
+        <label>25</label>
+        <mixed-citation publication-type="journal"><name><surname>Sachs</surname><given-names>T</given-names></name> (<year>1981</year>) <article-title>The control of the patterned differentiation of vascular tissues</article-title>. <source>Adv Bot Res</source><volume>9</volume>: <fpage>151</fpage>&#x2013;<lpage>262</lpage></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Sachs2">
+        <label>26</label>
+        <mixed-citation publication-type="journal"><name><surname>Sachs</surname><given-names>T</given-names></name> (<year>1969</year>) <article-title>Polarity and induction of organized vascular tissues</article-title>. <source>Ann Bot-London</source><volume>33</volume>: <fpage>263</fpage>&#x2013;<lpage>&amp;</lpage></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Mitchison1">
+        <label>27</label>
+        <mixed-citation publication-type="journal"><name><surname>Mitchison</surname><given-names>G</given-names></name> (<year>1981</year>) <article-title>The polar transport of auxin and vein patterns in plants</article-title>. <source>Philos T Roy Soc B</source><volume>295</volume>: <fpage>461</fpage>&#x2013;<lpage>&amp;</lpage></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Mitchison2">
+        <label>28</label>
+        <mixed-citation publication-type="journal"><name><surname>Mitchison</surname><given-names>G</given-names></name> (<year>1980</year>) <article-title>Model for vein formation in higher-plants</article-title>. <source>P Roy Soc Lond B Bio</source><volume>207</volume>: <fpage>79</fpage>&#x2013;<lpage>109</lpage></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-RollandLagan1">
+        <label>29</label>
+        <mixed-citation publication-type="journal"><name><surname>Rolland-Lagan</surname><given-names>A-G</given-names></name>, <name><surname>Prusinkiewicz</surname><given-names>P</given-names></name> (<year>2005</year>) <article-title>Reviewing models of auxin canalization in the context of leaf vein pattern formation in <italic>Arabidopsis</italic></article-title>. <source>Plant J</source><volume>44</volume>: <fpage>854</fpage>&#x2013;<lpage>865</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1111/j.1365-313X.2005.02581.x">10.1111/j.1365-313X.2005.02581.x</ext-link></comment><pub-id pub-id-type="pmid">16297075</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Stoma1">
+        <label>30</label>
+        <mixed-citation publication-type="journal"><name><surname>Stoma</surname><given-names>S</given-names></name>, <name><surname>Lucas</surname><given-names>M</given-names></name>, <name><surname>Chopard</surname><given-names>J</given-names></name>, <name><surname>Schaedel</surname><given-names>M</given-names></name>, <name><surname>Traas</surname><given-names>J</given-names></name>, <etal>et al</etal> (<year>2008</year>) <article-title>Flux-based transport enhancement as a plausible unifying mechanism for auxin transport in meristem development</article-title>. <source>PLoS Comput Biol</source><volume>4</volume>: <fpage>e1000207</fpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1371/journal.pcbi.1000207">10.1371/journal.pcbi.1000207</ext-link></comment><pub-id pub-id-type="pmid">18974825</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Feugier1">
+        <label>31</label>
+        <mixed-citation publication-type="journal"><name><surname>Feugier</surname><given-names>FG</given-names></name>, <name><surname>Mochizuki</surname><given-names>A</given-names></name>, <name><surname>Iwasa</surname><given-names>Y</given-names></name> (<year>2005</year>) <article-title>Self-organization of the vascular system in plant leaves: inter-dependent dynamics of auxin flux and carrier proteins</article-title>. <source>Journal of Theoretical Biology</source><volume>236</volume>: <fpage>366</fpage>&#x2013;<lpage>375</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1016/j.jtbi.2005.03.017">10.1016/j.jtbi.2005.03.017</ext-link></comment><pub-id pub-id-type="pmid">15899502</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Bayer1">
+        <label>32</label>
+        <mixed-citation publication-type="journal"><name><surname>Bayer</surname><given-names>EM</given-names></name>, <name><surname>Smith</surname><given-names>RS</given-names></name>, <name><surname>Mandel</surname><given-names>T</given-names></name>, <name><surname>Nakayama</surname><given-names>N</given-names></name>, <name><surname>Sauer</surname><given-names>M</given-names></name>, <etal>et al</etal> (<year>2009</year>) <article-title>Integration of transport-based models for phyllotaxis and midvein formation</article-title>. <source>Genes Dev</source><volume>23</volume>: <fpage>373</fpage>&#x2013;<lpage>384</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1101/gad.497009">10.1101/gad.497009</ext-link></comment><pub-id pub-id-type="pmid">19204121</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Smith2">
+        <label>33</label>
+        <mixed-citation publication-type="journal"><name><surname>Smith</surname><given-names>RS</given-names></name>, <name><surname>Bayer</surname><given-names>EM</given-names></name> (<year>2009</year>) <article-title>Auxin transport-feedback models of patterning in plants</article-title>. <source>Plant Cell Environ</source><volume>32</volume>: <fpage>1258</fpage>&#x2013;<lpage>1271</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1111/j.1365-3040.2009.01997.x">10.1111/j.1365-3040.2009.01997.x</ext-link></comment><pub-id pub-id-type="pmid">19453483</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Brooks1">
+        <label>34</label>
+        <mixed-citation publication-type="journal"><name><surname>Brooks</surname><given-names>L</given-names></name>, <name><surname>Strable</surname><given-names>J</given-names></name>, <name><surname>Zhang</surname><given-names>X</given-names></name>, <name><surname>Ohtsu</surname><given-names>K</given-names></name>, <name><surname>Zhou</surname><given-names>R</given-names></name>, <etal>et al</etal> (<year>2009</year>) <article-title>Microdissection of shoot meristem functional domains</article-title>. <source>PLoS Genet</source><volume>5</volume>: <fpage>e1000476</fpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1371/journal.pgen.1000476">10.1371/journal.pgen.1000476</ext-link></comment><pub-id pub-id-type="pmid">19424435</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Peng1">
+        <label>35</label>
+        <mixed-citation publication-type="journal"><name><surname>Peng</surname><given-names>J</given-names></name>, <name><surname>Chen</surname><given-names>R</given-names></name> (<year>2011</year>) <article-title>Auxin efflux transporter MtPIN10 regulates compound leaf and flower development in <italic>Medicago truncatula</italic></article-title>. <source>Plant Signal Behav</source><volume>6</volume>: <fpage>1537</fpage>&#x2013;<lpage>1544</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.4161/psb.6.10.17326">10.4161/psb.6.10.17326</ext-link></comment><pub-id pub-id-type="pmid">21900740</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Carraro1">
+        <label>36</label>
+        <mixed-citation publication-type="journal"><name><surname>Carraro</surname><given-names>N</given-names></name>, <name><surname>Forestan</surname><given-names>C</given-names></name>, <name><surname>Canova</surname><given-names>S</given-names></name>, <name><surname>Traas</surname><given-names>J</given-names></name>, <name><surname>Varotto</surname><given-names>S</given-names></name> (<year>2006</year>) <article-title><italic>ZmPIN1a</italic> and <italic>ZmPIN1b</italic> encode two novel putative candidates for polar auxin transport and plant architecture determination of maize</article-title>. <source>Plant Physiol</source><volume>142</volume>: <fpage>254</fpage>&#x2013;<lpage>264</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1104/pp.106.080119">10.1104/pp.106.080119</ext-link></comment><pub-id pub-id-type="pmid">16844839</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Gallavotti1">
+        <label>37</label>
+        <mixed-citation publication-type="journal"><name><surname>Gallavotti</surname><given-names>A</given-names></name>, <name><surname>Yang</surname><given-names>Y</given-names></name>, <name><surname>Schmidt</surname><given-names>R</given-names></name>, <name><surname>Jackson</surname><given-names>D</given-names></name> (<year>2008</year>) <article-title>The relationship between auxin transport and maize branching</article-title>. <source>Plant Physiol</source><volume>147</volume><issue>4</issue>: <fpage>1913</fpage>&#x2013;<lpage>23</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1104/pp.108.121541">10.1104/pp.108.121541</ext-link></comment><pub-id pub-id-type="pmid">18550681</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Forestan1">
+        <label>38</label>
+        <mixed-citation publication-type="journal"><name><surname>Forestan</surname><given-names>C</given-names></name>, <name><surname>Farinati</surname><given-names>S</given-names></name>, <name><surname>Varotto</surname><given-names>S</given-names></name> (<year>2012</year>) <article-title>The maize <italic>PIN</italic> gene family of auxin transporters</article-title>. <source>Front Plant Sci</source><volume>3</volume>: <fpage>16</fpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.3389/fpls.2012.00016">10.3389/fpls.2012.00016</ext-link></comment><pub-id pub-id-type="pmid">22639639</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Derbyshire1">
+        <label>39</label>
+        <mixed-citation publication-type="journal"><name><surname>Derbyshire</surname><given-names>P</given-names></name>, <name><surname>Byrne</surname><given-names>M</given-names></name> (<year>2013</year>) <article-title><italic>MORE SPIKELETS1</italic> is required for spikelet fate in the inflorescence of <italic>Brachypodium distachyon</italic></article-title>. <source>Plant Physiol</source><volume>161</volume><issue>3</issue>: <fpage>1291</fpage>&#x2013;<lpage>302</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1104/pp.112.212340">10.1104/pp.112.212340</ext-link></comment><pub-id pub-id-type="pmid">23355632</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Heisler1">
+        <label>40</label>
+        <mixed-citation publication-type="journal"><name><surname>Heisler</surname><given-names>MG</given-names></name>, <name><surname>Ohno</surname><given-names>C</given-names></name>, <name><surname>Das</surname><given-names>P</given-names></name>, <name><surname>Sieber</surname><given-names>P</given-names></name>, <name><surname>Reddy</surname><given-names>GV</given-names></name>, <etal>et al</etal> (<year>2005</year>) <article-title>Patterns of auxin transport and gene expression during primordium development revealed by live imaging of the <italic>Arabidopsis</italic> inflorescence meristem</article-title>. <source>Curr Biol</source><volume>15</volume>: <fpage>1899</fpage>&#x2013;<lpage>1911</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1016/j.cub.2005.09.052">10.1016/j.cub.2005.09.052</ext-link></comment><pub-id pub-id-type="pmid">16271866</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-AvsianKretchmer1">
+        <label>41</label>
+        <mixed-citation publication-type="journal"><name><surname>Avsian-Kretchmer</surname><given-names>O</given-names></name> (<year>2002</year>) <article-title>Indole acetic acid distribution coincides with vascular differentiation pattern during <italic>Arabidopsis</italic> leaf ontogeny</article-title>. <source>Plant Physiol</source><volume>130</volume>: <fpage>199</fpage>&#x2013;<lpage>209</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1104/pp.003228">10.1104/pp.003228</ext-link></comment><pub-id pub-id-type="pmid">12226500</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Medford1">
+        <label>42</label>
+        <mixed-citation publication-type="journal"><name><surname>Medford</surname><given-names>JI</given-names></name>, <name><surname>Behringer</surname><given-names>FJ</given-names></name>, <name><surname>Callos</surname><given-names>JD</given-names></name>, <name><surname>Feldmann</surname><given-names>KA</given-names></name> (<year>1992</year>) <article-title>Normal and abnormal development in the <italic>Arabidopsis</italic> vegetative shoot apex</article-title>. <source>Plant Cell</source><volume>4</volume>: <fpage>631</fpage>&#x2013;<lpage>643</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1105/tpc.4.6.631">10.1105/tpc.4.6.631</ext-link></comment><pub-id pub-id-type="pmid">12297656</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Evans1">
+        <label>43</label>
+        <mixed-citation publication-type="journal"><name><surname>Evans</surname><given-names>LS</given-names></name>, <name><surname>Berg</surname><given-names>AR</given-names></name> (<year>1972</year>) <article-title>Early histogenesis and semiquantitative histochemistry of leaf initiation in <italic>Triticum aestivum</italic></article-title>. <source>American Journal of Botany</source><volume>59</volume>: <fpage>973</fpage>&#x2013;<lpage>980</lpage></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Sharman1">
+        <label>44</label>
+        <mixed-citation publication-type="journal"><name><surname>Sharman</surname><given-names>B</given-names></name> (<year>1942</year>) <article-title>Developmental anatomy of the shoot of Zea mays L</article-title>. <source>Ann Bot-London</source><volume>6</volume>: <fpage>245</fpage>&#x2013;<lpage>282</lpage></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Rinne1">
+        <label>45</label>
+        <mixed-citation publication-type="journal"><name><surname>Rinne</surname><given-names>PL</given-names></name>, <name><surname>van der Schoot</surname><given-names>C</given-names></name> (<year>1998</year>) <article-title>Symplasmic fields in the tunica of the shoot apical meristem coordinate morphogenetic events</article-title>. <source>Development</source><volume>125</volume>: <fpage>1477</fpage>&#x2013;<lpage>1485</lpage><pub-id pub-id-type="pmid">9502728</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Bainbridge1">
+        <label>46</label>
+        <mixed-citation publication-type="journal"><name><surname>Bainbridge</surname><given-names>K</given-names></name>, <name><surname>Guyomarc'h</surname><given-names>S</given-names></name>, <name><surname>Bayer</surname><given-names>E</given-names></name>, <name><surname>Swarup</surname><given-names>R</given-names></name>, <name><surname>Bennett</surname><given-names>M</given-names></name>, <etal>et al</etal> (<year>2008</year>) <article-title>Auxin influx carriers stabilize phyllotactic patterning</article-title>. <source>Genes Dev</source><volume>22</volume>: <fpage>810</fpage>&#x2013;<lpage>823</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1101/gad.462608">10.1101/gad.462608</ext-link></comment><pub-id pub-id-type="pmid">18347099</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Barkoulas1">
+        <label>47</label>
+        <mixed-citation publication-type="journal"><name><surname>Barkoulas</surname><given-names>M</given-names></name>, <name><surname>Hay</surname><given-names>A</given-names></name>, <name><surname>Kougioumoutzi</surname><given-names>E</given-names></name>, <name><surname>Tsiantis</surname><given-names>M</given-names></name> (<year>2008</year>) <article-title>A developmental framework for dissected leaf formation in the <italic>Arabidopsis</italic> relative <italic>Cardamine hirsuta</italic></article-title>. <source>Nat Genet</source><volume>40</volume>: <fpage>1136</fpage>&#x2013;<lpage>1141</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1038/ng.189">10.1038/ng.189</ext-link></comment><pub-id pub-id-type="pmid">19165928</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Prusinkiewicz1">
+        <label>48</label>
+        <mixed-citation publication-type="journal"><name><surname>Prusinkiewicz</surname><given-names>P</given-names></name>, <name><surname>Runions</surname><given-names>A</given-names></name> (<year>2012</year>) <article-title>Computational models of plant development and form</article-title>. <source>New Phytol</source><volume>193</volume>: <fpage>549</fpage>&#x2013;<lpage>569</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1111/j.1469-8137.2011.04009.x">10.1111/j.1469-8137.2011.04009.x</ext-link></comment><pub-id pub-id-type="pmid">22235985</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Kramer1">
+        <label>49</label>
+        <mixed-citation publication-type="journal"><name><surname>Kramer</surname><given-names>EM</given-names></name> (<year>2009</year>) <article-title>Auxin-regulated cell polarity: an inside job?</article-title><source>Trends Plant Sci</source><volume>14</volume>: <fpage>242</fpage>&#x2013;<lpage>247</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1016/j.tplants.2009.02.005">10.1016/j.tplants.2009.02.005</ext-link></comment><pub-id pub-id-type="pmid">19386534</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Sauer1">
+        <label>50</label>
+        <mixed-citation publication-type="journal"><name><surname>Sauer</surname><given-names>M</given-names></name>, <name><surname>Kleine-Vehn</surname><given-names>J</given-names></name> (<year>2011</year>) <article-title>AUXIN BINDING PROTEIN1: The Outsider</article-title>. <source>Plant Cell</source><volume>23</volume><issue>6</issue>: <fpage>2033</fpage>&#x2013;<lpage>43</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1105/tpc.111.087064">10.1105/tpc.111.087064</ext-link></comment><pub-id pub-id-type="pmid">21719690</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Abley1">
+        <label>51</label>
+        <mixed-citation publication-type="journal"><name><surname>Abley</surname><given-names>K</given-names></name>, <name><surname>de Reuille</surname><given-names>PB</given-names></name>, <name><surname>Strutt</surname><given-names>D</given-names></name>, <name><surname>Bangham</surname><given-names>A</given-names></name>, <name><surname>Prusinkiewicz</surname><given-names>P</given-names></name>, <etal>et al</etal> (<year>2013</year>) <article-title>An intracellular partitioning-based framework for tissue cell polarity in plants and animals</article-title>. <source>Development</source><volume>140</volume>: <fpage>2061</fpage>&#x2013;<lpage>2074</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1242/dev.062984">10.1242/dev.062984</ext-link></comment><pub-id pub-id-type="pmid">23633507</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Wabnik1">
+        <label>52</label>
+        <mixed-citation publication-type="journal"><name><surname>Wabnik</surname><given-names>K</given-names></name>, <name><surname>Kleine-Vehn</surname><given-names>J</given-names></name>, <name><surname>Govaerts</surname><given-names>W</given-names></name>, <name><surname>Friml</surname><given-names>J</given-names></name> (<year>2011</year>) <article-title>Prototype cell-to-cell auxin transport mechanism by intracellular auxin compartmentalization</article-title>. <source>Trends Plant Sci</source><volume>16</volume>: <fpage>468</fpage>&#x2013;<lpage>475</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1016/j.tplants.2011.05.002">10.1016/j.tplants.2011.05.002</ext-link></comment><pub-id pub-id-type="pmid">21665516</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Vogel1">
+        <label>53</label>
+        <mixed-citation publication-type="journal"><name><surname>Vogel</surname><given-names>J</given-names></name>, <name><surname>Hill</surname><given-names>T</given-names></name> (<year>2008</year>) <article-title>High-efficiency <italic>Agrobacterium</italic>-mediated transformation of <italic>Brachypodium distachyon</italic> inbred line Bd21-3</article-title>. <source>Plant Cell Rep</source><volume>27</volume>: <fpage>471</fpage>&#x2013;<lpage>478</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1007/s00299-007-0472-y">10.1007/s00299-007-0472-y</ext-link></comment><pub-id pub-id-type="pmid">17999063</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Grandjean1">
+        <label>54</label>
+        <mixed-citation publication-type="journal"><name><surname>Grandjean</surname><given-names>O</given-names></name> (<year>2004</year>) <article-title>In vivo analysis of cell division, cell growth, and differentiation at the shoot apical meristem in <italic>Arabidopsis</italic></article-title>. <source>Plant Cell</source><volume>16</volume>: <fpage>74</fpage>&#x2013;<lpage>87</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1105/tpc.017962">10.1105/tpc.017962</ext-link></comment><pub-id pub-id-type="pmid">14671026</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Chuck1">
+        <label>55</label>
+        <mixed-citation publication-type="journal"><name><surname>Chuck</surname><given-names>G</given-names></name>, <name><surname>Bortiri</surname><given-names>E</given-names></name> (<year>2010</year>) <article-title>The unique relationship between <italic>tsh4</italic> and <italic>ra2</italic> in patterning floral phytomers</article-title>. <source>Plant Signal Behav</source><volume>5</volume>: <fpage>979</fpage>&#x2013;<lpage>981</lpage><pub-id pub-id-type="pmid">20622509</pub-id></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Smith3">
+        <label>56</label>
+        <mixed-citation publication-type="journal"><name><surname>Smith</surname><given-names>C</given-names></name>, <name><surname>Prusinkiewicz</surname><given-names>P</given-names></name> (<year>2004</year>) <article-title>Simulation modeling of growing tissues</article-title>. <source>Proceedings of the 4th International Workshop on Functional-Structural Plant Models</source><fpage>365</fpage>&#x2013;<lpage>370</lpage></mixed-citation>
+      </ref>
+      <ref id="pcbi.1003447-Bremer1">
+        <label>57</label>
+        <mixed-citation publication-type="journal"><name><surname>Bremer</surname><given-names>B</given-names></name>, <name><surname>Bremer</surname><given-names>K</given-names></name>, <name><surname>Chase</surname><given-names>MW</given-names></name>, <name><surname>Fay</surname><given-names>MF</given-names></name>, <name><surname>Reveal</surname><given-names>JL</given-names></name>, <etal>et al</etal> (<year>2009</year>) <article-title>An update of the Angiosperm Phylogeny Group classification for the orders and families of flowering plants: APG III</article-title>. <source>Bot J Linn Soc</source><volume>161</volume>: <fpage>105</fpage>&#x2013;<lpage>121</lpage><comment>doi:<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1111/j.1095-8339.2009.00996.x">10.1111/j.1095-8339.2009.00996.x</ext-link></comment></mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
+</pmc-articleset>
