@@ -41,6 +41,7 @@
 <li>python-werkzeug <http://werkzeug.pocoo.org/>
 <li>python-wikitools <http://code.google.com/p/python-wikitools/> (python-wikitools was imported into our tree and patched to ease deployment)
 </ul>
+<p>To install the dependencies in <i>Debian <abbr title="GNU is Not Unix">GNU</abbr>/Linux</i> execute <kbd>apt-get install python-dateutil python-elixir python-gi gir1.2-gstreamer-1.0 gir1.2-gst-plugins-base-1.0 gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad gstreamer1.0-libav python-magic python-mutagen python-progressbar python-xdg python-werkzeug</kbd> with root privileges.
 <p>To plot mimetypes occurring in sources, install python-matplotlib and pipe the output of <kbd>oa-cache stats $SOURCE</kbd> to <code>plot-helper</code>, where <code>$SOURCE</code> is either <code>pmc</code>, <code>pmc_doi</code> or <code>pmc_pmcid</code>.
 <h2>License</h2>
 <p>The Open Access Media Importer is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License  as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
