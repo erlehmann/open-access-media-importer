@@ -1,0 +1,8 @@
+#!/bin/sh
+# execute doctests of OAMI source modules
+# for verbosity, execute with "-v" option
+cd sources
+modules=$(ls *.py)
+for module in $modules; do
+  python $module $@
+done
