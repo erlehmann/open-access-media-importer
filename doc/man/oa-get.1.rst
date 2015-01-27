@@ -7,14 +7,16 @@ Open Access Media Importer download operations
 ----------------------------------------------
 
 :Author: Nils Dagsson Moskopp <nils@dieweltistgarnichtso.net>
-:Date: 2014-02-20
+:Date: 2015-01-27
 :Manual section: 1
 
 SYNOPSIS
 ========
 
-oa-get {detect-duplicates | download-metadata | download-media |
-       update-mimetypes} [source]
+oa-get [--force-download] [-v] {detect-duplicates | download-metadata
+       | download-media | update-mimetypes} [source]
+
+oa-get -h
 
 DESCRIPTION
 ===========
@@ -69,6 +71,19 @@ update-mimetypes
 
     For each update of a media type in the OAMI database, oa-get
     outputs a message to standard error.
+
+OPTIONS
+=======
+
+--force-download
+    Force download of supplementary materials already downloaded.
+
+-h --help
+    Show a short usage summary.
+
+-v --verbose
+    Increase verbosity. This option can be given multiple times.
+
 
 EXAMPLES
 ========
