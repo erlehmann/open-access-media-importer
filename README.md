@@ -11,7 +11,7 @@
 <p><a href="http://chrismaloney.org/notes/OAMI">Notes on the Open Access Media Importer by Chris Maloney</a>
 <p>A screencast showing usage can be played back with <kbd>ttyplay screencast</kbd>.
 <h2>Configuration</h2>
-<p>Copy the <code>userconfig.example</code> file to <code>$HOME/config/open-access-media-importer/userconfig</code>, uncomment the lines beginning with <code># username</code> and <code># password</code> and fill in your username and password for <i>Wikimedia Commons</i>.
+<p>Copy the <code>userconfig.example</code> file to <code>$HOME/.config/open-access-media-importer/userconfig</code>, uncomment the lines beginning with <code># username</code> and <code># password</code> and fill in your username and password for <i>Wikimedia Commons</i>.
 <h2>Import of supplementary materials by DOI</h2>
 <ol>
 <li>Look up the DOIs of one or more open access articles.
