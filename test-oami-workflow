@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# delete database
+./oa-cache clear-database dummy $@
+
+# normal workflow for OAMI
+./oa-get download-metadata dummy $@ && \
+    ./oa-cache find-media dummy $@ && \
+    ./oa-get update-mimetypes dummy $@ && \
+    ./oa-get download-media dummy $@ && \
+    ./oa-cache convert-media dummy $@ && \
+    ./oa-put upload-media dummy $@
