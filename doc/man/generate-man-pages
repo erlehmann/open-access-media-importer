@@ -1,0 +1,5 @@
+#!/bin/sh
+binaries="oa-cache oa-get oa-put"
+for b in $binaries; do
+  rst2man $b.1.rst $b.1
+done
