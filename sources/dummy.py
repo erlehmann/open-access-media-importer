@@ -50,7 +50,7 @@ def list_articles(target_directory, supplementary_materials=False, skip=[]):
             'article-month': 9,
             'article-day': 1,
             'article-url': "http://dx.doi.org/10.1186/1756-3305-1-29".decode('utf-8'),
-            'article-license-url': "http://creativecommons.org/licenses/by/2.0".decode('utf-8'),
+            'article-license-url': "http://creativecommons.org/licenses/by/2.0/".decode('utf-8'),
             'article-license-text': u'',
             'article-copyright-holder': "Behnke et al; licensee BioMed Central Ltd.".decode('utf-8'),
             'article-copyright-statement': u'',
