@@ -34,7 +34,7 @@ import pprint
 
 import subprocess
 
-from helpers import autovividict, filename_from_url
+from helpers import autovividict, filename_from_url, is_free_license
 from helpers.template import make_datestring
 from helpers.transcoder import Transcoder
 from model import session, set_source, Article, Category, Journal, SupplementaryMaterial
