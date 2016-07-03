@@ -1,5 +1,5 @@
 ﻿# -*- coding: utf-8 -*-
-# Copyright 2008, 2009 Mr.Z-man,  bjweeks
+# Copyright 2008-2013 Alex Zaddach (mrzmanwiki@gmail.com),  bjweeks
 
 # This file is part of wikitools.
 # wikitools is free software: you can redistribute it and/or modify
@@ -60,7 +60,7 @@ def namespaceDetect(title, site):
 class Page(object):
 	""" A page on the wiki"""
 
-	def __init__(self, site, title=False, check=True, followRedir=True, section=False, sectionnumber=False, pageid=False, namespace=False):
+	def __init__(self, site, title=False, check=True, followRedir=True, section=False, sectionnumber=None, pageid=False, namespace=False):
 		"""	
 		wiki - A wiki object
 		title - The page title, as a string or unicode object
@@ -100,7 +100,8 @@ class Page(object):
 			if self.title:
 				self.unprefixedtitle = self.title
 				self.title = ':'.join((self.site.namespaces[self.namespace]['*'], self.title.decode('utf8')))
-		if self.namespace is 0 and self.title:
+		if int(self.namespace) is 0 and self.title:
+			self.namespace = int(self.namespace)
 			self.unprefixedtitle = self.title		
 		# Setting page info with API, should set:
 		# pageid, exists, title, unprefixedtitle, namespace
@@ -116,7 +117,7 @@ class Page(object):
 				else:
 					self.unprefixedtitle = self.title
 					
-		if section or sectionnumber is not False:
+		if section or sectionnumber is not None:
 			self.setSection(section, sectionnumber)
 		else:
 			self.section = False
@@ -138,7 +139,7 @@ class Page(object):
 		if followRedir:
 			params['redirects'] = ''
 		req = api.APIRequest(self.site, params)
-		response = req.query()
+		response = req.query(False)
 		self.pageid = response['query']['pages'].keys()[0]
 		if self.pageid > 0:
 			self.exists = True
@@ -156,8 +157,6 @@ class Page(object):
 				self.unprefixedtitle = self.title.split(':', 1)[1]	
 			else:
 				self.unprefixedtitle = self.title
-		if 'invalid' in response['query']['pages'][str(self.pageid)]:
-			raise BadTitle(self.title)
 		self.pageid = int(self.pageid)
 		if self.pageid < 0:
 			self.pageid = 0
@@ -267,7 +266,7 @@ class Page(object):
 			else:
 				raise NoPage
 		req = api.APIRequest(self.site, params)
-		res = req.query()
+		res = req.query(False)
 		if 'redirects' in res['query']:
 			return True
 		else:
@@ -339,7 +338,10 @@ class Page(object):
 		req = api.APIRequest(self.site, params)
 		response = req.query(False)
 		if self.pageid == 0:
-			self.pageid = response['query']['pages'].keys()[0]
+			self.pageid = int(response['query']['pages'].keys()[0])
+			if self.pageid == -1:
+				self.exists == False
+				raise NoPage
 		self.wikitext = response['query']['pages'][str(self.pageid)]['revisions'][0]['*'].encode('utf-8')
 		self.lastedittime = response['query']['pages'][str(self.pageid)]['revisions'][0]['timestamp']
 		return self.wikitext
@@ -366,13 +368,9 @@ class Page(object):
 		else:
 			params['titles'] = self.title	
 		req = api.APIRequest(self.site, params)
-		response = req.query()
 		self.links = []
-		if isinstance(response, list): #There shouldn't be more than 5000 links on a page...
-			for page in response:
-				self.links.extend(self.__extractToList(page, 'links'))
-		else:
-			self.links = self.__extractToList(response, 'links')
+		for data in req.queryGen():
+			self.links.extend(self.__extractToList(data, 'links'))
 		return self.links
 		
 	def getProtection(self, force=False):
@@ -391,7 +389,7 @@ class Page(object):
 		else:
 			params['titles'] = self.title
 		req = api.APIRequest(self.site, params)
-		response = req.query()
+		response = req.query(False)
 		for pr in response['query'].values()[0].values()[0]['protection']:
 			if pr['level']: 
 				if pr['expiry'] == 'infinity':
@@ -426,13 +424,9 @@ class Page(object):
 		else:
 			params['titles'] = self.title	
 		req = api.APIRequest(self.site, params)
-		response = req.query()
 		self.templates = []
-		if isinstance(response, list): #There shouldn't be more than 5000 templates on a page...
-			for part in response:
-				self.templates.extend(self.__extractToList(part, 'templates'))
-		else:
-			self.templates = self.__extractToList(response, 'templates')
+		for data in req.queryGen():
+			self.templates.extend(self.__extractToList(data, 'templates'))
 		return self.templates
 	
 	def getCategories(self, force=False):
@@ -457,14 +451,105 @@ class Page(object):
 		else:
 			params['titles'] = self.title	
 		req = api.APIRequest(self.site, params)
-		response = req.query()
 		self.categories = []
-		if isinstance(response, list):
-			for part in response:
-				self.categories.extend(self.__extractToList(part, 'categories'))
-		else:
-			self.categories = self.__extractToList(response, 'categories')
+		for data in req.queryGen():
+			self.categories.extend(self.__extractToList(data, 'categories'))
 		return self.categories
+		
+	def getHistory(self, direction='older', content=True, limit='all'):
+		"""Get the history of a page
+		
+		direction - 2 options: 'older' (default) - start with the current revision and get older ones
+			'newer' - start with the oldest revision and get newer ones
+		content - If False, get only metadata (timestamp, edit summary, user, etc)
+			If True (default), also get the revision text
+		limit - Only retrieve a certain number of revisions. If 'all' (default), all revisions are returned 
+		
+		The data is returned in essentially the same format as the API, a list of dicts that look like:
+		{u'*': u"Page content", # Only returned when content=True
+		 u'comment': u'Edit summary',
+		 u'contentformat': u'text/x-wiki', # Only returned when content=True
+		 u'contentmodel': u'wikitext', # Only returned when content=True
+		 u'parentid': 139946, # id of previous revision
+		 u'revid': 139871, # revision id
+		 u'sha1': u'0a5cec3ca3e084e767f00c9a5645c17ac27b2757', # sha1 hash of page content
+		 u'size': 129, # size of page in bytes
+		 u'timestamp': u'2002-08-05T14:11:27Z', # timestamp of edit
+		 u'user': u'Username',
+		 u'userid': 48 # user id
+		}		
+		
+		Note that unlike other get* functions, the data is not cached
+		"""
+		max = limit
+		if limit == 'all':
+			max = float("inf")
+		if limit == 'all' or limit > self.site.limit:
+			limit = self.site.limit
+		history = []
+		rvc = None
+		while True:
+			revs, rvc = self.__getHistoryInternal(direction, content, limit, rvc)
+			history = history+revs
+			if len(history) == max or rvc is None:
+				break
+			if max - len(history) < self.site.limit:
+				limit = max - len(history)
+		return history
+		
+	def getHistoryGen(self, direction='older', content=True, limit='all'):
+		"""Generator function for page history
+		
+		The interface is the same as getHistory, but it will only retrieve 1 revision at a time.
+		This will be slower and have much higher network overhead, but does not require storing
+		the entire page history in memory	
+		"""
+		max = limit
+		count = 0
+		rvc = None
+		while True:
+			revs, rvc = self.__getHistoryInternal(direction, content, 1, rvc)
+			yield revs[0]
+			count += 1
+			if count == max or rvc is None:
+				break
+	
+	def __getHistoryInternal(self, direction, content, limit, rvcontinue):
+	
+		if self.pageid == 0 and not self.title:
+			self.setPageInfo()
+		if not self.exists:
+			raise NoPage
+		if direction != 'newer' and direction != 'older':
+			raise wiki.WikiError("direction must be 'newer' or 'older'")
+		params = {
+			'action':'query',
+			'prop':'revisions',
+			'rvdir':direction,
+			'rvprop':'ids|flags|timestamp|user|userid|size|sha1|comment',
+			'continue':'',
+			'rvlimit':limit
+		}
+		if self.pageid:
+			params['pageids'] = self.pageid
+		else:
+			params['titles'] = self.title	
+
+		if content:
+			params['rvprop']+='|content'
+		if rvcontinue:
+			params['continue'] = rvcontinue['continue']
+			params['rvcontinue'] = rvcontinue['rvcontinue']
+		req = api.APIRequest(self.site, params)
+		response = req.query(False)
+		id = response['query']['pages'].keys()[0]
+		if not self.pageid:
+			self.pageid = int(id)
+		revs = response['query']['pages'][id]['revisions']
+		rvc = None
+		if 'continue' in response:
+			rvc = response['continue']
+		return (revs, rvc)
 	
 	def __extractToList(self, json, stuff):
 		list = []
@@ -490,7 +575,7 @@ class Page(object):
 		"""
 		validargs = set(['text', 'summary', 'minor', 'notminor', 'bot', 'basetimestamp', 'starttimestamp',
 			'recreate', 'createonly', 'nocreate', 'watch', 'unwatch', 'watchlist', 'prependtext', 'appendtext', 
-			'section'])			
+			'section', 'captchaword', 'captchaid'])			
 		# For backwards compatibility
 		if 'newtext' in kwargs:
 			kwargs['text'] = kwargs['newtext']
@@ -517,7 +602,7 @@ class Page(object):
 			raise EditError("Bad param combination")
 		if 'createonly' in kwargs and 'nocreate' in kwargs:
 			raise EditError("Bad param combination")
-		token = self.getToken('edit')
+		token = self.site.getToken('csrf')
 		if 'text' in kwargs:
 			hashtext = kwargs['text']
 		elif 'prependtext' in kwargs and 'appendtext' in kwargs:
@@ -559,7 +644,7 @@ class Page(object):
 			self.setPageInfo()
 		if not self.exists:
 			raise NoPage
-		token = self.getToken('move')
+		token = self.site.getToken('csrf')
 		params = {
 			'action': 'move',
 			'to':mvto,
@@ -613,7 +698,7 @@ class Page(object):
 			raise ProtectError("No protection levels given")
 		if len(expirations) > len(restrictions):
 			raise ProtectError("More expirations than restrictions given")
-		token = self.getToken('protect')
+		token = self.site.getToken('csrf')
 		protections = ''
 		expiry = ''
 		if isinstance(expirations, str):
@@ -659,7 +744,7 @@ class Page(object):
 			self.setPageInfo()
 		if not self.exists:
 			raise NoPage
-		token = self.getToken('delete')
+		token = self.site.getToken('csrf')
 		params = {
 			'action': 'delete',
 			'token':token,
@@ -686,32 +771,9 @@ class Page(object):
 			self.section = False			
 		return result
 	
-	def getToken(self, type):
-		"""Get a token for everything except rollbacks
-		
-		type (string) - edit, delete, protect, move, block, unblock, email
-		Currently all the tokens are interchangeable, but this may change in the future
-		
-		"""			
-		if self.pageid == 0 and not self.title:
-			self.setPageInfo()
-		if not self.exists and type != 'edit':
-			raise NoPage
-		params = {
-			'action':'query',
-			'prop':'info',
-			'intoken':type,
-		}
-		if self.exists and self.pageid:
-			params['pageids'] = self.pageid
-		else:
-			params['titles'] = self.title
-		req = api.APIRequest(self.site, params)
-		response = req.query()
-		if self.pageid == 0:
-			self.pageid = response['query']['pages'].keys()[0]
-		token = response['query']['pages'][str(self.pageid)][type+'token']
-		return token
+	
+	def __hash__(self):
+		return int(self.pageid) ^ hash(self.site.apibase)
 	
 	def __str__(self):
 		if self.title:

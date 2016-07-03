@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2008, 2009 Mr.Z-man
+# Copyright 2008-2013 Alex Zaddach (mrzmanwiki@gmail.com)
 
 # This file is part of wikitools.
 # wikitools is free software: you can redistribute it and/or modify
@@ -37,7 +37,7 @@ def listFromQuery(site, queryresult):
 				pageid = item['pageid']
 			if item['ns'] == 14:
 				item = category.Category(site, title=item['title'], check=False, followRedir=False, pageid=pageid)
-			if item['ns'] == 6:
+			elif item['ns'] == 6:
 				item = wikifile.File(site, title=item['title'], check=False, followRedir=False, pageid=pageid)
 			else:
 				item = page.Page(site, title=item['title'], check=False, followRedir=False, pageid=pageid)
@@ -50,7 +50,7 @@ def listFromQuery(site, queryresult):
 				pageid = item['pageid']
 			if item['ns'] == 14:
 				item = category.Category(site, title=item['title'], check=False, followRedir=False, pageid=pageid)
-			if item['ns'] == 6:
+			elif item['ns'] == 6:
 				item = wikifile.File(site, title=item['title'], check=False, followRedir=False, pageid=pageid)
 			else:
 				item = page.Page(site, title=item['title'], check=False, followRedir=False, pageid=pageid)
@@ -91,17 +91,10 @@ def listFromTitles(site, titles, check=True, followRedir=False):
 				params['redirects'] = ''
 			req = api.APIRequest(site, params)
 			res = req.query(False)
-			if not response:
-				response = res
-			else:
-				# This breaks on non-existent titles, the api gives them negative numbers
-				# resultCombine doesn't account for this and ignores or overwrites the 
-				# duplicate pageids
-				response = api.resultCombine('', response, res)
-		for key in response['query']['pages'].keys():
-			res = response['query']['pages'][key]
-			item = makePage(key, res, site)
-			ret.append(item)
+			for key in res['query']['pages']:
+				obj = res['query']['pages'][key]
+				item = makePage(key, obj, site)
+				ret.append(item)
 	return ret
 
 def listFromPageids(site, pageids, check=True, followRedir=False):			

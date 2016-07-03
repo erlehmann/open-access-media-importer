@@ -1,5 +1,5 @@
 ﻿# -*- coding: utf-8 -*-
-# Copyright 2008, 2009 Mr.Z-man
+# Copyright 2008-2013 Alex Zaddach (mrzmanwiki@gmail.com)
 
 # This file is part of wikitools.
 # wikitools is free software: you can redistribute it and/or modify
@@ -15,10 +15,16 @@
 # You should have received a copy of the GNU General Public License
 # along with wikitools.  If not, see <http://www.gnu.org/licenses/>.
 
+# This module is documented at http://code.google.com/p/python-wikitools/wiki/api
+
 import urllib2
 import re
 import time
 import sys
+import wiki
+import base64
+import warnings
+import copy
 from urllib import quote_plus, _is_unicode
 try:
 	from poster.encode import multipart_encode
@@ -61,6 +67,8 @@ class APIRequest:
 		self.data = data.copy()
 		self.data['format'] = "json"
 		self.iswrite = write
+		if wiki.assertval is not None and self.iswrite:
+			self.data['assert'] =  wiki.assertval
 		if not 'maxlag' in self.data and not wiki.maxlag < 0:
 			self.data['maxlag'] = wiki.maxlag
 		self.multipart = multipart
@@ -73,14 +81,20 @@ class APIRequest:
 			self.encodeddata = urlencode(self.data, 1)
 			self.headers = {
 				"Content-Type": "application/x-www-form-urlencoded",
-				"Content-Length": len(self.encodeddata)
+				"Content-Length": str(len(self.encodeddata))
 			}
-		self.headers["User-agent"] = wiki.useragent,
+		self.headers["User-agent"] = wiki.useragent
 		if gzip:
 			self.headers['Accept-Encoding'] = 'gzip'
 		self.wiki = wiki
 		self.response = False
-		self.opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(wiki.cookies))
+		if wiki.auth:
+			self.headers['Authorization'] = "Basic {0}".format(
+				base64.encodestring(wiki.auth + ":" + wiki.httppass)).replace('\n','')
+		if hasattr(wiki, "passman"):
+			self.opener = urllib2.build_opener(urllib2.HTTPDigestAuthHandler(wiki.passman), urllib2.HTTPCookieProcessor(wiki.cookies))
+		else:
+			self.opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(wiki.cookies))
 		self.request = urllib2.Request(self.wiki.apibase, self.encodeddata, self.headers)
 		
 	def setMultipart(self, multipart=True):
@@ -98,7 +112,7 @@ class APIRequest:
 				self.encodeddata = self.encodeddata + singledata
 		else:
 			self.encodeddata = urlencode(self.data, 1)
-			self.headers['Content-Length'] = len(self.encodeddata)
+			self.headers['Content-Length'] = str(len(self.encodeddata))
 			self.headers['Content-Type'] = "application/x-www-form-urlencoded"
 
 	def changeParam(self, param, value):
@@ -123,7 +137,7 @@ class APIRequest:
 				self.encodeddata = self.encodeddata + singledata
 		else:
 			self.encodeddata = urlencode(self.data, 1)
-			self.headers['Content-Length'] = len(self.encodeddata)
+			self.headers['Content-Length'] = str(len(self.encodeddata))
 			self.headers['Content-Type'] = "application/x-www-form-urlencoded"
 		self.request = urllib2.Request(self.wiki.apibase, self.encodeddata, self.headers)
 	
@@ -131,20 +145,57 @@ class APIRequest:
 		"""Actually do the query here and return usable stuff
 		
 		querycontinue - look for query-continue in the results and continue querying
-		until there is no more data to retrieve
+		until there is no more data to retrieve (DEPRECATED: use queryGen as a more
+		reliable and efficient alternative)
 		
 		"""
+		if querycontinue and self.data['action'] == 'query':
+			warnings.warn("""The querycontinue option is deprecated and will be removed
+in a future release, use the new queryGen function instead
+for queries requring multiple requests""", FutureWarning)
 		data = False
 		while not data:
 			rawdata = self.__getRaw()
-			data = self.__parseJSON(rawdata)				
-		#Certain errors should probably be handled here...
+			data = self.__parseJSON(rawdata)
+			if not data and type(data) is APIListResult:
+				break
 		if 'error' in data:
+			if self.iswrite and data['error']['code'] == 'blocked':
+				raise wiki.UserBlocked(data['error']['info'])
 			raise APIError(data['error']['code'], data['error']['info'])
 		if 'query-continue' in data and querycontinue:
 			data = self.__longQuery(data)
 		return data
 	
+	def queryGen(self):
+		"""Unlike the old query-continue method that tried to stitch results
+		together, which could work poorly for complex result sets and could
+		use a lot of memory, this yield each set returned by the API and lets
+		the user process the data. 
+		Loosely based on the recommended implementation on mediawiki.org
+		
+		"""
+		reqcopy = copy.deepcopy(self.request)
+		self.changeParam('continue', '')
+		while True:
+			data = False
+			while not data:
+				rawdata = self.__getRaw()
+				data = self.__parseJSON(rawdata)
+				if not data and type(data) is APIListResult:
+					break
+			if 'error' in data:
+				if self.iswrite and data['error']['code'] == 'blocked':
+					raise wiki.UserBlocked(data['error']['info'])
+				raise APIError(data['error']['code'], data['error']['info'])
+			yield data
+			if 'continue' not in data: 
+				break
+			else:
+				self.request = copy.deepcopy(reqcopy)
+				for param in data['continue']:
+					self.changeParam(param, data['continue'][param])
+
 	def __longQuery(self, initialdata):
 		"""For queries that require multiple requests"""
 		self._continues = set()

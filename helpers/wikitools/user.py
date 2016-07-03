@@ -1,5 +1,5 @@
 ﻿# -*- coding: utf-8 -*-
-# Copyright 2008, 2009 Mr.Z-man,  bjweeks
+# Copyright 2008-2013 Alex Zaddach (mrzmanwiki@gmail.com), bjweeks
 
 # This file is part of wikitools.
 # wikitools is free software: you can redistribute it and/or modify
@@ -19,6 +19,7 @@ import wiki
 import page
 import api
 import socket
+import re
 
 class User:
 	"""A user on the wiki"""
@@ -29,25 +30,64 @@ class User:
 		check - Checks for existence, normalizes name
 		"""	
 		self.site = site
-		self.name = name
+		self.name = name.strip()
 		if not isinstance(self.name, unicode):
 			self.name = unicode(self.name, 'utf8')
 		self.exists = True # If we're not going to check, assume it does
 		self.blocked = None # So we can tell the difference between blocked/not blocked/haven't checked
 		self.editcount = -1
 		self.groups = []
+		self.id = 0
 		if check:
 			self.setUserInfo()
 		self.isIP = False
-		try:
-			s = socket.inet_aton(self.name.replace(' ', '_'))
-			if socket.inet_ntoa(s) == self.name:
-				self.isIP = True
-				self.exists = False
-		except:
-			pass
+		self.IPcheck()
 		self.page = page.Page(self.site, ':'.join([self.site.namespaces[2]['*'], self.name]), check=check, followRedir=False)
 	
+	def IPcheck(self):
+		try: #IPv4 check
+                        s = socket.inet_aton(self.name.replace(' ', '_'))
+                        if socket.inet_ntoa(s) == self.name:
+                                self.isIP = True
+                                self.exists = False
+				return
+                except:
+                        pass
+		try:
+			s = socket.inet_pton(socket.AF_INET6, self.name.replace(' ', '_'))
+			if self.IPnorm(socket.inet_ntop(socket.AF_INET6, s)) == self.IPnorm(self.name):
+				self.isIP = True
+				self.exists = False
+				self.name = self.IPnorm(self.name)
+				return
+		except:
+			pass
+
+	def IPnorm(self, ip):
+		"""This is basically a port of MediaWiki's IP::sanitizeIP but assuming no CIDR ranges"""
+		ip = ip.upper()
+		# Expand zero abbreviations
+		abbrevPos = ip.find('::')
+		if abbrevPos != -1:
+			addressEnd = len(ip) - 1
+			# If the '::' is at the beginning...
+			if abbrevPos == 0:
+				repeat = '0:'
+				extra = '0' if ip == '::' else ''
+				pad = 9
+			elif abbrevPos == addressEnd - 1:
+				repeat = ':0'
+				extra = ''
+				pad = 9
+			else:
+				repeat = ':0'
+				extra = ':'
+				pad = 8
+			ip = ip.replace( '::', repeat*(pad-ip.count(':'))+extra)
+		# Remove leading zereos from each bloc as needed
+		ip = re.sub('/(^|:)0+(([0-9A-Fa-f]{1,4}))/', '\1\2', ip)
+		return ip;
+
 	def setUserInfo(self):
 		"""Sets basic user info"""		
 		params = {
@@ -57,12 +97,13 @@ class User:
 			'usprop':'blockinfo|groups|editcount'
 		}
 		req = api.APIRequest(self.site, params)
-		response = req.query()
+		response = req.query(False)
 		user = response['query']['users'][0]
 		self.name = user['name']
 		if 'missing' in user or 'invalid' in user:
 			self.exists = False
 			return
+		self.id = int(user['userid'])
 		self.editcount = int(user['editcount'])
 		if 'groups' in user:
 			self.groups = user['groups']
@@ -71,6 +112,10 @@ class User:
 		else:
 			self.blocked = False
 		return self
+		
+	def getTalkPage(self, check=True, followRedir=False):
+		"""Convenience function to get an object for the user's talk page"""
+		return page.Page(self.site, ':'.join([self.site.namespaces[3]['*'], self.name]), check=check, followRedir=False)
 		
 	def isBlocked(self, force=False):
 		"""Determine if a user is blocked"""
@@ -104,13 +149,7 @@ class User:
 		reblock - overwrite existing block
 		
 		"""
-		params = {'action':'block',
-			'user':self.name,
-			'gettoken':''
-		}
-		req = api.APIRequest(self.site, params)
-		res = req.query()
-		token = res['block']['blocktoken']
+		token = self.site.getToken('csrf')
 		params = {'action':'block',
 			'user':self.name,
 			'token':token
@@ -145,14 +184,7 @@ class User:
 		reason - reason for the log
 		
 		"""
-		params = {
-		    'action': 'unblock',
-			'user': self.name,
-			'gettoken': ''
-		}
-		req = api.APIRequest(self.site, params)
-		res = req.query()
-		token = res['unblock']['unblocktoken']
+		token = self.site.getToken('csrf')
 		params = {
 		    'action': 'unblock',
 			'user': self.name,
@@ -166,16 +198,19 @@ class User:
 			self.blocked = False
 		return res
 	
+	def __hash__(self):
+		return int(self.name) ^ hash(self.site.apibase)
+	
 	def __eq__(self, other):
 		if not isinstance(other, User):
 			return False
-		if self.name == other.name and self.site == other.wiki:
+		if self.name == other.name and self.site == other.site:
 			return True
 		return False
 	def __ne__(self, other):
 		if not isinstance(other, User):
 			return True
-		if self.name == other.name and self.site == other.wiki:
+		if self.name == other.name and self.site == other.site:
 			return False
 		return True
 	

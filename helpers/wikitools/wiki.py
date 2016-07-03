@@ -1,5 +1,5 @@
 ﻿# -*- coding: utf-8 -*-
-# Copyright 2008, 2009 Mr.Z-man
+# Copyright 2008-2013 Alex Zaddach (mrzmanwiki@gmail.com)
 
 # This file is part of wikitools.
 # wikitools is free software: you can redistribute it and/or modify
@@ -21,7 +21,9 @@ import urllib
 import re
 import time
 import os
+import warnings
 from urlparse import urlparse
+from urllib2 import HTTPPasswordMgrWithDefaultRealm
 try:
 	import cPickle as pickle
 except:
@@ -29,15 +31,9 @@ except:
 
 class WikiError(Exception):
 	"""Base class for errors"""
-
-class BadTitle(WikiError):
-	"""Invalid title"""
 	
-class NoPage(WikiError):
-	"""Non-existent page"""
-
-class EditError(WikiError):
-	"""Problem with edit request"""
+class UserBlocked(WikiError):
+	"""Trying to edit while blocked"""
 
 class Namespace(int):
 	"""
@@ -53,18 +49,38 @@ class Namespace(int):
 	def __ror__(self, other):
 		return '|'.join([str(other), str(self)])
 
-VERSION = '1.1.1'
+VERSION = '1.4'
 		
 class Wiki:
 	"""A Wiki site"""
 
-	def __init__(self, url="http://en.wikipedia.org/w/api.php"):
+	def __init__(self, url="https://en.wikipedia.org/w/api.php", httpuser=None, httppass=None, preauth=False):
 		"""
 		url - A URL to the site's API, defaults to en.wikipedia
+		httpuser - optional user name for HTTP Auth
+        	httppass - password for HTTP Auth, leave out to enter interactively
+		preauth - true to send headers for HTTP Auth on the first request
+		          instead of relying on the negotiation for them
+
 		"""
 		self.apibase = url
 		self.cookies = WikiCookieJar()
 		self.username = ''
+		urlbits = urlparse(self.apibase)
+		self.domain = '://'.join([urlbits.scheme, urlbits.netloc])
+		if httpuser is not None:
+			if httppass is None:
+				from getpass import getpass
+				self.httppass = getpass("HTTP Auth password for "+httpuser+": ")
+			if preauth:
+				self.httppass = httppass
+				self.auth = httpuser
+			else:
+				self.passman = HTTPPasswordMgrWithDefaultRealm()
+				self.passman.add_password(None, self.domain, httpuser, httppass)
+		else:
+			self.passman = None
+			self.auth = None
 		self.maxlag = 5
 		self.maxwaittime = 120
 		self.useragent = "python-wikitools/%s" % VERSION
@@ -73,8 +89,8 @@ class Wiki:
 		self.siteinfo = {}
 		self.namespaces = {}
 		self.NSaliases = {}
-		urlbits = urlparse(self.apibase)
-		self.domain = '://'.join([urlbits.scheme, urlbits.netloc])
+		self.assertval = None
+		self.newtoken = False
 		try:
 			self.setSiteinfo()
 		except api.APIError: # probably read-restricted
@@ -88,13 +104,13 @@ class Wiki:
 		
 		"""
 		params = {'action':'query',
-			'meta':'siteinfo',
+			'meta':'siteinfo|tokens',
 			'siprop':'general|namespaces|namespacealiases',
 		}
 		if self.maxlag < 120:
 			params['maxlag'] = 120
 		req = api.APIRequest(self, params)
-		info = req.query()
+		info = req.query(False)
 		sidata = info['query']['general']
 		for item in sidata:
 			self.siteinfo[item] = sidata[item]
@@ -103,19 +119,24 @@ class Wiki:
 			nsinfo = nsdata[ns]
 			self.namespaces[nsinfo['id']] = nsinfo
 			if ns != "0":
-				attr = "NS_%s" % (nsdata[ns]['canonical'].replace(' ', '_').upper())
+				try:
+					attr = "NS_%s" % (nsdata[ns]['canonical'].replace(' ', '_').upper())
+				except KeyError:
+					attr = "NS_%s" % (nsdata[ns]['*'].replace(' ', '_').upper())
 			else:
 				attr = "NS_MAIN"
-			setattr(self, attr, Namespace(ns))			
+			setattr(self, attr.encode('utf8'), Namespace(ns.encode('utf8')))			
 		nsaliasdata = info['query']['namespacealiases']
 		if nsaliasdata:
 			for ns in nsaliasdata:
 				self.NSaliases[ns['*']] = ns['id']
 		if not 'writeapi' in sidata:
-			print "WARNING: Write-API not enabled, you will not be able to edit"
+			warnings.warn(UserWarning, "WARNING: Write-API not enabled, you will not be able to edit")
 		version = re.search("\d\.(\d\d)", self.siteinfo['generator'])
 		if not int(version.group(1)) >= 13: # Will this even work on 13?
-			print "WARNING: Some features may not work on older versions of MediaWiki"
+			warnings.warn(UserWarning, "WARNING: Some features may not work on older versions of MediaWiki")
+		if 'tokens' in info['query'].keys():
+			self.newtoken = True
 		return self
 	
 	def login(self, username, password=False, remember=False, force=False, verify=True, domain=None):
@@ -142,7 +163,7 @@ class Wiki:
 				pass
 		if not password:
 			from getpass import getpass
-			password = getpass()
+			password = getpass("Wiki password for "+username+": ")
 		def loginerror(info):
 			try:
 				print info['login']['result']
@@ -182,7 +203,7 @@ class Wiki:
 		if self.maxlag < 120:
 			params['maxlag'] = 120
 		req = api.APIRequest(self, params)
-		info = req.query()
+		info = req.query(False)
 		user_rights = info['query']['userinfo']['rights']
 		if 'apihighlimits' in user_rights:
 			self.limit = 5000
@@ -227,7 +248,7 @@ class Wiki:
 		if self.maxlag < 120:
 			data['maxlag'] = 120
 		req = api.APIRequest(self, data)
-		info = req.query()
+		info = req.query(False)
 		if info['query']['userinfo']['id'] == 0:
 			return False
 		elif username and info['query']['userinfo']['name'] != username:
@@ -254,6 +275,64 @@ class Wiki:
 		self.useragent = str(useragent)
 		return self.useragent
 
+	def setAssert(self, value):
+		"""Set an assertion value
+		
+		This only makes a difference on sites with the AssertEdit extension
+		on others it will be silently ignored
+		This is only checked on edits, so only applied to write queries
+		
+		Set to None (the default) to not use anything
+		http://www.mediawiki.org/wiki/Extension:Assert_Edit
+		
+		"""
+		valid = ['user', 'bot', 'true', 'false', 'exists', 'test', None]
+		if value not in valid:
+			raise WikiError("Invalid assertion")
+		self.assertval = value
+		return self.assertval
+		
+	def getToken(self, type):
+		"""Get a token
+		
+		For wikis with MW 1.24 or newer:
+		type (string) - csrf, deleteglobalaccount, patrol, rollback, setglobalaccountstatus, userrights, watch
+
+		For older wiki versions, only csrf (edit, move, etc.) tokens are supported
+		
+		"""
+		if self.newtoken:
+			params = {
+				'action':'query',
+				'meta':'tokens',
+				'type':type,
+			}
+			req = api.APIRequest(self, params)
+			response = req.query(False)
+			token = response['query']['tokens'][type+'token']
+		else:
+			if type not in ['edit', 'delete', 'protect', 'move', 'block', 'unblock', 'email', 'csrf']:
+				raise WikiError('Token type unavailable')
+			params = {
+				'action':'query',
+				'prop':'info',
+				'intoken':'edit',
+				'titles':'1'
+			}
+			req = api.APIRequest(self, params)
+			response = req.query(False)
+			if response.get('data', False):
+				pid = response['data']['query']['pages'].keys()[0]
+				token = response['query']['pages'][pid]['edittoken']
+			else:
+				pages = response['query']['pages']
+				token = pages.itervalues().next()['edittoken']
+		return token
+
+
+	def __hash__(self):
+		return hash(self.apibase)
+		
 	def __eq__(self, other):
 		if not isinstance(other, Wiki):
 			return False

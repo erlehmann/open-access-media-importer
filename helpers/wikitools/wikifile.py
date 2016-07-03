@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2009 Mr.Z-man
+# Copyright 2009-2013 Alex Zaddach (mrzmanwiki@gmail.com)
 
 # This file is part of wikitools.
 # wikitools is free software: you can redistribute it and/or modify
@@ -19,6 +19,7 @@ import wiki
 import page
 import api
 import urllib2
+import warnings
 
 class FileDimensionError(wiki.WikiError):
 	"""Invalid dimensions"""
@@ -28,7 +29,7 @@ class UploadError(wiki.WikiError):
 
 class File(page.Page):
 	"""A file on the wiki"""
-	def __init__(self, wiki, title, check=True, followRedir=False, section=False, sectionnumber=False):
+	def __init__(self, wiki, title, check=True, followRedir=False, section=False, sectionnumber=False, pageid=False):
 		"""	
 		wiki - A wiki object
 		title - The page title, as a string or unicode object
@@ -38,19 +39,21 @@ class File(page.Page):
 		sectionnumber - the section number
 		pageid - pageid, can be in place of title
 		""" 
-		page.Page.__init__(self, wiki, title, check, followRedir, section, sectionnumber)
+		page.Page.__init__(self, wiki, title, check, followRedir, section, sectionnumber, pageid)
 		if self.namespace != 6:
 			self.setNamespace(6, check)
 		self.usage = []
-		self.history = []
-		
+		self.filehistory = []
+
 	def getHistory(self, force=False):
-		if self.history and not force:
-			return self.history
+		warnings.warn("""File.getHistory has been renamed to File.getFileHistory""", FutureWarning)
+		return self.getFileHistory(force)
+		
+	def getFileHistory(self, force=False):
+		if self.filehistory and not force:
+			return self.filehistory
 		if self.pageid == 0 and not self.title:
 			self.setPageInfo()
-		if not self.exists:
-			raise NoPage
 		params = {
 			'action': 'query',
 			'prop': 'imageinfo',
@@ -61,9 +64,12 @@ class File(page.Page):
 		else:
 			params['titles'] = self.title	
 		req = api.APIRequest(self.site, params)
-		response = req.query()
-		self.history = response['query']['pages'][str(self.pageid)]['imageinfo']
-		return self.history
+		self.filehistory = []
+		for data in req.queryGen():
+			pid = data['query']['pages'].keys()[0]
+			for item in data['query']['pages'][pid]['imageinfo']:
+				self.filehistory.append(item)
+		return self.filehistory
 			
 	def getUsage(self, titleonly=False, force=False, namespaces=False):
 		"""Gets a list of pages that use the file
@@ -164,7 +170,7 @@ class File(page.Page):
 			'iiprop':'url'
 		}
 		if width and height:
-			raise DimensionError("Can't specify both width and height")
+			raise FileDimensionError("Can't specify both width and height")
 		if width:
 			params['iiurlwidth'] = width
 		if height:
@@ -194,7 +200,7 @@ class File(page.Page):
 		f.close()
 		return location
 		
-	def upload(self, fileobj=None, comment='', text='', url=None, ignorewarnings=False, watch=False):
+	def upload(self, fileobj=None, comment='', url=None, ignorewarnings=False, watch=False):
 		"""Upload a file, requires the "poster" module
 		
 		fileobj - A file object opened for reading
@@ -211,11 +217,16 @@ class File(page.Page):
 			raise UploadError("Must give either a file object or a URL")
 		if fileobj and url:
 			raise UploadError("Cannot give a file and a URL")
+		if fileobj:
+			if not isinstance(fileobj, file):
+				raise UploadError('If uploading from a file, a file object must be passed')
+			if fileobj.mode not in ['r', 'rb', 'r+']:
+				raise UploadError('File must be readable')
+			fileobj.seek(0)
 		params = {'action':'upload',
 			'comment':comment,
 			'filename':self.unprefixedtitle,
-			'text':text,
-			'token':self.getToken('edit') # There's no specific "upload" token
+			'token':self.site.getToken('csrf')
 		}
 		if url:
 			params['url'] = url
@@ -227,11 +238,20 @@ class File(page.Page):
 			params['watch'] = ''
 		req = api.APIRequest(self.site, params, write=True, multipart=bool(fileobj))
 		res = req.query()
-		if 'upload' in res and res['upload']['result'] == 'Success':
-			self.wikitext = ''
-			self.links = []
-			self.templates = []
-			self.exists = True
+		if 'upload' in res:
+			if res['upload']['result'] == 'Success':
+				self.wikitext = ''
+				self.links = []
+				self.templates = []
+				self.exists = True
+			elif res['upload']['result'] == 'Warning':
+				for warning in res['upload']['warnings'].keys():
+					if warning == 'duplicate':
+						print 'File is a duplicate of ' + res['upload']['warnings']['duplicate'][0]
+					elif warning == 'page-exists' or warning == 'exists':
+						print 'Page already exists: ' + res['upload']['warnings'][warning]
+					else:
+						print 'Warning: ' + warning + ' ' + res['upload']['warnings'][warning]
 		return res
 		
 			
