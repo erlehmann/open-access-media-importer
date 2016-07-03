@@ -29,7 +29,6 @@ def get_uploads():
         'action': 'query',
         'list': 'usercontribs',
         'ucuser': config.username,
-        'srlimit': '50',
         }
     results = queryGen(params)
     for result in results:
