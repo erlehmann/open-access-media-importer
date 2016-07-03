@@ -19,12 +19,15 @@ pylab.figure(figsize=(20.0, 12.0))
 uploads_per_month = {}
 uploads_per_day = {}
 
-for (timestamp, title) in uploads:
-    day = timestamp.date()
-    try:
-        uploads_per_day[day] += 1
-    except KeyError:
-        uploads_per_day[day] = 1
+for part in uploads:
+    stderr.write('.')
+    for (timestamp, title) in part:
+        day = timestamp.date()
+        try:
+            uploads_per_day[day] += 1
+        except KeyError:
+            uploads_per_day[day] = 1
+stderr.write('\n')
 
 uploads_total = {}
 totalcount = 0

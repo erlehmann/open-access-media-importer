@@ -16,18 +16,28 @@ def query(params):
         stderr.write('Mediawiki API request failed, retrying.\n')
         return query(request)
 
+def queryGen(params):
+    request = wikitools.api.APIRequest(wiki, params)
+    try:
+        return request.queryGen()
+    except wikitools.api.APIError:
+        stderr.write('Mediawiki API request failed, retrying.\n')
+        return queryGen(request)
+
 def get_uploads():
     params = {
         'action': 'query',
         'list': 'usercontribs',
-        'ucuser': config.username
+        'ucuser': config.username,
+        'srlimit': '50',
         }
-    result = query(params)
-    return [
+    results = queryGen(params)
+    for result in results:
+        yield [
         (parser.parse(uc[u'timestamp']), uc[u'title']) \
             for uc in result[u'query'][u'usercontribs'] \
             if uc[u'ns'] == 6 and u'new' in uc.keys()
-    ]
+        ]
 
 def get_wiki_name():
     params = {
